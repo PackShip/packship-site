@@ -11,6 +11,7 @@ import "aos/dist/aos.css";
 import DonationsLink from "@/shared/DonationsLink";
 import Hero from "./components/Hero";
 import Features from "./components/Features";
+import Instructions from "./components/Instructions";
 
 function useAnimatedNumber(target: number, duration: number) {
   const [currentNumber, setCurrentNumber] = useState<number>(0);
@@ -59,6 +60,7 @@ export default function Home() {
       <main>
         <Hero />
         <Features />
+        <Instructions />
       </main>
       <Footer />
     </Suspense>

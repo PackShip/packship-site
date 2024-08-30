@@ -1,5 +1,6 @@
 import { faEnvelope, faFilePdf, faCode, faFaceSmile } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedinIn, faGithub, faMedium, faSquareXTwitter, faBehance, faUpwork, faPaypal } from '@fortawesome/free-brands-svg-icons';
+import { Command } from '../types';
 
 export const navLinks = [
   // { 
@@ -105,5 +106,36 @@ export const features = [
   },
   {
     title: "Secure Publishing",
+  },
+];
+
+export const commands: Command[] = [
+  {
+    text: "# Initialize Your Project",
+    type: "comment",
+  },
+  {
+    text: "npx -y packship init",
+    type: "command",
+  },
+  {
+    text: "# Customize Your Package",
+    type: "comment",
+  },
+  {
+    text: "cd my-package",
+    type: "command",
+  },
+  {
+    text: "// Add your changes here",
+    type: "code",
+  },
+  {
+    text: "# Automate Your Workflow",
+    type: "comment",
+  },
+  {
+    text: "npm publish",
+    type: "command",
   },
 ];

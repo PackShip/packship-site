@@ -10,3 +10,12 @@ export interface DonationsLinkProps {
 export interface KeyFeatureProps {
   title: string;
 }
+
+export interface Command {
+  text: string;
+  type: "comment" | "command" | "code";
+}
+
+export interface TerminalProps {
+  commands: Command[];
+}
