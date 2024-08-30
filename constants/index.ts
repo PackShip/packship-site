@@ -92,3 +92,18 @@ export const socials = [
     icon: faPaypal,  // Use the imported icon object
   },
 ];
+
+export const features = [
+  {
+    title: "Automated Setup",
+  },
+  {
+    title: "Efficient Workflow",
+  },
+  {
+    title: "User-Friendly CLI",
+  },
+  {
+    title: "Secure Publishing",
+  },
+];
