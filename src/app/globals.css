@@ -1,33 +1,124 @@
+/* 
+
+TAILWIND CONFIGURATIONS
+
+*/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
+/* 
+
+VARIABLES
+
+*/
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --packship-red: "#CB3837";
+  --packship-yellow: "#FFBE1A";
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+
+/* 
+
+GENERICS
+
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  overflow-x: hidden;
+  position: relative;
+  color: var(--packship-red);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+section {
+  width: 100%;
+  margin: 144px 0;
+}
+
+nav {
+  width: 100%;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  font-size: 16px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.kontainer {
+  width: 100%;
+  max-width: 1200px;
+  padding: 12px 0;
+  margin: 0 auto; /* Ensure it centers in the middle */
+}
+
+.row {
+  width: 86%;
+  margin: 0 auto;
+  padding: 0 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-stroke {
+  color: #CB3837; /* Adjust text color as needed */
+  text-shadow: 
+    0 0 2px #FFBE1A, /* Outer glow */
+    1px 0 0 #FFBE1A,
+    -1px 0 0 #FFBE1A,
+    0 1px 0 #FFBE1A,
+    0 -1px 0 #FFBE1A,
+    1px 1px #FFBE1A,
+    -1px -1px 0 #FFBE1A,
+    1px -1px 0 #FFBE1A,
+    -1px 1px 0 #FFBE1A;
+}
+
+.ribbon-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  background-color: white; /* Ensure background covers the area */
+}
+
+.ribbon-content {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 200%; /* Ensure the content is double the width of the viewport */
+  animation: ribbonAnimation 30s linear infinite;
+}
+
+.ribbon-content img {
+  margin-right: 48px; 
+}
+
+@keyframes ribbonAnimation {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
