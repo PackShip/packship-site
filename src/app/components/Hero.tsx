@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Link from "next/link";
 
 export default function Hero() {
 
@@ -34,6 +35,17 @@ export default function Hero() {
           >
             Focus more on <span className="text-packship-red font-bold">coding</span> and less on <span className="text-packship-red font-bold">managing package releases</span>. <span className="text-packship-red font-bold">Packship</span> makes <span className="text-packship-red font-bold">shipping npm packages</span> easier and faster.
           </p>
+          <button 
+            type="button" 
+            data-aos="fade-up"
+          >
+            <Link
+              href="/getting-started"
+              className="bg-packship-red hover:bg-red-700 rounded-full text-2xl text-framify-grey px-8 py-4 font-bold mt-8"
+            >
+              Get Started
+            </Link>
+          </button>
         </div>
       </div>
     </section>

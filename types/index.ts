@@ -22,4 +22,5 @@ export interface TerminalProps {
 
 export interface SectionHeaderProps {
   header: string;
+  className?: string;
 }
