@@ -19,7 +19,7 @@ export default function Pricing() {
         <div className="w-full bg-black text-center flex flex-col lg:flex-row justify-between items-stretch rounded-lg shadow-2xl hover:shadow-3xl transition-shadow duration-300">
           {/* Left Column: Comparison Section */}
           <div className="w-1/2 flex-1 bg-gray-100 rounded-l-lg text-md sm:text-lg flex flex-col items-center gap-8">
-            <div className="w-full flex items-center justify-center bg-packship-red py-4">
+            <div className="rounded-tl-lg w-full flex items-center justify-center bg-packship-red py-4">
               <SectionHeader header="Why Choose Packship?" className="text-white rounded-lg" />
             </div>
             <div className="w-full flex flex-col justify-between items-center gap-16">
@@ -40,7 +40,7 @@ export default function Pricing() {
                   <tr className="border-b border-packship-red">
                     <td className="py-4 px-2 text-black text-left font-semibold">Automated Releases</td>
                     <td className="py-4 px-2 text-packship-red font-semibold">Yes</td>
-                    <td className="py-4 px-2 text-black">No</td>
+                    <td className="py-4 px-2 text-black">-</td>
                   </tr>
                   <tr className="border-b border-packship-red">
                     <td className="py-4 px-2 text-black text-left font-semibold">Ease of Use</td>
@@ -50,7 +50,7 @@ export default function Pricing() {
                   <tr className="border-b border-packship-red">
                     <td className="py-4 px-2 text-black text-left font-semibold">Support</td>
                     <td className="py-4 px-2 text-packship-red font-semibold">Priority</td>
-                    <td className="py-4 px-2 text-black">None</td>
+                    <td className="py-4 px-2 text-black">-</td>
                   </tr>
                   <tr>
                     <td className="py-4 px-2 text-black text-left font-semibold">Cost</td>
@@ -66,12 +66,15 @@ export default function Pricing() {
                 <span className="text-black text-sm">
                   Questions? Need Support? Want to request an invoice for Packship? Reach out to us at <Link href="mailto:hatemthedev@gmail.com" className="text-packship-red underline">hatemthedev@gmail.com</Link>
                 </span>
+                <span className="not-italic text-packship-red text-xs font-bold">
+                  N.B. Pricing is in United States Dollars
+                </span>
               </div>
             </div>
           </div>
 
           {/* Right Column: Pricing and Payment Notice */}
-          <div className="w-1/2 flex-1 bg-white rounded-tr-lg text-md sm:text-xl text-black flex flex-col items-center gap-8 p-8">
+          <div className="rounded-r-lg w-1/2 flex-1 bg-white rounded-tr-lg text-md sm:text-xl text-black flex flex-col items-center gap-8 p-8">
             <SectionHeader header="Checkout" />
             <div className="w-full flex flex-col justify-between items-center">
               <div className="bg-white text-black rounded-lg p-8 shadow-lg flex flex-col gap-4">
