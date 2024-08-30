@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { footerLinks } from "../../constants";
+import Image from "next/image";
+import packshipLogo from "../../public/assets/Packship-red-logo.svg";
 
 const isExternal = (url: string) => /^https?:\/\//.test(url);
 
@@ -13,7 +15,7 @@ export default function Footer() {
           <ul className="w-full sm:w-1/2 flex flex-col sm:flex-row gap-8 sm:gap-24">
             {footerLinks.map((section, index) => (
               <li key={index} className="flex flex-col">
-                <h4 className="text-left mb-4">{section.title}</h4>
+                <h4 className="text-left text-packship-red font-semibold mb-4">{section.title}</h4>
                 <ul className="text-left flex flex-col gap-2 items-start justify-start">
                   {section.links.map((link, linkIndex) => (
                     <li key={linkIndex}>
@@ -36,7 +38,10 @@ export default function Footer() {
               href="/"
               className="text-3xl"
             >
-              Packship
+              <Image
+                src={packshipLogo}
+                alt="Packship logo"
+              /> 
             </Link>
             <span className="text-xs font-medium mt-4">
               Copyright &copy; {currentYear} Hatem Soliman and the Packship documentation authors.

@@ -24,7 +24,7 @@ export default function Navigation() {
               <li key={index}>
                 <Link
                   href={link.href}
-                  className="bg-packship-red text-white font-bold px-4 py-2 rounded-lg"
+                  className="bg-packship-red text-white font-bold px-8 py-4 rounded-full"
                   target={isExternal(link.href) ? "_blank" : "_self"}
                   rel={isExternal(link.href) ? "noopener noreferrer" : undefined}
                 >

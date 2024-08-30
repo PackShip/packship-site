@@ -30,7 +30,7 @@ export default function Hero() {
           </h2>
           <p
             data-aos="fade-up"
-            className="text-lg text-packship-red font-semibold my-4"
+            className=" bg-packship-red text-md text-packship-black font-regular my-4 py-2 px-4 rounded-full"
           >
             Ready to streamline your package publishing process? Packship makes shipping npm packages easier and faster.
           </p>
