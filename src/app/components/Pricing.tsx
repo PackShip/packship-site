@@ -27,34 +27,34 @@ export default function Pricing() {
                 <thead>
                   <tr className="border-b border-packship-red text-packship-red font-semibold text-sm sm:text-base">
                     <th className="py-4 px-2 text-black text-left font-bold">Feature</th>
-                    <th className="py-4 px-2 text-black font-bold">Packship</th>
+                    <th className="py-4 px-2 text-black font-bold scale-125">Packship</th>
                     <th className="py-4 px-2 text-black font-bold">From Scratch</th>
                   </tr>
                 </thead>
                 <tbody className="text-sm sm:text-base text-gray-300">
                   <tr className="border-b border-packship-red">
                     <td className="py-4 px-2 text-black text-left font-semibold">Time to Set Up</td>
-                    <td className="py-4 px-2 text-packship-red font-semibold">Instant</td>
+                    <td className="py-4 px-2 text-packship-red font-semibold shadow-3xl scale-125">Instant</td>
                     <td className="py-4 px-2 text-black">Hours</td>
                   </tr>
                   <tr className="border-b border-packship-red">
                     <td className="py-4 px-2 text-black text-left font-semibold">Automated Releases</td>
-                    <td className="py-4 px-2 text-packship-red font-semibold">Yes</td>
+                    <td className="py-4 px-2 text-packship-red font-semibold shadow-3xl scale-125">Yes</td>
                     <td className="py-4 px-2 text-black">-</td>
                   </tr>
                   <tr className="border-b border-packship-red">
                     <td className="py-4 px-2 text-black text-left font-semibold">Ease of Use</td>
-                    <td className="py-4 px-2 text-packship-red font-semibold">High</td>
+                    <td className="py-4 px-2 text-packship-red font-semibold shadow-3xl scale-125">High</td>
                     <td className="py-4 px-2 text-black">Low</td>
                   </tr>
                   <tr className="border-b border-packship-red">
                     <td className="py-4 px-2 text-black text-left font-semibold">Support</td>
-                    <td className="py-4 px-2 text-packship-red font-semibold">Priority</td>
+                    <td className="py-4 px-2 text-packship-red font-semibold shadow-3xl scale-125">Priority</td>
                     <td className="py-4 px-2 text-black">-</td>
                   </tr>
                   <tr>
                     <td className="py-4 px-2 text-black text-left font-semibold">Cost</td>
-                    <td className="py-4 px-2 text-packship-red font-semibold">$29 One-Time</td>
+                    <td className="py-4 px-2 text-packship-red font-semibold shadow-3xl scale-125">$29 One-Time</td>
                     <td className="py-4 px-2 text-black">Varies</td>
                   </tr>
                 </tbody>
@@ -106,7 +106,7 @@ export default function Pricing() {
               </div>
 
               {/* Instructions */}
-              <div className="text-sm text-black mt-8 max-w-md">
+              <div className="text-sm text-gray-600 mt-8 max-w-md">
                 <p>
                   After you send the email request, we will generate an invoice and
                   send it to your email. Once the payment is processed, we will email
