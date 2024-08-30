@@ -19,3 +19,7 @@ export interface Command {
 export interface TerminalProps {
   commands: Command[];
 }
+
+export interface SectionHeaderProps {
+  header: string;
+}
