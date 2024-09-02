@@ -3,6 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import SectionHeader from "@/shared/SectionHeader";
 import Link from "next/link";
+import PurchaseForm from "@/shared/PurchaseForm";
 
 export default function Pricing() {
   useEffect(() => {
@@ -77,16 +78,16 @@ export default function Pricing() {
           <div className="rounded-r-lg w-1/2 flex-1 bg-white rounded-tr-lg text-md sm:text-xl text-black flex flex-col items-center gap-8 p-8">
             <SectionHeader header="Checkout" />
             <div className="w-full flex flex-col justify-between items-center">
-              <div className="bg-white text-black rounded-lg p-8 shadow-lg flex flex-col gap-4">
+              <div className="bg-white text-black rounded-lg p-8 shadow-lg flex flex-col gap-1">
                 <h4 className="text-xl font-bold mb-4">Packship CLI Tool</h4>
-                <p className="text-md mb-4">
+                <p className="text-md mb-2">
                   One-time Purchase: <span className="font-bold">$29</span>
                 </p>
                 <p className="text-sm text-gray-600 mb-6">
                   Includes all future updates and premium support.
                 </p>
                 <div className="bg-yellow-200 text-yellow-800 p-4 rounded-lg mb-4">
-                  <p className="font-semibold">
+                  <p className="font-semibold text-sm">
                     <span className="text-packship-red">Note:</span> Our online
                     checkout is currently under maintenance. To purchase, click the
                     button below to send us an email request.
@@ -94,7 +95,8 @@ export default function Pricing() {
                 </div>
 
                 {/* Purchase Button */}
-                <button
+                <PurchaseForm />
+                {/* <button
                   className="bg-packship-red text-white font-bold py-2 px-4 rounded-full hover:bg-red-700 transition"
                   onClick={() =>
                     (window.location.href =
@@ -102,7 +104,7 @@ export default function Pricing() {
                   }
                 >
                   Request Invoice via Email
-                </button>
+                </button> */}
               </div>
 
               {/* Instructions */}
