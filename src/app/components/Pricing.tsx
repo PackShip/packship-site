@@ -17,7 +17,7 @@ export default function Pricing() {
   }, []);
 
   return (
-    <section data-aos="fade-up" className="mt-24">
+    <section id="start-packshipping" data-aos="fade-up" className="mt-24">
       <div className="kontainer">
         <div className="w-full bg-black text-center flex flex-col lg:flex-row justify-between items-stretch rounded-lg shadow-2xl hover:shadow-3xl transition-shadow duration-300">
           {/* Left Column: Comparison Section */}

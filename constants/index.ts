@@ -17,7 +17,7 @@ export const navLinks = [
   // },
   { 
     name: "Try It!", 
-    href: "/pricing"
+    href: "#start-packshipping"
   },
 ];
 

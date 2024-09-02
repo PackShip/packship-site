@@ -42,7 +42,7 @@ export default function Hero() {
             data-aos="fade-up"
           >
             <Link
-              href="/getting-started"
+              href="#start-packshipping"
               className="bg-packship-red hover:bg-red-700 rounded-full text-2xl text-framify-grey px-8 py-4 font-bold mt-24"
             >
               Get Started
