@@ -81,10 +81,12 @@ export default function Pricing() {
               <div className="bg-white text-black rounded-lg p-8 shadow-lg flex flex-col gap-1">
                 <h4 className="text-xl font-bold mb-4">Packship CLI Tool</h4>
                 <p className="text-md mb-2">
-                  One-time Purchase: <span className="font-bold">$29</span>
+                  One-time Purchase: <span className="line-through">$29</span> <span className="font-bold text-packship-red text-lg">${(29 * 0.172).toFixed(2)}</span>
+                  {/* One-time Purchase: <span className="font-bold">$29</span>  */}
                 </p>
-                <p className="text-sm text-gray-600 mb-6">
-                  Includes all future updates and premium support.
+                <p className="font-semibold text-sm text-packship-red mb-6">
+                  LIMITED EARLY BIRD DISCOUNT!<br/>
+                  <span className="text-gray-600">Includes all future updates and premium support.</span>
                 </p>
                 <div className="bg-yellow-200 text-yellow-800 p-4 rounded-lg mb-4">
                   <p className="font-semibold text-sm">
@@ -94,7 +96,7 @@ export default function Pricing() {
                   </p>
                 </div>
 
-                {/* Purchase Button */}
+                {/* Purchase Button */}               
                 <PurchaseForm />
                 {/* <button
                   className="bg-packship-red text-white font-bold py-2 px-4 rounded-full hover:bg-red-700 transition"
