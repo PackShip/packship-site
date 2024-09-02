@@ -24,3 +24,9 @@ export interface SectionHeaderProps {
   header: string;
   className?: string;
 }
+
+export type CheckoutFormValues = {
+  firstName: string;
+  lastName: string;
+  email: string;
+}

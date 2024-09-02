@@ -4,6 +4,8 @@ import "aos/dist/aos.css";
 import SectionHeader from "@/shared/SectionHeader";
 import Link from "next/link";
 import PurchaseForm from "@/shared/PurchaseForm";
+import Image from "next/image";
+import ReceivingPackshipGift from "../../../public/assets/undraw_send_gift_re_t5ni.svg";
 
 export default function Pricing() {
   useEffect(() => {
@@ -60,6 +62,13 @@ export default function Pricing() {
                   </tr>
                 </tbody>
               </table>
+              <figure className="w-1/2 flex justify-center items-center">
+                <Image 
+                  src={ReceivingPackshipGift}
+                  alt="Receiving Packship Gift"
+                  className="w-full"
+                />
+              </figure>
               <div className="italic px-16 flex flex-col gap-8">
                 <span className="text-black text-sm">
                   Join a growing community of developers enhancing their productivity.
