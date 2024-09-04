@@ -27,16 +27,26 @@ export default function Admin() {
   const [loggedIn, setLoggedIn] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false); // Loading state
   const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
+  const [disabled, setDisabled] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handlePasswordVisibility = () => {
     setIsPasswordVisible(!isPasswordVisible);
   };
 
   const handleAdminLogin = async (values: { email: string; password: string }) => {
-    setLoading(true); // Show spinner
+    setLoading(true);
+    setDisabled(true);
+    setErrorMessage(null);
+
     setTimeout(async () => {
       try {
-        setLoggedIn(adminSignIn(values.email, values.password));
+        const result = adminSignIn(values.email, values.password);
+        if (result.success) {
+          setLoggedIn(true);
+        } else if (result.error) {
+          setErrorMessage(result.error.message);
+        }
       } catch (error) {
         console.error("Error logging in: ", error);
         alert("Login failed. Please check your credentials.");
@@ -121,6 +131,9 @@ export default function Admin() {
                       </button>
                     </div>
                     <ErrorMessage name="password" component="div" className="text-packship-red text-sm" />
+                    {errorMessage && (
+                      <span className="text-packship-red text-sm">{errorMessage}</span>
+                    )}
 
                     <button
                       type="submit"
@@ -177,8 +190,8 @@ export default function Admin() {
 
                   <button
                     type="submit"
-                    className="bg-packship-red w-full text-white font-bold py-2 px-4 rounded-full hover:bg-red-700 transition my-8"
-                    disabled={isSubmitting}
+                    className={`${disabled ? "bg-gray-400": "bg-packship-red" } w-full text-white font-bold py-2 px-4 rounded-full hover:bg-red-700 transition my-8`}
+                    disabled={disabled}
                   >
                     Generate Serial Code
                   </button>

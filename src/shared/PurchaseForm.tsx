@@ -8,6 +8,8 @@ import { CheckoutFormValues } from '../../types';
 import { useRouter } from 'next/navigation';
 import emailjs from "@emailjs/browser";
 import Link from 'next/link';
+import { useDispatch, UseDispatch } from 'react-redux';
+import { setRequestSuccess, updateCustomer } from '@/redux/customerSlice';
 
 const purchaseSchema = Yup.object().shape({
   firstName: Yup.string().required('Required'),
@@ -21,17 +23,24 @@ export default function PurchaseForm() {
   const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
   const router = useRouter();
+  const dispatch = useDispatch();
+  const [disabled, setDisabled] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   if (!serviceId || !templateId || !publicKey) {
     throw new Error("Missing required environment variables for EmailJS.");
   }
 
+  function capitalizeFirstLetter(string: string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
   const handleFormSubmit = async (values: CheckoutFormValues) => {
     try {
+      setDisabled(true);
       const templateParams = {
-        firstName: values.firstName,
-        lastname: values.lastName,
+        firstName: capitalizeFirstLetter(values.firstName),
+        lastName: capitalizeFirstLetter(values.lastName),
         email: values.email,
       };
 
@@ -47,6 +56,8 @@ export default function PurchaseForm() {
             createdAt: new Date(),
           });
 
+          dispatch(updateCustomer(values));
+          dispatch(setRequestSuccess(true));
           router.push('/success');
         },
         (err) => {
@@ -63,7 +74,7 @@ export default function PurchaseForm() {
   return (
     <>
       <Formik
-        initialValues={{ firstName: '', lastName: '', email: '' }}
+        initialValues={{ firstName: '', lastName: '', email: '', requestSuccess: false }}
         validationSchema={purchaseSchema}
         onSubmit={handleFormSubmit}
       >
@@ -92,8 +103,8 @@ export default function PurchaseForm() {
             </div>
             <button
               type="submit"
-              className="bg-packship-red text-white w-full font-bold py-2 px-4 rounded-full hover:bg-red-700 transition"
-              disabled={isSubmitting}
+              className={`${disabled ? "bg-gray-400": "bg-packship-red" } text-white w-full font-bold py-2 px-4 rounded-full hover:bg-red-700 transition`}
+              disabled={disabled}
             >
               Request Invoice via Email
             </button>

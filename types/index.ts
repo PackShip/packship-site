@@ -29,4 +29,5 @@ export type CheckoutFormValues = {
   firstName: string;
   lastName: string;
   email: string;
+  requestSuccess: boolean;
 }
