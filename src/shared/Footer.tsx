@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { footerLinks } from "../../constants";
 import Image from "next/image";
-import packshipLogo from "../../public/assets/Packship-red-logo.svg";
+import packshipLogo from "../../public/assets/packship-red-logo.svg";
 
 const isExternal = (url: string) => /^https?:\/\//.test(url);
 

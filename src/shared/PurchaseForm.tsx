@@ -5,8 +5,9 @@ import * as Yup from 'yup';
 import { collection, addDoc } from "firebase/firestore";
 import { db } from '@/firebase/firebaseConfig';
 import { CheckoutFormValues } from '../../types';
-import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import emailjs from "@emailjs/browser";
+import Link from 'next/link';
 
 const purchaseSchema = Yup.object().shape({
   firstName: Yup.string().required('Required'),
@@ -15,32 +16,47 @@ const purchaseSchema = Yup.object().shape({
 });
 
 export default function PurchaseForm() {
+  const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+  const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+  const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
   const router = useRouter();
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  if (!serviceId || !templateId || !publicKey) {
+    throw new Error("Missing required environment variables for EmailJS.");
+  }
 
   const handleFormSubmit = async (values: CheckoutFormValues) => {
     try {
-      // Save email to Firestore
-      await addDoc(collection(db, "pendingOrders"), {
+      const templateParams = {
         firstName: values.firstName,
-        lastName: values.lastName,
+        lastname: values.lastName,
         email: values.email,
-        createdAt: new Date(),
-      });
-  
-      // Send welcome email using EmailOctopus
-      await axios.post(`https://emailoctopus.com/api/1.5/lists/${process.env.NEXT_PUBLIC_EMAILOCTOPUS_PACKSHIP_LIST_ID}/contacts`, {
-        api_key: process.env.NEXT_PUBLIC_EMAILOCTOPUS_API_KEY,
-        email_address: values.email,
-        fields: {
-          FIRSTNAME: values.firstName,
-          LASTNAME: values.lastName
+      };
+
+      emailjs
+        .send(serviceId, templateId, templateParams, { publicKey })
+        .then((response) => {
+          console.log('Email sent:', response);
+
+          addDoc(collection(db, "pendingOrders"), {
+            firstName: values.firstName,
+            lastName: values.lastName,
+            email: values.email,
+            createdAt: new Date(),
+          });
+
+          router.push('/success');
         },
-        status: 'SUBSCRIBED'
-      });
-      
-      router.push('/success');
+        (err) => {
+          console.log('FAILED...', err);
+          setErrorMessage('Oops! Something went wrong on our end. Please try requesting an invoice again.');
+        }
+      );  
     } catch (error) {
-      console.error("Error saving order or sending email: ", error);
+      console.error('Unexpected error:', error);
+      setErrorMessage(`Oops! An unexpected error occurred on our end. Please try again. If the problem persists, contact our support team via ${<Link href="mailto:packshipcli@gmail.com" className="underline">packshipcli@gmail.com</Link>}`);
     }
   };
   
@@ -81,6 +97,11 @@ export default function PurchaseForm() {
             >
               Request Invoice via Email
             </button>
+            {errorMessage && (
+              <div className="text-packship-red text-sm mt-4">
+                {errorMessage}
+              </div>
+            )}
           </Form>
         )}
       </Formik>
