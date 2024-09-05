@@ -81,6 +81,7 @@ export default function Admin() {
         await addDoc(collection(db, "fulfilledOrders"), {
           ...pendingOrderData,
           serialCode: serialCode,
+          isUsed: false,
           fulfilledAt: new Date(),
         });
 
