@@ -10,7 +10,7 @@ import * as Yup from "yup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import adminSignIn from "@/server/adminSignIn";
-import { TailSpin } from "react-loader-spinner"; // Import TailSpin loader
+import { TailSpin } from "react-loader-spinner";
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Required"),
@@ -18,14 +18,13 @@ const LoginSchema = Yup.object().shape({
 });
 
 const SerialSchema = Yup.object().shape({
-  firstName: Yup.string().required("Required"),
-  lastName: Yup.string().required("Required"),
   userEmail: Yup.string().email("Invalid email").required("Required"),
+  orderID: Yup.string().required("Required"), // New validation for orderID
 });
 
 export default function Admin() {
   const [loggedIn, setLoggedIn] = useState<boolean>(false);
-  const [loading, setLoading] = useState<boolean>(false); // Loading state
+  const [loading, setLoading] = useState<boolean>(false);
   const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
   const [disabled, setDisabled] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -51,19 +50,21 @@ export default function Admin() {
         console.error("Error logging in: ", error);
         alert("Login failed. Please check your credentials.");
       } finally {
-        setLoading(false); // Hide spinner after 2 seconds
+        setLoading(false);
+        setDisabled(false);
       }
     }, 2000);
   };
 
-  const handleSerialGeneration = async (values: { firstName: string; lastName: string; userEmail: string }) => {
-    const serialCode = generateSerialCode(12);
+  const handleSerialGeneration = async (values: { userEmail: string; orderID: string }) => {
     try {
-      // Query the latest pending order for the given email
+      setDisabled(true);
+      
+      // Query the latest pending order for the given email and orderID
       const pendingOrderQuery = query(
         collection(db, "pendingOrders"),
         where("email", "==", values.userEmail),
-        orderBy("createdAt", "desc"),
+        where("orderID", "==", values.orderID),
         limit(1)
       );
 
@@ -73,11 +74,14 @@ export default function Admin() {
         const pendingOrderDoc = pendingOrderSnapshot.docs[0];
         const pendingOrderData = pendingOrderDoc.data();
 
+        // Generate a unique serial code
+        const serialCode = await generateSerialCode(12);
+
         // Create the order in the 'fulfilledOrders' collection
         await addDoc(collection(db, "fulfilledOrders"), {
           ...pendingOrderData,
           serialCode: serialCode,
-          createdAt: new Date(),
+          fulfilledAt: new Date(),
         });
 
         // Delete the order from 'pendingOrders' collection
@@ -85,10 +89,12 @@ export default function Admin() {
 
         alert(`Serial code generated: ${serialCode}. It has been saved to the database.`);
       } else {
-        alert("No pending order found for this user.");
+        alert("No pending order found for this user and order ID.");
       }
     } catch (error) {
       console.error("Error generating serial code or moving order: ", error);
+    } finally {
+      setDisabled(false);
     }
   };
 
@@ -155,30 +161,12 @@ export default function Admin() {
             </Formik>
           ) : (
             <Formik
-              initialValues={{ firstName: "", lastName: "", userEmail: "" }}
+              initialValues={{ userEmail: "", orderID: "" }}
               validationSchema={SerialSchema}
               onSubmit={handleSerialGeneration}
             >
               {({ isSubmitting }) => (
                 <Form className="flex flex-col items-center gap-4 w-full sm:w-1/2">
-                  <Field
-                    type="text"
-                    name="firstName"
-                    placeholder="Customer First Name"
-                    className="bg-slate-200 text-black border-packship-red border-2 rounded-full text-lg w-full px-4 py-2 outline-none"
-                    required
-                  />
-                  <ErrorMessage name="firstName" component="div" className="text-packship-red text-sm" />
-
-                  <Field
-                    type="text"
-                    name="lastName"
-                    placeholder="Customer Last Name"
-                    className="bg-slate-200 text-black border-packship-red border-2 rounded-full text-lg w-full px-4 py-2 outline-none"
-                    required
-                  />
-                  <ErrorMessage name="lastName" component="div" className="text-packship-red text-sm" />
-
                   <Field
                     type="email"
                     name="userEmail"
@@ -188,10 +176,19 @@ export default function Admin() {
                   />
                   <ErrorMessage name="userEmail" component="div" className="text-packship-red text-sm" />
 
+                  <Field
+                    type="text"
+                    name="orderID"
+                    placeholder="Order ID"
+                    className="bg-slate-200 text-black border-packship-red border-2 rounded-full text-lg w-full px-4 py-2 outline-none"
+                    required
+                  />
+                  <ErrorMessage name="orderID" component="div" className="text-packship-red text-sm" />
+
                   <button
                     type="submit"
-                    className={`${disabled ? "bg-gray-400": "bg-packship-red" } w-full text-white font-bold py-2 px-4 rounded-full hover:bg-red-700 transition my-8`}
-                    disabled={disabled}
+                    className={`${isSubmitting ? "bg-gray-400": "bg-packship-red" } w-full text-white font-bold py-2 px-4 rounded-full hover:bg-red-700 transition my-8`}
+                    disabled={isSubmitting}
                   >
                     Generate Serial Code
                   </button>
