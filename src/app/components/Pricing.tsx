@@ -19,46 +19,46 @@ export default function Pricing() {
   return (
     <section id="start-packshipping" data-aos="fade-up" className="mt-24">
       <div className="kontainer">
-        <div className="w-full bg-black text-center flex flex-col lg:flex-row justify-between items-stretch rounded-lg shadow-2xl hover:shadow-3xl transition-shadow duration-300">
+        <div className="w-full bg-white text-center px-8 sm:px-0 flex flex-col sm:flex-row justify-between items-stretch rounded-lg shadow-2xl hover:shadow-3xl transition-shadow duration-300">
           {/* Left Column: Comparison Section */}
-          <div className="w-1/2 flex-1 bg-gray-100 rounded-l-lg text-md sm:text-lg flex flex-col items-center gap-8">
-            <div className="rounded-tl-lg w-full flex items-center justify-center bg-packship-red py-4">
+          <div className="w-full sm:w-1/2 flex-1 bg-gray-100 rounded-lg sm:rounded-l-lg text-md sm:text-lg flex flex-col items-center gap-8">
+            <div className="rounded-t-lg sm:rounded-tl-lg w-full flex items-center justify-center bg-packship-red py-4">
               <SectionHeader header="Why Choose Packship?" className="text-white rounded-lg" />
             </div>
             <div className="w-full flex flex-col justify-between items-center gap-16">
               <table className="w-full max-w-md text-center border-collapse">
                 <thead>
                   <tr className="border-b border-packship-red text-packship-red font-semibold text-sm sm:text-base">
-                    <th className="py-4 px-2 text-black text-left font-bold">Feature</th>
-                    <th className="py-4 px-2 text-black font-bold scale-125">Packship</th>
-                    <th className="py-4 px-2 text-black font-bold">From Scratch</th>
+                    <th className="py-4 px-4 sm:px-2 text-black text-left font-bold">Feature</th>
+                    <th className="py-4 px-4 sm:px-2 text-black font-bold scale-125">Packship</th>
+                    <th className="py-4 px-4 sm:px-2 text-black font-bold">From Scratch</th>
                   </tr>
                 </thead>
                 <tbody className="text-sm sm:text-base text-gray-300">
                   <tr className="border-b border-packship-red">
-                    <td className="py-4 px-2 text-black text-left font-semibold">Time to Set Up</td>
-                    <td className="py-4 px-2 text-packship-red font-semibold shadow-3xl scale-125">Instant</td>
-                    <td className="py-4 px-2 text-black">Hours</td>
+                    <td className="py-4 px-4 sm:px-2 text-black text-left font-semibold">Time to Set Up</td>
+                    <td className="py-4 px-4 sm:px-2 text-packship-red font-semibold shadow-3xl scale-125">Instant</td>
+                    <td className="py-4 px-4 sm:px-2 text-black">Hours</td>
                   </tr>
                   <tr className="border-b border-packship-red">
-                    <td className="py-4 px-2 text-black text-left font-semibold">Automated Releases</td>
-                    <td className="py-4 px-2 text-packship-red font-semibold shadow-3xl scale-125">Yes</td>
-                    <td className="py-4 px-2 text-black">-</td>
+                    <td className="py-4 px-4 sm:px-2 text-black text-left font-semibold">Automated Releases</td>
+                    <td className="py-4 px-4 sm:px-2 text-packship-red font-semibold shadow-3xl scale-125">Yes</td>
+                    <td className="py-4 px-4 sm:px-2 text-black">-</td>
                   </tr>
                   <tr className="border-b border-packship-red">
-                    <td className="py-4 px-2 text-black text-left font-semibold">Ease of Use</td>
-                    <td className="py-4 px-2 text-packship-red font-semibold shadow-3xl scale-125">High</td>
-                    <td className="py-4 px-2 text-black">Low</td>
+                    <td className="py-4 px-4 sm:px-2 text-black text-left font-semibold">Ease of Use</td>
+                    <td className="py-4 px-4 sm:px-2 text-packship-red font-semibold shadow-3xl scale-125">High</td>
+                    <td className="py-4 px-4 sm:px-2 text-black">Low</td>
                   </tr>
                   <tr className="border-b border-packship-red">
-                    <td className="py-4 px-2 text-black text-left font-semibold">Support</td>
-                    <td className="py-4 px-2 text-packship-red font-semibold shadow-3xl scale-125">Priority</td>
-                    <td className="py-4 px-2 text-black">-</td>
+                    <td className="py-4 px-4 sm:px-2 text-black text-left font-semibold">Support</td>
+                    <td className="py-4 px-4 sm:px-2 text-packship-red font-semibold shadow-3xl scale-125">Priority</td>
+                    <td className="py-4 px-4 sm:px-2 text-black">-</td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-2 text-black text-left font-semibold">Cost</td>
-                    <td className="py-4 px-2 text-packship-red font-semibold shadow-3xl scale-125">$69 One-Time</td>
-                    <td className="py-4 px-2 text-black">Varies</td>
+                    <td className="py-4 px-4 sm:px-2 text-black text-left font-semibold">Cost</td>
+                    <td className="py-4 px-4 sm:px-2 text-packship-red font-semibold shadow-3xl scale-125">$69 One-Time</td>
+                    <td className="py-4 px-4 sm:px-2 text-black">Varies</td>
                   </tr>
                 </tbody>
               </table>
@@ -76,7 +76,7 @@ export default function Pricing() {
                 <span className="text-black text-sm">
                   Questions? Need Support? Want to request an invoice for Packship? Reach out to us at <Link href="mailto:hatemthedev@gmail.com" className="text-packship-red underline">hatemthedev@gmail.com</Link>
                 </span>
-                <span className="not-italic text-packship-red text-xs font-bold">
+                <span className="not-italic text-packship-red text-xs font-bold mb-4 sm:mb-0">
                   N.B. Pricing is in United States Dollars
                 </span>
               </div>
@@ -84,7 +84,7 @@ export default function Pricing() {
           </div>
 
           {/* Right Column: Pricing and Payment Notice */}
-          <div className="rounded-r-lg w-1/2 flex-1 bg-white rounded-tr-lg text-md sm:text-xl text-black flex flex-col items-center gap-8 p-8">
+          <div className="rounded-r-lg w-full sm:w-1/2 flex-1 bg-white rounded-tr-lg text-md sm:text-xl text-black flex flex-col items-center gap-8 px-2 py-8 sm:p-8">
             <SectionHeader header="Checkout" />
             <div className="w-full flex flex-col justify-between items-center">
               <div className="bg-white text-black rounded-lg p-8 shadow-lg flex flex-col gap-1">
