@@ -57,7 +57,7 @@ export default function Pricing() {
                   </tr>
                   <tr>
                     <td className="py-4 px-2 text-black text-left font-semibold">Cost</td>
-                    <td className="py-4 px-2 text-packship-red font-semibold shadow-3xl scale-125">$29 One-Time</td>
+                    <td className="py-4 px-2 text-packship-red font-semibold shadow-3xl scale-125">$69 One-Time</td>
                     <td className="py-4 px-2 text-black">Varies</td>
                   </tr>
                 </tbody>
@@ -90,7 +90,7 @@ export default function Pricing() {
               <div className="bg-white text-black rounded-lg p-8 shadow-lg flex flex-col gap-1">
                 <h4 className="text-xl font-bold mb-4">Packship CLI Tool</h4>
                 <p className="text-md mb-2">
-                  One-time Purchase: <span className="line-through">$69</span> <span className="font-bold text-packship-red text-lg">${(69 * 0.1875).toFixed(2)}</span>
+                  One-time Purchase: <span className="line-through">$69</span> <span className="font-bold text-packship-red text-lg">${(69 * 0.1883).toFixed(2)}</span>
                   {/* One-time Purchase: <span className="font-bold">$29</span>  */}
                 </p>
                 <p className="font-semibold text-sm text-packship-red mb-6">

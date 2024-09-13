@@ -9,16 +9,16 @@ export default function Navigation() {
   return (
     <nav>
       <div className="kontainer">
-        <div className="row flex justify-between items-center">
+        <div className="w-full row flex justify-between items-center">
           <Link
             href="/"
             className="text-3xl text-packship-red font-bold"
           >
-            <figure className="w-full">
+            <figure>
               <Image 
                 src={packshipLogo}
                 alt="Packship logo"
-                className="w-1/2"
+                width={150}
               />
             </figure>
           </Link>

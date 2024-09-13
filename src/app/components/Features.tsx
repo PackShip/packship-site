@@ -20,7 +20,7 @@ export default function Features() {
       <div className="kontainer text-center">
         <div className="row text-md sm:text-xl text-white flex flex-col items-center gap-8">
           <SectionHeader header="Key Features" />
-          <div data-aos="fade-up" className="w-full flex justify-between items-center">
+          <div data-aos="fade-up" className="w-full flex justify-center sm:justify-between items-center flex-wrap">
             {features.map((feature, index) => (
               <KeyFeature key={index} title={feature.title} />
             ))}
