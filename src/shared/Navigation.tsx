@@ -14,10 +14,13 @@ export default function Navigation() {
             href="/"
             className="text-3xl text-packship-red font-bold"
           >
-            <Image 
-              src={packshipLogo}
-              alt="Packship logo"
-            />
+            <figure className="w-full">
+              <Image 
+                src={packshipLogo}
+                alt="Packship logo"
+                className="w-1/2"
+              />
+            </figure>
           </Link>
           <ul className="flex gap-8">
             {navLinks.map((link, index) => (
