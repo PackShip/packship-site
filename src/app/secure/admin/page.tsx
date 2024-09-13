@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import adminSignIn from "@/server/adminSignIn";
 import { TailSpin } from "react-loader-spinner";
+import { hashSerial } from "@/utils/hashSerialCode";
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Required"),
@@ -76,11 +77,13 @@ export default function Admin() {
 
         // Generate a unique serial code
         const serialCode = await generateSerialCode(12);
+        const hashedSerialCode = hashSerial(serialCode);
 
         // Create the order in the 'fulfilledOrders' collection
         await addDoc(collection(db, "fulfilledOrders"), {
           ...pendingOrderData,
           serialCode: serialCode,
+          hashedSerialCode: hashedSerialCode,
           isUsed: false,
           fulfilledAt: new Date(),
         });
