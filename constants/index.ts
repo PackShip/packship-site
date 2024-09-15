@@ -3,10 +3,10 @@ import { faLinkedinIn, faGithub, faMedium, faSquareXTwitter, faBehance, faUpwork
 import { Command } from '../types';
 
 export const navLinks = [
-  // { 
-  //   name: "Getting Started", 
-  //   href: "/getting-started",
-  // },
+  { 
+    name: "Documentation", 
+    href: "/docs",
+  },
   // { 
   //   name: "GitHub",
   //   href: "https://github.com/CodeNKoffee/react-framify",
@@ -38,7 +38,7 @@ export const footerLinks = [
     links: [
       { 
         name: "Develop", 
-        href: "/getting-started", 
+        href: "/docs", 
       },
     ],
   },

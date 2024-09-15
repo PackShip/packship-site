@@ -16,7 +16,7 @@ export default function SectionHeader({ header, className }: SectionHeaderProps)
   return (
     <h3 
       data-aos="fade-up"
-      className={`text-2xl ${className ? className : "text-packship-red"} font-bold`}
+      className={`text-2xl ${className && className} font-bold text-packship-red`}
     >
       {header}
     </h3>
