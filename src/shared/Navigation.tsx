@@ -22,7 +22,7 @@ export default function Navigation() {
     <nav>
       <div className="kontainer">
         <div className="w-full row flex justify-between items-center">
-          <Link href="/" className="w-1/3 md:w-0 text-3xl text-packship-red font-bold">
+          <Link href="/" className="w-1/3 text-3xl text-packship-red font-bold">
             <figure>
               <Image
                 src={packshipLogo}
@@ -36,7 +36,7 @@ export default function Navigation() {
               <li key={index}>
                 <Link
                   href={link.href}
-                  className={`${link.name === "Try It!" ? "bg-packship-red text-white" : "text-packship-red"} font-bold px-8 py-4 rounded-full`}
+                  className={`${link.name === "Try It!" ? "bg-packship-red text-white hover:bg-red-700" : "text-packship-red hover:text-red-700"} font-bold px-8 py-4 rounded-full transition`}
                   target={isExternal(link.href) ? "_blank" : "_self"}
                   rel={isExternal(link.href) ? "noopener noreferrer" : undefined}
                 >

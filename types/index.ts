@@ -31,3 +31,9 @@ export type CheckoutFormValues = {
   email: string;
   requestSuccess: boolean;
 }
+
+export interface CopyCodeSnippetProps {
+  code: string;
+  language: string;
+  buttonText?: string;
+}
