@@ -56,11 +56,11 @@ export const footerLinks = [
     links: [
       { 
         name: "Purchase", 
-        href: "https://github.com/CodeNKoffee/react-framify",
+        href: "#start-packshipping",
       },
       { 
         name: "Contact", 
-        href: "https://www.npmjs.com/package/react-framify",
+        href: "mailto:packshipcli@gmail.com",
       },
     ],
   },
@@ -84,7 +84,7 @@ export const socials = [
   },
   {
     name: "Email",
-    link: "mailto:hatemthedev@gmail.com",
+    link: "mailto:packshipcli@gmail.com",
     icon: faEnvelope,  // Use the imported icon object
   },
   {
