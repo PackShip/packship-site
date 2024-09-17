@@ -33,7 +33,7 @@ export default function Footer() {
               </li>
             ))}
           </ul>
-          <div className="text-left w-full sm:w-1/4 flex flex-col items-start justify-start">
+          <div className="text-left w-full *: sm:w-1/4 flex flex-col items-center sm:items-start justify-start">
             <Link
               href="/"
               className="text-3xl"

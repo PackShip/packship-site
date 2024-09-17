@@ -20,7 +20,7 @@ export default function Pricing() {
     <section id="start-packshipping" data-aos="fade-up" className="mt-24">
       <div className="kontainer">
         <div className="row">
-          <div className="w-full bg-white text-center px-8 sm:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch rounded-lg lg:rounded-l-lg shadow-2xl hover:shadow-3xl transition-shadow duration-300">
+          <div className="w-full bg-white text-center flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch rounded-lg lg:rounded-l-lg shadow-2xl hover:shadow-3xl transition-shadow duration-300">
             {/* Left Column: Comparison Section */}
             <div className="w-full lg:w-1/2 flex-1 bg-gray-100 rounded-lg lg:rounded-l-lg lg:rounded-r-none text-md sm:text-lg flex flex-col items-center gap-8">
               <div className="rounded-t-lg sm:rounded-tl-lg w-full flex items-center justify-center bg-packship-red py-4">
@@ -85,7 +85,7 @@ export default function Pricing() {
             </div>
 
             {/* Right Column: Pricing and Payment Notice */}
-            <div className="rounded-r-lg w-full lg:w-1/2 flex-1 bg-white rounded-tr-lg text-md sm:text-xl text-black flex flex-col items-center gap-8 px-2 py-8 sm:p-8">
+            <div className="rounded-b-lg lg:rounded-r-lg w-full px-8 lg:w-1/2 flex-1 bg-white rounded-tr-lg text-md sm:text-xl text-black flex flex-col items-center gap-8 py-8 sm:p-8">
               <SectionHeader header="Checkout" />
               <div className="w-full flex flex-col justify-between items-center">
                 <div className="bg-white text-black rounded-lg p-8 shadow-lg flex flex-col gap-1">
