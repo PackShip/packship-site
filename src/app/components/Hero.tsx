@@ -37,6 +37,7 @@ export default function Hero() {
             Focus more on <span className="text-packship-red font-bold">coding</span> and less on <span className="text-packship-red font-bold">managing package releases</span>. <span className="text-packship-red font-bold">Packship</span> makes <span className="text-packship-red font-bold">shipping npm packages</span> easier and faster.
           </p>
           <CommandPrompt data-aos="fade-up" />
+          <span className="text-sm text-black">Early bird special: <span className="text-green-400 font-bold">81% off</span></span>
           <button 
             type="button" 
             data-aos="fade-up"
@@ -45,7 +46,7 @@ export default function Hero() {
               href="#start-packshipping"
               className="bg-packship-red hover:bg-red-700 rounded-full text-2xl text-framify-grey px-8 py-4 font-bold mt-24"
             >
-              Get Started
+              Publish Your Package Now
             </Link>
           </button>
         </div>

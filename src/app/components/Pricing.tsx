@@ -75,7 +75,7 @@ export default function Pricing() {
                     Join a growing community of developers enhancing their productivity.
                   </span>
                   <span className="text-black text-sm">
-                    Questions? Need Support? Want to request an invoice for Packship? Reach out to us at <Link href="mailto:hatemthedev@gmail.com" className="text-packship-red underline">hatemthedev@gmail.com</Link>
+                    Questions? Need Support? Want to request an invoice for Packship? Reach out to us at <Link href="mailto:packshipcli@gmail.com" className="text-packship-red underline">packshipcli@gmail.com</Link>
                   </span>
                   <span className="not-italic text-packship-red text-xs font-bold mb-4 lg:mb-0">
                     N.B. Pricing is in United States Dollars
