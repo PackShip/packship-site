@@ -16,7 +16,7 @@ export default function Docs() {
             Packship Installation Guide
           </h1>
 
-          <div className="my-16 flex flex-col gap-8">
+          <div className="w-full my-16 flex flex-col gap-8">
             <p>This guide will walk you through installing Packship&apos;s dependencies and configuring Webpack.</p>
 
             {/* Section: Getting Started */}
