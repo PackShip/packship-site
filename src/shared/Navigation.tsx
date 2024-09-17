@@ -6,6 +6,7 @@ import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const isExternal = (url: string) => /^https?:\/\//.test(url);
+const isAnchorLink = (url: string) => /^#/.test(url);
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,7 +36,7 @@ export default function Navigation() {
             {navLinks.map((link, index) => (
               <li key={index}>
                 <Link
-                  href={link.href}
+                  href={isAnchorLink(link.href) ? `/${link.href}` : link.href}
                   className={`${link.name === "Try It!" ? "bg-packship-red text-white hover:bg-red-700" : "text-packship-red hover:text-red-700"} font-bold px-8 py-4 rounded-full transition`}
                   target={isExternal(link.href) ? "_blank" : "_self"}
                   rel={isExternal(link.href) ? "noopener noreferrer" : undefined}
