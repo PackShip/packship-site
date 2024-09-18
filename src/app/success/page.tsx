@@ -25,13 +25,13 @@ export default function Success() {
 
 
   return (
-    <div className="kontainer min-h-screen flex flex-col items-center justify-center bg-white text-white">
+    <div className="kontainer min-h-screen flex flex-col items-center justify-center text-white">
       <div className="row">
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-5xl font-bold mb-4 text-packship-purple-lite">Operation Successful!</h1>
-          <p className="mb-16 text-xl text-packship-purple-lite">Your request has been processed successfully, {customerFirstName}.</p>
+          <h1 className="text-5xl font-bold mb-4 text-white">Operation Successful!</h1>
+          <p className="mb-16 text-xl text-white">Your request has been processed successfully, {customerFirstName}.</p>
           <div className="w-full flex justify-center items-center gap-8">
-            <figure className="w-1/6">
+            <figure className="w-1/6 bg-white p-4 rounded-full border-8 border-packship-purple-lite">
               <Image 
                 src={SuccessfulEmailSent}
                 alt="Success Illustration"
