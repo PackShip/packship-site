@@ -20,11 +20,11 @@ export default function Pricing() {
     <section id="start-packshipping" data-aos="fade-up" className="mt-24">
       <div className="kontainer">
         <div className="row">
-          <div className="w-full bg-white text-center flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch rounded-lg lg:rounded-l-xl shadow-2xl hover:shadow-3xl transition-shadow duration-300">
+          <div className="w-full bg-white text-center flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch rounded-xl lg:rounded-l-xl shadow-2xl hover:shadow-3xl transition-shadow duration-300">
             {/* Left Column: Comparison Section */}
-            <div className="w-full lg:w-1/2 flex-1 bg-gray-100 rounded-xl lg:rounded-l-lg lg:rounded-r-none text-md sm:text-lg flex flex-col items-center gap-8">
-              <div className="rounded-t-lg sm:rounded-tl-lg w-full flex items-center justify-center bg-packship-purple py-4">
-                <SectionHeader header="Why Choose Packship?" className="text-white rounded-lg" />
+            <div className="w-full lg:w-1/2 flex-1 bg-gray-100 rounded-xl lg:rounded-l-3xl lg:rounded-r-none text-md sm:text-lg flex flex-col items-center gap-8">
+              <div className="rounded-t-xl sm:rounded-tl-xl w-full flex items-center justify-center bg-packship-purple py-4">
+                <SectionHeader header="Why Choose Packship?" className="text-white rounded-xl" />
               </div>
               <div className="w-full flex flex-col justify-between items-center gap-16">
                 <table className="w-full max-w-md text-center border-collapse">
@@ -85,7 +85,7 @@ export default function Pricing() {
             </div>
 
             {/* Right Column: Pricing and Payment Notice */}
-            <div className="rounded-b-lg lg:rounded-r-lg w-full px-8 lg:w-1/2 flex-1 bg-white rounded-tr-lg text-md sm:text-xl text-black flex flex-col items-center gap-8 py-8 sm:p-8">
+            <div className="rounded-b-xl lg:rounded-r-xl w-full px-8 lg:w-1/2 flex-1 bg-white rounded-tr-xl text-md sm:text-xl text-black flex flex-col items-center gap-8 py-8 sm:p-8">
               <SectionHeader header="Checkout" color="text-packship-purple" />
               <div className="w-full flex flex-col justify-between items-center">
                 <div className="bg-white text-black rounded-lg p-8 shadow-lg flex flex-col gap-1">
@@ -98,7 +98,7 @@ export default function Pricing() {
                     LIMITED EARLY BIRD DISCOUNT!<br/>
                     <span className="text-gray-600">Includes all future updates and premium support.</span>
                   </p>
-                  <div className="bg-yellow-200 text-yellow-800 p-4 rounded-lg mb-4">
+                  <div className="bg-yellow-200 text-yellow-800 p-4 rounded-xl mb-4">
                     <p className="font-semibold text-sm">
                       <span className="text-packship-purple">Note:</span> Our online
                       checkout is currently under maintenance. To purchase, click the
