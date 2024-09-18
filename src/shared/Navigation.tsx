@@ -23,7 +23,7 @@ export default function Navigation() {
     <nav>
       <div className="kontainer">
         <div className="w-full row flex justify-between items-center">
-          <Link href="/" className="w-1/3 text-3xl text-packship-red font-bold">
+          <Link href="/" className="w-1/3 text-3xl text-packship-purple font-bold">
             <figure>
               <Image
                 src={packshipLogo}
@@ -37,7 +37,7 @@ export default function Navigation() {
               <li key={index}>
                 <Link
                   href={isAnchorLink(link.href) ? `/${link.href}` : link.href}
-                  className={`${link.name === "Try It!" ? "bg-packship-red text-white hover:bg-red-700" : "text-packship-red hover:text-red-700"} font-bold px-8 py-4 rounded-full transition`}
+                  className={`${link.name === "Try It!" ? "bg-packship-purple text-white hover:bg-purple-700" : "text-white hover:text-packship-purple-lite"} font-bold px-8 py-4 rounded-full transition`}
                   target={isExternal(link.href) ? "_blank" : "_self"}
                   rel={isExternal(link.href) ? "noopener noreferrer" : undefined}
                 >
@@ -47,12 +47,12 @@ export default function Navigation() {
             ))}
           </div>
           <div className="md:hidden w-1/3 relative flex justify-end items-end">
-            <button onClick={handleToggle} className="text-packship-red">
+            <button onClick={handleToggle} className="text-packship-purple-lite">
               <FaBars size={24} />
             </button>
             {isOpen && (
               <div className="fixed top-0 right-0 w-full h-full bg-black bg-opacity-90 flex flex-col items-center justify-center z-50">
-                <button onClick={closeMenu} className="absolute top-4 right-8 text-packship-red">
+                <button onClick={closeMenu} className="absolute top-4 right-8 text-packship-purple-lite">
                   <FaTimes size={32} />
                 </button>
                 <div className="flex flex-col items-center">
@@ -60,7 +60,7 @@ export default function Navigation() {
                     <Link
                       key={index}
                       href={link.href}
-                      className={`${link.name === "Try It!" && "bg-packship-red"} w-full text-center text-white font-bold px-8 py-4 rounded-full my-4`}
+                      className={`${link.name === "Try It!" && "bg-packship-purple-lite"} w-full text-center text-white font-bold px-8 py-4 rounded-full my-4`}
                       target={isExternal(link.href) ? "_blank" : "_self"}
                       rel={isExternal(link.href) ? "noopener noreferrer" : undefined}
                       onClick={closeMenu}

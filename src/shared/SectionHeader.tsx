@@ -3,7 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { SectionHeaderProps } from "../../types";
 
-export default function SectionHeader({ header, className }: SectionHeaderProps) {
+export default function SectionHeader({ header, className, color }: SectionHeaderProps) {
 
   useEffect(() => {
     AOS.init({
@@ -16,7 +16,7 @@ export default function SectionHeader({ header, className }: SectionHeaderProps)
   return (
     <h3 
       data-aos="fade-up"
-      className={`text-2xl ${className && className} font-bold text-packship-red`}
+      className={`text-2xl ${className && className} font-bold ${color ? color : "text-packship-purple-lite"}`}
     >
       {header}
     </h3>

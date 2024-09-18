@@ -7,7 +7,7 @@ export default function Terminal({ commands }: TerminalProps) {
       <div className="w-full bg-gray-800 rounded-b-lg p-4 text-white text-lg">
         {commands.map((command, index) => (
           <div key={index} className="flex gap-2">
-            <span className="text-packship-red font-bold">$</span>
+            <span className="text-packship-purple-lite font-bold">$</span>
             {command.type === "comment" ? (
               <span className="text-gray-500">{command.text}</span>
             ) : command.type === "command" ? (
@@ -20,7 +20,7 @@ export default function Terminal({ commands }: TerminalProps) {
                 </span>
               </span>
             ) : (
-              <span className="text-packship-red">{command.text}</span>
+              <span className="text-packship-purple-lite">{command.text}</span>
             )}
           </div>
         ))}

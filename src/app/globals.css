@@ -36,6 +36,19 @@ html {
 }
 
 body {
+  background: 
+              /* radial-gradient(circle at 100% 100%, #dbc2ff, transparent), */
+              /* radial-gradient(circle at 10% 10%, #391B53, transparent),
+              radial-gradient(circle at 40% 40%, #583473, transparent),
+              radial-gradient(circle at 50% 50%, #7B549F, transparent),
+              radial-gradient(circle at 90% 7%, #BB95EF, transparent); */
+              radial-gradient(circle at 20% 20%, #2E073F, transparent),
+              radial-gradient(circle at 80% 30%, #7A1CAC, transparent),
+              radial-gradient(circle at 30% 80%, #2E073F, transparent),
+              radial-gradient(circle at 70% 70%, #2E073F, transparent);
+  background-size: cover;
+  /* height: 100vh; */
+  margin: 0;
   overflow-x: hidden;
   position: relative;
   color: var(--packship-red);
@@ -44,6 +57,7 @@ body {
 section {
   width: 100%;
   margin: 144px 0;
+  /* color: #eee2ff */
 }
 
 nav {

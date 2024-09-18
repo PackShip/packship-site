@@ -17,6 +17,9 @@ const config: Config = {
       colors: {
         "packship-red": "#CB3837",
         "packship-yellow": "#FFBE1A",
+        "packship-purple": "#3F3D56",
+        "packship-purple-semilite": "#EBD3F8",
+        "packship-purple-lite": "#DBC2FF"
       }
     },
   },

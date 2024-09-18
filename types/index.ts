@@ -23,6 +23,7 @@ export interface TerminalProps {
 export interface SectionHeaderProps {
   header: string;
   className?: string;
+  color?: string;
 }
 
 export type CheckoutFormValues = {

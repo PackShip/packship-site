@@ -6,7 +6,7 @@ export default function Modal({ onClose }: { onClose: () => void }) {
         <p>Check your email for further instructions.</p>
         <button
           onClick={onClose}
-          className="mt-4 bg-packship-red text-white font-bold py-2 px-4 rounded-full hover:bg-red-700 transition"
+          className="mt-4 bg-packship-purple-lite text-white font-bold py-2 px-4 rounded-full hover:bg-purple-700 transition"
         >
           Close
         </button>

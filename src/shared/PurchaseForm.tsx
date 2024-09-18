@@ -94,33 +94,33 @@
               <div className="w-full mb-8 flex flex-col justify-center items-center gap-2">
                 <div className="w-full flex flex-col sm:flex-row justify-between items-center">
                   <label htmlFor="firstName" className="text-lg font-semibold">First Name</label>
-                  <Field name="firstName" type="text" className="bg-slate-200 border-packship-red border-2 rounded-full text-lg w-full sm:w-2/3 sm:px-4 py-2 outline-none" />
+                  <Field name="firstName" type="text" className="bg-slate-200 border-packship-purple border-2 rounded-full text-lg w-full sm:w-2/3 sm:px-4 py-2 outline-none" />
                 </div>
-                <ErrorMessage name="firstName" component="div" className="text-packship-red text-sm" />
+                <ErrorMessage name="firstName" component="div" className="text-packship-purple text-sm" />
               </div>
               <div className="w-full mb-8 flex flex-col justify-center items-center gap-2">
                 <div className="w-full flex flex-col sm:flex-row justify-between items-center">
                   <label htmlFor="lastName" className="text-lg font-semibold">Last Name</label>
-                  <Field name="lastName" type="text" className="bg-slate-200 border-packship-red border-2 rounded-full text-lg w-full sm:w-2/3 px-4 py-2 outline-none" />
+                  <Field name="lastName" type="text" className="bg-slate-200 border-packship-purple border-2 rounded-full text-lg w-full sm:w-2/3 px-4 py-2 outline-none" />
                 </div>
-                <ErrorMessage name="lastName" component="div" className="text-packship-red text-sm" />
+                <ErrorMessage name="lastName" component="div" className="text-packship-purple text-sm" />
               </div>
               <div className="w-full mb-8 flex flex-col justify-center items-center gap-2">
                 <div className="w-full flex flex-col sm:flex-row justify-between items-center">
                   <label htmlFor="email" className="text-lg font-semibold">Email Address</label>
-                  <Field name="email" type="email" className="bg-slate-200 border-packship-red border-2 rounded-full text-lg w-full sm:w-2/3 px-4 py-2 outline-none" />
+                  <Field name="email" type="email" className="bg-slate-200 border-packship-purple border-2 rounded-full text-lg w-full sm:w-2/3 px-4 py-2 outline-none" />
                 </div>
-                <ErrorMessage name="email" component="div" className="text-packship-red text-sm" />
+                <ErrorMessage name="email" component="div" className="text-packship-purple text-sm" />
               </div>
               <button
                 type="submit"
-                className={`${disabled ? "bg-gray-400": "bg-packship-red" } text-white w-full font-bold py-2 px-4 rounded-full hover:bg-red-700 transition`}
+                className={`${disabled ? "bg-gray-400": "bg-packship-purple" } text-white w-full font-bold py-2 px-4 rounded-full hover:bg-purple-700 transition`}
                 disabled={disabled}
               >
                 Request Invoice via Email
               </button>
               {errorMessage && (
-                <div className="text-packship-red text-sm mt-4">
+                <div className="text-packship-purple text-sm mt-4">
                   {errorMessage}
                 </div>
               )}

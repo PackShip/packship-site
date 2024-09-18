@@ -15,7 +15,7 @@ export default function CopyCodeSnippet({ code, language, buttonText = "Copy Cod
       <SyntaxHighlighter language={language} style={vs2015}>
         {code}
       </SyntaxHighlighter>
-      <button className="bg-packship-red px-4 py-2 text-white font-bold text-sm rounded-full hover:bg-red-700 transition" onClick={copyCodeToClipboard}>
+      <button className="bg-packship-purple px-4 py-2 text-white font-bold text-sm rounded-full hover:bg-purple-700 transition" onClick={copyCodeToClipboard}>
         {buttonText}
       </button>
     </div>

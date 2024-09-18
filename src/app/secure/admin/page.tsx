@@ -121,16 +121,16 @@ export default function Admin() {
                       type="email"
                       name="email"
                       placeholder="Admin Email"
-                      className="bg-slate-200 text-black border-packship-red border-2 w-full rounded-full text-lg px-4 py-2 outline-none"
+                      className="bg-slate-200 text-white border-packship-purple-lite border-2 w-full rounded-full text-lg px-4 py-2 outline-none"
                     />
-                    <ErrorMessage name="email" component="div" className="text-packship-red text-sm" />
+                    <ErrorMessage name="email" component="div" className="text-packship-purple-lite text-sm" />
 
-                    <div className="bg-slate-200 text-black border-packship-red border-2 w-full rounded-full text-lg px-4 py-2 flex justify-between items-center">
+                    <div className="bg-slate-200 text-white border-packship-purple-lite border-2 w-full rounded-full text-lg px-4 py-2 flex justify-between items-center">
                       <Field
                         type={isPasswordVisible ? "text" : "password"}
                         name="password"
                         placeholder="Password"
-                        className="bg-transparent text-black w-3/4 outline-none"
+                        className="bg-transparent text-white w-3/4 outline-none"
                       />
                       <button
                         onClick={handlePasswordVisibility}
@@ -140,14 +140,14 @@ export default function Admin() {
                         <FontAwesomeIcon icon={isPasswordVisible ? faEyeSlash : faEye} />
                       </button>
                     </div>
-                    <ErrorMessage name="password" component="div" className="text-packship-red text-sm" />
+                    <ErrorMessage name="password" component="div" className="text-packship-purple-lite text-sm" />
                     {errorMessage && (
-                      <span className="text-packship-red text-sm">{errorMessage}</span>
+                      <span className="text-packship-purple-lite text-sm">{errorMessage}</span>
                     )}
 
                     <button
                       type="submit"
-                      className="bg-packship-red text-white w-full font-bold py-2 px-4 rounded-full hover:bg-red-700 transition my-8 flex justify-center items-center"
+                      className="bg-packship-purple-lite text-white w-full font-bold py-2 px-4 rounded-full hover:bg-purple-700 transition my-8 flex justify-center items-center"
                       disabled={isSubmitting || loading}
                     >
                       {loading ? (
@@ -175,23 +175,23 @@ export default function Admin() {
                     type="email"
                     name="userEmail"
                     placeholder="Customer Email"
-                    className="bg-slate-200 text-black border-packship-red border-2 rounded-full text-lg w-full px-4 py-2 outline-none"
+                    className="bg-slate-200 text-white border-packship-purple-lite border-2 rounded-full text-lg w-full px-4 py-2 outline-none"
                     required
                   />
-                  <ErrorMessage name="userEmail" component="div" className="text-packship-red text-sm" />
+                  <ErrorMessage name="userEmail" component="div" className="text-packship-purple-lite text-sm" />
 
                   <Field
                     type="text"
                     name="orderID"
                     placeholder="Order ID"
-                    className="bg-slate-200 text-black border-packship-red border-2 rounded-full text-lg w-full px-4 py-2 outline-none"
+                    className="bg-slate-200 text-white border-packship-purple-lite border-2 rounded-full text-lg w-full px-4 py-2 outline-none"
                     required
                   />
-                  <ErrorMessage name="orderID" component="div" className="text-packship-red text-sm" />
+                  <ErrorMessage name="orderID" component="div" className="text-packship-purple-lite text-sm" />
 
                   <button
                     type="submit"
-                    className={`${isSubmitting ? "bg-gray-400": "bg-packship-red" } w-full text-white font-bold py-2 px-4 rounded-full hover:bg-red-700 transition my-8`}
+                    className={`${isSubmitting ? "bg-gray-400": "bg-packship-purple-lite" } w-full text-white font-bold py-2 px-4 rounded-full hover:bg-purple-700 transition my-8`}
                     disabled={isSubmitting}
                   >
                     Generate Serial Code

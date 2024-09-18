@@ -25,11 +25,11 @@ export default function Success() {
 
 
   return (
-    <div className="kontainer min-h-screen flex flex-col items-center justify-center bg-white text-black">
+    <div className="kontainer min-h-screen flex flex-col items-center justify-center bg-white text-white">
       <div className="row">
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-5xl font-bold mb-4 text-packship-red">Operation Successful!</h1>
-          <p className="mb-16 text-xl text-packship-red">Your request has been processed successfully, {customerFirstName}.</p>
+          <h1 className="text-5xl font-bold mb-4 text-packship-purple-lite">Operation Successful!</h1>
+          <p className="mb-16 text-xl text-packship-purple-lite">Your request has been processed successfully, {customerFirstName}.</p>
           <div className="w-full flex justify-center items-center gap-8">
             <figure className="w-1/6">
               <Image 
@@ -39,7 +39,7 @@ export default function Success() {
                 priority 
               />
             </figure>
-            <span className="text-black text-lg w-1/2">Keep an eye on your email as we will be sending you an invoice shortly. We&apos;re currently packshipping your invoice with care.</span>
+            <span className="text-white text-lg w-1/2">Keep an eye on your email as we will be sending you an invoice shortly. We&apos;re currently packshipping your invoice with care.</span>
           </div>
         </div>
       </div>

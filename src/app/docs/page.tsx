@@ -10,9 +10,9 @@ export default function Docs() {
   return (
     <>
       <Navigation />
-      <div className="kontainer min-h-screen flex flex-col items-center justify-center bg-white text-black">
+      <div className="kontainer min-h-screen flex flex-col items-center justify-center text-white">
         <div className="row w-full flex flex-col justify-center">
-          <h1 className="text-center sm:text-start text-4xl sm:text-5xl text-packship-red font-bold mt-8">
+          <h1 className="text-center sm:text-start text-4xl sm:text-5xl text-white font-bold mt-8">
             Packship Installation Guide
           </h1>
 
@@ -20,10 +20,10 @@ export default function Docs() {
             <p>This guide will walk you through installing Packship&apos;s dependencies and configuring Webpack.</p>
 
             {/* Section: Getting Started */}
-            <h2 className="text-2xl sm:text-3xl text-packship-red font-bold">1. Getting Started</h2>
+            <h2 className="text-2xl sm:text-3xl text-packship-purple-semilite font-bold">1. Getting Started</h2>
             <p>Start by installing the Packship global command:</p>
 
-            <SectionHeader className="text-xl sm:text-2xl" header="Packship Global Installation" />
+            <SectionHeader color="text-packship-purple-semilite" className="text-xl sm:text-2xl" header="Packship Global Installation" />
 
             {/* MacOS & Linux Section */}
             <div className="mb-2 flex flex-col gap-4">
@@ -37,7 +37,7 @@ export default function Docs() {
               <CopyCodeSnippet code="npm i -g packship@latest" language="bash" />
             </div>
 
-            <SectionHeader className="text-xl sm:text-2xl" header="Setting Up Your Package with Packship" />
+            <SectionHeader color="text-packship-purple-semilite" className="text-xl sm:text-2xl" header="Setting Up Your Package with Packship" />
 
             {/* Setup Section */}
             <div className="mb-2 flex flex-col gap-4">
@@ -46,11 +46,11 @@ export default function Docs() {
             <p>Follow the prompts, and your package will be ready!</p>
 
             {/* Section: Dependency Installation */}
-            <h2 className="text-2xl sm:text-3xl text-packship-red font-bold">2. Dependency Installation</h2>
+            <h2 className="text-2xl sm:text-3xl text-packship-purple-semilite font-bold">2. Dependency Installation</h2>
             <p>Install the necessary dependencies to avoid redundancy and ensure proper package setup.</p>
 
             {/* Main Dependencies */}
-            <SectionHeader className="text-xl sm:text-2xl" header="Main Dependencies" />
+            <SectionHeader color="text-packship-purple-semilite" className="text-xl sm:text-2xl" header="Main Dependencies" />
 
             {/* For TypeScript */}
             <div className="mb-2 flex flex-col gap-4">
@@ -69,7 +69,7 @@ export default function Docs() {
             </p>
 
             {/* Babel for React & TypeScript */}
-            <SectionHeader className="text-xl sm:text-2xl" header="Babel for React & TypeScript" />
+            <SectionHeader color="text-packship-purple-semilite" className="text-xl sm:text-2xl" header="Babel for React & TypeScript" />
             <p>Install Babel presets to compile TypeScript and JSX/React syntax:</p>
 
             {/* For TypeScript */}
@@ -85,7 +85,7 @@ export default function Docs() {
             </div>
 
             {/* Babel & Webpack Loaders */}
-            <SectionHeader className="text-xl sm:text-2xl" header="Babel & Webpack Loaders" />
+            <SectionHeader color="text-packship-purple-semilite" className="text-xl sm:text-2xl" header="Babel & Webpack Loaders" />
             <div className="mb-2 flex flex-col gap-4">
               <p>Install the necessary loaders for Babel and Webpack:</p>
               <CopyCodeSnippet code="npm install --save-dev babel-loader webpack" language="bash" />
@@ -94,7 +94,7 @@ export default function Docs() {
             <p>These loaders ensure that Webpack and Babel can work together to transpile and bundle your code.</p>
 
             {/* Section: Publishing your Npm package */}
-            <h2 className="text-2xl sm:text-3xl text-packship-red font-bold">3. Publishing Your Npm Package</h2>
+            <h2 className="text-2xl sm:text-3xl text-packship-purple-semilite font-bold">3. Publishing Your Npm Package</h2>
             <div className="mb-2 flex flex-col gap-4">
               <p>To publish your package, ensure the build is successful:</p>
               <CopyCodeSnippet code="npm run build" language="bash" />
