@@ -39,37 +39,43 @@
     const handleFormSubmit = async (values: CheckoutFormValues) => {
       try {
         setDisabled(true);
-
+    
+        // Generate the Order ID first
+        const orderID = await generateOrderID(24);
+    
+        // Add order to Firestore
+        await addDoc(collection(db, "pendingOrders"), {
+          firstName: values.firstName,
+          lastName: values.lastName,
+          email: values.email,
+          orderID: orderID,
+          createdAt: new Date(),
+        });
+    
+        // Dispatch the success and update customer state
+        dispatch(updateCustomer(values));
+        dispatch(setRequestSuccess(true));
+    
+        // Attempt to send email notification via EmailJS (non-blocking)
         const templateParams = {
           firstName: capitalizeFirstLetter(values.firstName),
           lastName: capitalizeFirstLetter(values.lastName),
           email: values.email,
         };
-
-        const orderID = await generateOrderID(24);
-
+    
         emailjs
           .send(serviceId, templateId, templateParams, { publicKey })
           .then((response) => {
             console.log('Email sent:', response);
-
-            addDoc(collection(db, "pendingOrders"), {
-              firstName: values.firstName,
-              lastName: values.lastName,
-              email: values.email,
-              orderID: orderID,
-              createdAt: new Date(),
-            });
-
-            dispatch(updateCustomer(values));
-            dispatch(setRequestSuccess(true));
-            router.push('/success');
-          },
-          (err) => {
-            console.log('FAILED...', err);
-            setErrorMessage('Oops! Something went wrong on our end. Please try requesting an invoice again.');
-          }
-        );  
+          })
+          .catch((err) => {
+            console.error('Failed to send email notification:', err);
+            // No need to show error to the user as this is optional
+          });
+    
+        // Redirect to success page
+        router.push('/success');
+    
       } catch (error) {
         console.error('Unexpected error:', error);
         setErrorMessage(`Oops! An unexpected error occurred on our end. Please try again. If the problem persists, contact our support team via ${<Link href="mailto:packshipcli@gmail.com" className="underline">packshipcli@gmail.com</Link>}`);
