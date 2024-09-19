@@ -135,7 +135,7 @@ export const commands: Command[] = [
     type: "comment",
   },
   {
-    text: "npm publish",
+    text: "packship publish",
     type: "command",
   },
 ];
