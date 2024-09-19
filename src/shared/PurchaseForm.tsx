@@ -94,7 +94,7 @@
               <div className="w-full mb-8 flex flex-col justify-center items-center gap-2">
                 <div className="w-full flex flex-col sm:flex-row justify-between items-center">
                   <label htmlFor="firstName" className="text-lg font-semibold">First Name</label>
-                  <Field name="firstName" type="text" className="bg-slate-200 border-packship-purple border-2 rounded-full text-lg w-full sm:w-2/3 sm:px-4 py-2 outline-none" />
+                  <Field name="firstName" type="text" className="bg-slate-200 border-packship-purple border-2 rounded-full text-lg w-full sm:w-2/3 px-4 py-2 outline-none" />
                 </div>
                 <ErrorMessage name="firstName" component="div" className="text-packship-purple text-sm" />
               </div>
