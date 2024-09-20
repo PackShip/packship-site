@@ -47,7 +47,7 @@ export const footerLinks = [
     links: [
       { 
         name: "Feedback", 
-        href: "/contact", 
+        href: "mailto:packshipcli@gmail.com", 
       },
     ],
   },

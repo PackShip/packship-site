@@ -4,6 +4,7 @@ import Image from "next/image";
 import packshipLogo from "../../public/assets/PackShipLogo.svg";
 
 const isExternal = (url: string) => /^https?:\/\//.test(url);
+const isAnchorLink = (url: string) => /^#/.test(url);
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -19,14 +20,14 @@ export default function Footer() {
                 <ul className="text-left flex flex-col gap-2 items-start justify-start">
                   {section.links.map((link, linkIndex) => (
                     <li key={linkIndex}>
-                      <a
+                      <Link
+                        href={isAnchorLink(link.href) ? `/${link.href}` : link.href}
                         className="block hover:underline text-white"
-                        href={link.href}
                         target={isExternal(link.href) ? "_blank" : "_self"}
                         rel={isExternal(link.href) ? "noopener noreferrer" : undefined}
                       >
                         {link.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
