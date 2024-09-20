@@ -42,7 +42,7 @@ To start using **PackShip CLI**, follow these simple steps:
 2. **Initialize a New Package**:
 
     ```bash
-    npx -y packship init
+    packship init
     ```
     
     Follow the prompts to set up your project quickly.

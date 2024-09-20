@@ -115,7 +115,7 @@ export const commands: Command[] = [
     type: "comment",
   },
   {
-    text: "npx -y packship init",
+    text: "packship init",
     type: "command",
   },
   {

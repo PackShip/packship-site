@@ -13,6 +13,7 @@ import Hero from "./components/Hero";
 import Features from "./components/Features";
 import Instructions from "./components/Instructions";
 import Pricing from "./components/Pricing";
+import Preview from "./components/Preview";
 
 function useAnimatedNumber(target: number, duration: number) {
   const [currentNumber, setCurrentNumber] = useState<number>(0);
@@ -61,6 +62,7 @@ export default function Home() {
       <main>
         <Hero />
         <Features />
+        <Preview />
         <Instructions />
         <Pricing />
       </main>

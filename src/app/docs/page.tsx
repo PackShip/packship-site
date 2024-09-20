@@ -5,6 +5,9 @@ import Navigation from "@/shared/Navigation";
 import Footer from "@/shared/Footer";
 import SectionHeader from "@/shared/SectionHeader";
 import CopyCodeSnippet from "@/shared/CopyCodeSnippet";
+import Image from "next/image";
+import DependacyResIssuePreview from "../../../public/assets/dep-res-issue.png";
+import EACCESSPreview from "../../../public/assets/eas-issue.png";
 
 export default function Docs() {
   return (
@@ -41,12 +44,39 @@ export default function Docs() {
 
             {/* Setup Section */}
             <div className="mb-2 flex flex-col gap-4">
-              <CopyCodeSnippet code="npx -y packship init" language="bash" />
+              <CopyCodeSnippet code="packship init" language="bash" />
             </div>
             <p>Follow the prompts, and your package will be ready!</p>
 
             {/* Section: Dependency Installation */}
             <h2 className="text-2xl sm:text-3xl text-packship-purple-semilite font-bold">2. Dependency Installation</h2>
+
+           {/* Initialize Node Modules and Package-Lock */}
+            <SectionHeader color="text-packship-purple-semilite" className="text-xl sm:text-2xl" header="Initialize `node modules` and `package-lock.json`" /> 
+            <p>Install the necessary dependencies to ensure your package runs smoothly.</p>
+            <CopyCodeSnippet code="npm install" language="bash" />
+            <p>If you encounter dependency resolution issues, similar to this:</p>
+            <figure className="w-full">
+              <Image 
+                src={DependacyResIssuePreview}
+                alt="Dependency Resolution Issues"
+                className="w-full border-2 border-packship-purple-lite rounded-lg"
+              />
+            </figure>
+            <p>Run the following command to install dependencies:</p>
+            <CopyCodeSnippet code="npm install --legacy-peer-deps" language="bash" />
+            <p>If you see an EACCES error, run the following command to fix permissions:</p>
+            <figure className="w-full">
+              <Image 
+                src={EACCESSPreview}
+                alt="EACCES Issue"
+                className="w-full border-2 border-packship-purple-lite rounded-lg"
+              />
+            </figure>
+            <CopyCodeSnippet code='sudo chown -R $(whoami) "$(npm config get cache)"' language="bash" />
+            <p>Then, try installing the dependencies again:</p>
+            <CopyCodeSnippet code="npm install" language="bash" />
+            <p>If you encounter deprecated package warnings, you can safely ignore them or update the packages as needed.</p>
             <p>Install the necessary dependencies to avoid redundancy and ensure proper package setup.</p>
 
             {/* Main Dependencies */}
