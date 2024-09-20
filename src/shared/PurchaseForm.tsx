@@ -43,7 +43,7 @@
         // Generate the Order ID first
         const orderID = await generateOrderID(24);
     
-        // Add order to Firestore
+        // Add order to Firestore regardless of email verification
         await addDoc(collection(db, "pendingOrders"), {
           firstName: values.firstName,
           lastName: values.lastName,
