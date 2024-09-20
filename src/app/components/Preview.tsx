@@ -19,7 +19,7 @@ export default function Preview() {
         <div className="row text-md sm:text-xl text-white flex flex-col items-center gap-8">
           <SectionHeader header="Promo Launch Trailer | Skit" />
           <div data-aos="fade-up" className="w-full flex flex-col justify-between items-center">
-            <iframe src="https://cards.producthunt.com/cards/products/607718" width="500" height="405" className="bg-white bg-opacity-75 rounded-xl p-2" />
+          <iframe src="https://cards.producthunt.com/cards/products/607718" style={{ width: '100%', maxWidth: '500px', height: '405px' }} className="bg-white bg-opacity-75 rounded-xl p-2 md:w-500" />
           </div>
         </div>
       </div>
