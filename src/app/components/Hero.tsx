@@ -49,22 +49,35 @@ export default function Hero() {
               Publish Your Package Now
             </Link>
           </button>
-          <Link
-            href="https://www.producthunt.com/posts/packship?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-packship"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-32 animate-bounce"
-            data-aos="fade-up"
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=600712&theme=neutral"
-              alt="PackShip - Ship your NPM packages in hours, not years | Product Hunt"
-              style={{ width: "250px", height: "54px" }}
-              width="250"
-              height="54"
-            />
-          </Link>
+          <div className="mt-32 animate-bounce flex justify-between items-center gap-4" data-aos="fade-up">
+            <Link
+              href="https://www.producthunt.com/posts/packship?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-packship"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=600712&theme=neutral"
+                alt="PackShip - Ship your NPM packages in hours, not years | Product Hunt"
+                style={{ width: "250px", height: "54px" }}
+                width="250"
+                height="54"
+              />
+            </Link>
+            <Link
+              href="https://fazier.com/launches/packship"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://fazier.com/api/v1/public/badges/embed_image.svg?launch_id=1261&badge_type=featured&template=true" 
+                width="270" 
+                alt="PackShip - Ship your NPM packages in hours, not years | Fazier" 
+                style={{ width: "250px", height: "54px" }}
+              />
+            </Link>
+          </div>
         </div>
       </div>
     </section>
