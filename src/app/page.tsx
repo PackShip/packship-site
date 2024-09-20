@@ -14,6 +14,7 @@ import Features from "./components/Features";
 import Instructions from "./components/Instructions";
 import Pricing from "./components/Pricing";
 import Preview from "./components/Preview";
+import Walkthrough from "./components/Walkthrough";
 
 function useAnimatedNumber(target: number, duration: number) {
   const [currentNumber, setCurrentNumber] = useState<number>(0);
@@ -64,6 +65,7 @@ export default function Home() {
         <Features />
         <Preview />
         <Instructions />
+        <Walkthrough />
         <Pricing />
       </main>
       <Footer />
