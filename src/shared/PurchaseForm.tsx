@@ -30,7 +30,7 @@
     if (!serviceId || !templateId || !publicKey) {
       throw new Error("Missing required environment variables for EmailJS.");
     }
-
+        
     function capitalizeFirstLetter(string: string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
     }
@@ -63,7 +63,7 @@
         };
     
         emailjs
-          .send(serviceId, templateId, templateParams, { publicKey })
+          .send(serviceId, templateId, templateParams, publicKey )
           .then((response) => {
             console.log('Email sent:', response);
           })
@@ -74,7 +74,6 @@
     
         // Redirect to success page
         router.push('/success');
-    
       } catch (error) {
         console.error('Unexpected error:', error);
         setErrorMessage(`Oops! An unexpected error occurred on our end. Please try again. If the problem persists, contact our support team via ${<Link href="mailto:packshipcli@gmail.com" className="underline">packshipcli@gmail.com</Link>}`);
