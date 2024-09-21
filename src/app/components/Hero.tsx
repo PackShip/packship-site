@@ -49,7 +49,7 @@ export default function Hero() {
               Publish Your Package Now
             </Link>
           </button>
-          <div className="mt-32 animate-bounce flex justify-between items-center gap-4" data-aos="fade-up">
+          <div className="mt-32 animate-bounce flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-4" data-aos="fade-up">
             <Link
               href="https://www.producthunt.com/posts/packship?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-packship"
               target="_blank"
