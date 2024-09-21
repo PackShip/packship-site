@@ -91,7 +91,7 @@ export default function Pricing() {
                 <div className="bg-white text-black rounded-lg p-8 shadow-lg flex flex-col gap-1">
                   <h4 className="text-xl font-bold mb-4">Packship CLI Tool</h4>
                   <p className="text-md mb-2">
-                    One-time Purchase: <span className="line-through">$69</span> <span className="font-bold text-purple-700 text-lg">${(69 * 0.07235).toFixed(2)}</span>
+                    One-time Purchase: <span className="line-through">$69</span> <span className="font-bold text-purple-700 text-lg">${(69 * 0.0868).toFixed(2)}</span>
                     {/* One-time Purchase: <span className="font-bold">$29</span>  */}
                   </p>
                   <p className="font-semibold text-sm text-purple-700 mb-6">
