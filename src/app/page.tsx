@@ -1,20 +1,18 @@
 "use client"
 
 import Navigation from "@/shared/Navigation";
-import Image from "next/image";
 import { Suspense, useEffect, useState } from "react";
-import Link from "next/link";
-import { brands } from "../../constants";
 import Footer from "@/shared/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import DonationsLink from "@/shared/DonationsLink";
 import Hero from "./components/Hero";
 import Features from "./components/Features";
 import Instructions from "./components/Instructions";
 import Pricing from "./components/Pricing";
 import Preview from "./components/Preview";
 import Walkthrough from "./components/Walkthrough";
+import Testimonials from "./components/Testimonials";
+import { tweetUrls } from "../../constants";
 
 function useAnimatedNumber(target: number, duration: number) {
   const [currentNumber, setCurrentNumber] = useState<number>(0);
@@ -37,18 +35,6 @@ function useAnimatedNumber(target: number, duration: number) {
 }
 
 export default function Home() {
-  const animatedNumber = useAnimatedNumber(5000, 7000);
-  const [isMobile, setIsMobile] = useState<boolean>(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 476);
-    };
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
   useEffect(() => {
     AOS.init({
       duration: 1200, 
@@ -63,6 +49,7 @@ export default function Home() {
       <main>
         <Hero />
         <Features />
+        <Testimonials />
         <Preview />
         <Instructions />
         <Walkthrough />

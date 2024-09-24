@@ -31,6 +31,7 @@
     "react-loader-spinner": "^6.1.6",
     "react-redux": "^9.1.2",
     "react-syntax-highlighter": "^15.5.0",
+    "react-twitter-widgets": "^1.11.0",
     "yup": "^1.4.0"
   },
   "devDependencies": {

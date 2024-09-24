@@ -139,3 +139,12 @@ export const commands: Command[] = [
     type: "command",
   },
 ];
+
+export const tweetUrls = [
+  "https://x.com/Saas_Dude/status/1837062465793757214",
+  "https://x.com/pravanjanHQ/status/1837072828174323912",
+  "https://x.com/philipp_parzer/status/1837093286114218118",
+  "https://x.com/philipp_parzer/status/1837100846649135341",
+  "https://x.com/crptwtf/status/1837109244476231822",
+  "https://x.com/andrecasaldev/status/1837171793351598239",
+];
