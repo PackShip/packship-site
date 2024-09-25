@@ -49,6 +49,22 @@ export const footerLinks = [
         name: "Feedback", 
         href: "mailto:packshipcli@gmail.com", 
       },
+      { 
+        name: "LinkedIn", 
+        href: "https://linkedin.com/in/h4temsoliman", 
+      },
+      { 
+        name: "GitHub", 
+        href: "https://github.com/codenkoffee", 
+      },
+      { 
+        name: "X", 
+        href: "https://x.com/h4temsoliman", 
+      },
+      { 
+        name: "Portfolio", 
+        href: "https://hatemsoliman.dev", 
+      },
     ],
   },
   {
@@ -61,6 +77,10 @@ export const footerLinks = [
       { 
         name: "Contact", 
         href: "mailto:packshipcli@gmail.com",
+      },
+      { 
+        name: "Fund Me", 
+        href: "https://paypal.me/h4temsoliman?country.x=EG&locale.x=en_US",
       },
     ],
   },
