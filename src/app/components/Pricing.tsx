@@ -96,7 +96,7 @@ export default function Pricing() {
                     {/* One-time Purchase: <span className="font-bold">$29</span>  */}
                   </p>
                   <p className="font-semibold text-sm text-purple-700 mb-6">
-                    LIMITED EARLY BIRD DISCOUNT!<br/>
+                    {/* LIMITED EARLY BIRD DISCOUNT!<br/> */}
                     <span className="text-gray-600">Includes all future updates and premium support.</span>
                   </p>
                   <div className="bg-yellow-200 text-yellow-800 p-4 rounded-xl mb-4">

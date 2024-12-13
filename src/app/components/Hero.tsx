@@ -37,7 +37,7 @@ export default function Hero() {
             Focus more on <span className="text-packship-purple-lite font-bold">coding</span> and less on <span className="text-packship-purple-lite font-bold">managing package releases</span>. <span className="text-packship-purple-lite font-bold">Packship</span> makes <span className="text-packship-purple-lite font-bold">shipping npm packages</span> easier and faster.
           </p>
           <CommandPrompt data-aos="fade-up" />
-          <span className="text-sm text-white">Early bird special: <span className="text-green-400 font-bold">91% off</span></span>
+          {/* <span className="text-sm text-white">Early bird special: <span className="text-green-400 font-bold">91% off</span></span> */}
           <button 
             type="button" 
             data-aos="fade-up"
