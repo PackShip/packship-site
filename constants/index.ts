@@ -43,31 +43,6 @@ export const footerLinks = [
     ],
   },
   {
-    title: "Community",
-    links: [
-      { 
-        name: "Feedback", 
-        href: "mailto:packshipcli@gmail.com", 
-      },
-      { 
-        name: "LinkedIn", 
-        href: "https://linkedin.com/in/h4temsoliman", 
-      },
-      { 
-        name: "GitHub", 
-        href: "https://github.com/codenkoffee", 
-      },
-      { 
-        name: "X", 
-        href: "https://x.com/h4temsoliman", 
-      },
-      { 
-        name: "Portfolio", 
-        href: "https://hatemsoliman.dev", 
-      },
-    ],
-  },
-  {
     title: "More",
     links: [
       { 
@@ -84,6 +59,43 @@ export const footerLinks = [
       },
     ],
   },
+  {
+    title: "By the Maker of PackShip",
+    links: [
+      { 
+        name: "React Framify", 
+        href: "https://react-framify.hatemsoliman.dev/",
+      },
+      { 
+        name: "GitHub Edge", 
+        href: "https://github-edge.hatemsoliman.dev/",
+      },
+      { 
+        name: "Memento", 
+        href: "https://memento-game.firebaseapp.com/",
+      },
+      { 
+        name: "LayerLeap", 
+        href: "https://layerleap.hatemsoliman.dev/",
+      },
+      { 
+        name: "Quantum Fly", 
+        href: "https://quantumfly.hatemsoliman.dev/",
+      },
+      { 
+        name: "Polar Paradise", 
+        href: "https://polarparadise.hatemsoliman.dev/",
+      },
+      { 
+        name: "Splanda Media", 
+        href: "https://splandamedia.com/",
+      },
+      { 
+        name: "QMaster", 
+        href: "https://linkedin.com/company/qmasterapp/",
+      },
+    ],
+  }
 ];
 
 export const socials = [

@@ -12,7 +12,7 @@ export default function Footer() {
   return (
     <footer className="bg-framify-black w-full py-8 sm:py-32 flex justify-start sm:justify-between items-start">
       <div className="kontainer">
-        <div className="row flex flex-col sm:flex-row gap-16 sm:gap-0">
+        <div className="row flex flex-col sm:flex-row-reverse gap-16 sm:gap-0 sm:items-start">
           <ul className="w-full sm:w-1/2 flex flex-col sm:flex-row gap-8 sm:gap-24">
             {footerLinks.map((section, index) => (
               <li key={index} className="flex flex-col">
