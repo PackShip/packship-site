@@ -13,6 +13,7 @@ import Preview from "./components/Preview";
 import Walkthrough from "./components/Walkthrough";
 import Testimonials from "./components/Testimonials";
 import { tweetUrls } from "../../constants";
+import PricingPlans from "./components/PricingPlans";
 
 function useAnimatedNumber(target: number, duration: number) {
   const [currentNumber, setCurrentNumber] = useState<number>(0);
@@ -53,7 +54,8 @@ export default function Home() {
         <Preview />
         <Instructions />
         <Walkthrough />
-        <Pricing />
+        <PricingPlans />
+        {/* <Pricing /> */}
       </main>
       <Footer />
     </Suspense>
