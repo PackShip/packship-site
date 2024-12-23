@@ -32,12 +32,12 @@ export default function Navigation() {
               />
             </figure>
           </Link>
-          <div className="hidden md:flex gap-8">
+          <div className="hidden md:flex gap-2">
             {navLinks.map((link, index) => (
               <li key={index}>
                 <Link
                   href={isAnchorLink(link.href) ? `/${link.href}` : link.href}
-                  className={`${link.name === "Try It!" ? "bg-packship-purple text-white hover:bg-purple-700" : "text-white hover:text-packship-purple-lite"} font-bold px-8 py-4 rounded-full transition`}
+                  className={`${link.name === "Try It!" ? "bg-packship-purple text-white hover:bg-purple-700" : "text-white hover:text-packship-purple-lite"} font-semibold px-8 py-4 rounded-full transition`}
                   target={isExternal(link.href) ? "_blank" : "_self"}
                   rel={isExternal(link.href) ? "noopener noreferrer" : undefined}
                 >

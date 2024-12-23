@@ -15,10 +15,18 @@ export const navLinks = [
   //   name: "Need Help?", 
   //   href: "/contact"
   // },
-  { 
-    name: "Try It!", 
-    href: "#start-packshipping"
+  {
+    name: "Pricing",
+    href: "#start-packshipping",
   },
+  {
+    name: "Wall of Fame",
+    href: "#wall-of-fame",
+  },
+  // { 
+  //   name: "Try It!", 
+  //   href: "#start-packshipping"
+  // },
 ];
 
 export const brands = [

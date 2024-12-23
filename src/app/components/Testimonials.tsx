@@ -4,7 +4,7 @@ import DonationsLink from "@/shared/DonationsLink";
 
 export default function Testimonials() {
   return (
-    <div className="kontainer text-center">
+    <div id="wall-of-fame" className="kontainer text-center">
       <div className="row text-md sm:text-xl flex flex-col items-center gap-8">
         <SectionHeader header="What Our Audience Says" />
         {/* Transparent background with blurry circular edges */}
