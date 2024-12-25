@@ -67,6 +67,6 @@ export interface PayPalOrderResponse {
 export interface PayPalOrderProps {
   orderId: string;
   status: string;
-  plan: string;
+  plan: PricingPlan;
   amount: number;
 }
