@@ -39,8 +39,8 @@ export default function PricingPlans() {
     },
     {
       name: "Orbit",
-      price: 99,
-      originalPrice: 149,
+      price: 149,
+      originalPrice: 249,
       features: [
         { name: "Everything in Launch, plus:", included: true },
         { name: "Unlimited usage license", included: true },
