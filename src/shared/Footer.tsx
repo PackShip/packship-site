@@ -10,10 +10,10 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-framify-black w-full py-8 sm:py-32 flex justify-start sm:justify-between items-start">
+    <footer className="bg-framify-black w-full py-8 md:py-32 flex justify-start md:justify-between items-start">
       <div className="kontainer">
-        <div className="row flex flex-col sm:flex-row-reverse gap-16 sm:gap-0 sm:items-start">
-          <ul className="w-full sm:w-1/2 flex flex-col sm:flex-row gap-8 sm:gap-24">
+        <div className="row flex flex-col md:flex-row-reverse gap-16 md:gap-0 md:items-start">
+          <ul className="w-full md:w-1/2 flex flex-col md:flex-row gap-8 md:gap-24">
             {footerLinks.map((section, index) => (
               <li key={index} className="flex flex-col">
                 <h4 className="text-left text-packship-purple-lite font-semibold mb-4">{section.title}</h4>
@@ -34,7 +34,7 @@ export default function Footer() {
               </li>
             ))}
           </ul>
-          <div className="text-left w-full *: sm:w-1/4 flex flex-col items-center sm:items-start justify-start">
+          <div className="text-left w-full *: md:w-1/4 flex flex-col items-center md:items-start justify-start">
             <Link
               href="/"
               className="text-3xl"
