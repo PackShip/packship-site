@@ -15,20 +15,19 @@ export default function Checkout() {
 
   return (
     <div className="h-screen bg-gray-900">
-      {/* Logo with back link - unchanged */}
       <Link 
         href="/" 
-        className="fixed top-8 left-8 flex items-center gap-2 group transition-all duration-300 hover:-translate-x-2"
+        className="fixed top-8 left-8 flex items-center gap-2 group transition-all duration-300"
       >
-        <ChevronLeft className="w-5 h-5 text-packship-purple-lite opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <ChevronLeft className="w-5 h-5 text-packship-purple-lite opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
         <Image
           src={PackShipLogo}
           alt="Packship Logo"
           width={120}
           height={40}
-          className="hover:opacity-80 transition-opacity duration-300"
+          className="opacity-100 group-hover:opacity-0 group-hover:translate-x-2 transition-all duration-300"
         />
-        <span className="absolute left-0 ml-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-packship-purple-lite">
+        <span className="absolute left-7 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300 text-packship-purple-lite">
           Back
         </span>
       </Link>
