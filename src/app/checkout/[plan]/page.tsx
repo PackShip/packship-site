@@ -14,7 +14,9 @@ export default function Checkout() {
   const params = useParams();
   const plan = plans.find((p) => p.name.toLowerCase() === params.plan);
 
-  if (!plan) return null;
+  if (!plan) {
+    return <div className="text-red-500">Plan not found</div>;
+  }
 
   const handlePaymentSuccess = (orderId: string) => {
     router.push("/success");

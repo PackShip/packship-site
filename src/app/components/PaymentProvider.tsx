@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 import {
   PayPalScriptProvider,
   PayPalButtons,
@@ -11,8 +11,12 @@ import {
   PayPalCVVField,
   usePayPalCardFields,
 } from "@paypal/react-paypal-js";
-import { BillingAddress, CustomerInfo, PaymentProviderProps } from '../../../types';
-import SubmitPayment from './SubmitPayment';
+import {
+  BillingAddress,
+  CustomerInfo,
+  PaymentProviderProps,
+} from "../../../types";
+import SubmitPayment from "./SubmitPayment";
 
 const initialOptions = {
   clientId: process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID!,
@@ -21,16 +25,21 @@ const initialOptions = {
   components: "buttons,hosted-fields",
 };
 
-export default function PaymentProvider({ plan, onSuccess }: PaymentProviderProps) {
+export default function PaymentProvider({
+  plan,
+  onSuccess,
+}: PaymentProviderProps) {
   const [isPaying, setIsPaying] = useState(false);
-  const [paymentMethod, setPaymentMethod] = useState<'paypal' | 'card'>('paypal');
+  const [paymentMethod, setPaymentMethod] = useState<"paypal" | "card">(
+    "paypal"
+  );
   const [error, setError] = useState<string | null>(null);
   const [customerInfo, setCustomerInfo] = useState<CustomerInfo>({
-    email: '',
-    firstName: '',
-    lastName: '',
-    country: '',
-    state: '',
+    email: "",
+    firstName: "",
+    lastName: "",
+    country: "",
+    state: "",
   });
 
   const [billingAddress, setBillingAddress] = useState<BillingAddress>({
@@ -42,12 +51,18 @@ export default function PaymentProvider({ plan, onSuccess }: PaymentProviderProp
     postalCode: "",
   });
 
-  const handleBillingAddressChange = (field: keyof BillingAddress, value: string) => {
-    setBillingAddress(prev => ({ ...prev, [field]: value }));
+  const handleBillingAddressChange = (
+    field: keyof BillingAddress,
+    value: string
+  ) => {
+    setBillingAddress((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleCustomerInfoChange = (field: keyof CustomerInfo, value: string) => {
-    setCustomerInfo(prev => ({ ...prev, [field]: value }));
+  const handleCustomerInfoChange = (
+    field: keyof CustomerInfo,
+    value: string
+  ) => {
+    setCustomerInfo((prev) => ({ ...prev, [field]: value }));
   };
 
   const createOrder = async () => {
@@ -62,7 +77,9 @@ export default function PaymentProvider({ plan, onSuccess }: PaymentProviderProp
       if (!orderData.id) throw new Error("Failed to create order");
       return orderData.id;
     } catch (error) {
-      setError(error instanceof Error ? error.message : "Failed to create order");
+      setError(
+        error instanceof Error ? error.message : "Failed to create order"
+      );
       throw error;
     }
   };
@@ -98,10 +115,99 @@ export default function PaymentProvider({ plan, onSuccess }: PaymentProviderProp
         )}
 
         <div className="space-y-4">
-          <h3 className="text-lg font-medium text-gray-900">Customer Information</h3>
+          <h3 className="text-lg font-medium text-gray-900">
+            Customer Information
+          </h3>
           <div className="grid grid-cols-2 gap-4">
-            {/* Customer info fields */}
-            {/* ...existing customer fields... */}
+            <input
+              type="email"
+              placeholder="Email"
+              value={customerInfo.email}
+              onChange={(e) =>
+                handleCustomerInfoChange("email", e.target.value)
+              }
+              className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+            />
+            <input
+              type="text"
+              placeholder="First Name"
+              value={customerInfo.firstName}
+              onChange={(e) =>
+                handleCustomerInfoChange("firstName", e.target.value)
+              }
+              className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+            />
+            <input
+              type="text"
+              placeholder="Last Name"
+              value={customerInfo.lastName}
+              onChange={(e) =>
+                handleCustomerInfoChange("lastName", e.target.value)
+              }
+              className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+            />
+            <input
+              type="text"
+              placeholder="Country"
+              value={customerInfo.country}
+              onChange={(e) =>
+                handleCustomerInfoChange("country", e.target.value)
+              }
+              className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+            />
+            <input
+              type="text"
+              placeholder="State/Province"
+              value={customerInfo.state}
+              onChange={(e) =>
+                handleCustomerInfoChange("state", e.target.value)
+              }
+              className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 col-span-2"
+            />
+            <input
+              type="text"
+              id="card-billing-address-line-1"
+              name="card-billing-address-line-1"
+              placeholder="Address line 1"
+              value={billingAddress.addressLine1}
+              onChange={(e) =>
+                handleBillingAddressChange("addressLine1", e.target.value)
+              }
+              className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 col-span-2"
+            />
+            <input
+              type="text"
+              id="card-billing-address-line-2"
+              name="card-billing-address-line-2"
+              placeholder="Address line 2 (Optional)"
+              value={billingAddress.addressLine2}
+              onChange={(e) =>
+                handleBillingAddressChange("addressLine2", e.target.value)
+              }
+              className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 col-span-2"
+            />
+            <input
+              type="text"
+              id="card-billing-address-postal-code"
+              name="card-billing-address-postal-code"
+              placeholder="Postal/zip code"
+              value={billingAddress.postalCode}
+              onChange={(e) =>
+                handleBillingAddressChange("postalCode", e.target.value)
+              }
+              className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+            />
+            <input
+              type="text"
+              id="card-billing-address-country-code"
+              name="card-billing-address-country-code"
+              placeholder="Country code"
+              value={billingAddress.countryCode}
+              onChange={(e) =>
+                handleBillingAddressChange("countryCode", e.target.value)
+              }
+              className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+            />
           </div>
         </div>
 
@@ -109,21 +215,21 @@ export default function PaymentProvider({ plan, onSuccess }: PaymentProviderProp
           <h3 className="text-lg font-medium text-gray-900">Payment Method</h3>
           <div className="flex gap-4">
             <button
-              onClick={() => setPaymentMethod('paypal')}
+              onClick={() => setPaymentMethod("paypal")}
               className={`px-4 py-2 rounded-md transition-colors ${
-                paymentMethod === 'paypal' 
-                  ? 'bg-[#0070ba] text-white' 
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                paymentMethod === "paypal"
+                  ? "bg-[#0070ba] text-white"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >
               PayPal
             </button>
             <button
-              onClick={() => setPaymentMethod('card')}
+              onClick={() => setPaymentMethod("card")}
               className={`px-4 py-2 rounded-md transition-colors ${
-                paymentMethod === 'card' 
-                  ? 'bg-[#0070ba] text-white' 
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                paymentMethod === "card"
+                  ? "bg-[#0070ba] text-white"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >
               Credit/Debit Card
@@ -131,7 +237,7 @@ export default function PaymentProvider({ plan, onSuccess }: PaymentProviderProp
           </div>
         </div>
 
-        {paymentMethod === 'paypal' ? (
+        {paymentMethod === "paypal" ? (
           <PayPalButtons
             createOrder={createOrder}
             onApprove={onApprove}
@@ -165,17 +271,24 @@ export default function PaymentProvider({ plan, onSuccess }: PaymentProviderProp
                 <PayPalExpiryField />
                 <PayPalCVVField />
               </div>
-              
+
               {/* Billing Address Fields */}
               <div className="space-y-4 mt-6">
-                <h3 className="text-lg font-medium text-gray-900">Billing Address</h3>
+                <h3 className="text-lg font-medium text-gray-900">
+                  Billing Address
+                </h3>
                 {Object.keys(billingAddress).map((field) => (
                   <input
                     key={field}
                     type="text"
                     placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
                     className="w-full p-2 border border-gray-300 rounded-md"
-                    onChange={(e) => handleBillingAddressChange(field as keyof BillingAddress, e.target.value)}
+                    onChange={(e) =>
+                      handleBillingAddressChange(
+                        field as keyof BillingAddress,
+                        e.target.value
+                      )
+                    }
                   />
                 ))}
               </div>
