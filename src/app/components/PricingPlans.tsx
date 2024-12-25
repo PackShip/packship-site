@@ -78,11 +78,11 @@ export default function PricingPlans() {
             </p>
           </div>
 
-          <div className="w-full flex justify-between gap-16">
+          <div className="w-full flex flex-col md:flex-row justify-between gap-16">
             {plans.map((plan) => (
               <div
                 key={plan.name}
-                className={`w-1/2 rounded-2xl p-6 ${
+                className={`w-full md:w-1/2 rounded-2xl p-6 ${
                   plan.name === "Orbit"
                     ? "bg-black/30 border border-green-500"
                     : "bg-black/30"
