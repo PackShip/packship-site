@@ -148,7 +148,9 @@ export default function PricingPlans() {
                 </button>
 
                 <p className="text-center text-sm text-gray-400 mt-4">
-                  Pay once. Build unlimited projects!
+                  {plan.name === "Launch" 
+                    ? "One-time use license. Perfect for single projects!"
+                    : "Pay once. Build unlimited projects!"}
                 </p>
               </div>
             ))}
