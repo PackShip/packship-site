@@ -67,7 +67,7 @@ export default function PricingPlans() {
               Ship NPM packages faster,<br />
               focus on what matters!
             </h2>
-            <div className="flex items-center justify-center gap-2 text-green-500">
+            <div className="flex items-center justify-center gap-2 text-packship-purple-lite">
               <span className="text-2xl">⚡️</span>
               <span>Save 40% on launch pricing (Limited time offer)</span>
             </div>
@@ -114,7 +114,7 @@ export default function PricingPlans() {
                         className="flex items-center text-gray-300"
                       >
                         {feature.included ? (
-                          <CheckIcon className="w-5 h-5 text-green-500 mr-2" />
+                          <CheckIcon className="w-5 h-5 text-packship-purple-lite mr-2" />
                         ) : (
                           <XIcon className="w-5 h-5 text-gray-600 mr-2" />
                         )}
@@ -126,7 +126,7 @@ export default function PricingPlans() {
                           {feature.name}
                         </span>
                         {feature.highlight && (
-                          <span className="ml-2 text-xs bg-green-500/20 text-green-500 px-2 py-1 rounded">
+                          <span className="ml-2 text-xs bg-packship-purple-semilite/20 text-packship-purple-lite px-2 py-1 rounded">
                             {feature.highlight}
                           </span>
                         )}
@@ -141,7 +141,7 @@ export default function PricingPlans() {
                   className={`w-full py-3 px-4 rounded-lg font-medium ${
                     plan.name === "Orbit"
                       ? "bg-green-500 text-black hover:bg-green-400"
-                      : "bg-yellow-500 text-black hover:bg-yellow-400"
+                      : "bg-packship-purple-lite text-black hover:bg-packship-purple-semilite"
                   } transition-colors duration-200`}
                 >
                   {plan.buttonText}
