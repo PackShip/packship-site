@@ -54,3 +54,19 @@ export interface PricingPlan {
   bundleNote?: string;
   additionalContent?: React.ReactNode;
 }
+
+export interface PayPalButtonProps {
+  plan: PricingPlan;
+}
+
+export interface PayPalOrderResponse {
+  id: string;
+  status: string;
+}
+
+export interface PayPalOrderProps {
+  orderId: string;
+  status: string;
+  plan: string;
+  amount: number;
+}

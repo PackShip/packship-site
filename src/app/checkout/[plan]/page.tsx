@@ -6,6 +6,8 @@ import { CheckIcon, ChevronLeft } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import PackShipLogo from '../../../../public/assets/packshipLogo.svg';
+import PayPalButton from '@/app/components/PayPalButton';
+import PayPalProvider from '@/app/components/PayPalProvider';
 
 export default function Checkout() {
   const params = useParams();
@@ -63,7 +65,9 @@ export default function Checkout() {
           <div className="max-w-xl mx-auto w-full">
             <h2 className="text-2xl font-bold text-white mb-6">Checkout</h2>
             <div className="h-96 flex items-center justify-center border border-gray-700 rounded-lg">
-              <p className="text-gray-400">PayPal checkout component will be integrated here</p>
+            <PayPalProvider>
+              <PayPalButton plan={plan} />
+            </PayPalProvider>
             </div>
           </div>
         </div>
