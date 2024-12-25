@@ -38,3 +38,19 @@ export interface CopyCodeSnippetProps {
   language: string;
   buttonText?: string;
 }
+
+export interface PlanFeature {
+  name: string;
+  included: boolean;
+  highlight?: string;
+}
+
+export interface PricingPlan {
+  name: string;
+  price: number;
+  originalPrice: number;
+  features: PlanFeature[];
+  buttonText: string;
+  bundleNote?: string;
+  additionalContent?: React.ReactNode;
+}
