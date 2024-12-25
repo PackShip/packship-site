@@ -9,31 +9,22 @@ import {
   PayPalNumberField,
   PayPalExpiryField,
   PayPalCVVField,
+  usePayPalCardFields,
 } from "@paypal/react-paypal-js";
-import { PricingPlan } from '../../../types';
-
-interface PaymentProviderProps {
-  plan: PricingPlan;
-  onSuccess: (orderId: string) => void;
-}
+import { BillingAddress, CustomerInfo, PaymentProviderProps } from '../../../types';
+import SubmitPayment from './SubmitPayment';
 
 const initialOptions = {
   clientId: process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID!,
   currency: "USD",
   intent: "capture",
-  components: "buttons,card-fields",
+  components: "buttons,hosted-fields",
 };
 
-interface CustomerInfo {
-  email: string;
-  firstName: string;
-  lastName: string;
-  country: string;
-  state: string;
-}
-
 export default function PaymentProvider({ plan, onSuccess }: PaymentProviderProps) {
+  const [isPaying, setIsPaying] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState<'paypal' | 'card'>('paypal');
+  const [error, setError] = useState<string | null>(null);
   const [customerInfo, setCustomerInfo] = useState<CustomerInfo>({
     email: '',
     firstName: '',
@@ -42,77 +33,75 @@ export default function PaymentProvider({ plan, onSuccess }: PaymentProviderProp
     state: '',
   });
 
+  const [billingAddress, setBillingAddress] = useState<BillingAddress>({
+    addressLine1: "",
+    addressLine2: "",
+    adminArea1: "",
+    adminArea2: "",
+    countryCode: "",
+    postalCode: "",
+  });
+
+  const handleBillingAddressChange = (field: keyof BillingAddress, value: string) => {
+    setBillingAddress(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleCustomerInfoChange = (field: keyof CustomerInfo, value: string) => {
+    setCustomerInfo(prev => ({ ...prev, [field]: value }));
+  };
+
   const createOrder = async () => {
     try {
+      setError(null);
       const response = await fetch("/api/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ 
-          plan,
-          customerInfo 
-        }),
+        body: JSON.stringify({ plan, customerInfo, billingAddress }),
       });
       const orderData = await response.json();
+      if (!orderData.id) throw new Error("Failed to create order");
       return orderData.id;
     } catch (error) {
-      console.error("Failed to create order:", error);
+      setError(error instanceof Error ? error.message : "Failed to create order");
       throw error;
     }
   };
 
   const onApprove = async (data: { orderID: string }) => {
     try {
+      setIsPaying(true);
       const response = await fetch(`/api/orders/${data.orderID}/capture`, {
         method: "POST",
       });
       const orderData = await response.json();
+      if (!response.ok) throw new Error(orderData.error || "Payment failed");
       onSuccess(data.orderID);
     } catch (error) {
-      console.error("Payment failed:", error);
+      setError(error instanceof Error ? error.message : "Payment failed");
+    } finally {
+      setIsPaying(false);
     }
+  };
+
+  const onError = (err: Record<string, unknown>) => {
+    console.error("PayPal error:", err);
+    setError("Payment processing failed. Please try again.");
   };
 
   return (
     <PayPalScriptProvider options={initialOptions}>
       <div className="bg-white p-6 rounded-lg shadow-sm space-y-6">
+        {error && (
+          <div className="p-4 bg-red-50 border border-red-200 text-red-600 rounded">
+            {error}
+          </div>
+        )}
+
         <div className="space-y-4">
           <h3 className="text-lg font-medium text-gray-900">Customer Information</h3>
           <div className="grid grid-cols-2 gap-4">
-            <input
-              type="email"
-              placeholder="Email"
-              className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-              value={customerInfo.email}
-              onChange={(e) => setCustomerInfo(prev => ({...prev, email: e.target.value}))}
-            />
-            <input
-              type="text"
-              placeholder="First Name"
-              className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-              value={customerInfo.firstName}
-              onChange={(e) => setCustomerInfo(prev => ({...prev, firstName: e.target.value}))}
-            />
-            <input
-              type="text"
-              placeholder="Last Name"
-              className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-              value={customerInfo.lastName}
-              onChange={(e) => setCustomerInfo(prev => ({...prev, lastName: e.target.value}))}
-            />
-            <input
-              type="text"
-              placeholder="Country"
-              className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-              value={customerInfo.country}
-              onChange={(e) => setCustomerInfo(prev => ({...prev, country: e.target.value}))}
-            />
-            <input
-              type="text"
-              placeholder="State/City"
-              className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-              value={customerInfo.state}
-              onChange={(e) => setCustomerInfo(prev => ({...prev, state: e.target.value}))}
-            />
+            {/* Customer info fields */}
+            {/* ...existing customer fields... */}
           </div>
         </div>
 
@@ -147,34 +136,55 @@ export default function PaymentProvider({ plan, onSuccess }: PaymentProviderProp
             createOrder={createOrder}
             onApprove={onApprove}
             style={{
-              layout: "vertical",
               shape: "rect",
+              layout: "vertical",
               color: "gold",
+              label: "paypal",
             }}
+            disabled={isPaying}
           />
         ) : (
-          <PayPalCardFieldsProvider 
-            createOrder={createOrder} 
+          <PayPalCardFieldsProvider
+            createOrder={createOrder}
             onApprove={onApprove}
-            onError={(err) => {
-              console.error("Card payment error:", err);
+            onError={onError}
+            style={{
+              input: {
+                "font-size": "16px",
+                "font-family": "system-ui",
+                "font-weight": "lighter",
+                color: "#ccc",
+              },
+              ".invalid": { color: "purple" },
             }}
           >
             <div className="space-y-4 bg-white p-4 rounded-md border border-gray-200">
-              <PayPalNameField className="w-full p-2 border border-gray-300 rounded-md" />
-              <PayPalNumberField className="w-full p-2 border border-gray-300 rounded-md" />
+              <PayPalNameField />
+              <PayPalNumberField />
               <div className="grid grid-cols-2 gap-4">
-                <PayPalExpiryField className="w-full p-2 border border-gray-300 rounded-md" />
-                <PayPalCVVField className="w-full p-2 border border-gray-300 rounded-md" />
+                <PayPalExpiryField />
+                <PayPalCVVField />
               </div>
-              <button 
-                className="w-full bg-[#0070ba] text-white py-2 rounded-md font-medium hover:bg-[#003087] transition-colors"
-                onClick={() => {
-                  // Handle card submission
-                }}
-              >
-                Pay ${plan.price}
-              </button>
+              
+              {/* Billing Address Fields */}
+              <div className="space-y-4 mt-6">
+                <h3 className="text-lg font-medium text-gray-900">Billing Address</h3>
+                {Object.keys(billingAddress).map((field) => (
+                  <input
+                    key={field}
+                    type="text"
+                    placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
+                    className="w-full p-2 border border-gray-300 rounded-md"
+                    onChange={(e) => handleBillingAddressChange(field as keyof BillingAddress, e.target.value)}
+                  />
+                ))}
+              </div>
+
+              <SubmitPayment
+                isPaying={isPaying}
+                setIsPaying={setIsPaying}
+                billingAddress={billingAddress}
+              />
             </div>
           </PayPalCardFieldsProvider>
         )}

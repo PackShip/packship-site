@@ -64,9 +64,41 @@ export interface PayPalOrderResponse {
   status: string;
 }
 
+export interface BillingAddress {
+  addressLine1: string;
+  addressLine2: string;
+  adminArea1: string;
+  adminArea2: string;
+  countryCode: string;
+  postalCode: string;
+}
+
+export interface CustomerInfo {
+  email: string;
+  firstName: string;
+  lastName: string;
+  country: string;
+  state: string;
+}
+
 export interface PayPalOrderProps {
   orderId: string;
   status: string;
   plan: PricingPlan;
   amount: number;
+}
+
+export interface CardFieldFormState {
+  isFormValid: boolean;
+  fields: Record<string, unknown>;
+}
+
+export interface CardFieldsForm {
+  getState: () => Promise<CardFieldFormState>;
+  submit: () => Promise<void>;
+}
+
+export interface PaymentProviderProps {
+  plan: PricingPlan;
+  onSuccess: (orderId: string) => void;
 }
