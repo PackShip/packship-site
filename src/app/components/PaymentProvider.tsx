@@ -216,36 +216,45 @@ export default function PaymentProvider({
           <div className="flex gap-4">
             <button
               onClick={() => setPaymentMethod("paypal")}
-              className={`px-4 py-2 rounded-md transition-colors ${
+              className={`flex items-center justify-center px-6 py-3 rounded-md transition-colors w-1/2 ${
                 paymentMethod === "paypal"
-                  ? "bg-[#0070ba] text-white"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  ? "bg-[#ffc439] border-2 border-[#ffc439]"
+                  : "bg-gray-100 border-2 border-gray-200 hover:bg-gray-200"
               }`}
             >
-              PayPal
+              <img
+                src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_100x26.png"
+                alt="PayPal"
+                className="h-6"
+              />
             </button>
             <button
               onClick={() => setPaymentMethod("card")}
-              className={`px-4 py-2 rounded-md transition-colors ${
+              className={`flex items-center justify-center gap-2 px-6 py-3 rounded-md transition-colors w-1/2 ${
                 paymentMethod === "card"
-                  ? "bg-[#0070ba] text-white"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  ? "bg-[#142c8e] text-white border-2 border-[#142c8e]"
+                  : "bg-gray-100 border-2 border-gray-200 hover:bg-gray-200"
               }`}
             >
-              Credit/Debit Card
+              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 4H4C2.89 4 2 4.89 2 6V18C2 19.11 2.89 20 4 20H20C21.11 20 22 19.11 22 18V6C22 4.89 21.11 4 20 4ZM20 18H4V12H20V18ZM20 8H4V6H20V8Z" />
+              </svg>
+              <span>Card</span>
             </button>
           </div>
         </div>
 
         {paymentMethod === "paypal" ? (
+          // Update PayPal buttons styling
           <PayPalButtons
             createOrder={createOrder}
             onApprove={onApprove}
             style={{
-              shape: "rect",
-              layout: "vertical",
               color: "gold",
+              shape: "rect",
               label: "paypal",
+              layout: "vertical",
+              tagline: false
             }}
             disabled={isPaying}
           />
