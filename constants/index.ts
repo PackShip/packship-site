@@ -189,7 +189,7 @@ export const tweetUrls = [
   "https://x.com/andrecasaldev/status/1837171793351598239",
 ];
 
-export const plans: PricingPlan[] = [
+export const  plans: PricingPlan[] = [
   {
     name: "Launch",
     price: 24,

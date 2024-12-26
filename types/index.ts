@@ -102,3 +102,8 @@ export interface PaymentProviderProps {
   plan: PricingPlan;
   onSuccess: (orderId: string) => void;
 }
+
+export interface PayPalButtonsProps {
+  amount: number;
+  onSuccess: (orderId: string) => void; 
+}

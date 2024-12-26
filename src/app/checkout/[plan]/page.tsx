@@ -8,6 +8,8 @@ import Image from "next/image";
 import PackShipLogo from "../../../../public/assets/packshipLogo.svg";
 import { useRouter } from "next/navigation";
 import PaymentProvider from "@/app/components/PaymentProvider";
+import PayPalButton from "@/app/components/paypal/PayPalButton";
+import PaymentGateway from "@/app/components/paypal/PaymentGateway";
 
 export default function Checkout() {
   const router = useRouter();
@@ -18,7 +20,7 @@ export default function Checkout() {
     return <div className="text-red-500">Plan not found</div>;
   }
 
-  const handlePaymentSuccess = (orderId: string) => {
+  const handlePaymentSuccess = (details: any) => {
     router.push("/success");
   };
 
@@ -80,7 +82,9 @@ export default function Checkout() {
         <div className="w-full md:w-1/2 bg-white p-8 pt-24 flex items-center">
           <div className="max-w-xl mx-auto w-full">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Checkout</h2>
-            <PaymentProvider plan={plan} onSuccess={handlePaymentSuccess} />
+            {/* <PaymentProvider plan={plan} onSuccess={handlePaymentSuccess} /> */}
+            {/* <PayPalButton amount={plan.price} onSuccess={handlePaymentSuccess} /> */}
+            <PaymentGateway plan={plan} onSuccess={handlePaymentSuccess} />
           </div>
         </div>
       </div>
