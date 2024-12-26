@@ -81,7 +81,7 @@ export default function Checkout() {
         {/* Right side: PayPal checkout */}
         <div className="w-full md:w-1/2 bg-white p-8 pt-24 flex items-center">
           <div className="max-w-xl mx-auto w-full">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Checkout</h2>
+            <h2 className="text-4xl text-center font-bold text-gray-900 mb-6">Checkout</h2>
             {/* <PaymentProvider plan={plan} onSuccess={handlePaymentSuccess} /> */}
             {/* <PayPalButton amount={plan.price} onSuccess={handlePaymentSuccess} /> */}
             <PaymentGateway plan={plan} onSuccess={handlePaymentSuccess} />

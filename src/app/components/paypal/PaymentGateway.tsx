@@ -6,12 +6,14 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { collection, addDoc } from "firebase/firestore";
 import { db } from '@/firebase/firebaseConfig';
-import { 
-  CustomerInfo, 
+import {
+  CustomerInfo,
   PricingPlan,
   PayPalOrderResponse,
-  PaymentProviderProps 
+  PaymentProviderProps
 } from "../../../../types";
+import { useMemo } from 'react';
+import countryList from 'react-select-country-list';
 
 // Simplified validation schema for essential fields only
 const customerSchema = Yup.object().shape({
@@ -27,6 +29,8 @@ export default function PaymentGateway({ plan, onSuccess }: PaymentProviderProps
   const [isPaying, setIsPaying] = useState(false);
   const [orderId, setOrderId] = useState<string | null>(null);
 
+  const countries = useMemo(() => countryList().getData(), []);
+
   // PayPal initialization options
   const initialOptions = {
     "client-id": process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID!,
@@ -41,7 +45,7 @@ export default function PaymentGateway({ plan, onSuccess }: PaymentProviderProps
   const createOrder = async (customerData: CustomerInfo) => {
     try {
       setError(null);
-      
+
       // Create a pending order in Firebase first
       const pendingOrderRef = await addDoc(collection(db, "pendingOrders"), {
         plan: plan.name,
@@ -63,13 +67,13 @@ export default function PaymentGateway({ plan, onSuccess }: PaymentProviderProps
       const response = await fetch("/api/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ 
+        body: JSON.stringify({
           plan,
           customerInfo: customerData,
           orderId: pendingOrderRef.id
         }),
       });
-      
+
       const orderData = await response.json() as PayPalOrderResponse;
       if (!orderData.id) throw new Error("Failed to create order");
       return orderData.id;
@@ -89,7 +93,7 @@ export default function PaymentGateway({ plan, onSuccess }: PaymentProviderProps
         method: "POST",
         body: JSON.stringify({ firebaseOrderId: orderId })
       });
-      
+
       const orderData = await response.json() as PayPalOrderResponse;
       if (!response.ok) throw new Error(orderData.error || "Payment failed");
       onSuccess(data.orderID);
@@ -108,7 +112,7 @@ export default function PaymentGateway({ plan, onSuccess }: PaymentProviderProps
 
   return (
     <PayPalScriptProvider options={initialOptions}>
-      <div className="max-w-2xl mx-auto p-4">
+      <div className="text-center max-w-2xl mx-auto p-16">
         <Formik
           initialValues={{
             firstName: '',
@@ -128,71 +132,103 @@ export default function PaymentGateway({ plan, onSuccess }: PaymentProviderProps
           }}
         >
           {({ isValid, dirty, values }) => (
-            <Form className="space-y-4">
-              {/* First Name field */}
-              <div className="space-y-2">
-                <Field
-                  name="firstName"
-                  placeholder="First Name"
-                  className="w-full p-2 border rounded"
-                />
-                <ErrorMessage name="firstName" component="div" className="text-red-500" />
-              </div>
+            <Form>
+              <div className="space-y-4 mb-8">
+                <div className="flex flex-col md:flex-row justify-between gap-2">
+                  {/* First Name field */}
+                  <div className="w-full space-y-2">
+                    <Field
+                      name="firstName"
+                      placeholder="First Name"
+                      className="w-full p-4 border rounded-full"
+                    />
+                    <ErrorMessage name="firstName" component="div" className="text-red-500" />
+                  </div>
 
-              {/* Last Name field */}
-              <div className="space-y-2">
-                <Field
-                  name="lastName"
-                  placeholder="Last Name"
-                  className="w-full p-2 border rounded"
-                />
-                <ErrorMessage name="lastName" component="div" className="text-red-500" />
-              </div>
+                  {/* Last Name field */}
+                  <div className="w-full space-y-2">
+                    <Field
+                      name="lastName"
+                      placeholder="Last Name"
+                      className="w-full p-4 border rounded-full"
+                    />
+                    <ErrorMessage name="lastName" component="div" className="text-red-500" />
+                  </div>
+                </div>
 
-              {/* Email field */}
-              <div className="space-y-2">
-                <Field
-                  name="email"
-                  type="email"
-                  placeholder="Email Address"
-                  className="w-full p-2 border rounded"
-                />
-                <ErrorMessage name="email" component="div" className="text-red-500" />
-              </div>
+                {/* Email field */}
+                <div className="space-y-2">
+                  <Field
+                    name="email"
+                    type="email"
+                    placeholder="Email Address"
+                    className="w-full p-4 border rounded-full"
+                  />
+                  <ErrorMessage name="email" component="div" className="text-red-500" />
+                </div>
 
-              {/* Country/Region field */}
-              <div className="space-y-2">
-                <Field
-                  as="select"
-                  name="country"
-                  className="w-full p-2 border rounded"
-                >
-                  <option value="">Select Country/Region</option>
-                  <option value="US">United States</option>
-                  <option value="CA">Canada</option>
-                  <option value="GB">United Kingdom</option>
-                  {/* Add more countries as needed */}
-                </Field>
-                <ErrorMessage name="country" component="div" className="text-red-500" />
+                {/* Country/Region field */}
+                <div className="space-y-2">
+                  <Field
+                    as="select"
+                    name="country"
+                    className="w-full p-4 border rounded-full"
+                    defaultValue="EG"
+                  >
+                    <option value="">Select Country/Region</option>
+                    {countries.map(({ value, label }) => (
+                      <option
+                        key={value}
+                        value={value}
+                        selected={value === "EG"}
+                      >
+                        {label}
+                      </option>
+                    ))}
+                  </Field>
+                  <ErrorMessage
+                    name="country"
+                    component="div"
+                    className="text-red-500"
+                  />
+                </div>
               </div>
 
               {/* Show PayPal buttons only when form is valid and dirty */}
               {isValid && dirty && (
-                <PayPalButtons
-                  style={{ layout: "vertical" }}
-                  createOrder={() => createOrder(values)}
-                  onApprove={onApprove}
-                  onError={onError}
-                  disabled={isPaying}
-                />
+                <>
+                  <hr className="border-gray-200" />
+                  <div className="space-y-12 py-8">
+                    <div className="animate-fade-in-up">
+                      <span className="w-full inline-block py-4 px-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-md font-medium transform hover:scale-105 transition-all duration-300 shadow-lg">
+                        <span className="animate-bounce inline-block mr-2">🚀</span>
+                        You&apos;re one step away from packshipping!
+                        <span className="animate-pulse inline-block ml-2">📦</span>
+                      </span>
+                    </div>
+                    <div className="">
+                      <PayPalButtons
+                        style={{
+                          layout: "vertical",
+                          shape: "pill",
+                          height: 55
+                        }}
+                        createOrder={() => createOrder(values)}
+                        onApprove={onApprove}
+                        onError={onError}
+                        disabled={isPaying}
+                      />
+                    </div>
+                  </div>
+                </>
               )}
             </Form>
           )}
         </Formik>
-        
+
         {/* Status messages */}
-        {message && <div className="mt-4 p-2 bg-green-100 text-green-700 rounded">{message}</div>}
-        {error && <div className="mt-4 p-2 bg-red-100 text-red-700 rounded">{error}</div>}
+        {message && <div className="mt-4 p-2 bg-green-100 text-green-700 rounded-md">{message}</div>}
+        {error && <div className="mt-4 p-2 bg-red-100 text-red-700 rounded-md">{error}</div>}
       </div>
     </PayPalScriptProvider>
   );
