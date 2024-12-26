@@ -107,3 +107,21 @@ export interface PayPalButtonsProps {
   amount: number;
   onSuccess: (orderId: string) => void; 
 }
+
+export interface PayPalOrder {
+  id: string;
+  status: string;
+  plan: PricingPlan;
+  serialCode?: string;
+}
+
+export interface FulfilledOrder {
+  paypalOrderId: string;
+  plan: string;
+  amount: number;
+  customerInfo: CustomerInfo;
+  serialCode: string;
+  hashedSerialCode: string;
+  status: 'completed';
+  completedAt: Date;
+}
