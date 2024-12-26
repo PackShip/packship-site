@@ -3,8 +3,6 @@
 import Navigation from "@/shared/Navigation";
 import { Suspense, useEffect, useState } from "react";
 import Footer from "@/shared/Footer";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import Hero from "./components/Hero";
 import Features from "./components/Features";
 import Instructions from "./components/Instructions";
@@ -36,14 +34,6 @@ function useAnimatedNumber(target: number, duration: number) {
 }
 
 export default function Home() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1200, 
-      offset: 200,
-      easing: 'ease-out',
-    });
-  }, []);
-
   return (
     <Suspense>
       <Navigation />

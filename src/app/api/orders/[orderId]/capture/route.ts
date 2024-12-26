@@ -1,18 +1,34 @@
 import { db } from "@/firebase/firebaseConfig";
-import { addDoc, collection } from "firebase/firestore";
+import { doc, updateDoc } from "firebase/firestore";
 import { NextResponse } from "next/server";
+
+async function generateAccessToken() {
+  const auth = Buffer.from(`${process.env.PAYPAL_CLIENT_ID}:${process.env.PAYPAL_CLIENT_SECRET}`).toString('base64');
+  const response = await fetch(`${process.env.PAYPAL_API_URL}/v1/oauth2/token`, {
+    method: 'POST',
+    body: 'grant_type=client_credentials',
+    headers: {
+      Authorization: `Basic ${auth}`,
+    },
+  });
+  const data = await response.json();
+  return data.access_token;
+}
 
 export async function POST(
   request: Request,
   { params }: { params: { orderId: string } }
 ) {
   try {
+    const { firebaseOrderId } = await request.json();
+    const accessToken = await generateAccessToken();
+    
     const response = await fetch(
       `${process.env.PAYPAL_API_URL}/v2/checkout/orders/${params.orderId}/capture`,
       {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${process.env.PAYPAL_ACCESS_TOKEN}`,
+          Authorization: `Bearer ${accessToken}`,
           "Content-Type": "application/json",
         },
       }
@@ -20,10 +36,13 @@ export async function POST(
 
     const data = await response.json();
     
-    // Update order status in Firebase
-    const ordersRef = collection(db, "orders");
-    await addDoc(ordersRef, {
-      orderId: params.orderId,
+    if (data.error) {
+      throw new Error(data.error_description || 'Payment capture failed');
+    }
+
+    // Update the Firebase order
+    const orderRef = doc(db, "pendingOrders", firebaseOrderId);
+    await updateDoc(orderRef, {
       status: "completed",
       paypalResponse: data,
       completedAt: new Date(),

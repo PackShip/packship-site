@@ -1,6 +1,4 @@
 import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import SectionHeader from "@/shared/SectionHeader";
 import Link from "next/link";
 import PurchaseForm from "@/shared/PurchaseForm";
@@ -8,16 +6,8 @@ import Image from "next/image";
 import ReceivingPackshipGift from "../../../public/assets/undraw_send_gift_re_t5ni.svg";
 
 export default function Pricing() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1200,
-      offset: 200,
-      easing: "ease-out",
-    });
-  }, []);
-
   return (
-    <section id="start-packshipping" data-aos="fade-up" className="mt-24">
+    <section id="start-packshipping" className="mt-24">
       <div className="kontainer">
         <div className="row">
           <div className="w-full bg-white text-center flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch rounded-xl lg:rounded-l-xl shadow-2xl hover:shadow-3xl transition-shadow duration-300">
