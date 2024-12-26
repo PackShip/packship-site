@@ -3,8 +3,8 @@ import { doc, updateDoc } from "firebase/firestore";
 import { NextResponse } from "next/server";
 
 async function generateAccessToken() {
-  const auth = Buffer.from(`${process.env.PAYPAL_CLIENT_ID}:${process.env.PAYPAL_CLIENT_SECRET}`).toString('base64');
-  const response = await fetch(`${process.env.PAYPAL_API_URL}/v1/oauth2/token`, {
+  const auth = Buffer.from(`${process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID}:${process.env.NEXT_PUBLIC_PAYPAL_CLIENT_SECRET}`).toString('base64');
+  const response = await fetch(`${process.env.NEXT_PUBLIC_PAYPAL_API_URL}/v1/oauth2/token`, {
     method: 'POST',
     body: 'grant_type=client_credentials',
     headers: {
@@ -24,7 +24,7 @@ export async function POST(
     const accessToken = await generateAccessToken();
     
     const response = await fetch(
-      `${process.env.PAYPAL_API_URL}/v2/checkout/orders/${params.orderId}/capture`,
+      `${process.env.NEXT_PUBLIC_PAYPAL_API_URL}/v2/checkout/orders/${params.orderId}/capture`,
       {
         method: "POST",
         headers: {

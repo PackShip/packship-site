@@ -4,8 +4,8 @@ import { db } from '@/firebase/firebaseConfig';
 
 // Add this function to generate access token
 async function generateAccessToken() {
-  const auth = Buffer.from(`${process.env.PAYPAL_CLIENT_ID}:${process.env.PAYPAL_CLIENT_SECRET}`).toString('base64');
-  const response = await fetch(`${process.env.PAYPAL_API_URL}/v1/oauth2/token`, {
+  const auth = Buffer.from(`${process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID}:${process.env.NEXT_PUBLIC_PAYPAL_CLIENT_SECRET}`).toString('base64');
+  const response = await fetch(`${process.env.NEXT_PUBLIC_PAYPAL_API_URL}/v1/oauth2/token`, {
     method: 'POST',
     body: 'grant_type=client_credentials',
     headers: {
@@ -24,7 +24,7 @@ export async function POST(request: Request) {
     const accessToken = await generateAccessToken();
     
     // Create PayPal order first
-    const response = await fetch(`${process.env.PAYPAL_API_URL}/v2/checkout/orders`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_PAYPAL_API_URL}/v2/checkout/orders`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

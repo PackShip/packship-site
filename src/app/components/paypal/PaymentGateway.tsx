@@ -140,7 +140,7 @@ export default function PaymentGateway({ plan, onSuccess }: PaymentProviderProps
                     <Field
                       name="firstName"
                       placeholder="First Name"
-                      className="w-full p-4 border rounded-full"
+                      className="w-full p-4 border-2 border-gray-200 rounded-full"
                     />
                     <ErrorMessage name="firstName" component="div" className="text-red-500" />
                   </div>
@@ -150,7 +150,7 @@ export default function PaymentGateway({ plan, onSuccess }: PaymentProviderProps
                     <Field
                       name="lastName"
                       placeholder="Last Name"
-                      className="w-full p-4 border rounded-full"
+                      className="w-full p-4 border-2 border-gray-200 rounded-full"
                     />
                     <ErrorMessage name="lastName" component="div" className="text-red-500" />
                   </div>
@@ -162,7 +162,7 @@ export default function PaymentGateway({ plan, onSuccess }: PaymentProviderProps
                     name="email"
                     type="email"
                     placeholder="Email Address"
-                    className="w-full p-4 border rounded-full"
+                    className="w-full p-4 border-2 border-gray-200 rounded-full"
                   />
                   <ErrorMessage name="email" component="div" className="text-red-500" />
                 </div>
@@ -172,7 +172,7 @@ export default function PaymentGateway({ plan, onSuccess }: PaymentProviderProps
                   <Field
                     as="select"
                     name="country"
-                    className="w-full p-4 border rounded-full"
+                    className="w-full p-4 border-2 border-gray-200 rounded-full"
                     defaultValue="EG"
                   >
                     <option value="">Select Country/Region</option>
