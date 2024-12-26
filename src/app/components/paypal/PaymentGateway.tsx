@@ -200,9 +200,9 @@ export default function PaymentGateway({ plan, onSuccess }: PaymentProviderProps
                   <hr className="border-gray-200" />
                   <div className="space-y-12 py-8">
                     <div className="animate-fade-in-up">
-                      <span className="w-full inline-block py-4 px-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-md font-medium transform hover:scale-105 transition-all duration-300 shadow-lg">
+                      <span className="w-full inline-block py-4 px-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-md transform hover:scale-105 transition-all duration-300 shadow-lg">
                         <span className="animate-bounce inline-block mr-2">🚀</span>
-                        You&apos;re one step away from packshipping!
+                        You&apos;re one <span className="font-bold">click</span> away from <span className="italic">packshipping!</span>
                         <span className="animate-pulse inline-block ml-2">📦</span>
                       </span>
                     </div>

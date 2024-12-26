@@ -3,16 +3,27 @@ import { doc, updateDoc } from "firebase/firestore";
 import { NextResponse } from "next/server";
 
 async function generateAccessToken() {
-  const auth = Buffer.from(`${process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID}:${process.env.NEXT_PUBLIC_PAYPAL_CLIENT_SECRET}`).toString('base64');
-  const response = await fetch(`${process.env.NEXT_PUBLIC_PAYPAL_API_URL}/v1/oauth2/token`, {
-    method: 'POST',
-    body: 'grant_type=client_credentials',
-    headers: {
-      Authorization: `Basic ${auth}`,
-    },
-  });
-  const data = await response.json();
-  return data.access_token;
+  try {
+    const auth = Buffer.from(
+      `${process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID}:${process.env.NEXT_PUBLIC_PAYPAL_CLIENT_SECRET}`
+    ).toString('base64');
+    
+    const response = await fetch(`${process.env.NEXT_PUBLIC_PAYPAL_API_URL}/v1/oauth2/token`, {
+      method: 'POST',
+      body: 'grant_type=client_credentials',
+      headers: {
+        'Authorization': `Basic ${auth}`,
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+    });
+    
+    const data = await response.json();
+    console.log('Auth Response:', data);
+    return data.access_token;
+  } catch (error) {
+    console.error('Auth Error:', error);
+    throw error;
+  }
 }
 
 export async function POST(
@@ -21,28 +32,32 @@ export async function POST(
 ) {
   try {
     const { firebaseOrderId } = await request.json();
+    console.log('OrderId:', params.orderId, 'FirebaseId:', firebaseOrderId);
+    
     const accessToken = await generateAccessToken();
+    console.log('Access Token:', accessToken);
 
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_PAYPAL_API_URL}/v2/checkout/orders/${params.orderId}/capture`,
       {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${accessToken}`,
-          "Content-Type": "application/json",
+          'Authorization': `Bearer ${accessToken}`,
+          'Content-Type': 'application/json',
+          'Prefer': 'return=representation'
         },
       }
     );
 
-    const data = await response.json();
-    console.log("PayPal capture response:", data); // <-- Debug log
-
-    if (data.error) {
-      // Include entire data in the error message for debugging
-      throw new Error(`Error: ${data.error}\n${data.error_description || 'Payment capture failed'}`);
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error('PayPal Error:', errorData);
+      throw new Error(JSON.stringify(errorData));
     }
 
-    // Update the Firebase order
+    const data = await response.json();
+    console.log('PayPal Success:', data);
+
     const orderRef = doc(db, "pendingOrders", firebaseOrderId);
     await updateDoc(orderRef, {
       status: "completed",
@@ -53,11 +68,11 @@ export async function POST(
     return NextResponse.json(data);
 
   } catch (error) {
-    console.error("Payment capture failed:", error); // Log entire error
+    console.error('Capture Error:', error);
     return NextResponse.json(
-      {
+      { 
         error: "Failed to capture payment",
-        details: String(error), // Return full error details
+        details: error instanceof Error ? error.message : String(error)
       },
       { status: 500 }
     );
