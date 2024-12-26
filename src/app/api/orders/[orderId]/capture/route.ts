@@ -22,7 +22,7 @@ export async function POST(
   try {
     const { firebaseOrderId } = await request.json();
     const accessToken = await generateAccessToken();
-    
+
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_PAYPAL_API_URL}/v2/checkout/orders/${params.orderId}/capture`,
       {
@@ -35,9 +35,11 @@ export async function POST(
     );
 
     const data = await response.json();
-    
+    console.log("PayPal capture response:", data); // <-- Debug log
+
     if (data.error) {
-      throw new Error(data.error_description || 'Payment capture failed');
+      // Include entire data in the error message for debugging
+      throw new Error(`Error: ${data.error}\n${data.error_description || 'Payment capture failed'}`);
     }
 
     // Update the Firebase order
@@ -49,10 +51,14 @@ export async function POST(
     });
 
     return NextResponse.json(data);
+
   } catch (error) {
-    console.error('Payment capture failed:', error);
+    console.error("Payment capture failed:", error); // Log entire error
     return NextResponse.json(
-      { error: 'Failed to capture payment' }, 
+      {
+        error: "Failed to capture payment",
+        details: String(error), // Return full error details
+      },
       { status: 500 }
     );
   }
