@@ -2,6 +2,7 @@
 
 import Footer from "@/shared/Footer";
 import Navigation from "@/shared/Navigation";
+import Link from "next/link";
 
 export default function Refund() {
   return (
@@ -27,7 +28,7 @@ export default function Refund() {
               <h2 className="text-xl font-semibold mb-3">2. Refund Process</h2>
               <p className="mb-4">To request a refund:</p>
               <ol className="list-decimal ml-6 mb-4">
-                <li>Email us at packshipcli@gmail.com</li>
+                <li>Email us at <Link className="underline font-bold italic" href="mailto:packshipcli@gmail.com">packshipcli@gmail.com</Link></li>
                 <li>Include your purchase details and reason for refund</li>
                 <li>We will process your request within 5 business days</li>
               </ol>
@@ -50,8 +51,7 @@ export default function Refund() {
             <div className="w-full text-sm mb-6">
               <h2 className="text-xl font-semibold mb-3">4. Contact</h2>
               <p className="mb-4">
-                For any questions about our refund policy, please contact us at
-                packshipcli@gmail.com
+                For any questions about our refund policy, please contact us at <Link className="underline font-bold italic" href="mailto:packshipcli@gmail.com">packshipcli@gmail.com</Link>
               </p>
             </div>
           </div>
