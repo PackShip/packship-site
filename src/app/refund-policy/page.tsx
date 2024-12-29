@@ -47,7 +47,7 @@ export default function Refund() {
                 <li>All refund requests are thoroughly reviewed and not guaranteed</li>
                 <li>License keys must be surrendered if a refund is granted</li>
                 <li>Processing time may vary depending on the circumstances</li>
-                <li>We reserve the right to deny any refund request that doesn't meet our criteria</li>
+                <li>We reserve the right to deny any refund request that doesn&apos;t meet our criteria</li>
               </ul>
             </div>
 

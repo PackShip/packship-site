@@ -2,6 +2,7 @@
 
 import Footer from "@/shared/Footer";
 import Navigation from "@/shared/Navigation";
+import Link from "next/link";
 
 export default function Privacy() {
   return (
@@ -49,8 +50,7 @@ export default function Privacy() {
             <div className="w-full text-sm mb-6">
               <h2 className="text-xl font-semibold mb-3">4. Contact Us</h2>
               <p className="mb-4">
-                For privacy-related inquiries, please contact us at
-                packshipcli@gmail.com
+                For privacy-related inquiries, please contact us at <Link className="underline font-bold italic" href="mailto:packshipcli@gmail.com">packshipcli@gmail.com</Link>
               </p>
             </div>
           </div>

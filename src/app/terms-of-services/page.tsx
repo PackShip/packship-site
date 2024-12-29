@@ -2,6 +2,7 @@
 
 import Footer from "@/shared/Footer";
 import Navigation from "@/shared/Navigation";
+import Link from "next/link";
 
 export default function Terms() {
   return (
@@ -49,7 +50,7 @@ export default function Terms() {
                 4. Support and Updates
               </h2>
               <p className="mb-4">
-                Support is provided via email at packshipcli@gmail.com. While we
+                Support is provided via email at <Link className="underline font-bold italic" href="mailto:packshipcli@gmail.com">packshipcli@gmail.com</Link>. While we
                 strive to respond promptly, response times may vary.
               </p>
             </div>
