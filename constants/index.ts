@@ -34,20 +34,15 @@ export const brands = [
 
 export const footerLinks = [
   {
-    title: "Docs",
-    links: [
-      { 
-        name: "Develop", 
-        href: "/docs", 
-      },
-    ],
-  },
-  {
-    title: "More",
+    title: "Links",
     links: [
       { 
         name: "Purchase", 
         href: "#start-packshipping",
+      },
+      { 
+        name: "Develop", 
+        href: "/docs", 
       },
       { 
         name: "Contact", 
@@ -56,6 +51,23 @@ export const footerLinks = [
       { 
         name: "Fund Me", 
         href: "https://paypal.me/h4temsoliman?country.x=EG&locale.x=en_US",
+      },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { 
+        name: "Terms of Services", 
+        href: "/terms-of-services", 
+      },
+      { 
+        name: "Privacy Notice", 
+        href: "/privacy-notice", 
+      },
+      { 
+        name: "Refund Policy", 
+        href: "/refund-policy", 
       },
     ],
   },
