@@ -14,7 +14,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="pt-32 pb-16 relative">
+    <section className="pb-16 relative">
       <div className="kontainer">
         <div className="row flex flex-col items-center gap-8 text-center">
           <div className="max-w-3xl mx-auto">
