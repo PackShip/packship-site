@@ -79,7 +79,7 @@ export default function Navigation() {
             <span className="dark:text-white/80 light:text-gray-700"> | </span>
             <li>
               <a
-                href="https://github.com/packship/packship"
+                href="https://github.com/CodeNKoffee/packship"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="dark:text-white/80 light:text-gray-700 hover:text-packship-purple-lite transition-all"
@@ -141,7 +141,7 @@ export default function Navigation() {
                     </Link>
                   ))}
                   <a
-                    href="https://github.com/packship/packship"
+                    href="https://github.com/CodeNKoffee/packship"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="dark:text-white light:text-gray-900 mt-4"

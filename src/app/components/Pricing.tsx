@@ -54,7 +54,7 @@ export default function Pricing() {
               </p>
               <div className="mt-auto flex gap-4">
                 <Link
-                  href="https://github.com/packship/packship"
+                  href="https://github.com/CodeNKoffee/packship"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-transparent hover:bg-white/10 dark:text-white light:text-gray-800 dark:border-white/20 light:border-gray-300 border rounded-md px-4 py-2 font-medium transition-all flex items-center gap-2"
@@ -63,7 +63,7 @@ export default function Pricing() {
                   Star on GitHub
                 </Link>
                 <Link
-                  href="https://github.com/packship/packship/fork"
+                  href="https://github.com/CodeNKoffee/packship/fork"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-transparent hover:bg-white/10 dark:text-white light:text-gray-800 dark:border-white/20 light:border-gray-300 border rounded-md px-4 py-2 font-medium transition-all flex items-center gap-2"

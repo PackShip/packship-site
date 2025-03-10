@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaChevronDown, FaChevronRight, FaBars, FaTimes } from "react-icons/fa";
+import "@/styles/scrollbar.css";
 
 // Define the sidebar structure - same as DocsSidebar
 const sidebarItems = [
@@ -101,7 +102,7 @@ export default function MobileDocsSidebar() {
 
       {isOpen && (
         <div className="fixed inset-0 bg-black/80 z-20">
-          <div className="relative w-full max-w-[300px] bg-black/30 dark:bg-black/30 light:bg-gray-100 h-full p-4 overflow-y-auto bg-opacity-90 backdrop-blur-sm bg-gradient-to-b from-black/35 to-black/25">
+          <div className="relative w-full max-w-[300px] bg-black/30 dark:bg-black/30 light:bg-gray-100 h-full p-4 custom-scrollbar bg-opacity-90 backdrop-blur-sm bg-gradient-to-b from-black/35 to-black/25">
             <button
               onClick={closeSidebar}
               className="absolute top-4 right-4 text-packship-purple-lite"

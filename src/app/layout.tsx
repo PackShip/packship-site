@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "@/styles/scrollbar.css";
 import Script from "next/script";
 import { Metadata } from "next";
 import ClientProviders from "@/shared/ClientProviders";

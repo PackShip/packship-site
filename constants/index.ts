@@ -46,11 +46,11 @@ export const footerLinks = [
       },
       {
         name: "GitHub",
-        href: "https://github.com/packship/packship",
+        href: "https://github.com/CodeNKoffee/packship",
       },
       {
         name: "Report an Issue",
-        href: "https://github.com/packship/packship/issues/new",
+        href: "https://github.com/CodeNKoffee/packship/issues/new",
       },
     ],
   },
@@ -67,7 +67,7 @@ export const footerLinks = [
       },
       {
         name: "Contribute",
-        href: "https://github.com/packship/packship/blob/main/CONTRIBUTING.md",
+        href: "https://github.com/CodeNKoffee/packship/blob/main/CONTRIBUTING.md",
       },
       {
         name: "Sponsor",
@@ -88,7 +88,7 @@ export const footerLinks = [
       },
       {
         name: "License",
-        href: "https://github.com/packship/packship/blob/main/LICENSE",
+        href: "https://github.com/CodeNKoffee/packship/blob/main/LICENSE",
       },
     ],
   },
