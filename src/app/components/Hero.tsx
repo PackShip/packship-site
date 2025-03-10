@@ -77,7 +77,7 @@ export default function Hero() {
       </div>
 
       <div
-        className="mt-16 max-w-4xl mx-auto"
+        className="mt-16 max-w-4xl mx-auto w-10/12 md:w-full"
         data-aos="fade-up"
         data-aos-duration="900"
       >

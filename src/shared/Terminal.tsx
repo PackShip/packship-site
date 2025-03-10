@@ -4,9 +4,9 @@ export default function Terminal({ commands }: TerminalProps) {
   return (
     <div className="w-full max-w-screen-sm">
       <div className="w-full h-4 bg-gray-400 rounded-t-lg"></div>
-      <div className="w-full bg-gray-800 rounded-b-lg p-4 text-white text-lg">
+      <div className="w-full bg-gray-800 rounded-b-lg p-8 text-white text-lg">
         {commands.map((command, index) => (
-          <div key={index} className="flex gap-2">
+          <div key={index} className="flex gap-2 mb-2">
             <span className="text-packship-purple-lite font-bold">$</span>
             {command.type === "comment" ? (
               <span className="text-gray-500">{command.text}</span>
