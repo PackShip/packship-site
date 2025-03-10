@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaChevronDown, FaChevronRight } from "react-icons/fa";
@@ -74,6 +74,14 @@ export default function DocsSidebar() {
     }, {} as Record<string, boolean>)
   );
 
+  // Scroll to active link when component mounts or pathname changes
+  useEffect(() => {
+    const activeLink = document.querySelector(".bg-packship-purple-lite\\/30");
+    if (activeLink) {
+      activeLink.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }, [pathname]);
+
   const toggleSection = (title: string) => {
     setExpandedSections((prev) => ({
       ...prev,
@@ -83,8 +91,11 @@ export default function DocsSidebar() {
 
   return (
     <div className="hidden md:block w-[250px] h-full fixed left-0 top-[72px] bottom-0 border-r-2 border-white/15 dark:border-white/15 light:border-gray-300 bg-black/20 dark:bg-black/20 light:bg-gray-100 bg-opacity-90 backdrop-blur-sm bg-gradient-to-b from-black/25 to-black/15 shadow-lg shadow-black/10">
-      <div className="h-full custom-scrollbar py-6 px-4">
-        <ul className="space-y-4">
+      <div
+        className="h-full custom-scrollbar py-6 px-4"
+        style={{ height: "calc(100vh - 72px)" }}
+      >
+        <ul className="space-y-4 pb-20">
           {sidebarItems.map((section) => (
             <li key={section.title} className="mb-4">
               <div

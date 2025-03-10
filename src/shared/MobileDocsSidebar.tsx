@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaChevronDown, FaChevronRight, FaBars, FaTimes } from "react-icons/fa";
@@ -75,6 +75,20 @@ export default function MobileDocsSidebar() {
     }, {} as Record<string, boolean>)
   );
 
+  // Scroll to active link when sidebar opens or pathname changes
+  useEffect(() => {
+    if (isOpen) {
+      setTimeout(() => {
+        const activeLink = document.querySelector(
+          ".bg-packship-purple-lite\\/30"
+        );
+        if (activeLink) {
+          activeLink.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }, 100);
+    }
+  }, [isOpen, pathname]);
+
   const toggleSection = (title: string) => {
     setExpandedSections((prev) => ({
       ...prev,
@@ -102,7 +116,10 @@ export default function MobileDocsSidebar() {
 
       {isOpen && (
         <div className="fixed inset-0 bg-black/80 z-20">
-          <div className="relative w-full max-w-[300px] bg-black/30 dark:bg-black/30 light:bg-gray-100 h-full p-4 custom-scrollbar bg-opacity-90 backdrop-blur-sm bg-gradient-to-b from-black/35 to-black/25">
+          <div
+            className="relative w-full max-w-[300px] bg-black/30 dark:bg-black/30 light:bg-gray-100 h-full p-4 custom-scrollbar bg-opacity-90 backdrop-blur-sm bg-gradient-to-b from-black/35 to-black/25"
+            style={{ height: "100vh" }}
+          >
             <button
               onClick={closeSidebar}
               className="absolute top-4 right-4 text-packship-purple-lite"
@@ -113,7 +130,7 @@ export default function MobileDocsSidebar() {
 
             <div className="mt-12">
               <nav>
-                <ul className="space-y-2">
+                <ul className="space-y-2 pb-20">
                   {sidebarItems.map((section) => (
                     <li key={section.title} className="mb-4">
                       <div
