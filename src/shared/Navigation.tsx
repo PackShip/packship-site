@@ -41,7 +41,7 @@ export default function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "py-1 bg-black/60 backdrop-blur-sm dark:bg-black/60 light:bg-white/60"
+          ? "py-1 dark:bg-black/60 light:bg-white/60 backdrop-blur-sm"
           : "py-2 bg-transparent"
       }`}
     >
@@ -65,7 +65,7 @@ export default function Navigation() {
                   className={`${
                     link.name === "Get Started"
                       ? "bg-packship-purple-lite text-black hover:bg-packship-purple-lite/90 dark:text-black light:text-black"
-                      : "text-white/80 hover:text-packship-purple-lite dark:text-white/80 light:text-gray-700"
+                      : "dark:text-white/80 light:text-gray-700 hover:text-packship-purple-lite"
                   } font-medium px-4 py-2 rounded-md transition-all`}
                   target={isExternal(link.href) ? "_blank" : "_self"}
                   rel={
@@ -76,13 +76,13 @@ export default function Navigation() {
                 </Link>
               </li>
             ))}
-            <span> | </span>
+            <span className="dark:text-white/80 light:text-gray-700"> | </span>
             <li>
               <a
                 href="https://github.com/packship/packship"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/80 hover:text-packship-purple-lite transition-all dark:text-white/80 light:text-gray-700"
+                className="dark:text-white/80 light:text-gray-700 hover:text-packship-purple-lite transition-all"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -127,7 +127,7 @@ export default function Navigation() {
                       className={`${
                         link.name === "Get Started"
                           ? "bg-packship-purple-lite text-black"
-                          : "text-white dark:text-white light:text-gray-900"
+                          : "dark:text-white light:text-gray-900"
                       } font-medium px-6 py-3 rounded-md`}
                       target={isExternal(link.href) ? "_blank" : "_self"}
                       rel={
@@ -144,7 +144,7 @@ export default function Navigation() {
                     href="https://github.com/packship/packship"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white mt-4 dark:text-white light:text-gray-900"
+                    className="dark:text-white light:text-gray-900 mt-4"
                     onClick={closeMenu}
                   >
                     <svg
