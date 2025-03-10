@@ -38,4 +38,5 @@ export interface CopyCodeSnippetProps {
   code: string;
   language: string;
   buttonText?: string;
+  inline?: boolean;
 }
