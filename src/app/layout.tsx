@@ -41,7 +41,10 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} relative`}>
+        {/* Grid background overlay - spans the entire page including behind nav */}
+        <div className="fixed inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:44px_44px]"></div>
+
         <ClientProviders>{children}</ClientProviders>
         <Script
           id="shapo-embed-js"

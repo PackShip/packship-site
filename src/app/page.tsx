@@ -16,9 +16,11 @@ import Testimonials from "./components/Testimonials";
 export default function Home() {
   useEffect(() => {
     AOS.init({
-      duration: 1200,
-      offset: 200,
+      duration: 800,
+      offset: 100,
       easing: "ease-out",
+      once: false,
+      mirror: true,
     });
   }, []);
 

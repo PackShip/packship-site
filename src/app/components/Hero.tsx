@@ -8,31 +8,34 @@ import Image from "next/image";
 export default function Hero() {
   useEffect(() => {
     AOS.init({
-      duration: 1200,
-      offset: 200,
+      duration: 800,
+      offset: 100,
       easing: "ease-out",
     });
   }, []);
 
   return (
     <section className="pb-24 relative">
-      <div className="kontainer">
+      <div className="kontainer pt-32">
         <div className="row flex flex-col md:flex-row items-center gap-12 text-center md:text-left">
           <div className="max-w-2xl mx-auto md:mx-0">
             <h1
               data-aos="fade-up"
+              data-aos-duration="600"
               className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
             >
               Packship
             </h1>
             <h2
               data-aos="fade-up"
+              data-aos-duration="700"
               className="text-xl md:text-2xl text-packship-purple-lite font-medium mb-6"
             >
               Create, manage, and publish NPM packages with ease
             </h2>
             <p
               data-aos="fade-up"
+              data-aos-duration="800"
               className="text-lg text-white/80 max-w-2xl mx-auto md:mx-0 mb-8"
             >
               A powerful CLI tool that automates the entire NPM package
@@ -44,6 +47,7 @@ export default function Hero() {
             <div
               className="flex flex-col sm:flex-row gap-4 mt-4 justify-center md:justify-start"
               data-aos="fade-up"
+              data-aos-duration="900"
             >
               <Link
                 href="#start-packshipping"
@@ -64,6 +68,7 @@ export default function Hero() {
           <div
             className="w-full md:w-1/2 flex justify-center items-center"
             data-aos="fade-left"
+            data-aos-duration="700"
           >
             <div className="relative w-64 h-64">
               <div className="package-box">
@@ -126,7 +131,11 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="mt-16 max-w-4xl mx-auto" data-aos="fade-up">
+      <div
+        className="mt-16 max-w-4xl mx-auto"
+        data-aos="fade-up"
+        data-aos-duration="900"
+      >
         <div className="bg-black/30 rounded-lg border border-gray-800 overflow-hidden">
           <div className="p-6">
             <CommandPrompt
@@ -146,9 +155,6 @@ export default function Hero() {
       {/* Decorative elements */}
       <div className="absolute top-1/4 left-10 w-32 h-32 bg-packship-purple-lite/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-1/4 right-10 w-40 h-40 bg-packship-purple-lite/10 rounded-full blur-3xl"></div>
-
-      {/* Grid background overlay - similar to Tauri */}
-      <div className="absolute inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:44px_44px]"></div>
 
       {/* Add floating animation styles */}
       <style jsx>{`

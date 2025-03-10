@@ -38,8 +38,8 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`transition-all duration-300 ${
-        scrolled ? "py-2 bg-black/80" : "py-4 bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? "py-1 bg-black/60 backdrop-blur-sm" : "py-2 bg-transparent"
       }`}
     >
       <div className="kontainer">
@@ -60,7 +60,7 @@ export default function Navigation() {
                 <Link
                   href={isAnchorLink(link.href) ? `/${link.href}` : link.href}
                   className={`${
-                    link.name === "Try It!"
+                    link.name === "Get Started"
                       ? "bg-packship-purple-lite text-black hover:bg-packship-purple-lite/90"
                       : "text-white/80 hover:text-packship-purple-lite"
                   } font-medium px-4 py-2 rounded-md transition-all`}
@@ -117,7 +117,7 @@ export default function Navigation() {
                       key={index}
                       href={link.href}
                       className={`${
-                        link.name === "Try It!"
+                        link.name === "Get Started"
                           ? "bg-packship-purple-lite text-black"
                           : "text-white"
                       } font-medium px-6 py-3 rounded-md`}
