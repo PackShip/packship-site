@@ -22,27 +22,33 @@ export default function Pricing() {
           <div className="text-center max-w-2xl mx-auto">
             <h2
               data-aos="fade-up"
-              className="text-3xl md:text-4xl font-bold text-white mb-4"
+              className="text-3xl md:text-4xl font-bold dark:text-white light:text-gray-800 mb-4"
             >
               Get Started with Packship
             </h2>
-            <p data-aos="fade-up" className="text-white/70 text-lg">
+            <p
+              data-aos="fade-up"
+              className="dark:text-white/70 light:text-gray-600 text-lg"
+            >
               Packship is open source and free to use. Join our community and
               start shipping your packages faster.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
-            <div data-aos="fade-up" className="feature-card flex flex-col">
+            <div
+              data-aos="fade-up"
+              className="feature-card flex flex-col dark:bg-black/20 light:bg-white/90 p-6 rounded-lg border dark:border-gray-800 light:border-gray-200"
+            >
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-md bg-packship-purple-lite/20 flex items-center justify-center">
                   <FaGithub className="text-packship-purple-lite" size={20} />
                 </div>
-                <h3 className="text-xl font-semibold text-white">
+                <h3 className="text-xl font-semibold dark:text-white light:text-gray-800">
                   Open Source
                 </h3>
               </div>
-              <p className="text-white/70 mb-6">
+              <p className="dark:text-white/70 light:text-gray-600 mb-6">
                 Packship is completely open source under the MIT license. You
                 can use it, modify it, and contribute to it freely.
               </p>
@@ -51,7 +57,7 @@ export default function Pricing() {
                   href="https://github.com/packship/packship"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-transparent hover:bg-white/10 text-white border border-white/20 rounded-md px-4 py-2 font-medium transition-all flex items-center gap-2"
+                  className="bg-transparent hover:bg-white/10 dark:text-white light:text-gray-800 dark:border-white/20 light:border-gray-300 border rounded-md px-4 py-2 font-medium transition-all flex items-center gap-2"
                 >
                   <FaStar className="text-yellow-400" />
                   Star on GitHub
@@ -60,7 +66,7 @@ export default function Pricing() {
                   href="https://github.com/packship/packship/fork"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-transparent hover:bg-white/10 text-white border border-white/20 rounded-md px-4 py-2 font-medium transition-all flex items-center gap-2"
+                  className="bg-transparent hover:bg-white/10 dark:text-white light:text-gray-800 dark:border-white/20 light:border-gray-300 border rounded-md px-4 py-2 font-medium transition-all flex items-center gap-2"
                 >
                   <FaCodeBranch className="text-packship-purple-lite" />
                   Fork
@@ -71,17 +77,17 @@ export default function Pricing() {
             <div
               data-aos="fade-up"
               data-aos-delay="100"
-              className="feature-card flex flex-col"
+              className="feature-card flex flex-col dark:bg-black/20 light:bg-white/90 p-6 rounded-lg border dark:border-gray-800 light:border-gray-200"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-md bg-packship-purple-lite/20 flex items-center justify-center">
                   <FaRocket className="text-packship-purple-lite" size={20} />
                 </div>
-                <h3 className="text-xl font-semibold text-white">
+                <h3 className="text-xl font-semibold dark:text-white light:text-gray-800">
                   Quick Installation
                 </h3>
               </div>
-              <p className="text-white/70 mb-6">
+              <p className="dark:text-white/70 light:text-gray-600 mb-6">
                 Get started in seconds with a simple installation command.
                 Available through npm, yarn, pnpm, or direct installation
                 scripts.
@@ -103,14 +109,14 @@ export default function Pricing() {
           </div>
 
           <div
-            className="w-full max-w-2xl bg-black/30 rounded-lg border border-gray-800 p-6 mt-8"
+            className="w-full max-w-2xl dark:bg-black/30 light:bg-white/90 rounded-lg dark:border-gray-800 light:border-gray-200 border p-6 mt-8"
             data-aos="fade-up"
           >
             <div className="text-center mb-6">
-              <h3 className="text-xl font-semibold text-white mb-2">
+              <h3 className="text-xl font-semibold dark:text-white light:text-gray-800 mb-2">
                 Stay Updated
               </h3>
-              <p className="text-white/70">
+              <p className="dark:text-white/70 light:text-gray-600">
                 Subscribe to our newsletter for updates on new features,
                 releases, and community events.
               </p>
