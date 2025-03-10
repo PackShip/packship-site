@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import SectionHeader from "@/shared/SectionHeader";
+import DocsSectionHeader from "@/shared/DocsSectionHeader";
 import CopyCodeSnippet from "@/shared/CopyCodeSnippet";
 
 export default function CliInit() {
@@ -31,7 +31,7 @@ export default function CliInit() {
           </p>
         </div>
 
-        <SectionHeader
+        <DocsSectionHeader
           color="text-packship-purple-semilite"
           className="text-xl sm:text-2xl"
           header="Command Options"
@@ -106,7 +106,7 @@ export default function CliInit() {
           </table>
         </div>
 
-        <SectionHeader
+        <DocsSectionHeader
           color="text-packship-purple-semilite"
           className="text-xl sm:text-2xl"
           header="Examples"

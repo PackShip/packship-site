@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import SectionHeader from "@/shared/SectionHeader";
+import DocsSectionHeader from "@/shared/DocsSectionHeader";
 import CopyCodeSnippet from "@/shared/CopyCodeSnippet";
 import Image from "next/image";
 import DependacyResIssuePreview from "../../../public/assets/dep-res-issue.png";
@@ -26,7 +26,7 @@ export default function Docs() {
           </h2>
           <p>Start by installing the Packship global command:</p>
 
-          <SectionHeader
+          <DocsSectionHeader
             color="text-packship-purple-semilite"
             className="text-xl sm:text-2xl"
             header="Packship Global Installation"
@@ -47,7 +47,7 @@ export default function Docs() {
             <CopyCodeSnippet code="npm i -g packship@latest" language="bash" />
           </div>
 
-          <SectionHeader
+          <DocsSectionHeader
             color="text-packship-purple-semilite"
             className="text-xl sm:text-2xl"
             header="Setting Up Your Package with Packship"
@@ -68,7 +68,7 @@ export default function Docs() {
           </h2>
 
           {/* Initialize Node Modules and Package-Lock */}
-          <SectionHeader
+          <DocsSectionHeader
             color="text-packship-purple-semilite"
             className="text-xl sm:text-2xl"
             header="Initialize `node modules` and `package-lock.json`"
@@ -118,7 +118,7 @@ export default function Docs() {
           </p>
 
           {/* Main Dependencies */}
-          <SectionHeader
+          <DocsSectionHeader
             color="text-packship-purple-semilite"
             className="text-xl sm:text-2xl"
             header="Main Dependencies"
@@ -149,7 +149,7 @@ export default function Docs() {
           </p>
 
           {/* Babel for React & TypeScript */}
-          <SectionHeader
+          <DocsSectionHeader
             color="text-packship-purple-semilite"
             className="text-xl sm:text-2xl"
             header="Babel for React & TypeScript"
@@ -177,7 +177,7 @@ export default function Docs() {
           </div>
 
           {/* Babel & Webpack Loaders */}
-          <SectionHeader
+          <DocsSectionHeader
             color="text-packship-purple-semilite"
             className="text-xl sm:text-2xl"
             header="Babel & Webpack Loaders"

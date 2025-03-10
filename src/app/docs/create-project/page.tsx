@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import SectionHeader from "@/shared/SectionHeader";
+import DocsSectionHeader from "@/shared/DocsSectionHeader";
 import CopyCodeSnippet from "@/shared/CopyCodeSnippet";
 
 export default function CreateProject() {
@@ -29,7 +29,7 @@ export default function CreateProject() {
           <CopyCodeSnippet code="packship init" language="bash" />
         </div>
 
-        <SectionHeader
+        <DocsSectionHeader
           color="text-packship-purple-semilite"
           className="text-xl sm:text-2xl"
           header="Interactive Setup"
@@ -76,7 +76,7 @@ export default function CreateProject() {
           </ol>
         </div>
 
-        <SectionHeader
+        <DocsSectionHeader
           color="text-packship-purple-semilite"
           className="text-xl sm:text-2xl"
           header="Project Structure"

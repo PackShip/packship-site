@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import SectionHeader from "@/shared/SectionHeader";
+import DocsSectionHeader from "@/shared/DocsSectionHeader";
 import CopyCodeSnippet from "@/shared/CopyCodeSnippet";
 
 export default function Prerequisites() {
@@ -28,7 +28,7 @@ export default function Prerequisites() {
           </ul>
         </div>
 
-        <SectionHeader
+        <DocsSectionHeader
           color="text-packship-purple-semilite"
           className="text-xl sm:text-2xl"
           header="Checking Your Node.js Version"
@@ -51,7 +51,7 @@ export default function Prerequisites() {
           </p>
         </div>
 
-        <SectionHeader
+        <DocsSectionHeader
           color="text-packship-purple-semilite"
           className="text-xl sm:text-2xl"
           header="Checking Your npm Version"
