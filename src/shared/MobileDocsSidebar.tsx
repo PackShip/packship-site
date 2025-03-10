@@ -101,7 +101,7 @@ export default function MobileDocsSidebar() {
 
       {isOpen && (
         <div className="fixed inset-0 bg-black/80 z-20">
-          <div className="relative w-full max-w-[300px] bg-black/95 dark:bg-black/95 light:bg-white/95 h-full p-4 overflow-y-auto">
+          <div className="relative w-full max-w-[300px] bg-black/30 dark:bg-black/30 light:bg-gray-100 h-full p-4 overflow-y-auto bg-opacity-90 backdrop-blur-sm bg-gradient-to-b from-black/35 to-black/25">
             <button
               onClick={closeSidebar}
               className="absolute top-4 right-4 text-packship-purple-lite"
@@ -116,7 +116,7 @@ export default function MobileDocsSidebar() {
                   {sidebarItems.map((section) => (
                     <li key={section.title} className="mb-4">
                       <div
-                        className="flex items-center justify-between cursor-pointer text-white/80 dark:text-white/80 light:text-gray-700 hover:text-packship-purple-lite transition-colors py-1"
+                        className="flex items-center justify-between cursor-pointer text-white/80 dark:text-white/80 light:text-gray-700 hover:text-packship-purple-lite hover:bg-white/5 rounded-md px-2 transition-colors py-1"
                         onClick={() => toggleSection(section.title)}
                       >
                         <span className="font-medium">{section.title}</span>
@@ -135,8 +135,8 @@ export default function MobileDocsSidebar() {
                                 href={item.href}
                                 className={`block py-1 px-2 rounded-md transition-colors ${
                                   pathname === item.href
-                                    ? "bg-packship-purple-lite/20 text-packship-purple-lite"
-                                    : "text-white/70 dark:text-white/70 light:text-gray-600 hover:text-packship-purple-lite"
+                                    ? "bg-packship-purple-lite/30 text-packship-purple-lite font-medium"
+                                    : "text-white/70 dark:text-white/70 light:text-gray-600 hover:text-packship-purple-lite hover:bg-white/5"
                                 }`}
                                 onClick={closeSidebar}
                               >

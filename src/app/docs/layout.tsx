@@ -5,7 +5,6 @@ import Navigation from "@/shared/Navigation";
 import DocsFooter from "@/shared/DocsFooter";
 import DocsSidebar from "@/shared/DocsSidebar";
 import MobileDocsSidebar from "@/shared/MobileDocsSidebar";
-import DocsTableOfContents from "@/shared/DocsTableOfContents";
 import { usePathname } from "next/navigation";
 
 export default function DocsLayout({
@@ -47,7 +46,6 @@ export default function DocsLayout({
                 {children}
               </div>
             </main>
-            <DocsTableOfContents />
           </div>
         </div>
       </div>

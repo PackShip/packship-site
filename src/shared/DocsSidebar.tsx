@@ -81,13 +81,13 @@ export default function DocsSidebar() {
   };
 
   return (
-    <div className="hidden md:block w-[250px] h-full fixed left-0 top-[72px] bottom-0 border-r border-white/10 dark:border-white/10 light:border-gray-200 bg-black/5 dark:bg-black/5 light:bg-white/5">
+    <div className="hidden md:block w-[250px] h-full fixed left-0 top-[72px] bottom-0 border-r-2 border-white/15 dark:border-white/15 light:border-gray-300 bg-black/20 dark:bg-black/20 light:bg-gray-100 bg-opacity-90 backdrop-blur-sm bg-gradient-to-b from-black/25 to-black/15 shadow-lg shadow-black/10">
       <div className="h-full overflow-y-auto py-6 px-4">
         <ul className="space-y-1">
           {sidebarItems.map((section) => (
             <li key={section.title} className="mb-4">
               <div
-                className="flex items-center justify-between cursor-pointer text-white/80 dark:text-white/80 light:text-gray-700 hover:text-packship-purple-lite transition-colors py-1"
+                className="flex items-center justify-between cursor-pointer text-white/80 dark:text-white/80 light:text-gray-700 hover:text-packship-purple-lite hover:bg-white/5 rounded-md px-2 transition-colors py-1"
                 onClick={() => toggleSection(section.title)}
               >
                 <span className="font-medium">{section.title}</span>
@@ -106,8 +106,8 @@ export default function DocsSidebar() {
                         href={item.href}
                         className={`block py-1 px-2 rounded-md transition-colors ${
                           pathname === item.href
-                            ? "bg-packship-purple-lite/20 text-packship-purple-lite"
-                            : "text-white/70 dark:text-white/70 light:text-gray-600 hover:text-packship-purple-lite"
+                            ? "bg-packship-purple-lite/30 text-packship-purple-lite font-medium"
+                            : "text-white/70 dark:text-white/70 light:text-gray-600 hover:text-packship-purple-lite hover:bg-white/5"
                         }`}
                       >
                         {item.name}
