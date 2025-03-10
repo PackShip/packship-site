@@ -81,8 +81,8 @@ export default function DocsSidebar() {
   };
 
   return (
-    <aside className="fixed left-0 top-[72px] bottom-0 w-[250px] hidden md:block overflow-y-auto border-r border-white/10 dark:border-white/10 light:border-gray-200 bg-black/5 dark:bg-black/5 light:bg-white/5 z-10">
-      <nav className="py-6 px-4">
+    <div className="hidden md:block w-[250px] h-full fixed left-0 top-[72px] bottom-0 border-r border-white/10 dark:border-white/10 light:border-gray-200 bg-black/5 dark:bg-black/5 light:bg-white/5">
+      <div className="h-full overflow-y-auto py-6 px-4">
         <ul className="space-y-1">
           {sidebarItems.map((section) => (
             <li key={section.title} className="mb-4">
@@ -119,7 +119,7 @@ export default function DocsSidebar() {
             </li>
           ))}
         </ul>
-      </nav>
-    </aside>
+      </div>
+    </div>
   );
 }

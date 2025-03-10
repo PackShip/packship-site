@@ -93,15 +93,15 @@ export default function MobileDocsSidebar() {
     <div className="md:hidden">
       <button
         onClick={toggleSidebar}
-        className="fixed top-20 left-4 z-40 bg-packship-purple-lite/20 p-2 rounded-md"
+        className="fixed top-20 left-4 z-10 bg-packship-purple-lite/20 p-2 rounded-md"
         aria-label="Toggle sidebar"
       >
         <FaBars size={24} className="text-packship-purple-lite" />
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 bg-black/80 z-50 overflow-y-auto">
-          <div className="relative w-full max-w-[300px] bg-black/95 dark:bg-black/95 light:bg-white/95 h-full p-4">
+        <div className="fixed inset-0 bg-black/80 z-20">
+          <div className="relative w-full max-w-[300px] bg-black/95 dark:bg-black/95 light:bg-white/95 h-full p-4 overflow-y-auto">
             <button
               onClick={closeSidebar}
               className="absolute top-4 right-4 text-packship-purple-lite"

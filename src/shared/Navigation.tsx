@@ -39,7 +39,7 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-20 transition-all duration-300 ${
         scrolled
           ? "py-1 dark:bg-black/60 light:bg-white/60 backdrop-blur-sm"
           : "py-2 bg-transparent"

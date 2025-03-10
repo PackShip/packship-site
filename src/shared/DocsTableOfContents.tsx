@@ -47,11 +47,11 @@ export default function DocsTableOfContents() {
   }
 
   return (
-    <div className="hidden lg:block w-[250px] ml-8 flex-shrink-0 sticky top-24 self-start">
+    <div className="hidden lg:block w-[250px] ml-8 flex-shrink-0 sticky top-24 self-start z-[1]">
       <div className="text-sm text-white/60 dark:text-white/60 light:text-gray-500 mb-2">
         On this page
       </div>
-      <nav className="border-l border-white/10 pl-4">
+      {/* <nav className="border-l border-white/10 pl-4">
         <ul className="space-y-2">
           {headings.map((heading) => (
             <li
@@ -71,7 +71,7 @@ export default function DocsTableOfContents() {
             </li>
           ))}
         </ul>
-      </nav>
+      </nav> */}
     </div>
   );
 }
