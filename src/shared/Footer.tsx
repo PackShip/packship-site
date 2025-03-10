@@ -20,13 +20,15 @@ export default function Footer() {
                 <Image
                   src={packshipLogo}
                   alt="Packship logo"
-                  width={144}
-                  height={144}
+                  width={40}
+                  height={40}
                 />
+                <span className="text-xl font-bold text-white">Packship</span>
               </Link>
               <p className="text-white/60 text-sm max-w-md text-center md:text-left">
-                An open-source tool for simplifying NPM package development and
-                publishing.
+                An open-source tool that automates the NPM package lifecycle,
+                from setup to publishing, so you can focus on writing great
+                code.
               </p>
             </div>
 
@@ -65,7 +67,7 @@ export default function Footer() {
 
           <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 gap-4">
             <div className="text-white/60 text-sm">
-              &copy; {currentYear} Packship. All rights reserved.
+              &copy; {currentYear} Packship. Released under the MIT License.
             </div>
 
             <div className="flex gap-4">
@@ -74,6 +76,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/60 hover:text-packship-purple-lite transition-colors"
+                aria-label="GitHub"
               >
                 <FaGithub size={20} />
               </a>
@@ -82,6 +85,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/60 hover:text-packship-purple-lite transition-colors"
+                aria-label="Twitter"
               >
                 <FaTwitter size={20} />
               </a>
@@ -90,6 +94,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/60 hover:text-packship-purple-lite transition-colors"
+                aria-label="Discord"
               >
                 <FaDiscord size={20} />
               </a>

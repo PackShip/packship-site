@@ -2,9 +2,9 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Link from "next/link";
-import Image from "next/image";
-import { FaGithub, FaStar, FaCodeBranch } from "react-icons/fa";
+import { FaGithub, FaStar, FaCodeBranch, FaRocket } from "react-icons/fa";
 import CommandPrompt from "@/shared/CommandPrompt";
+import PurchaseForm from "@/shared/PurchaseForm";
 
 export default function Pricing() {
   useEffect(() => {
@@ -16,9 +16,9 @@ export default function Pricing() {
   }, []);
 
   return (
-    <section id="start-packshipping" className="py-16">
+    <section id="start-packshipping" className="py-24 relative">
       <div className="kontainer">
-        <div className="row flex flex-col items-center gap-12">
+        <div className="row flex flex-col items-center gap-16">
           <div className="text-center max-w-2xl mx-auto">
             <h2
               data-aos="fade-up"
@@ -26,7 +26,7 @@ export default function Pricing() {
             >
               Get Started with Packship
             </h2>
-            <p data-aos="fade-up" className="text-white/70">
+            <p data-aos="fade-up" className="text-white/70 text-lg">
               Packship is open source and free to use. Join our community and
               start shipping your packages faster.
             </p>
@@ -43,8 +43,8 @@ export default function Pricing() {
                 </h3>
               </div>
               <p className="text-white/70 mb-6">
-                Packship is completely open source. You can use it, modify it,
-                and contribute to it.
+                Packship is completely open source under the MIT license. You
+                can use it, modify it, and contribute to it freely.
               </p>
               <div className="mt-auto flex gap-4">
                 <Link
@@ -75,70 +75,54 @@ export default function Pricing() {
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-md bg-packship-purple-lite/20 flex items-center justify-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="text-packship-purple-lite"
-                  >
-                    <path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"></path>
-                    <path d="M4 6v12c0 1.1.9 2 2 2h14v-4"></path>
-                    <path d="M18 12a2 2 0 0 0 0 4h4v-4Z"></path>
-                  </svg>
+                  <FaRocket className="text-packship-purple-lite" size={20} />
                 </div>
                 <h3 className="text-xl font-semibold text-white">
-                  Support the Project
+                  Quick Installation
                 </h3>
               </div>
               <p className="text-white/70 mb-6">
-                While Packship is free, your support helps us maintain and
-                improve the project.
+                Get started in seconds with a simple installation command.
+                Available through npm, yarn, pnpm, or direct installation
+                scripts.
               </p>
-              <div className="mt-auto flex gap-4">
-                <Link
-                  href="https://github.com/sponsors/packship"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-packship-purple-lite hover:bg-packship-purple-lite/90 text-black rounded-md px-4 py-2 font-medium transition-all"
-                >
-                  Become a Sponsor
-                </Link>
-                <Link
-                  href="https://paypal.me/h4temsoliman?country.x=EG&locale.x=en_US"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-transparent hover:bg-white/10 text-white border border-white/20 rounded-md px-4 py-2 font-medium transition-all"
-                >
-                  Donate
-                </Link>
+              <div className="mt-auto">
+                <CommandPrompt
+                  commands={{
+                    Bash: "curl -fsSL https://packship.dev/install.sh | sh",
+                    PowerShell:
+                      "iwr -useb https://packship.dev/install.ps1 | iex",
+                    npm: "npm install -g packship",
+                    yarn: "yarn global add packship",
+                    pnpm: "pnpm add -g packship",
+                  }}
+                  activeTab="npm"
+                />
               </div>
             </div>
           </div>
 
-          <div data-aos="fade-up" className="w-full max-w-2xl mt-8">
+          <div
+            className="w-full max-w-2xl bg-black/30 rounded-lg border border-gray-800 p-6 mt-8"
+            data-aos="fade-up"
+          >
             <div className="text-center mb-6">
               <h3 className="text-xl font-semibold text-white mb-2">
-                Install Packship
+                Stay Updated
               </h3>
-              <p className="text-white/70">Get started with a single command</p>
+              <p className="text-white/70">
+                Subscribe to our newsletter for updates on new features,
+                releases, and community events.
+              </p>
             </div>
-            <div className="terminal-window">
-              <div className="flex gap-2 mb-2">
-                <div className="tab-button active">npm</div>
-                <div className="tab-button">yarn</div>
-                <div className="tab-button">pnpm</div>
-              </div>
-              <CommandPrompt command="npm install -g packship" />
-            </div>
+            <PurchaseForm />
           </div>
         </div>
       </div>
+
+      {/* Decorative elements */}
+      <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-packship-purple-lite/5 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-packship-purple-lite/5 rounded-full blur-3xl -z-10"></div>
     </section>
   );
 }

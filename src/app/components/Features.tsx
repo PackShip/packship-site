@@ -3,7 +3,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { features } from "../../../constants";
 import KeyFeature from "@/shared/KeyFeature";
-import SectionHeader from "@/shared/SectionHeader";
 
 export default function Features() {
   useEffect(() => {
@@ -15,25 +14,34 @@ export default function Features() {
   }, []);
 
   return (
-    <section id="features" className="py-16">
+    <section id="features" className="py-24 relative">
       <div className="kontainer">
-        <div className="row flex flex-col items-center gap-12">
+        <div className="row flex flex-col items-center gap-16">
           <div className="text-center max-w-2xl mx-auto">
             <h2
               data-aos="fade-up"
               className="text-3xl md:text-4xl font-bold text-white mb-4"
             >
-              Key Features
+              Why Use Packship?
             </h2>
-            <p data-aos="fade-up" className="text-white/70">
-              Packship provides everything you need to streamline your NPM
-              package development and release process.
+            <p data-aos="fade-up" className="text-white/70 text-lg">
+              Packship eliminates the complexity of NPM package development,
+              letting you focus on writing great code instead of managing
+              release processes.
             </p>
           </div>
 
-          <div data-aos="fade-up" className="grid-container w-full">
+          <div
+            data-aos="fade-up"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full"
+          >
             {features.map((feature, index) => (
-              <div key={index} data-aos="fade-up" data-aos-delay={index * 100}>
+              <div
+                key={index}
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+                className="h-full"
+              >
                 <KeyFeature title={feature.title} />
               </div>
             ))}
@@ -41,8 +49,9 @@ export default function Features() {
         </div>
       </div>
 
-      {/* Decorative element */}
-      <div className="absolute left-0 right-0 w-full max-w-md mx-auto h-px bg-gradient-to-r from-transparent via-packship-purple-lite/50 to-transparent"></div>
+      {/* Decorative elements */}
+      <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-packship-purple-lite/5 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-packship-purple-lite/5 rounded-full blur-3xl -z-10"></div>
     </section>
   );
 }

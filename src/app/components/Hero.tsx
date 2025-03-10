@@ -3,6 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Link from "next/link";
 import CommandPrompt from "@/shared/CommandPrompt";
+import Image from "next/image";
 
 export default function Hero() {
   useEffect(() => {
@@ -14,65 +15,35 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="pb-16 relative">
+    <section className="pt-32 pb-24 relative">
       <div className="kontainer">
         <div className="row flex flex-col items-center gap-8 text-center">
           <div className="max-w-3xl mx-auto">
             <h1
               data-aos="fade-up"
-              className="text-lg text-packship-purple-lite font-medium mb-4"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
             >
-              Open Source NPM Package Management
+              Packship
             </h1>
             <h2
               data-aos="fade-up"
-              className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+              className="text-xl md:text-2xl text-packship-purple-lite font-medium mb-6"
             >
-              Simplify Your{" "}
-              <span className="text-packship-purple-lite">NPM</span> Package{" "}
-              <span className="text-packship-purple-lite">Releases</span>
+              Create, manage, and publish NPM packages with ease
             </h2>
             <p
               data-aos="fade-up"
               className="text-lg text-white/80 max-w-2xl mx-auto mb-8"
             >
-              Focus more on{" "}
-              <span className="text-packship-purple-lite font-medium">
-                coding
-              </span>{" "}
-              and less on{" "}
-              <span className="text-packship-purple-lite font-medium">
-                managing package releases
-              </span>
-              .{" "}
-              <span className="text-packship-purple-lite font-medium">
-                Packship
-              </span>{" "}
-              makes{" "}
-              <span className="text-packship-purple-lite font-medium">
-                shipping npm packages
-              </span>{" "}
-              easier and faster.
+              A powerful CLI tool that automates the entire NPM package
+              lifecycle, from setup to publishing. Packship handles
+              configuration, versioning, testing, and deployment so you can
+              focus on writing code.
             </p>
           </div>
 
           <div
-            className="w-full max-w-2xl mx-auto bg-black/50 rounded-lg p-4 border border-gray-800"
-            data-aos="fade-up"
-          >
-            <div className="flex gap-2 mb-2">
-              <div className="tab-button active">Bash</div>
-              <div className="tab-button">PowerShell</div>
-              <div className="tab-button">npm</div>
-            </div>
-            <div className="terminal-window">
-              <code className="text-green-400">$</code>{" "}
-              <code className="text-white">npm install -g packship</code>
-            </div>
-          </div>
-
-          <div
-            className="flex flex-col sm:flex-row gap-4 mt-8"
+            className="flex flex-col sm:flex-row gap-4 mt-4"
             data-aos="fade-up"
           >
             <Link
@@ -88,40 +59,22 @@ export default function Hero() {
               Documentation
             </Link>
           </div>
+        </div>
+      </div>
 
-          <div
-            className="mt-16 flex flex-col sm:flex-row justify-center items-center gap-4"
-            data-aos="fade-up"
-          >
-            <Link
-              href="https://www.producthunt.com/posts/packship?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-packship"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="opacity-80 hover:opacity-100 transition-all"
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=600712&theme=neutral"
-                alt="PackShip - Ship your NPM packages in hours, not years | Product Hunt"
-                style={{ width: "250px", height: "54px" }}
-                width="250"
-                height="54"
-              />
-            </Link>
-            <Link
-              href="https://fazier.com/launches/packship"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="opacity-80 hover:opacity-100 transition-all"
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="https://fazier.com/api/v1/public/badges/embed_image.svg?launch_id=1261&badge_type=featured&template=true"
-                width="270"
-                alt="PackShip - Ship your NPM packages in hours, not years | Fazier"
-                style={{ width: "250px", height: "54px" }}
-              />
-            </Link>
+      <div className="mt-16 max-w-4xl mx-auto" data-aos="fade-up">
+        <div className="bg-black/30 rounded-lg border border-gray-800 overflow-hidden">
+          <div className="p-6">
+            <CommandPrompt
+              commands={{
+                Bash: "curl -fsSL https://packship.dev/install.sh | sh",
+                PowerShell: "iwr -useb https://packship.dev/install.ps1 | iex",
+                npm: "npm install -g packship",
+                yarn: "yarn global add packship",
+                pnpm: "pnpm add -g packship",
+              }}
+              activeTab="npm"
+            />
           </div>
         </div>
       </div>
@@ -129,6 +82,9 @@ export default function Hero() {
       {/* Decorative elements */}
       <div className="absolute top-1/4 left-10 w-32 h-32 bg-packship-purple-lite/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-1/4 right-10 w-40 h-40 bg-packship-purple-lite/10 rounded-full blur-3xl"></div>
+
+      {/* Grid background overlay - similar to Tauri */}
+      <div className="absolute inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:44px_44px]"></div>
     </section>
   );
 }

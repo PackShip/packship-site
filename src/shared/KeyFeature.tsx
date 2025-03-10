@@ -32,17 +32,17 @@ const getIconForFeature = (title: string) => {
 const getDescriptionForFeature = (title: string) => {
   const titleLower = title.toLowerCase();
   if (titleLower.includes("setup") || titleLower.includes("automated"))
-    return "Quickly set up your NPM package with automated configuration and best practices.";
+    return "Automatically generates package.json, README, testing setup, and GitHub workflows with a single command.";
   if (titleLower.includes("workflow") || titleLower.includes("efficient"))
-    return "Streamline your development workflow with integrated tools and processes.";
+    return "Integrates with Git, CI/CD pipelines, and testing frameworks to create a seamless development experience.";
   if (titleLower.includes("cli") || titleLower.includes("command"))
-    return "Intuitive command-line interface that makes package management simple.";
+    return "Simple commands for versioning, testing, building, and publishing packages without memorizing complex options.";
   if (titleLower.includes("secure") || titleLower.includes("security"))
-    return "Built with security in mind to protect your packages and dependencies.";
+    return "Implements security best practices with dependency scanning, integrity checks, and secure publishing protocols.";
   if (titleLower.includes("size") || titleLower.includes("minimal"))
-    return "Optimized for minimal overhead and maximum performance.";
+    return "Lightweight tool that doesn't bloat your project with unnecessary dependencies or configuration files.";
   if (titleLower.includes("platform") || titleLower.includes("cross"))
-    return "Works seamlessly across different platforms and environments.";
+    return "Works on macOS, Windows, and Linux with consistent behavior and reliable results across environments.";
   return "Enhance your NPM package development experience.";
 };
 
@@ -51,7 +51,7 @@ export default function KeyFeature({ title }: KeyFeatureProps) {
   const description = getDescriptionForFeature(title);
 
   return (
-    <div className="feature-card">
+    <div className="feature-card h-full flex flex-col">
       <div className="flex items-center gap-3 mb-3">
         <div className="w-10 h-10 rounded-md bg-packship-purple-lite/20 flex items-center justify-center">
           <FontAwesomeIcon
@@ -62,7 +62,7 @@ export default function KeyFeature({ title }: KeyFeatureProps) {
         </div>
         <h3 className="text-xl font-semibold text-white">{title}</h3>
       </div>
-      <p className="text-white/70 text-sm">{description}</p>
+      <p className="text-white/70 text-sm flex-grow">{description}</p>
     </div>
   );
 }

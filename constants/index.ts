@@ -34,23 +34,44 @@ export const brands = [
 
 export const footerLinks = [
   {
-    title: "Links",
+    title: "Project",
     links: [
       {
-        name: "Purchase",
+        name: "Get Started",
         href: "#start-packshipping",
       },
       {
-        name: "Develop",
+        name: "Documentation",
         href: "/docs",
       },
       {
-        name: "Contact",
-        href: "mailto:packshipcli@gmail.com",
+        name: "GitHub",
+        href: "https://github.com/packship/packship",
       },
       {
-        name: "Fund Me",
-        href: "https://paypal.me/h4temsoliman?country.x=EG&locale.x=en_US",
+        name: "Report an Issue",
+        href: "https://github.com/packship/packship/issues/new",
+      },
+    ],
+  },
+  {
+    title: "Community",
+    links: [
+      {
+        name: "Discord",
+        href: "https://discord.gg/packship",
+      },
+      {
+        name: "Twitter",
+        href: "https://twitter.com/packshipcli",
+      },
+      {
+        name: "Contribute",
+        href: "https://github.com/packship/packship/blob/main/CONTRIBUTING.md",
+      },
+      {
+        name: "Sponsor",
+        href: "https://github.com/sponsors/packship",
       },
     ],
   },
@@ -58,56 +79,19 @@ export const footerLinks = [
     title: "Legal",
     links: [
       {
-        name: "Terms of Services",
+        name: "Terms of Service",
         href: "/terms-of-services",
       },
       {
-        name: "Privacy Notice",
+        name: "Privacy Policy",
         href: "/privacy-notice",
       },
       {
-        name: "Refund Policy",
-        href: "/refund-policy",
+        name: "License",
+        href: "https://github.com/packship/packship/blob/main/LICENSE",
       },
     ],
   },
-  {
-    title: "By the Maker of PackShip",
-    links: [
-      {
-        name: "React Framify",
-        href: "https://react-framify.hatemsoliman.dev/",
-      },
-      {
-        name: "GitHub Edge",
-        href: "https://github-edge.hatemsoliman.dev/",
-      },
-      {
-        name: "Memento",
-        href: "https://memento-game.firebaseapp.com/",
-      },
-      {
-        name: "LayerLeap",
-        href: "https://layerleap.hatemsoliman.dev/",
-      },
-      {
-        name: "Quantum Fly",
-        href: "https://quantumfly.hatemsoliman.dev/",
-      },
-      {
-        name: "Polar Paradise",
-        href: "https://polarparadise.hatemsoliman.dev/",
-      },
-      {
-        name: "Splanda Media",
-        href: "https://splandamedia.com/",
-      },
-      {
-        name: "QMaster",
-        href: "https://linkedin.com/company/qmasterapp/",
-      },
-    ],
-  }
 ];
 
 export const socials = [
