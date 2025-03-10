@@ -7,8 +7,8 @@ import KeyFeature from "@/shared/KeyFeature";
 export default function Features() {
   useEffect(() => {
     AOS.init({
-      duration: 1200,
-      offset: 200,
+      duration: 800,
+      offset: 100,
       easing: "ease-out",
     });
   }, []);
@@ -20,11 +20,14 @@ export default function Features() {
           <div className="text-center max-w-2xl mx-auto">
             <h2
               data-aos="fade-up"
-              className="text-3xl md:text-4xl font-bold text-white mb-4"
+              className="text-3xl md:text-4xl font-bold dark:text-white light:text-gray-900 mb-4"
             >
               Why Use Packship?
             </h2>
-            <p data-aos="fade-up" className="text-white/70 text-lg">
+            <p
+              data-aos="fade-up"
+              className="dark:text-white/70 light:text-gray-700 text-lg"
+            >
               Packship eliminates the complexity of NPM package development,
               letting you focus on writing great code instead of managing
               release processes.

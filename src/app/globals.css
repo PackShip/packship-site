@@ -17,6 +17,7 @@ VARIABLES
   --packship-red: "#CB3837";
   --packship-yellow: "#FFBE1A";
   --packship-purple: "#3F3D56";
+  --packship-purple-semilite: "#EBD3F8";
   --packship-purple-lite: "#DBC2FF";
   --packship-purple-dark: "#2E073F";
 }
@@ -103,6 +104,14 @@ p {
   line-height: 1.6;
 }
 
+.dark p {
+  color: #fff;
+}
+
+.light p {
+  color: #333;
+}
+
 button {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
@@ -163,6 +172,15 @@ button {
   100% {
     transform: translateX(-50%);
   }
+}
+
+/* Text colors for headings */
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  color: #fff;
+}
+
+.light h1, .light h2, .light h3, .light h4, .light h5, .light h6 {
+  color: #333;
 }
 
 /* Tauri-inspired styles */

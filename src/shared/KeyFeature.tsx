@@ -1,3 +1,5 @@
+"use client";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { KeyFeatureProps } from "../../types";
 import {
@@ -9,6 +11,7 @@ import {
   faCube,
   faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
+import { useTheme } from "@/context/ThemeContext";
 
 // Map feature titles to icons
 const getIconForFeature = (title: string) => {
@@ -49,20 +52,32 @@ const getDescriptionForFeature = (title: string) => {
 export default function KeyFeature({ title }: KeyFeatureProps) {
   const icon = getIconForFeature(title);
   const description = getDescriptionForFeature(title);
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
 
   return (
     <div className="feature-card h-full flex flex-col">
       <div className="flex items-center gap-3 mb-3">
-        <div className="w-10 h-10 rounded-md bg-packship-purple-lite/20 flex items-center justify-center">
+        <div
+          className={`w-10 h-10 rounded-md ${
+            isDark ? "bg-packship-purple-lite/20" : "bg-packship-purple/10"
+          } flex items-center justify-center`}
+        >
           <FontAwesomeIcon
             icon={icon}
-            className="text-packship-purple-lite"
+            className={
+              isDark ? "text-packship-purple-lite" : "text-packship-purple"
+            }
             size="lg"
           />
         </div>
-        <h3 className="text-xl font-semibold text-white">{title}</h3>
+        <h3 className="text-xl font-semibold dark:text-white light:text-gray-900">
+          {title}
+        </h3>
       </div>
-      <p className="text-white/70 text-sm flex-grow">{description}</p>
+      <p className="dark:text-white/70 light:text-gray-700 text-sm flex-grow">
+        {description}
+      </p>
     </div>
   );
 }

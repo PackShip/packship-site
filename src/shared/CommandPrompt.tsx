@@ -1,6 +1,9 @@
+"use client";
+
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy, faCheck } from "@fortawesome/free-solid-svg-icons";
+import { useTheme } from "@/context/ThemeContext";
 
 interface CommandPromptProps {
   command?: string;
@@ -23,6 +26,8 @@ export default function CommandPrompt({
 }: CommandPromptProps) {
   const [copied, setCopied] = useState(false);
   const [currentTab, setCurrentTab] = useState(activeTab);
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(commands[currentTab] || command);
@@ -45,14 +50,16 @@ export default function CommandPrompt({
       </div>
       <div className="terminal-window flex justify-between items-center">
         <div className="flex items-center overflow-x-auto">
-          <span className="text-green-400 mr-2">$</span>
-          <pre className="font-mono whitespace-pre">
+          <span className="text-green-500 dark:text-green-400 light:text-green-600 mr-2">
+            $
+          </span>
+          <pre className="font-mono whitespace-pre dark:text-white light:text-gray-800">
             {commands[currentTab] || command}
           </pre>
         </div>
         <button
           onClick={handleCopy}
-          className="text-white/50 hover:text-white transition-colors p-2 flex-shrink-0"
+          className="dark:text-white/50 light:text-gray-500 hover:text-packship-purple-lite transition-colors p-2 flex-shrink-0"
           title={copied ? "Copied!" : "Copy to clipboard"}
         >
           <FontAwesomeIcon icon={copied ? faCheck : faCopy} />

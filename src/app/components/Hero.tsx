@@ -23,21 +23,21 @@ export default function Hero() {
             <h1
               data-aos="fade-up"
               data-aos-duration="600"
-              className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold dark:text-white light:text-gray-900 mb-6 leading-tight"
             >
               Packship
             </h1>
             <h2
               data-aos="fade-up"
               data-aos-duration="700"
-              className="text-xl md:text-2xl text-packship-purple-lite font-medium mb-6"
+              className="text-xl md:text-2xl text-packship-purple-lite dark:text-packship-purple-lite light:text-packship-purple font-medium mb-6"
             >
               Create, manage, and publish NPM packages with ease
             </h2>
             <p
               data-aos="fade-up"
               data-aos-duration="800"
-              className="text-lg text-white/80 max-w-2xl mx-auto md:mx-0 mb-8"
+              className="text-lg dark:text-white/80 light:text-gray-700 max-w-2xl mx-auto md:mx-0 mb-8"
             >
               A powerful CLI tool that automates the entire NPM package
               lifecycle, from setup to publishing. Packship handles
@@ -58,7 +58,7 @@ export default function Hero() {
               </Link>
               <Link
                 href="/docs"
-                className="bg-transparent hover:bg-white/10 text-white border border-white/20 rounded-md px-6 py-3 font-medium transition-all"
+                className="bg-transparent hover:bg-white/10 dark:text-white light:text-gray-900 dark:border-white/20 light:border-gray-400 border rounded-md px-6 py-3 font-medium transition-all"
               >
                 Documentation
               </Link>
@@ -81,7 +81,7 @@ export default function Hero() {
         data-aos="fade-up"
         data-aos-duration="900"
       >
-        <div className="bg-black/30 rounded-lg border border-gray-800 overflow-hidden">
+        <div className="bg-black/30 dark:bg-black/30 light:bg-white/70 rounded-lg border dark:border-gray-800 light:border-gray-300 overflow-hidden">
           <div className="p-6">
             <CommandPrompt
               commands={{

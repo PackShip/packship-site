@@ -11,7 +11,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/10 py-12 mt-16">
+    <footer className="border-t dark:border-white/10 light:border-gray-200 py-12 mt-16">
       <div className="kontainer">
         <div className="row flex flex-col gap-8">
           <div className="flex flex-col md:flex-row-reverse justify-between items-center md:items-start gap-8">
@@ -20,11 +20,14 @@ export default function Footer() {
                 <Image
                   src={packshipLogo}
                   alt="Packship logo"
-                  width={144}
-                  height={144}
+                  width={40}
+                  height={40}
                 />
+                <span className="text-xl font-bold dark:text-white light:text-gray-900">
+                  Packship
+                </span>
               </Link>
-              <p className="text-white/60 text-sm max-w-md text-center md:text-left">
+              <p className="dark:text-white/60 light:text-gray-600 text-sm max-w-md text-center md:text-left">
                 An open-source tool that automates the NPM package lifecycle,
                 from setup to publishing, so you can focus on writing great
                 code.
@@ -34,7 +37,7 @@ export default function Footer() {
             <div className="flex gap-8 flex-wrap justify-center md:justify-start">
               {footerLinks.map((section, index) => (
                 <div key={index} className="min-w-32">
-                  <h4 className="text-packship-purple-lite font-medium text-sm mb-3">
+                  <h4 className="dark:text-packship-purple-lite light:text-packship-purple font-medium text-sm mb-3">
                     {section.title}
                   </h4>
                   <ul className="flex flex-col gap-2">
@@ -46,7 +49,7 @@ export default function Footer() {
                               ? `/${link.href}`
                               : link.href
                           }
-                          className="text-white/70 hover:text-packship-purple-lite text-sm transition-colors"
+                          className="dark:text-white/70 light:text-gray-600 hover:text-packship-purple-lite text-sm transition-colors"
                           target={isExternal(link.href) ? "_blank" : "_self"}
                           rel={
                             isExternal(link.href)
@@ -64,8 +67,8 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 gap-4">
-            <div className="text-white/60 text-sm">
+          <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t dark:border-white/10 light:border-gray-200 gap-4">
+            <div className="dark:text-white/60 light:text-gray-600 text-sm">
               &copy; {currentYear} Packship. Released under the MIT License.
             </div>
 
@@ -74,7 +77,7 @@ export default function Footer() {
                 href="https://github.com/packship/packship"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/60 hover:text-packship-purple-lite transition-colors"
+                className="dark:text-white/60 light:text-gray-600 hover:text-packship-purple-lite transition-colors"
                 aria-label="GitHub"
               >
                 <FaGithub size={20} />
@@ -83,7 +86,7 @@ export default function Footer() {
                 href="https://twitter.com/packshipcli"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/60 hover:text-packship-purple-lite transition-colors"
+                className="dark:text-white/60 light:text-gray-600 hover:text-packship-purple-lite transition-colors"
                 aria-label="Twitter"
               >
                 <FaTwitter size={20} />
@@ -92,7 +95,7 @@ export default function Footer() {
                 href="https://discord.gg/packship"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/60 hover:text-packship-purple-lite transition-colors"
+                className="dark:text-white/60 light:text-gray-600 hover:text-packship-purple-lite transition-colors"
                 aria-label="Discord"
               >
                 <FaDiscord size={20} />
