@@ -56,9 +56,6 @@ export default function Navigation() {
                 height={40}
               />
             </figure>
-            <span className="text-xl font-bold text-white dark:text-white light:text-gray-900">
-              Packship
-            </span>
           </Link>
           <div className="hidden md:flex gap-4 items-center">
             {navLinks.map((link, index) => (
