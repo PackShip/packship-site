@@ -4,6 +4,7 @@ import "@/styles/scrollbar.css";
 import Script from "next/script";
 import { Metadata } from "next";
 import ClientProviders from "@/shared/ClientProviders";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -47,6 +48,10 @@ export default function RootLayout({
         <div className="fixed inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:44px_44px]"></div>
 
         <ClientProviders>{children}</ClientProviders>
+
+        {/* Toast notifications */}
+        <Toaster position="bottom-right" />
+
         <Script
           id="shapo-embed-js"
           src="https://cdn.shapo.io/js/embed.js"

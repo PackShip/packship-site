@@ -2,6 +2,7 @@ import React, { useCallback } from "react";
 import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import copy from "copy-to-clipboard";
+import toast from "react-hot-toast";
 import { CopyCodeSnippetProps } from "../../types";
 
 export default function CopyCodeSnippet({
@@ -12,7 +13,22 @@ export default function CopyCodeSnippet({
 }: CopyCodeSnippetProps) {
   const copyCodeToClipboard = useCallback(() => {
     copy(code);
-    alert("Code copied to clipboard!");
+    toast.success("Code copied to clipboard!", {
+      style: {
+        background: "rgba(20, 20, 20, 0.9)",
+        color: "#fff",
+        border: "1px solid rgba(138, 75, 175, 0.5)",
+        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.3)",
+        padding: "12px 16px",
+        borderRadius: "8px",
+        fontSize: "14px",
+      },
+      iconTheme: {
+        primary: "#8a4baf",
+        secondary: "#fff",
+      },
+      duration: 2000,
+    });
   }, [code]);
 
   if (inline) {

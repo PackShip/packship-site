@@ -6,6 +6,7 @@ import DocsFooter from "@/shared/DocsFooter";
 import DocsSidebar from "@/shared/DocsSidebar";
 import MobileDocsSidebar from "@/shared/MobileDocsSidebar";
 import { usePathname } from "next/navigation";
+import { Toaster } from "react-hot-toast";
 
 export default function DocsLayout({
   children,
@@ -50,6 +51,19 @@ export default function DocsLayout({
         </div>
       </div>
       <DocsFooter />
+
+      {/* Toast notifications for docs section */}
+      <Toaster
+        position="bottom-right"
+        toastOptions={{
+          style: {
+            background: "rgba(20, 20, 20, 0.9)",
+            color: "#fff",
+            border: "1px solid rgba(138, 75, 175, 0.5)",
+            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.3)",
+          },
+        }}
+      />
     </>
   );
 }
