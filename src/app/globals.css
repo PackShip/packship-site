@@ -38,16 +38,30 @@ html {
   overflow-x: hidden;
 }
 
-body {
+/* Dark mode (default) */
+.dark body {
   background-color: #0f0f0f;
   background-image: 
     linear-gradient(rgba(46, 7, 63, 0.1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(46, 7, 63, 0.1) 1px, transparent 1px);
   background-size: 30px 30px;
+  color: #fff;
+}
+
+/* Light mode */
+.light body {
+  background-color: #f5f5f7;
+  background-image: 
+    linear-gradient(rgba(46, 7, 63, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46, 7, 63, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+  color: #333;
+}
+
+body {
   margin: 0;
   overflow-x: hidden;
   position: relative;
-  color: #fff;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -65,7 +79,14 @@ nav {
   right: 0;
   z-index: 100;
   backdrop-filter: blur(10px);
+}
+
+.dark nav {
   background-color: rgba(15, 15, 15, 0.8);
+}
+
+.light nav {
+  background-color: rgba(245, 245, 247, 0.8);
 }
 
 li {
@@ -145,8 +166,21 @@ button {
 }
 
 /* Tauri-inspired styles */
-.code-block {
+/* Dark mode */
+.dark .code-block {
   background-color: #1a1a1a;
+  color: #fff;
+  border: 1px solid #333;
+}
+
+/* Light mode */
+.light .code-block {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.code-block {
   border-radius: 8px;
   padding: 1rem;
   font-family: 'Courier New', Courier, monospace;
@@ -157,37 +191,76 @@ button {
   padding: 0.5rem 1rem;
   border-radius: 4px 4px 0 0;
   background-color: transparent;
-  color: #888;
   border: none;
   cursor: pointer;
 }
 
-.tab-button.active {
+.dark .tab-button {
+  color: #888;
+}
+
+.light .tab-button {
+  color: #666;
+}
+
+.dark .tab-button.active {
   background-color: #1a1a1a;
   color: var(--packship-purple-lite);
 }
 
-.terminal-window {
+.light .tab-button.active {
+  background-color: #f0f0f0;
+  color: #3F3D56;
+}
+
+/* Dark mode */
+.dark .terminal-window {
   background-color: #1a1a1a;
-  border-radius: 8px;
-  padding: 1rem;
-  font-family: 'Courier New', Courier, monospace;
   color: #fff;
   border: 1px solid #333;
 }
 
-.feature-card {
-  background-color: rgba(30, 30, 30, 0.5);
+/* Light mode */
+.light .terminal-window {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.terminal-window {
   border-radius: 8px;
-  padding: 1.5rem;
-  transition: all 0.3s ease;
+  padding: 1rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Dark mode */
+.dark .feature-card {
+  background-color: rgba(30, 30, 30, 0.5);
   border: 1px solid #333;
 }
 
-.feature-card:hover {
+/* Light mode */
+.light .feature-card {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #ddd;
+}
+
+.feature-card {
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.dark .feature-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   border-color: var(--packship-purple-lite);
+}
+
+.light .feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-color: #3F3D56;
 }
 
 .grid-container {

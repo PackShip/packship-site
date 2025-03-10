@@ -4,6 +4,7 @@ import Image from "next/image";
 import packshipLogo from "../../public/assets/PackShipLogo.svg";
 import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import ThemeToggle from "./ThemeToggle";
 
 const isExternal = (url: string) => /^https?:\/\//.test(url);
 const isAnchorLink = (url: string) => /^#/.test(url);
@@ -39,7 +40,9 @@ export default function Navigation() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "py-1 bg-black/60 backdrop-blur-sm" : "py-2 bg-transparent"
+        scrolled
+          ? "py-2 bg-black/60 backdrop-blur-sm dark:bg-black/60 light:bg-white/60"
+          : "py-4 bg-transparent"
       }`}
     >
       <div className="kontainer">
@@ -49,10 +52,13 @@ export default function Navigation() {
               <Image
                 src={packshipLogo}
                 alt="Packship logo"
-                width={144}
-                height={144}
+                width={40}
+                height={40}
               />
             </figure>
+            <span className="text-xl font-bold text-white dark:text-white light:text-gray-900">
+              Packship
+            </span>
           </Link>
           <div className="hidden md:flex gap-4 items-center">
             {navLinks.map((link, index) => (
@@ -61,8 +67,8 @@ export default function Navigation() {
                   href={isAnchorLink(link.href) ? `/${link.href}` : link.href}
                   className={`${
                     link.name === "Get Started"
-                      ? "bg-packship-purple-lite text-black hover:bg-packship-purple-lite/90"
-                      : "text-white/80 hover:text-packship-purple-lite"
+                      ? "bg-packship-purple-lite text-black hover:bg-packship-purple-lite/90 dark:text-black light:text-black"
+                      : "text-white/80 hover:text-packship-purple-lite dark:text-white/80 light:text-gray-700"
                   } font-medium px-4 py-2 rounded-md transition-all`}
                   target={isExternal(link.href) ? "_blank" : "_self"}
                   rel={
@@ -74,11 +80,14 @@ export default function Navigation() {
               </li>
             ))}
             <li>
+              <ThemeToggle />
+            </li>
+            <li>
               <a
                 href="https://github.com/packship/packship"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/80 hover:text-packship-purple-lite transition-all"
+                className="text-white/80 hover:text-packship-purple-lite transition-all dark:text-white/80 light:text-gray-700"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +105,8 @@ export default function Navigation() {
               </a>
             </li>
           </div>
-          <div className="md:hidden relative flex justify-end items-end">
+          <div className="md:hidden relative flex justify-end items-end gap-2">
+            <ThemeToggle />
             <button
               onClick={handleToggle}
               className="text-packship-purple-lite p-2"
@@ -104,7 +114,7 @@ export default function Navigation() {
               <FaBars size={24} />
             </button>
             {isOpen && (
-              <div className="fixed top-0 right-0 w-full h-full bg-black bg-opacity-95 flex flex-col items-center justify-center z-50">
+              <div className="fixed top-0 right-0 w-full h-full bg-black bg-opacity-95 dark:bg-black/95 light:bg-white/95 flex flex-col items-center justify-center z-50">
                 <button
                   onClick={closeMenu}
                   className="absolute top-4 right-8 text-packship-purple-lite"
@@ -119,7 +129,7 @@ export default function Navigation() {
                       className={`${
                         link.name === "Get Started"
                           ? "bg-packship-purple-lite text-black"
-                          : "text-white"
+                          : "text-white dark:text-white light:text-gray-900"
                       } font-medium px-6 py-3 rounded-md`}
                       target={isExternal(link.href) ? "_blank" : "_self"}
                       rel={
@@ -136,7 +146,7 @@ export default function Navigation() {
                     href="https://github.com/packship/packship"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white mt-4"
+                    className="text-white mt-4 dark:text-white light:text-gray-900"
                     onClick={closeMenu}
                   >
                     <svg
