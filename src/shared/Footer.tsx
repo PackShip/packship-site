@@ -20,12 +20,9 @@ export default function Footer() {
                 <Image
                   src={packshipLogo}
                   alt="Packship logo"
-                  width={40}
-                  height={40}
+                  width={144}
+                  height={144}
                 />
-                <span className="text-xl font-bold dark:text-white light:text-gray-900">
-                  Packship
-                </span>
               </Link>
               <p className="dark:text-white/60 light:text-gray-600 text-sm max-w-md text-center md:text-left">
                 An open-source tool that automates the NPM package lifecycle,
