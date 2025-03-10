@@ -92,6 +92,43 @@ export const footerLinks = [
       },
     ],
   },
+  {
+    title: "By the Maker of PackShip",
+    links: [
+      {
+        name: "React Framify",
+        href: "https://react-framify.hatemsoliman.dev/",
+      },
+      {
+        name: "GitHub Edge",
+        href: "https://github-edge.hatemsoliman.dev/",
+      },
+      {
+        name: "Memento",
+        href: "https://memento-game.firebaseapp.com/",
+      },
+      {
+        name: "LayerLeap",
+        href: "https://layerleap.hatemsoliman.dev/",
+      },
+      {
+        name: "Quantum Fly",
+        href: "https://quantumfly.hatemsoliman.dev/",
+      },
+      {
+        name: "Polar Paradise",
+        href: "https://polarparadise.hatemsoliman.dev/",
+      },
+      {
+        name: "Splanda Media",
+        href: "https://splandamedia.com/",
+      },
+      {
+        name: "QMaster",
+        href: "https://linkedin.com/company/qmasterapp/",
+      },
+    ],
+  },
 ];
 
 export const socials = [

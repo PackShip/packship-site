@@ -14,16 +14,15 @@ export default function Footer() {
     <footer className="border-t border-white/10 py-12 mt-16">
       <div className="kontainer">
         <div className="row flex flex-col gap-8">
-          <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
+          <div className="flex flex-col md:flex-row-reverse justify-between items-center md:items-start gap-8">
             <div className="flex flex-col items-center md:items-start">
               <Link href="/" className="flex items-center gap-2 mb-4">
                 <Image
                   src={packshipLogo}
                   alt="Packship logo"
-                  width={40}
-                  height={40}
+                  width={144}
+                  height={144}
                 />
-                <span className="text-xl font-bold text-white">Packship</span>
               </Link>
               <p className="text-white/60 text-sm max-w-md text-center md:text-left">
                 An open-source tool that automates the NPM package lifecycle,
@@ -32,7 +31,7 @@ export default function Footer() {
               </p>
             </div>
 
-            <div className="flex gap-8 flex-wrap justify-center md:justify-end">
+            <div className="flex gap-8 flex-wrap justify-center md:justify-start">
               {footerLinks.map((section, index) => (
                 <div key={index} className="min-w-32">
                   <h4 className="text-packship-purple-lite font-medium text-sm mb-3">
