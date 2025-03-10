@@ -24,6 +24,7 @@ export interface SectionHeaderProps {
   header: string;
   className?: string;
   color?: string;
+  description?: string;
 }
 
 export type CheckoutFormValues = {

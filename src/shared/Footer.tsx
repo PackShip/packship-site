@@ -2,6 +2,7 @@ import Link from "next/link";
 import { footerLinks } from "../../constants";
 import Image from "next/image";
 import packshipLogo from "../../public/assets/PackShipLogo.svg";
+import { FaGithub, FaTwitter, FaDiscord } from "react-icons/fa";
 
 const isExternal = (url: string) => /^https?:\/\//.test(url);
 const isAnchorLink = (url: string) => /^#/.test(url);
@@ -10,46 +11,93 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-framify-black w-full py-8 sm:py-32 flex justify-start sm:justify-between items-start">
+    <footer className="border-t border-white/10 py-12 mt-16">
       <div className="kontainer">
-        <div className="row flex flex-col sm:flex-row-reverse gap-16 sm:gap-0 sm:items-start">
-          <ul className="text-sm w-full sm:w-1/2 flex flex-col sm:flex-row gap-8 sm:gap-24">
-            {footerLinks.map((section, index) => (
-              <li key={index} className="flex flex-col">
-                <h4 className="text-left text-packship-purple-lite font-semibold mb-4">{section.title}</h4>
-                <ul className="text-left flex flex-col gap-2 items-start justify-start">
-                  {section.links.map((link, linkIndex) => (
-                    <li key={linkIndex}>
-                      <Link
-                        href={isAnchorLink(link.href) ? `/${link.href}` : link.href}
-                        className="block hover:underline text-white"
-                        target={isExternal(link.href) ? "_blank" : "_self"}
-                        rel={isExternal(link.href) ? "noopener noreferrer" : undefined}
-                      >
-                        {link.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            ))}
-          </ul>
-          <div className="text-left w-full *: sm:w-1/4 flex flex-col items-center sm:items-start justify-start">
-            <Link
-              href="/"
-              className="text-3xl"
-            >
-              <Image
-                src={packshipLogo}
-                alt="Packship logo"
-              /> 
-            </Link>
-            <span className="text-xs font-medium mt-4 text-white">
-              Copyright &copy; {currentYear} Hatem Soliman and the Packship documentation authors.
-            </span>
+        <div className="row flex flex-col gap-8">
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
+            <div className="flex flex-col items-center md:items-start">
+              <Link href="/" className="flex items-center gap-2 mb-4">
+                <Image
+                  src={packshipLogo}
+                  alt="Packship logo"
+                  width={32}
+                  height={32}
+                />
+                <span className="text-lg font-bold text-white">Packship</span>
+              </Link>
+              <p className="text-white/60 text-sm max-w-md text-center md:text-left">
+                An open-source tool for simplifying NPM package development and
+                publishing.
+              </p>
+            </div>
+
+            <div className="flex gap-8 flex-wrap justify-center md:justify-end">
+              {footerLinks.map((section, index) => (
+                <div key={index} className="min-w-32">
+                  <h4 className="text-packship-purple-lite font-medium text-sm mb-3">
+                    {section.title}
+                  </h4>
+                  <ul className="flex flex-col gap-2">
+                    {section.links.map((link, linkIndex) => (
+                      <li key={linkIndex}>
+                        <Link
+                          href={
+                            isAnchorLink(link.href)
+                              ? `/${link.href}`
+                              : link.href
+                          }
+                          className="text-white/70 hover:text-packship-purple-lite text-sm transition-colors"
+                          target={isExternal(link.href) ? "_blank" : "_self"}
+                          rel={
+                            isExternal(link.href)
+                              ? "noopener noreferrer"
+                              : undefined
+                          }
+                        >
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 gap-4">
+            <div className="text-white/60 text-sm">
+              &copy; {currentYear} Packship. All rights reserved.
+            </div>
+
+            <div className="flex gap-4">
+              <a
+                href="https://github.com/packship/packship"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-packship-purple-lite transition-colors"
+              >
+                <FaGithub size={20} />
+              </a>
+              <a
+                href="https://twitter.com/packshipcli"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-packship-purple-lite transition-colors"
+              >
+                <FaTwitter size={20} />
+              </a>
+              <a
+                href="https://discord.gg/packship"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-packship-purple-lite transition-colors"
+              >
+                <FaDiscord size={20} />
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </footer>
   );
-};
+}

@@ -3,20 +3,20 @@ import { faLinkedinIn, faGithub, faMedium, faSquareXTwitter, faBehance, faUpwork
 import { Command } from '../types';
 
 export const navLinks = [
-  { 
-    name: "Documentation", 
+  {
+    name: "Guides",
     href: "/docs",
   },
-  // { 
-  //   name: "GitHub",
-  //   href: "https://github.com/CodeNKoffee/react-framify",
-  // },
-  // { 
-  //   name: "Need Help?", 
-  //   href: "/contact"
-  // },
-  { 
-    name: "Try It!", 
+  {
+    name: "References",
+    href: "/docs/api",
+  },
+  {
+    name: "Blog",
+    href: "/blog"
+  },
+  {
+    name: "Get Started",
     href: "#start-packshipping"
   },
 ];
@@ -36,20 +36,20 @@ export const footerLinks = [
   {
     title: "Links",
     links: [
-      { 
-        name: "Purchase", 
+      {
+        name: "Purchase",
         href: "#start-packshipping",
       },
-      { 
-        name: "Develop", 
-        href: "/docs", 
+      {
+        name: "Develop",
+        href: "/docs",
       },
-      { 
-        name: "Contact", 
+      {
+        name: "Contact",
         href: "mailto:packshipcli@gmail.com",
       },
-      { 
-        name: "Fund Me", 
+      {
+        name: "Fund Me",
         href: "https://paypal.me/h4temsoliman?country.x=EG&locale.x=en_US",
       },
     ],
@@ -57,53 +57,53 @@ export const footerLinks = [
   {
     title: "Legal",
     links: [
-      { 
-        name: "Terms of Services", 
-        href: "/terms-of-services", 
+      {
+        name: "Terms of Services",
+        href: "/terms-of-services",
       },
-      { 
-        name: "Privacy Notice", 
-        href: "/privacy-notice", 
+      {
+        name: "Privacy Notice",
+        href: "/privacy-notice",
       },
-      { 
-        name: "Refund Policy", 
-        href: "/refund-policy", 
+      {
+        name: "Refund Policy",
+        href: "/refund-policy",
       },
     ],
   },
   {
     title: "By the Maker of PackShip",
     links: [
-      { 
-        name: "React Framify", 
+      {
+        name: "React Framify",
         href: "https://react-framify.hatemsoliman.dev/",
       },
-      { 
-        name: "GitHub Edge", 
+      {
+        name: "GitHub Edge",
         href: "https://github-edge.hatemsoliman.dev/",
       },
-      { 
-        name: "Memento", 
+      {
+        name: "Memento",
         href: "https://memento-game.firebaseapp.com/",
       },
-      { 
-        name: "LayerLeap", 
+      {
+        name: "LayerLeap",
         href: "https://layerleap.hatemsoliman.dev/",
       },
-      { 
-        name: "Quantum Fly", 
+      {
+        name: "Quantum Fly",
         href: "https://quantumfly.hatemsoliman.dev/",
       },
-      { 
-        name: "Polar Paradise", 
+      {
+        name: "Polar Paradise",
         href: "https://polarparadise.hatemsoliman.dev/",
       },
-      { 
-        name: "Splanda Media", 
+      {
+        name: "Splanda Media",
         href: "https://splandamedia.com/",
       },
-      { 
-        name: "QMaster", 
+      {
+        name: "QMaster",
         href: "https://linkedin.com/company/qmasterapp/",
       },
     ],
@@ -150,6 +150,12 @@ export const features = [
   },
   {
     title: "Secure Publishing",
+  },
+  {
+    title: "Minimal Overhead",
+  },
+  {
+    title: "Cross-Platform Support",
   },
 ];
 
