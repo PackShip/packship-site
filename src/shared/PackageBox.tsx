@@ -1,6 +1,10 @@
+"use client";
+
+import React from "react";
+
 export default function PackageBox() {
   return (
-    <div className="relative w-64 h-64">
+    <div className="relative w-72 h-72">
       <div className="package-box">
         <svg
           width="100%"
@@ -10,92 +14,112 @@ export default function PackageBox() {
           xmlns="http://www.w3.org/2000/svg"
           className="package-svg"
         >
-          {/* Box base - bottom face */}
-          <path
-            d="M20 80L20 140L100 180L100 120L20 80Z"
-            stroke="#DBC2FF"
-            strokeWidth="2"
-            strokeLinejoin="round"
-            fill="rgba(63, 61, 86, 0.2)"
-          />
+          {/* Box base - all faces with cleaner look */}
+          <g>
+            {/* Bottom face */}
+            <path
+              d="M30 80L30 150L100 190L100 120L30 80Z"
+              stroke="#DBC2FF"
+              strokeWidth="1.5"
+              strokeLinejoin="round"
+              fill="rgba(63, 61, 86, 0.15)"
+            />
 
-          {/* Box base - right face */}
-          <path
-            d="M100 120L100 180L180 140L180 80L100 120Z"
-            stroke="#DBC2FF"
-            strokeWidth="2"
-            strokeLinejoin="round"
-            fill="rgba(63, 61, 86, 0.1)"
-          />
+            {/* Right face */}
+            <path
+              d="M100 120L100 190L170 150L170 80L100 120Z"
+              stroke="#DBC2FF"
+              strokeWidth="1.5"
+              strokeLinejoin="round"
+              fill="rgba(63, 61, 86, 0.1)"
+            />
 
-          {/* Box base - top face */}
-          <path
-            d="M20 80L100 40L180 80L100 120L20 80Z"
-            stroke="#DBC2FF"
-            strokeWidth="2"
-            strokeLinejoin="round"
-            fill="rgba(63, 61, 86, 0.3)"
-          />
+            {/* Top face */}
+            <path
+              d="M30 80L100 40L170 80L100 120L30 80Z"
+              stroke="#DBC2FF"
+              strokeWidth="1.5"
+              strokeLinejoin="round"
+              fill="rgba(63, 61, 86, 0.2)"
+            />
 
-          {/* Lid - left side */}
-          <path
-            d="M20 80L20 60L100 20L100 40L20 80Z"
-            stroke="#DBC2FF"
-            strokeWidth="2"
-            strokeLinejoin="round"
-            fill="rgba(219, 194, 255, 0.1)"
-          />
+            {/* Center line on top face */}
+            <path
+              d="M100 40L100 120"
+              stroke="#DBC2FF"
+              strokeWidth="1"
+              strokeLinecap="round"
+            />
 
-          {/* Lid - right side */}
-          <path
-            d="M100 40L100 20L180 60L180 80L100 40Z"
-            stroke="#DBC2FF"
-            strokeWidth="2"
-            strokeLinejoin="round"
-            fill="rgba(219, 194, 255, 0.2)"
-          />
+            {/* Horizontal line on top face */}
+            <path
+              d="M40 80L160 80"
+              stroke="#DBC2FF"
+              strokeWidth="1"
+              strokeLinecap="round"
+            />
 
-          {/* Lid - top face */}
-          <path
-            d="M20 60L100 20L180 60L100 100L20 60Z"
-            stroke="#DBC2FF"
-            strokeWidth="2"
-            strokeLinejoin="round"
-            fill="rgba(219, 194, 255, 0.15)"
-            opacity="0.8"
-          />
-
-          {/* Tape line on top of box */}
-          <path
-            d="M100 20L100 100"
-            stroke="#DBC2FF"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            opacity="0.6"
-          />
-
-          {/* Tape line across the box */}
-          <path
-            d="M60 70L140 70"
-            stroke="#DBC2FF"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            opacity="0.6"
-          />
-
-          {/* Package label */}
-          <text
-            x="100"
-            y="130"
-            fill="#DBC2FF"
-            fontSize="12"
-            textAnchor="middle"
-            fontFamily="monospace"
-          >
-            packship
-          </text>
+            {/* Label on front face with better perspective */}
+            <g transform="translate(0, 0)">
+              <rect
+                x="65"
+                y="135"
+                width="40"
+                height="25"
+                transform="skewX(30) skewY(-5)"
+                fill="rgba(63, 61, 86, 0.3)"
+                stroke="#DBC2FF"
+                strokeWidth="0.75"
+              />
+              <text
+                x="85"
+                y="150"
+                fill="#DBC2FF"
+                fontSize="9"
+                textAnchor="middle"
+                fontFamily="monospace"
+                transform="skewX(30) skewY(-5)"
+              >
+                packship
+              </text>
+            </g>
+          </g>
         </svg>
       </div>
+
+      {/* Enhanced floating animation styles */}
+      <style jsx>{`
+        .package-box {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          animation: float 8s ease-in-out infinite;
+          transform-style: preserve-3d;
+          perspective: 1000px;
+        }
+
+        .package-svg {
+          filter: drop-shadow(0 0 20px rgba(219, 194, 255, 0.4));
+        }
+
+        @keyframes float {
+          0% {
+            transform: translateY(0px) rotate3d(0.1, 0.5, 0.2, 0deg);
+          }
+          25% {
+            transform: translateY(-10px) rotate3d(0.1, 0.5, 0.2, 2deg);
+          }
+          50% {
+            transform: translateY(-15px) rotate3d(0.1, 0.5, 0.2, 4deg);
+          }
+          75% {
+            transform: translateY(-7px) rotate3d(0.1, 0.5, 0.2, 2deg);
+          }
+          100% {
+            transform: translateY(0px) rotate3d(0.1, 0.5, 0.2, 0deg);
+          }
+        }
+      `}</style>
     </div>
   );
 }
