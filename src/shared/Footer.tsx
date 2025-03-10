@@ -31,10 +31,10 @@ export default function Footer() {
               </p>
             </div>
 
-            <div className="flex gap-8 flex-wrap justify-center md:justify-start">
+            <div className="text-center md:text-left flex gap-8 flex-wrap justify-center md:justify-start">
               {footerLinks.map((section, index) => (
                 <div key={index} className="min-w-32">
-                  <h4 className="dark:text-packship-purple-lite light:text-packship-purple font-medium text-sm mb-3">
+                  <h4 className="dark:text-packship-purple-lite light:text-packship-purple font-medium text-sm text-center md:text-left mb-3">
                     {section.title}
                   </h4>
                   <ul className="flex flex-col gap-2">
@@ -46,7 +46,7 @@ export default function Footer() {
                               ? `/${link.href}`
                               : link.href
                           }
-                          className="dark:text-white/70 light:text-gray-600 hover:text-packship-purple-lite text-sm transition-colors"
+                          className="dark:text-white/70 light:text-gray-600 hover:text-packship-purple-lite text-sm text-center md:text-left transition-colors"
                           target={isExternal(link.href) ? "_blank" : "_self"}
                           rel={
                             isExternal(link.href)
