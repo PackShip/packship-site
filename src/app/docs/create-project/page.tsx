@@ -1,181 +1,142 @@
 "use client";
 
 import React from "react";
-import DocsSectionHeader from "@/shared/DocsSectionHeader";
 import CopyCodeSnippet from "@/shared/CopyCodeSnippet";
+import NextPageButton from "@/shared/NextPageButton";
+import {
+  DocH2,
+  DocH3,
+  DocH4,
+  DocParagraph,
+  DocCode,
+  DocNote,
+  DocList,
+  DocListItem,
+} from "@/shared/DocTypography";
 
 export default function CreateProject() {
   return (
     <>
-      <div className="w-full flex flex-col gap-8">
-        <p>
+      <div className="w-full flex flex-col gap-6">
+        <DocParagraph>
           Creating a new project with PackShip is simple and straightforward.
           This guide will walk you through the process of initializing a new
           package project.
-        </p>
+        </DocParagraph>
 
-        <h2
-          id="initialize-package"
-          className="text-2xl sm:text-3xl text-packship-purple-semilite font-bold"
-        >
-          Initialize a New Package
-        </h2>
+        <DocH2 id="initialize-package">Initialize a New Package</DocH2>
 
-        <div className="mb-2 flex flex-col gap-4">
-          <p>
-            To create a new package project, run the following command in your
-            terminal:
-          </p>
+        <DocParagraph>
+          To create a new package project, run the following command in your
+          terminal:
+        </DocParagraph>
+
+        <div className="mb-4">
           <CopyCodeSnippet code="packship init" language="bash" />
         </div>
 
-        <DocsSectionHeader
-          color="text-packship-purple-semilite"
-          className="text-xl sm:text-2xl"
-          header="Interactive Setup"
-        />
+        <DocH3>Interactive Setup Process</DocH3>
 
-        <div className="mb-2 flex flex-col gap-4">
-          <p>
-            The{" "}
-            <code className="bg-black/30 px-1 py-0.5 rounded">
-              packship init
-            </code>{" "}
-            command will start an interactive setup process that guides you
-            through configuring your package:
-          </p>
+        <DocParagraph>
+          The <DocCode>packship init</DocCode> command will start an interactive
+          setup process that guides you through configuring your package:
+        </DocParagraph>
 
-          <ol className="list-decimal pl-6 space-y-4">
-            <li>
-              <strong>Package Name</strong>: Enter a unique name for your
-              package. This will be the name used when publishing to npm.
-            </li>
-            <li>
-              <strong>Package Description</strong>: Provide a brief description
-              of what your package does.
-            </li>
-            <li>
-              <strong>Author</strong>: Enter your name or organization name.
-            </li>
-            <li>
-              <strong>License</strong>: Choose a license for your package
-              (default: MIT).
-            </li>
-            <li>
-              <strong>Version</strong>: Set the initial version (default:
-              0.1.0).
-            </li>
-            <li>
-              <strong>Language</strong>: Choose between JavaScript and
-              TypeScript.
-            </li>
-            <li>
-              <strong>Package Type</strong>: Select the type of package you want
-              to create (React component, utility library, etc.).
-            </li>
-          </ol>
-        </div>
+        <DocH4>Package Name</DocH4>
+        <DocParagraph>
+          Enter a unique name for your package. This will be the name used when
+          publishing to npm.
+        </DocParagraph>
 
-        <DocsSectionHeader
-          color="text-packship-purple-semilite"
-          className="text-xl sm:text-2xl"
-          header="Project Structure"
-        />
+        <DocH4>Package Description</DocH4>
+        <DocParagraph>
+          Provide a brief description of what your package does.
+        </DocParagraph>
 
-        <div className="mb-2 flex flex-col gap-4">
-          <p>
-            After completing the setup, PackShip will generate a project with
-            the following structure:
-          </p>
+        <DocH4>Author</DocH4>
+        <DocParagraph>Enter your name or organization name.</DocParagraph>
 
-          <CopyCodeSnippet
-            code={`my-package/
+        <DocH4>License</DocH4>
+        <DocParagraph>
+          Choose a license for your package (default: MIT).
+        </DocParagraph>
+
+        <DocH4>Version</DocH4>
+        <DocParagraph>Set the initial version (default: 0.1.0).</DocParagraph>
+
+        <DocH2 id="project-structure">Project Structure</DocH2>
+
+        <DocParagraph>
+          After initialization, PackShip will create a project with the
+          following structure:
+        </DocParagraph>
+
+        <div className="mb-4 font-mono text-sm bg-black/20 p-4 rounded-md text-white/80 overflow-x-auto">
+          <pre>
+            {`my-package/
 ├── src/
-│   └── index.js (or index.ts)
-├── dist/
-├── node_modules/
-├── .gitignore
-├── package.json
-├── README.md
-├── LICENSE
-└── webpack.config.js`}
-            language="bash"
-          />
-
-          <p>The key files and directories are:</p>
-
-          <ul className="list-disc pl-6 space-y-2">
-            <li>
-              <strong>src/</strong>: Contains your source code
-            </li>
-            <li>
-              <strong>dist/</strong>: Will contain the compiled output after
-              building
-            </li>
-            <li>
-              <strong>package.json</strong>: Defines your package metadata and
-              dependencies
-            </li>
-            <li>
-              <strong>webpack.config.js</strong>: Configuration for bundling
-              your package
-            </li>
-          </ul>
+│   ├── index.ts        # Main entry point
+│   └── components/     # React components
+├── dist/               # Compiled output
+├── node_modules/       # Dependencies
+├── package.json        # Package configuration
+├── tsconfig.json       # TypeScript configuration
+├── webpack.config.js   # Webpack configuration
+└── README.md           # Documentation`}
+          </pre>
         </div>
 
-        <h2
-          id="next-steps"
-          className="text-2xl sm:text-3xl text-packship-purple-semilite font-bold"
-        >
-          Next Steps
-        </h2>
+        <DocH3>Key Files</DocH3>
 
-        <div className="mb-2 flex flex-col gap-4">
-          <p>After initializing your project:</p>
+        <DocH4>src/index.ts</DocH4>
+        <DocParagraph>
+          This is the main entry point of your package. All exports that should
+          be available to consumers of your package should be exported from this
+          file.
+        </DocParagraph>
 
-          <ol className="list-decimal pl-6 space-y-2">
-            <li>
-              Navigate to your project directory:{" "}
-              <CopyCodeSnippet
-                code="cd my-package"
-                language="bash"
-                inline={true}
-              />
-            </li>
-            <li>
-              Install dependencies:{" "}
-              <CopyCodeSnippet
-                code="npm install"
-                language="bash"
-                inline={true}
-              />
-            </li>
-            <li>
-              Start developing your package by editing files in the{" "}
-              <code className="bg-black/30 px-1 py-0.5 rounded">src/</code>{" "}
-              directory
-            </li>
-            <li>
-              When ready, build your package:{" "}
-              <CopyCodeSnippet
-                code="npm run build"
-                language="bash"
-                inline={true}
-              />
-            </li>
-          </ol>
+        <DocH4>package.json</DocH4>
+        <DocParagraph>
+          Contains metadata about your package and defines scripts,
+          dependencies, and other configuration options.
+        </DocParagraph>
 
-          <p className="mt-4">
-            Once you&apos;ve developed your package, you can proceed to{" "}
-            <a
-              href="/docs/publishing"
-              className="text-packship-purple-lite hover:underline"
-            >
-              publishing it to npm
-            </a>
-            .
-          </p>
-        </div>
+        <DocH4>webpack.config.js</DocH4>
+        <DocParagraph>
+          Configures how your package is bundled. PackShip sets up a default
+          configuration that works well for most React packages.
+        </DocParagraph>
+
+        <DocH2 id="next-steps">Next Steps</DocH2>
+
+        <DocParagraph>After creating your project, you can:</DocParagraph>
+
+        <DocList>
+          <DocListItem>
+            Install dependencies with <DocCode>npm install</DocCode>
+          </DocListItem>
+          <DocListItem>
+            Start developing your components in the{" "}
+            <DocCode>src/components</DocCode> directory
+          </DocListItem>
+          <DocListItem>
+            Export your components from <DocCode>src/index.ts</DocCode>
+          </DocListItem>
+          <DocListItem>
+            Build your package with <DocCode>npm run build</DocCode>
+          </DocListItem>
+          <DocListItem>
+            Publish your package with <DocCode>packship publish</DocCode>
+          </DocListItem>
+        </DocList>
+
+        <DocNote>
+          Remember to update the version in <DocCode>package.json</DocCode>{" "}
+          before publishing updates to your package.
+        </DocNote>
+
+        {/* Next Page Button */}
+        <NextPageButton title="Frontend Setup" href="/docs/frontend-setup" />
       </div>
     </>
   );

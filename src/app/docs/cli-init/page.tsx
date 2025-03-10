@@ -1,191 +1,172 @@
 "use client";
 
 import React from "react";
-import DocsSectionHeader from "@/shared/DocsSectionHeader";
 import CopyCodeSnippet from "@/shared/CopyCodeSnippet";
+import NextPageButton from "@/shared/NextPageButton";
+import {
+  DocH2,
+  DocH3,
+  DocH4,
+  DocParagraph,
+  DocCode,
+  DocNote,
+  DocList,
+  DocListItem,
+} from "@/shared/DocTypography";
 
 export default function CliInit() {
   return (
     <>
-      <div className="w-full flex flex-col gap-8">
-        <p>
-          The{" "}
-          <code className="bg-black/30 px-1 py-0.5 rounded">packship init</code>{" "}
-          command is the starting point for creating a new package with
-          PackShip. This guide explains all the options and features of this
-          command.
-        </p>
+      <div className="w-full flex flex-col gap-6">
+        <DocParagraph>
+          The <DocCode>packship init</DocCode> command is the starting point for
+          creating a new package with PackShip. This guide explains all the
+          options and features of this command.
+        </DocParagraph>
 
-        <h2
-          id="basic-usage"
-          className="text-2xl sm:text-3xl text-packship-purple-semilite font-bold"
-        >
-          Basic Usage
-        </h2>
+        <DocH2 id="basic-usage">Basic Usage</DocH2>
 
-        <div className="mb-2 flex flex-col gap-4">
-          <p>To initialize a new package project, run:</p>
+        <DocParagraph>
+          To initialize a new package project, simply run:
+        </DocParagraph>
+
+        <div className="mb-4">
           <CopyCodeSnippet code="packship init" language="bash" />
-          <p>
-            This will start an interactive prompt to configure your package.
-          </p>
         </div>
 
-        <DocsSectionHeader
-          color="text-packship-purple-semilite"
-          className="text-xl sm:text-2xl"
-          header="Command Options"
-        />
+        <DocParagraph>
+          This will start an interactive setup process that guides you through
+          configuring your package.
+        </DocParagraph>
 
-        <div className="mb-2 flex flex-col gap-4">
-          <p>
-            The <code className="bg-black/30 px-1 py-0.5 rounded">init</code>{" "}
-            command supports several options to customize the initialization
-            process:
-          </p>
+        <DocH2 id="command-options">Command Options</DocH2>
 
-          <table className="w-full border-collapse">
-            <thead>
-              <tr className="bg-black/20">
-                <th className="border border-gray-700 p-2 text-left">Option</th>
-                <th className="border border-gray-700 p-2 text-left">
-                  Description
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td className="border border-gray-700 p-2">
-                  <code>--name, -n</code>
-                </td>
-                <td className="border border-gray-700 p-2">
-                  Specify the package name
-                </td>
-              </tr>
-              <tr>
-                <td className="border border-gray-700 p-2">
-                  <code>--description, -d</code>
-                </td>
-                <td className="border border-gray-700 p-2">
-                  Provide a package description
-                </td>
-              </tr>
-              <tr>
-                <td className="border border-gray-700 p-2">
-                  <code>--author, -a</code>
-                </td>
-                <td className="border border-gray-700 p-2">
-                  Set the package author
-                </td>
-              </tr>
-              <tr>
-                <td className="border border-gray-700 p-2">
-                  <code>--license, -l</code>
-                </td>
-                <td className="border border-gray-700 p-2">
-                  Specify the license (default: MIT)
-                </td>
-              </tr>
-              <tr>
-                <td className="border border-gray-700 p-2">
-                  <code>--typescript, -ts</code>
-                </td>
-                <td className="border border-gray-700 p-2">
-                  Initialize with TypeScript support
-                </td>
-              </tr>
-              <tr>
-                <td className="border border-gray-700 p-2">
-                  <code>--yes, -y</code>
-                </td>
-                <td className="border border-gray-700 p-2">
-                  Skip prompts and use defaults
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <DocParagraph>
+          The <DocCode>init</DocCode> command supports several options to
+          customize the initialization process:
+        </DocParagraph>
 
-        <DocsSectionHeader
-          color="text-packship-purple-semilite"
-          className="text-xl sm:text-2xl"
-          header="Examples"
-        />
+        <DocH3>--template [name]</DocH3>
 
-        <div className="mb-2 flex flex-col gap-4">
-          <p>Initialize a package with default settings (skipping prompts):</p>
-          <CopyCodeSnippet code="packship init --yes" language="bash" />
+        <DocParagraph>
+          Specify a template to use for your package. Available templates
+          include:
+        </DocParagraph>
 
-          <p>Initialize a TypeScript package with a specific name:</p>
+        <DocList>
+          <DocListItem>
+            <DocCode>react</DocCode>: For React component libraries (default)
+          </DocListItem>
+          <DocListItem>
+            <DocCode>vanilla</DocCode>: For plain JavaScript/TypeScript
+            libraries
+          </DocListItem>
+          <DocListItem>
+            <DocCode>node</DocCode>: For Node.js packages
+          </DocListItem>
+        </DocList>
+
+        <div className="mb-4">
           <CopyCodeSnippet
-            code='packship init --name "my-awesome-package" --typescript'
-            language="bash"
-          />
-
-          <p>Initialize with custom author and license:</p>
-          <CopyCodeSnippet
-            code='packship init --author "Your Name" --license Apache-2.0'
+            code="packship init --template vanilla"
             language="bash"
           />
         </div>
 
-        <h2
-          id="generated-files"
-          className="text-2xl sm:text-3xl text-packship-purple-semilite font-bold"
-        >
-          Generated Files
-        </h2>
+        <DocH3>--typescript</DocH3>
 
-        <div className="mb-2 flex flex-col gap-4">
-          <p>
-            The <code className="bg-black/30 px-1 py-0.5 rounded">init</code>{" "}
-            command generates the following files and directories:
-          </p>
+        <DocParagraph>
+          Initialize the project with TypeScript support (this is the default).
+        </DocParagraph>
 
-          <ul className="list-disc pl-6 space-y-2">
-            <li>
-              <strong>package.json</strong>: Contains package metadata and
-              dependencies
-            </li>
-            <li>
-              <strong>README.md</strong>: Basic documentation template
-            </li>
-            <li>
-              <strong>LICENSE</strong>: License file based on your selection
-            </li>
-            <li>
-              <strong>.gitignore</strong>: Configured to ignore common files
-            </li>
-            <li>
-              <strong>src/</strong>: Directory for your source code
-            </li>
-            <li>
-              <strong>webpack.config.js</strong>: Webpack configuration for
-              building your package
-            </li>
-            <li>
-              <strong>tsconfig.json</strong>: TypeScript configuration (if using
-              TypeScript)
-            </li>
-          </ul>
+        <div className="mb-4">
+          <CopyCodeSnippet code="packship init --typescript" language="bash" />
         </div>
 
-        <div className="mt-4">
-          <p>
-            After initializing your project, you can proceed to{" "}
-            <a
-              href="/docs/cli-publish"
-              className="text-packship-purple-lite hover:underline"
-            >
-              publishing your package
-            </a>{" "}
-            with the{" "}
-            <code className="bg-black/30 px-1 py-0.5 rounded">
-              packship publish
-            </code>{" "}
-            command.
-          </p>
+        <DocH3>--javascript</DocH3>
+
+        <DocParagraph>
+          Initialize the project with JavaScript instead of TypeScript.
+        </DocParagraph>
+
+        <div className="mb-4">
+          <CopyCodeSnippet code="packship init --javascript" language="bash" />
         </div>
+
+        <DocH3>--yes, -y</DocH3>
+
+        <DocParagraph>Skip all prompts and use default values.</DocParagraph>
+
+        <div className="mb-4">
+          <CopyCodeSnippet code="packship init -y" language="bash" />
+        </div>
+
+        <DocNote>
+          Using <DocCode>-y</DocCode> will create a package with default values.
+          You&apos;ll need to manually edit the package.json file afterward to
+          customize your package details.
+        </DocNote>
+
+        <DocH2 id="configuration-prompts">Configuration Prompts</DocH2>
+
+        <DocParagraph>
+          When running <DocCode>packship init</DocCode> without the{" "}
+          <DocCode>-y</DocCode> flag, you&apos;ll be prompted to provide the
+          following information:
+        </DocParagraph>
+
+        <DocH4>Package Name</DocH4>
+        <DocParagraph>
+          The name of your package. This should be unique on npm and follow npm
+          naming conventions.
+        </DocParagraph>
+
+        <DocH4>Package Description</DocH4>
+        <DocParagraph>
+          A brief description of what your package does.
+        </DocParagraph>
+
+        <DocH4>Author</DocH4>
+        <DocParagraph>Your name or organization name.</DocParagraph>
+
+        <DocH4>License</DocH4>
+        <DocParagraph>
+          The license for your package. The default is MIT.
+        </DocParagraph>
+
+        <DocH4>Version</DocH4>
+        <DocParagraph>
+          The initial version of your package. The default is 0.1.0.
+        </DocParagraph>
+
+        <DocH2 id="examples">Examples</DocH2>
+
+        <DocH3>Creating a React Component Library</DocH3>
+
+        <div className="mb-4">
+          <CopyCodeSnippet
+            code="packship init --template react"
+            language="bash"
+          />
+        </div>
+
+        <DocH3>Creating a JavaScript Utility Library</DocH3>
+
+        <div className="mb-4">
+          <CopyCodeSnippet
+            code="packship init --template vanilla --javascript"
+            language="bash"
+          />
+        </div>
+
+        <DocH3>Quick Initialization with Defaults</DocH3>
+
+        <div className="mb-4">
+          <CopyCodeSnippet code="packship init -y" language="bash" />
+        </div>
+
+        {/* Next Page Button */}
+        <NextPageButton title="CLI Publish" href="/docs/cli-publish" />
       </div>
     </>
   );

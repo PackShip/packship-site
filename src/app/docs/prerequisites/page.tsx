@@ -1,128 +1,132 @@
 "use client";
 
 import React from "react";
-import DocsSectionHeader from "@/shared/DocsSectionHeader";
 import CopyCodeSnippet from "@/shared/CopyCodeSnippet";
+import NextPageButton from "@/shared/NextPageButton";
+import {
+  DocH2,
+  DocH3,
+  DocH4,
+  DocParagraph,
+  DocCode,
+  DocNote,
+  DocList,
+  DocListItem,
+} from "@/shared/DocTypography";
 
 export default function Prerequisites() {
   return (
     <>
-      <div className="w-full flex flex-col gap-8">
-        <p>
+      <div className="w-full flex flex-col gap-6">
+        <DocParagraph>
           Before you start using PackShip, make sure you have the following
           prerequisites installed and configured on your system.
-        </p>
+        </DocParagraph>
 
-        <h2
-          id="system-requirements"
-          className="text-2xl sm:text-3xl text-packship-purple-semilite font-bold"
-        >
-          System Requirements
-        </h2>
+        <DocH2 id="system-requirements">System Requirements</DocH2>
+        <DocParagraph>
+          PackShip requires the following software to be installed on your
+          system:
+        </DocParagraph>
 
-        <div className="mb-2 flex flex-col gap-4">
-          <ul className="list-disc pl-6 space-y-2">
-            <li>Node.js (version 14.x or higher)</li>
-            <li>npm (version 6.x or higher) or yarn (version 1.x or higher)</li>
-            <li>Git (for version control)</li>
-          </ul>
-        </div>
+        <DocList>
+          <DocListItem>
+            <strong>Node.js</strong> (version 14.x or higher)
+          </DocListItem>
+          <DocListItem>
+            <strong>npm</strong> (version 6.x or higher)
+          </DocListItem>
+        </DocList>
 
-        <DocsSectionHeader
-          color="text-packship-purple-semilite"
-          className="text-xl sm:text-2xl"
-          header="Checking Your Node.js Version"
-        />
+        <DocH3>Installing Node.js and npm</DocH3>
 
-        <div className="mb-2 flex flex-col gap-4">
-          <p>You can check your Node.js version by running:</p>
+        <DocParagraph>
+          You can download and install Node.js and npm from the{" "}
+          <a
+            href="https://nodejs.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-packship-purple-lite hover:underline"
+          >
+            official Node.js website
+          </a>
+          .
+        </DocParagraph>
+
+        <DocParagraph>
+          To verify that Node.js and npm are installed correctly, run the
+          following commands in your terminal:
+        </DocParagraph>
+
+        <div className="mb-4 flex flex-col gap-3">
           <CopyCodeSnippet code="node --version" language="bash" />
-          <p>
-            If you need to update or install Node.js, visit the{" "}
-            <a
-              href="https://nodejs.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-packship-purple-lite hover:underline"
-            >
-              official Node.js website
-            </a>
-            .
-          </p>
-        </div>
-
-        <DocsSectionHeader
-          color="text-packship-purple-semilite"
-          className="text-xl sm:text-2xl"
-          header="Checking Your npm Version"
-        />
-
-        <div className="mb-2 flex flex-col gap-4">
-          <p>You can check your npm version by running:</p>
           <CopyCodeSnippet code="npm --version" language="bash" />
-          <p>npm is included with Node.js, but you might need to update it:</p>
-          <CopyCodeSnippet code="npm install -g npm@latest" language="bash" />
         </div>
 
-        <h2
-          id="npm-account"
-          className="text-2xl sm:text-3xl text-packship-purple-semilite font-bold"
-        >
-          npm Account
-        </h2>
+        <DocH3>Development Environment</DocH3>
 
-        <div className="mb-2 flex flex-col gap-4">
-          <p>
-            To publish packages, you&apos;ll need an npm account. If you
-            don&apos;t have one, you can create it at{" "}
+        <DocParagraph>
+          While not strictly required, we recommend using a code editor with
+          good TypeScript support, such as:
+        </DocParagraph>
+
+        <DocList>
+          <DocListItem>
             <a
-              href="https://www.npmjs.com/signup"
+              href="https://code.visualstudio.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-packship-purple-lite hover:underline"
             >
-              npmjs.com
-            </a>
-            .
-          </p>
-
-          <p>After creating an account, log in via the terminal:</p>
-          <CopyCodeSnippet code="npm login" language="bash" />
-          <p>Follow the prompts to enter your username, password, and email.</p>
-        </div>
-
-        <h2
-          id="development-environment"
-          className="text-2xl sm:text-3xl text-packship-purple-semilite font-bold"
-        >
-          Development Environment
-        </h2>
-
-        <div className="mb-2 flex flex-col gap-4">
-          <p>
-            We recommend using a code editor with good JavaScript/TypeScript
-            support, such as:
-          </p>
-          <ul className="list-disc pl-6 space-y-2">
-            <li>Visual Studio Code</li>
-            <li>WebStorm</li>
-            <li>Atom</li>
-            <li>Sublime Text</li>
-          </ul>
-        </div>
-
-        <div className="mt-4">
-          <p>
-            Once you have all the prerequisites in place, you&apos;re ready to{" "}
+              Visual Studio Code
+            </a>{" "}
+            (recommended)
+          </DocListItem>
+          <DocListItem>
             <a
-              href="/docs/create-project"
+              href="https://www.jetbrains.com/webstorm/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-packship-purple-lite hover:underline"
             >
-              create your first project
-            </a>{" "}
-            with PackShip!
-          </p>
+              WebStorm
+            </a>
+          </DocListItem>
+        </DocList>
+
+        <DocH2 id="npm-account">npm Account</DocH2>
+
+        <DocParagraph>
+          To publish packages, you&apos;ll need an npm account. If you
+          don&apos;t have one already, you can create one at{" "}
+          <a
+            href="https://www.npmjs.com/signup"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-packship-purple-lite hover:underline"
+          >
+            npmjs.com
+          </a>
+          .
+        </DocParagraph>
+
+        <DocParagraph>
+          After creating an account, you&apos;ll need to log in via the command
+          line:
+        </DocParagraph>
+
+        <div className="mb-4">
+          <CopyCodeSnippet code="npm login" language="bash" />
         </div>
+
+        <DocNote>
+          You&apos;ll be prompted to enter your username, password, and email
+          address. If you have two-factor authentication enabled, you&apos;ll
+          also need to provide an OTP (One-Time Password).
+        </DocNote>
+
+        {/* Next Page Button */}
+        <NextPageButton title="Create a Project" href="/docs/create-project" />
       </div>
     </>
   );

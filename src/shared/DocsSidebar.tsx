@@ -83,14 +83,14 @@ export default function DocsSidebar() {
   return (
     <div className="hidden md:block w-[250px] h-full fixed left-0 top-[72px] bottom-0 border-r-2 border-white/15 dark:border-white/15 light:border-gray-300 bg-black/20 dark:bg-black/20 light:bg-gray-100 bg-opacity-90 backdrop-blur-sm bg-gradient-to-b from-black/25 to-black/15 shadow-lg shadow-black/10">
       <div className="h-full overflow-y-auto py-6 px-4">
-        <ul className="space-y-1">
+        <ul className="space-y-4">
           {sidebarItems.map((section) => (
             <li key={section.title} className="mb-4">
               <div
-                className="flex items-center justify-between cursor-pointer text-white/80 dark:text-white/80 light:text-gray-700 hover:text-packship-purple-lite hover:bg-white/5 rounded-md px-2 transition-colors py-1"
+                className="flex items-center justify-between cursor-pointer text-white/90 dark:text-white/90 light:text-gray-800 hover:text-packship-purple-lite hover:bg-white/5 rounded-md px-2 transition-colors py-2 font-medium text-[15px] uppercase tracking-wide"
                 onClick={() => toggleSection(section.title)}
               >
-                <span className="font-medium">{section.title}</span>
+                <span>{section.title}</span>
                 {section.isExpandable &&
                   (expandedSections[section.title] ? (
                     <FaChevronDown size={12} />
@@ -99,12 +99,12 @@ export default function DocsSidebar() {
                   ))}
               </div>
               {expandedSections[section.title] && (
-                <ul className="ml-4 mt-1 space-y-1">
+                <ul className="ml-2 mt-1 space-y-1 border-l border-white/10 pl-2">
                   {section.items.map((item) => (
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className={`block py-1 px-2 rounded-md transition-colors ${
+                        className={`block py-1.5 px-2 rounded-md transition-colors text-[14px] ${
                           pathname === item.href
                             ? "bg-packship-purple-lite/30 text-packship-purple-lite font-medium"
                             : "text-white/70 dark:text-white/70 light:text-gray-600 hover:text-packship-purple-lite hover:bg-white/5"
