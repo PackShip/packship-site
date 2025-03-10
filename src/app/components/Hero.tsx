@@ -4,6 +4,7 @@ import "aos/dist/aos.css";
 import Link from "next/link";
 import CommandPrompt from "@/shared/CommandPrompt";
 import Image from "next/image";
+import PackageBox from "@/shared/PackageBox";
 
 export default function Hero() {
   useEffect(() => {
@@ -70,63 +71,7 @@ export default function Hero() {
             data-aos="fade-left"
             data-aos-duration="700"
           >
-            <div className="relative w-64 h-64">
-              <div className="package-box">
-                <svg
-                  width="100%"
-                  height="100%"
-                  viewBox="0 0 200 200"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="package-svg"
-                >
-                  {/* Top face */}
-                  <path
-                    d="M20 80L100 40L180 80L100 120L20 80Z"
-                    stroke="#DBC2FF"
-                    strokeWidth="2"
-                    strokeLinejoin="round"
-                  />
-
-                  {/* Bottom face */}
-                  <path
-                    d="M20 80L20 140L100 180L100 120L20 80Z"
-                    stroke="#DBC2FF"
-                    strokeWidth="2"
-                    strokeLinejoin="round"
-                  />
-
-                  {/* Right face */}
-                  <path
-                    d="M100 120L100 180L180 140L180 80L100 120Z"
-                    stroke="#DBC2FF"
-                    strokeWidth="2"
-                    strokeLinejoin="round"
-                  />
-
-                  {/* NPM logo hint */}
-                  <path
-                    d="M70 90L70 150M130 90L130 150M100 90L100 150"
-                    stroke="#DBC2FF"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeDasharray="2 4"
-                  />
-
-                  {/* Package name */}
-                  <text
-                    x="100"
-                    y="70"
-                    fill="#DBC2FF"
-                    fontSize="12"
-                    textAnchor="middle"
-                    fontFamily="monospace"
-                  >
-                    packship
-                  </text>
-                </svg>
-              </div>
-            </div>
+            <PackageBox />
           </div>
         </div>
       </div>
@@ -168,18 +113,18 @@ export default function Hero() {
         }
 
         .package-svg {
-          filter: drop-shadow(0 0 10px rgba(219, 194, 255, 0.3));
+          filter: drop-shadow(0 0 15px rgba(219, 194, 255, 0.3));
         }
 
         @keyframes float {
           0% {
-            transform: translateY(0px) rotate3d(1, 1, 1, 0deg);
+            transform: translateY(0px) rotate3d(1, 1, 0, 0deg);
           }
           50% {
-            transform: translateY(-20px) rotate3d(1, 1, 1, 5deg);
+            transform: translateY(-20px) rotate3d(1, 1, 0, 5deg);
           }
           100% {
-            transform: translateY(0px) rotate3d(1, 1, 1, 0deg);
+            transform: translateY(0px) rotate3d(1, 1, 0, 0deg);
           }
         }
       `}</style>

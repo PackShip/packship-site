@@ -32,13 +32,13 @@ const getIconForFeature = (title: string) => {
 const getDescriptionForFeature = (title: string) => {
   const titleLower = title.toLowerCase();
   if (titleLower.includes("setup") || titleLower.includes("automated"))
-    return "Automatically generates package.json, README, testing setup, and GitHub workflows with a single command.";
+    return "Automatically generates package.json, README, testing setup, and so much more with a single command.";
   if (titleLower.includes("workflow") || titleLower.includes("efficient"))
     return "Integrates with Git, CI/CD pipelines, and testing frameworks to create a seamless development experience.";
   if (titleLower.includes("cli") || titleLower.includes("command"))
     return "Simple commands for versioning, testing, building, and publishing packages without memorizing complex options.";
   if (titleLower.includes("secure") || titleLower.includes("security"))
-    return "Implements security best practices with dependency scanning, integrity checks, and secure publishing protocols.";
+    return "Implements security best practices with in-house terminal 2FA instead of redirecting to the web.";
   if (titleLower.includes("size") || titleLower.includes("minimal"))
     return "Lightweight tool that doesn't bloat your project with unnecessary dependencies or configuration files.";
   if (titleLower.includes("platform") || titleLower.includes("cross"))
