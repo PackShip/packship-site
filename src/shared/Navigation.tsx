@@ -39,7 +39,7 @@ export default function Navigation() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "py-2 bg-black/60 backdrop-blur-sm" : "py-4 bg-transparent"
+        scrolled ? "py-1 bg-black/60 backdrop-blur-sm" : "py-2 bg-transparent"
       }`}
     >
       <div className="kontainer">
@@ -49,11 +49,10 @@ export default function Navigation() {
               <Image
                 src={packshipLogo}
                 alt="Packship logo"
-                width={40}
-                height={40}
+                width={144}
+                height={144}
               />
             </figure>
-            <span className="text-xl font-bold text-white">Packship</span>
           </Link>
           <div className="hidden md:flex gap-4 items-center">
             {navLinks.map((link, index) => (
