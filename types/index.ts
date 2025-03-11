@@ -24,6 +24,7 @@ export interface SectionHeaderProps {
   header: string;
   className?: string;
   color?: string;
+  description?: string;
 }
 
 export type CheckoutFormValues = {
@@ -37,4 +38,5 @@ export interface CopyCodeSnippetProps {
   code: string;
   language: string;
   buttonText?: string;
+  inline?: boolean;
 }

@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
 import Navigation from "@/shared/Navigation";
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect } from "react";
 import Footer from "@/shared/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -12,47 +12,30 @@ import Pricing from "./components/Pricing";
 import Preview from "./components/Preview";
 import Walkthrough from "./components/Walkthrough";
 import Testimonials from "./components/Testimonials";
-import { tweetUrls } from "../../constants";
-
-function useAnimatedNumber(target: number, duration: number) {
-  const [currentNumber, setCurrentNumber] = useState<number>(0);
-  useEffect(() => {
-    const startTime = Date.now();
-    const step = () => {
-      const now = Date.now();
-      const progress = Math.min((now - startTime) / duration, 1);
-      const current = Math.floor(progress * target);
-      setCurrentNumber(current);
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      }
-    };
-    requestAnimationFrame(step);
-    return () => {};
-  }, [target, duration]);
-
-  return currentNumber;
-}
 
 export default function Home() {
   useEffect(() => {
     AOS.init({
-      duration: 1200, 
-      offset: 200,
-      easing: 'ease-out',
+      duration: 800,
+      offset: 100,
+      easing: "ease-out",
+      once: false,
+      mirror: true,
     });
   }, []);
 
   return (
     <Suspense>
       <Navigation />
-      <main>
+      <main className="pt-16">
         <Hero />
         <Features />
+        <div className="flex flex-col md:flex-row justify-around items-start flex-1">
+          <Preview />
+          <Walkthrough />
+        </div>
         <Testimonials />
-        <Preview />
         <Instructions />
-        <Walkthrough />
         <Pricing />
       </main>
       <Footer />

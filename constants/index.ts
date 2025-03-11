@@ -3,20 +3,20 @@ import { faLinkedinIn, faGithub, faMedium, faSquareXTwitter, faBehance, faUpwork
 import { Command } from '../types';
 
 export const navLinks = [
-  { 
-    name: "Documentation", 
+  {
+    name: "Guides",
     href: "/docs",
   },
-  // { 
-  //   name: "GitHub",
-  //   href: "https://github.com/CodeNKoffee/react-framify",
-  // },
-  // { 
-  //   name: "Need Help?", 
-  //   href: "/contact"
-  // },
-  { 
-    name: "Try It!", 
+  {
+    name: "PackShip Pug",
+    href: "/packship-pug",
+  },
+  {
+    name: "Blog",
+    href: "/blog"
+  },
+  {
+    name: "Get Started",
     href: "#start-packshipping"
   },
 ];
@@ -34,80 +34,109 @@ export const brands = [
 
 export const footerLinks = [
   {
-    title: "Links",
+    title: "Project",
     links: [
-      { 
-        name: "Purchase", 
+      {
+        name: "Get Started",
         href: "#start-packshipping",
       },
-      { 
-        name: "Develop", 
-        href: "/docs", 
+      {
+        name: "Documentation",
+        href: "/docs",
       },
-      { 
-        name: "Contact", 
-        href: "mailto:packshipcli@gmail.com",
+      {
+        name: "PackShip Pug",
+        href: "/packship-pug",
       },
-      { 
-        name: "Fund Me", 
-        href: "https://paypal.me/h4temsoliman?country.x=EG&locale.x=en_US",
+      {
+        name: "Blog",
+        href: "/blog",
+      },
+      {
+        name: "GitHub",
+        href: "https://github.com/CodeNKoffee/packship",
+      },
+      {
+        name: "Report an Issue",
+        href: "https://github.com/CodeNKoffee/packship/issues/new",
+      },
+    ],
+  },
+  {
+    title: "Community",
+    links: [
+      {
+        name: "Discord",
+        href: "https://discord.gg/packship",
+      },
+      {
+        name: "X (formerly Twitter)",
+        href: "https://x.com/h4temsoliman",
+      },
+      {
+        name: "Contribute",
+        href: "https://github.com/CodeNKoffee/packship/blob/master/CONTRIBUTING.md",
+      },
+      {
+        name: "Sponsor",
+        href: "/sponsor-packship",
       },
     ],
   },
   {
     title: "Legal",
     links: [
-      { 
-        name: "Terms of Services", 
-        href: "/terms-of-services", 
+      {
+        name: "Open Source License",
+        href: "https://github.com/CodeNKoffee/packship/blob/master/LICENSE.md",
       },
-      { 
-        name: "Privacy Notice", 
-        href: "/privacy-notice", 
+      {
+        name: "Code of Conduct",
+        href: "https://github.com/CodeNKoffee/packship/blob/master/CODE_OF_CONDUCT.md",
       },
-      { 
-        name: "Refund Policy", 
-        href: "/refund-policy", 
+      {
+        name: "Contributing Guidelines",
+        href: "https://github.com/CodeNKoffee/packship/blob/master/CONTRIBUTING.md",
       },
     ],
   },
   {
     title: "By the Maker of PackShip",
     links: [
-      { 
-        name: "React Framify", 
+      {
+        name: "React Framify",
         href: "https://react-framify.hatemsoliman.dev/",
       },
-      { 
-        name: "GitHub Edge", 
+      {
+        name: "GitHub Edge",
         href: "https://github-edge.hatemsoliman.dev/",
       },
-      { 
-        name: "Memento", 
+      {
+        name: "Memento",
         href: "https://memento-game.firebaseapp.com/",
       },
-      { 
-        name: "LayerLeap", 
+      {
+        name: "LayerLeap",
         href: "https://layerleap.hatemsoliman.dev/",
       },
-      { 
-        name: "Quantum Fly", 
+      {
+        name: "Quantum Fly",
         href: "https://quantumfly.hatemsoliman.dev/",
       },
-      { 
-        name: "Polar Paradise", 
+      {
+        name: "Polar Paradise",
         href: "https://polarparadise.hatemsoliman.dev/",
       },
-      { 
-        name: "Splanda Media", 
+      {
+        name: "Splanda Media",
         href: "https://splandamedia.com/",
       },
-      { 
-        name: "QMaster", 
+      {
+        name: "QMaster",
         href: "https://linkedin.com/company/qmasterapp/",
       },
     ],
-  }
+  },
 ];
 
 export const socials = [
@@ -150,6 +179,51 @@ export const features = [
   },
   {
     title: "Secure Publishing",
+  },
+  {
+    title: "Minimal Overhead",
+  },
+  {
+    title: "Cross-Platform Support",
+  },
+];
+
+export const painPoints = [
+  {
+    title: "Manual Project Setup",
+    hours: "4 hrs",
+    description: "configuring package structure",
+    creatorExperience: "6 months"
+  },
+  {
+    title: "Inefficient Development Cycles",
+    hours: "6 hrs",
+    description: "managing build and release processes",
+    creatorExperience: "2 days"
+  },
+  {
+    title: "Complex Command-Line Tools",
+    hours: "4 hrs",
+    description: "learning and debugging CLI commands",
+    creatorExperience: "1 week"
+  },
+  {
+    title: "Publishing Security Risks",
+    hours: "2 hrs",
+    description: "ensuring secure package distribution",
+    creatorExperience: "15 minutes*"
+  },
+  {
+    title: "Development Overhead",
+    hours: "3 hrs",
+    description: "dealing with unnecessary dependencies",
+    creatorExperience: "4 hrs"
+  },
+  {
+    title: "Platform Compatibility Issues",
+    hours: "2 hrs",
+    description: "fixing cross-platform bugs",
+    creatorExperience: "24 hours"
   },
 ];
 
