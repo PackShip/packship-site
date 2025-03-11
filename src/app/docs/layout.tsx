@@ -36,10 +36,10 @@ export default function DocsLayout({
         <MobileDocsSidebar />
         <DocsSidebar />
         <div className="md:ml-[250px]">
-          <div className="max-w-[1200px] mx-auto px-6 pt-24 pb-16 flex">
+          <div className="max-w-[1200px] mx-auto px-6 pt-32 pb-16 flex">
             <main className="flex-1 max-w-[850px]">
               <div className="mb-6">
-                <h1 className="text-3xl sm:text-4xl font-bold text-white dark:text-white light:text-gray-900">
+                <h1 className="text-3xl sm:text-4xl font-bold text-packship-purple-lite dark:text-packship-purple-lite light:text-packship-purple">
                   {getCurrentPageTitle()}
                 </h1>
               </div>
