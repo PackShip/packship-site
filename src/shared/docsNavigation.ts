@@ -49,6 +49,7 @@ export const sidebarItems = [
     items: [
       { name: "init", href: "/docs/cli-init" },
       { name: "publish", href: "/docs/cli-publish" },
+      { name: "Version Flag", href: "/docs/cli-version" },
       { name: "Other Commands", href: "/docs/cli-other" },
     ],
   },
