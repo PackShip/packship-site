@@ -12,7 +12,7 @@ import {
   DocNote,
 } from "@/shared/DocTypography";
 
-export default function CliVersion() {
+export default function CLIVersion() {
   const pathname = usePathname();
 
   return (

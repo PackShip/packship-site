@@ -15,7 +15,7 @@ import {
   DocListItem,
 } from "@/shared/DocTypography";
 
-export default function CliInit() {
+export default function CLIInit() {
   const pathname = usePathname();
 
   return (
