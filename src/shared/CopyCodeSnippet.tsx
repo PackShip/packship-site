@@ -66,7 +66,7 @@ export default function CopyCodeSnippet({
           language={language}
           style={vs2015}
           wrapLongLines={true}
-          className="m-0"
+          className="!m-0"
         >
           {code}
         </SyntaxHighlighter>

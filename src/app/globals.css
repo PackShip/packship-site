@@ -44,6 +44,12 @@ html {
   color: #a855f7 !important; /* purple-500 */
 }
 
+/* Documentation content full width override */
+.prose-override {
+  width: 100%;
+  max-width: none !important;
+}
+
 /* Dark mode (default) */
 .dark body {
   background-color: #0f0f0f;
