@@ -78,9 +78,12 @@ export function DocCode({ children, className = "" }: DocTextProps) {
 export function DocNote({ children, className = "" }: DocTextProps) {
   return (
     <div
-      className={`bg-packship-purple-lite/10 border-l-4 border-packship-purple-lite p-4 rounded-r-md my-6 ${className}`}
+      className={`bg-packship-purple/70 dark:bg-packship-purple-lite/10 border-l-4 border-purple-500 dark:border-packship-purple-lite p-4 rounded-md my-6 shadow-sm ${className}`}
     >
-      <p className="text-white/90 dark:text-white/90 light:text-gray-800 leading-relaxed">
+      <p
+        className="!text-white font-semibold leading-relaxed"
+        style={{ color: "white" }}
+      >
         {children}
       </p>
     </div>
