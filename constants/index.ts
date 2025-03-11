@@ -75,7 +75,7 @@ export const footerLinks = [
       },
       {
         name: "Contribute",
-        href: "https://github.com/CodeNKoffee/packship/blob/main/CONTRIBUTING.md",
+        href: "https://github.com/CodeNKoffee/packship/blob/master/CONTRIBUTING.md",
       },
       {
         name: "Sponsor",
