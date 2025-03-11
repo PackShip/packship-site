@@ -20,9 +20,10 @@ export default function Footer() {
               <Link href="/" className="flex items-center gap-2 mb-4">
                 <Image
                   src={packshipLogo}
-                  alt="Packship logo"
-                  width={144}
-                  height={144}
+                  alt="PackShip logo"
+                  width={150}
+                  height={40}
+                  className="h-auto"
                 />
               </Link>
               <p className="dark:text-white/60 light:text-gray-600 text-sm max-w-md text-center md:text-left">

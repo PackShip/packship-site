@@ -122,11 +122,11 @@ export default function PackshipPug() {
             href="/#start-packshipping"
             className="inline-flex items-center px-6 py-3 rounded-md bg-packship-purple-lite hover:bg-packship-purple-lite/90 text-black font-medium transition-all"
           >
-            Try Packship CLI while you wait
+            Try PackShip CLI while you wait
           </Link>
 
-          <p className="mt-6 text-sm text-gray-500 dark:text-white/60 light:text-gray-500">
-            Want to be notified when Packship Pug launches?
+          <p className="mt-12 text-lg text-center">
+            Want to be notified when PackShip Pug launches?
             <a
               href="https://github.com/CodeNKoffee/packship"
               className="text-packship-purple-lite underline ml-1 font-medium"

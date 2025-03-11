@@ -19,9 +19,10 @@ export default function DocsFooter() {
               <Link href="/" className="flex items-center gap-2 mb-4">
                 <Image
                   src={packshipLogo}
-                  alt="Packship logo"
-                  width={144}
-                  height={144}
+                  alt="PackShip logo"
+                  width={150}
+                  height={40}
+                  className="h-auto"
                 />
               </Link>
               <p className="dark:text-white/60 light:text-gray-600 text-sm max-w-md text-center md:text-left">
@@ -65,8 +66,8 @@ export default function DocsFooter() {
           </div>
 
           <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t dark:border-white/10 light:border-gray-200 gap-4">
-            <div className="dark:text-white/60 light:text-gray-600 text-sm">
-              &copy; {currentYear} Packship. Released under the MIT License.
+            <div className="text-sm text-center md:text-left dark:text-white/60 light:text-gray-500">
+              &copy; {currentYear} PackShip. Released under the MIT License.
             </div>
 
             <div className="flex gap-4">

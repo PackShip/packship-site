@@ -18,11 +18,11 @@ export default function PainPoint({
       <h3 className="text-xl font-semibold mb-3 text-white h-14 flex items-center">
         {title}
       </h3>
-      <div className="mb-2 flex flex-col items-start gap-2">
+      <div className="flex items-start">
         <span className="text-packship-purple-lite font-bold whitespace-nowrap w-16">
           {hours}
         </span>
-        <span className="text-white/70">{description}</span>
+        <span className="text-white/70 ml-2">{description}</span>
       </div>
       {creatorExperience && (
         <div className="mt-auto pt-3 border-t border-white/10">

@@ -51,9 +51,10 @@ export default function Navigation() {
             <figure>
               <Image
                 src={packshipLogo}
-                alt="Packship logo"
-                width={144}
-                height={144}
+                alt="PackShip logo"
+                width={150}
+                height={40}
+                className="h-auto"
               />
             </figure>
           </Link>
