@@ -32,7 +32,7 @@ export default function DocsFooter() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-8 w-full md:w-auto">
+            <div className="flex flex-col sm:grid sm:grid-cols-3 gap-y-8 gap-x-6 w-full md:w-auto">
               {footerLinks.map((section, index) => (
                 <div key={index} className="min-w-[120px]">
                   <h4 className="dark:text-packship-purple-lite light:text-packship-purple font-medium text-sm mb-3">

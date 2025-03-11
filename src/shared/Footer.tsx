@@ -14,7 +14,7 @@ export default function Footer() {
   return (
     <footer className="border-t dark:border-white/10 light:border-gray-200 py-12 mt-16">
       <div className="kontainer">
-        <div className="flex flex-col gap-8">
+        <div className="w-[90%] sm:w-full mx-auto py-[12px] flex flex-col justify-between items-center gap-8">
           <div className="flex flex-col md:flex-row-reverse justify-between items-center md:items-start gap-8">
             <div className="flex flex-col items-center md:items-start">
               <Link href="/" className="flex items-center gap-2 mb-4">
@@ -33,7 +33,7 @@ export default function Footer() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-8 w-full md:w-auto">
+            <div className="flex flex-col sm:grid sm:grid-cols-3 gap-y-8 gap-x-6 w-full md:w-auto">
               {footerLinks.map((section, index) => (
                 <div key={index} className="min-w-[120px]">
                   <h4 className="dark:text-packship-purple-lite light:text-packship-purple font-medium text-sm mb-3">
