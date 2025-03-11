@@ -58,7 +58,7 @@ export default function Hero() {
               </Link>
               <Link
                 href="/docs"
-                className="bg-transparent hover:bg-white/10 dark:text-white light:text-gray-900 dark:border-white/20 light:border-gray-400 border rounded-md px-6 py-3 font-medium transition-all"
+                className="bg-transparent hover:bg-white/10 text-gray-900 dark:text-white border-2 border-gray-600 dark:border-white/20 rounded-md px-6 py-3 font-medium transition-all hover:border-black/70 dark:hover:border-white/40"
               >
                 Documentation
               </Link>
