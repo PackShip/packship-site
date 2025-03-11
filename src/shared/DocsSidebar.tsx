@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaChevronDown, FaChevronRight } from "react-icons/fa";
 import "@/styles/scrollbar.css";
+import ScrollbarWrapper from "./ScrollbarWrapper";
 
 // Define the sidebar structure
 const sidebarItems = [
@@ -91,10 +92,7 @@ export default function DocsSidebar() {
 
   return (
     <div className="hidden md:block w-[250px] h-full fixed left-0 top-[72px] bottom-0 border-r-2 border-white/15 dark:border-white/15 light:border-gray-300 bg-black/20 dark:bg-black/20 light:bg-gray-100 bg-opacity-90 backdrop-blur-sm bg-gradient-to-b from-black/25 to-black/15 shadow-lg shadow-black/10">
-      <div
-        className="h-full custom-scrollbar py-6 px-4"
-        style={{ height: "calc(100vh - 72px)" }}
-      >
+      <ScrollbarWrapper className="py-6 px-4">
         <ul className="space-y-4 pb-20">
           {sidebarItems.map((section) => (
             <li key={section.title} className="mb-4">
@@ -131,7 +129,7 @@ export default function DocsSidebar() {
             </li>
           ))}
         </ul>
-      </div>
+      </ScrollbarWrapper>
     </div>
   );
 }

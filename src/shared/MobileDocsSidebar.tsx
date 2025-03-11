@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaChevronDown, FaChevronRight, FaBars, FaTimes } from "react-icons/fa";
 import "@/styles/scrollbar.css";
+import ScrollbarWrapper from "./ScrollbarWrapper";
 
 // Define the sidebar structure - same as DocsSidebar
 const sidebarItems = [
@@ -115,10 +116,11 @@ export default function MobileDocsSidebar() {
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 bg-black/80 z-20">
+        <div className="fixed inset-0 bg-black/50 z-40" onClick={closeSidebar}>
           <div
-            className="relative w-full max-w-[300px] bg-black/30 dark:bg-black/30 light:bg-gray-100 h-full p-4 custom-scrollbar bg-opacity-90 backdrop-blur-sm bg-gradient-to-b from-black/35 to-black/25"
+            className="relative w-full max-w-[300px] bg-black/30 dark:bg-black/30 light:bg-gray-100 h-full bg-opacity-90 backdrop-blur-sm bg-gradient-to-b from-black/35 to-black/25"
             style={{ height: "100vh" }}
+            onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={closeSidebar}
@@ -128,7 +130,7 @@ export default function MobileDocsSidebar() {
               <FaTimes size={24} />
             </button>
 
-            <div className="mt-12">
+            <ScrollbarWrapper style={{ height: "100vh", paddingTop: "60px" }}>
               <nav>
                 <ul className="space-y-2 pb-20">
                   {sidebarItems.map((section) => (
@@ -168,7 +170,7 @@ export default function MobileDocsSidebar() {
                   ))}
                 </ul>
               </nav>
-            </div>
+            </ScrollbarWrapper>
           </div>
         </div>
       )}
