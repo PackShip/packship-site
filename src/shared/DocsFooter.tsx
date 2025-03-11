@@ -32,10 +32,10 @@ export default function DocsFooter() {
               </p>
             </div>
 
-            <div className="text-center md:text-left flex flex-wrap justify-center md:justify-start gap-6 sm:gap-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-8 w-full md:w-auto">
               {footerLinks.map((section, index) => (
-                <div key={index} className="min-w-[120px] sm:min-w-32">
-                  <h4 className="dark:text-packship-purple-lite light:text-packship-purple font-medium text-sm text-center md:text-left mb-3">
+                <div key={index} className="min-w-[120px]">
+                  <h4 className="dark:text-packship-purple-lite light:text-packship-purple font-medium text-sm mb-3">
                     {section.title}
                   </h4>
                   <ul className="flex flex-col gap-2">
@@ -47,7 +47,7 @@ export default function DocsFooter() {
                               ? `/${link.href}`
                               : link.href
                           }
-                          className="dark:text-white/70 light:text-gray-600 hover:text-packship-purple-lite text-sm text-center md:text-left transition-colors"
+                          className="dark:text-white/70 light:text-gray-600 hover:text-packship-purple-lite text-sm transition-colors"
                           target={isExternal(link.href) ? "_blank" : "_self"}
                           rel={
                             isExternal(link.href)
