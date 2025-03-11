@@ -102,10 +102,19 @@ export default function CLIOther() {
         </DocList>
 
         <DocNote>
-          The <DocCode>report</DocCode> command is specifically for reporting
-          issues with the PackShip tool itself, not for issues with your npm
-          package. If you&apos;re trying to report an issue with your package,
-          please refer to your package documentation.
+          The <DocCode>report</DocCode> command is designed for reporting issues
+          with the PackShip tool itself. If you suspect the PackShip CLI is
+          causing problems with your npm package, you can either use{" "}
+          <DocCode>packship report</DocCode> or submit an issue directly on our{" "}
+          <a
+            href="https://github.com/CodeNKoffee/packship/issues"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-packship-purple-lite hover:underline"
+          >
+            GitHub Issues
+          </a>{" "}
+          page.
         </DocNote>
 
         <DocH2 id="telemetry-commands">Telemetry Commands</DocH2>

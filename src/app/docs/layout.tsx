@@ -23,6 +23,20 @@ export default function DocsLayout({
     }
 
     const lastSegment = path[path.length - 1];
+
+    // Special handling for CLI pages
+    if (lastSegment.startsWith("cli-")) {
+      const parts = lastSegment.split("-");
+      // Capitalize "CLI" properly
+      parts[0] = "CLI";
+      // Capitalize the rest of the words
+      for (let i = 1; i < parts.length; i++) {
+        parts[i] = parts[i].charAt(0).toUpperCase() + parts[i].slice(1);
+      }
+      return parts.join(" ");
+    }
+
+    // Regular handling for non-CLI pages
     return lastSegment
       .split("-")
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
