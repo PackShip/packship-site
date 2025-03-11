@@ -192,32 +192,38 @@ export const painPoints = [
   {
     title: "Manual Project Setup",
     hours: "4 hrs",
-    description: "configuring package structure"
+    description: "configuring package structure",
+    creatorExperience: "6 months"
   },
   {
     title: "Inefficient Development Cycles",
     hours: "6 hrs",
-    description: "managing build and release processes"
+    description: "managing build and release processes",
+    creatorExperience: "2 days"
   },
   {
     title: "Complex Command-Line Tools",
     hours: "4 hrs",
-    description: "learning and debugging CLI commands"
+    description: "learning and debugging CLI commands",
+    creatorExperience: "1 week"
   },
   {
     title: "Publishing Security Risks",
     hours: "2 hrs",
-    description: "ensuring secure package distribution"
+    description: "ensuring secure package distribution",
+    creatorExperience: "15 minutes*"
   },
   {
     title: "Development Overhead",
     hours: "3 hrs",
-    description: "dealing with unnecessary dependencies"
+    description: "dealing with unnecessary dependencies",
+    creatorExperience: "4 hrs"
   },
   {
     title: "Platform Compatibility Issues",
     hours: "2 hrs",
-    description: "fixing cross-platform bugs"
+    description: "fixing cross-platform bugs",
+    creatorExperience: "1 day"
   },
 ];
 

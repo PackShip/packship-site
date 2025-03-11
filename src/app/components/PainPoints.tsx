@@ -33,11 +33,19 @@ export default function PainPoints() {
             </h2>
             <p
               data-aos="fade-up"
-              className="dark:text-white/70 light:text-gray-700 text-lg"
+              className="dark:text-white/70 light:text-gray-700 text-lg mb-2"
             >
               Building and publishing NPM packages traditionally comes with
               these time-consuming pain points that PackShip was designed to
               solve.
+            </p>
+            <p
+              data-aos="fade-up"
+              data-aos-delay="100"
+              className="dark:text-packship-purple-lite light:text-packship-purple-lite text-lg italic"
+            >
+              Here's how much time it actually took me to develop and ship my
+              first package:
             </p>
           </div>
 
@@ -56,6 +64,7 @@ export default function PainPoints() {
                   title={point.title}
                   hours={point.hours}
                   description={point.description}
+                  creatorExperience={point.creatorExperience}
                 />
               </div>
             ))}
@@ -74,12 +83,18 @@ export default function PainPoints() {
               </span>
               <FaCloudRain className="text-white/70 text-2xl" />
             </div>
-            <p className="text-white/70">
+            <p className="text-white/70 mb-2">
               <span className="text-packship-purple-lite font-semibold">
                 PackShip
               </span>{" "}
               eliminates these pain points with its six powerful features,
               saving you time and frustration.
+            </p>
+            <p className="text-white/70 text-sm italic">
+              * I shipped my first package with security risks because I was
+              tired of the amount of work involved.
+              <br />
+              Don't make the same mistake - use PackShip instead!
             </p>
           </div>
 
