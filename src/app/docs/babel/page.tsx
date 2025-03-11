@@ -29,20 +29,51 @@ export default function Babel() {
 
         <DocParagraph>
           When you initialize a new project with PackShip, it generates a
-          default Babel configuration in the <DocCode>.babelrc</DocCode> file:
+          default Babel configuration in the{" "}
+          <DocCode>babel.config.json</DocCode> file:
         </DocParagraph>
 
         <div className="mb-4 font-mono text-sm bg-black/20 p-4 rounded-md text-white/80 overflow-x-auto">
           <pre>
             {`{
   "presets": [
-    "@babel/preset-env",
+    [
+      "@babel/preset-env",
+      {
+        "modules": false,
+        "targets": {
+          "node": "current"
+        }
+      }
+    ],
     "@babel/preset-react",
     "@babel/preset-typescript"
   ],
+  "env": {
+    "test": {
+      "presets": [
+        "@babel/preset-env",
+        "@babel/preset-react",
+        "@babel/preset-typescript"
+      ],
+      "plugins": [
+        [
+          "@babel/plugin-proposal-class-properties",
+          {
+            "spec": true
+          }
+        ]
+      ]
+    }
+  },
   "plugins": [
-    "@babel/plugin-proposal-class-properties",
-    "@babel/plugin-transform-runtime"
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "spec": true
+      }
+    ],
+    "@babel/plugin-proposal-object-rest-spread"
   ]
 }`}
           </pre>
@@ -64,28 +95,35 @@ export default function Babel() {
         </DocParagraph>
 
         <DocParagraph>
-          You can customize it to target specific browsers:
+          In PackShip&apos;s default configuration, preset-env is configured
+          with:
         </DocParagraph>
 
         <div className="mb-4">
           <CopyCodeSnippet
-            code={`{
-  "presets": [
-    ["@babel/preset-env", {
-      "targets": {
-        "browsers": [
-          "last 2 versions",
-          "not dead",
-          "> 0.5%"
-        ]
-      }
-    }],
-    // ... other presets
-  ]
-}`}
+            code={`[
+  "@babel/preset-env",
+  {
+    "modules": false,
+    "targets": {
+      "node": "current"
+    }
+  }
+]`}
             language="json"
           />
         </div>
+
+        <DocList>
+          <DocListItem>
+            <DocCode>modules: false</DocCode>: Preserves ES modules syntax for
+            webpack to handle, enabling tree-shaking optimizations
+          </DocListItem>
+          <DocListItem>
+            <DocCode>targets.node: &quot;current&quot;</DocCode>: Targets the
+            Node.js version you&apos;re currently using for development
+          </DocListItem>
+        </DocList>
 
         <DocH3>@babel/preset-react</DocH3>
 
@@ -101,14 +139,12 @@ export default function Babel() {
 
         <div className="mb-4">
           <CopyCodeSnippet
-            code={`{
-  "presets": [
-    // ... other presets
-    ["@babel/preset-react", {
-      "runtime": "automatic"
-    }]
-  ]
-}`}
+            code={`[
+  "@babel/preset-react",
+  {
+    "runtime": "automatic"
+  }
+]`}
             language="json"
           />
         </div>
@@ -156,7 +192,24 @@ export default function Babel() {
 
         <DocParagraph>
           This plugin allows you to use class properties syntax in your
-          JavaScript classes:
+          JavaScript classes. In PackShip, it&apos;s configured with{" "}
+          <DocCode>spec: true</DocCode> for stricter spec compliance:
+        </DocParagraph>
+
+        <div className="mb-4">
+          <CopyCodeSnippet
+            code={`[
+  "@babel/plugin-proposal-class-properties",
+  {
+    "spec": true
+  }
+]`}
+            language="json"
+          />
+        </div>
+
+        <DocParagraph>
+          This enables you to write class components with class properties:
         </DocParagraph>
 
         <div className="mb-4">
@@ -184,23 +237,60 @@ export default function Babel() {
           />
         </div>
 
-        <DocH3>@babel/plugin-transform-runtime</DocH3>
+        <DocH3>@babel/plugin-proposal-object-rest-spread</DocH3>
 
         <DocParagraph>
-          This plugin helps reduce the size of your bundle by extracting Babel
-          helpers into a separate runtime package:
+          This plugin enables the use of the rest and spread operators for
+          objects:
         </DocParagraph>
 
-        <DocList>
-          <DocListItem>
-            Prevents duplication of Babel helper functions in each file
-          </DocListItem>
-          <DocListItem>
-            Provides a sandboxed environment for built-ins like{" "}
-            <DocCode>Promise</DocCode>, <DocCode>Set</DocCode>, and{" "}
-            <DocCode>Map</DocCode>
-          </DocListItem>
-        </DocList>
+        <div className="mb-4">
+          <CopyCodeSnippet
+            code={`// Rest operator
+const { id, ...rest } = props;
+
+// Spread operator
+const newProps = { ...props, newProp: 'value' };`}
+            language="javascript"
+          />
+        </div>
+
+        <DocH3>Environment-Specific Configuration</DocH3>
+
+        <DocParagraph>
+          PackShip&apos;s Babel configuration includes environment-specific
+          settings using the <DocCode>env</DocCode> key. For example, the test
+          environment has its own configuration:
+        </DocParagraph>
+
+        <div className="mb-4">
+          <CopyCodeSnippet
+            code={`"env": {
+  "test": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react",
+      "@babel/preset-typescript"
+    ],
+    "plugins": [
+      [
+        "@babel/plugin-proposal-class-properties",
+        {
+          "spec": true
+        }
+      ]
+    ]
+  }
+}`}
+            language="json"
+          />
+        </div>
+
+        <DocNote>
+          The test environment configuration is automatically used when running
+          tests with Jest or other test frameworks that set{" "}
+          <DocCode>NODE_ENV=test</DocCode>.
+        </DocNote>
 
         <DocH2 id="customizing-babel">Customizing Babel Configuration</DocH2>
 
@@ -208,6 +298,32 @@ export default function Babel() {
           You can customize the Babel configuration to suit your specific needs.
           Here are some common customizations:
         </DocParagraph>
+
+        <DocH3>Targeting Specific Browsers</DocH3>
+
+        <DocParagraph>
+          To target specific browsers instead of Node.js, modify the preset-env
+          configuration:
+        </DocParagraph>
+
+        <div className="mb-4">
+          <CopyCodeSnippet
+            code={`[
+  "@babel/preset-env",
+  {
+    "modules": false,
+    "targets": {
+      "browsers": [
+        "last 2 versions",
+        "not dead",
+        "> 0.5%"
+      ]
+    }
+  }
+]`}
+            language="json"
+          />
+        </div>
 
         <DocH3>Adding Support for Decorators</DocH3>
 
@@ -233,8 +349,8 @@ export default function Babel() {
   ],
   "plugins": [
     ["@babel/plugin-proposal-decorators", { "legacy": true }],
-    "@babel/plugin-proposal-class-properties",
-    // ... other plugins
+    ["@babel/plugin-proposal-class-properties", { "spec": true }],
+    "@babel/plugin-proposal-object-rest-spread"
   ]
 }`}
             language="json"
@@ -246,34 +362,26 @@ export default function Babel() {
           the plugins list.
         </DocNote>
 
-        <DocH3>
-          Adding Support for Optional Chaining and Nullish Coalescing
-        </DocH3>
+        <DocH3>Adding Runtime Helpers</DocH3>
 
         <DocParagraph>
-          To add support for optional chaining (<DocCode>?.</DocCode>) and
-          nullish coalescing (<DocCode>??</DocCode>) operators:
+          To reduce bundle size by extracting Babel helpers, add the
+          transform-runtime plugin:
         </DocParagraph>
 
         <div className="mb-4">
           <CopyCodeSnippet
-            code={`npm install --save-dev @babel/plugin-proposal-optional-chaining @babel/plugin-proposal-nullish-coalescing-operator`}
+            code={`npm install --save-dev @babel/plugin-transform-runtime`}
             language="bash"
           />
         </div>
 
-        <DocParagraph>Then update your Babel configuration:</DocParagraph>
-
         <div className="mb-4">
           <CopyCodeSnippet
             code={`{
-  "presets": [
-    // ... existing presets
-  ],
   "plugins": [
-    // ... other plugins
-    "@babel/plugin-proposal-optional-chaining",
-    "@babel/plugin-proposal-nullish-coalescing-operator"
+    // ... existing plugins
+    "@babel/plugin-transform-runtime"
   ]
 }`}
             language="json"
@@ -284,21 +392,39 @@ export default function Babel() {
 
         <DocParagraph>
           In PackShip projects, Babel is integrated with Webpack using{" "}
-          <DocCode>babel-loader</DocCode>. The webpack configuration includes a
-          rule for processing TypeScript and JavaScript files with Babel:
+          <DocCode>babel-loader</DocCode>. The webpack configuration includes
+          rules for processing TypeScript and JavaScript files with Babel:
         </DocParagraph>
 
         <div className="mb-4">
           <CopyCodeSnippet
             code={`// webpack.config.js
-module.exports = {
+export default {
   // ... other config
   module: {
     rules: [
       {
-        test: /\\.tsx?$/,
+        test: /\\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'ts-loader',
+            options: {
+              transpileOnly: true,
+            },
+          },
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-react', '@babel/preset-env'],
+            },
+          },
+        ],
+      },
+      {
+        test: /\\.(js|jsx)$/,
+        exclude: /node_modules/,
         use: 'babel-loader',
-        exclude: /node_modules/
       },
       // ... other rules
     ]
@@ -309,40 +435,26 @@ module.exports = {
         </div>
 
         <DocParagraph>
-          You can customize the Babel loader options directly in the webpack
-          configuration:
+          This configuration uses both <DocCode>ts-loader</DocCode> and{" "}
+          <DocCode>babel-loader</DocCode> for TypeScript files:
         </DocParagraph>
 
-        <div className="mb-4">
-          <CopyCodeSnippet
-            code={`// webpack.config.js
-module.exports = {
-  // ... other config
-  module: {
-    rules: [
-      {
-        test: /\\.tsx?$/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            cacheDirectory: true, // Enables caching for faster builds
-            // You can also specify Babel options here instead of using .babelrc
-            presets: [
-              '@babel/preset-env',
-              '@babel/preset-react',
-              '@babel/preset-typescript'
-            ]
-          }
-        },
-        exclude: /node_modules/
-      },
-      // ... other rules
-    ]
-  }
-};`}
-            language="javascript"
-          />
-        </div>
+        <DocList>
+          <DocListItem>
+            <DocCode>ts-loader</DocCode>: Handles TypeScript compilation with{" "}
+            <DocCode>transpileOnly: true</DocCode> for faster builds
+          </DocListItem>
+          <DocListItem>
+            <DocCode>babel-loader</DocCode>: Applies Babel transformations to
+            the output from ts-loader
+          </DocListItem>
+        </DocList>
+
+        <DocNote>
+          The <DocCode>babel.config.json</DocCode> file is automatically used by
+          babel-loader, but you can also specify options directly in the webpack
+          configuration for more granular control.
+        </DocNote>
 
         {/* Next Page Button */}
         <NextPageButton title="Version Updates" href="/docs/version-updates" />
