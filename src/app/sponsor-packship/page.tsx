@@ -99,7 +99,7 @@ export default function SponsorPackShip() {
                       <FaPaypal className="mr-2" /> Donate with PayPal
                     </a>
                     <a
-                      href="buymeacoffee.com/h4temsoliman"
+                      href="https://www.buymeacoffee.com/h4temsoliman"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center bg-[#FFDD00] hover:bg-[#E5C700] text-black font-medium py-3 px-4 rounded-md transition-colors"
@@ -284,7 +284,7 @@ export default function SponsorPackShip() {
                     <FaPaypal className="mr-2" /> PayPal
                   </a>
                   <a
-                    href="buymeacoffee.com/h4temsoliman"
+                    href="https://www.buymeacoffee.com/h4temsoliman"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center bg-[#FFDD00] hover:bg-[#E5C700] text-black font-medium py-1 px-4 rounded-md transition-colors"

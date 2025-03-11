@@ -87,16 +87,16 @@ export const footerLinks = [
     title: "Legal",
     links: [
       {
-        name: "Terms of Service",
-        href: "/terms-of-services",
+        name: "Open Source License",
+        href: "https://github.com/CodeNKoffee/packship/blob/master/LICENSE.md",
       },
       {
-        name: "Privacy Policy",
-        href: "/privacy-notice",
+        name: "Code of Conduct",
+        href: "https://github.com/CodeNKoffee/packship/blob/master/CODE_OF_CONDUCT.md",
       },
       {
-        name: "License",
-        href: "https://github.com/CodeNKoffee/packship/blob/main/LICENSE",
+        name: "Contributing Guidelines",
+        href: "https://github.com/CodeNKoffee/packship/blob/master/CONTRIBUTING.md",
       },
     ],
   },
