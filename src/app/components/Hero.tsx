@@ -25,7 +25,7 @@ export default function Hero() {
               data-aos-duration="600"
               className="text-5xl md:text-6xl lg:text-7xl font-bold dark:text-white light:text-gray-900 mb-6 leading-tight"
             >
-              Packship
+              PackShip
             </h1>
             <h2
               data-aos="fade-up"

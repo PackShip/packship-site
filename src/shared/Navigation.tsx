@@ -41,8 +41,8 @@ export default function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-20 transition-all duration-300 ${
         scrolled
-          ? "py-1 dark:bg-black/60 light:bg-white/60 backdrop-blur-sm"
-          : "py-2 bg-transparent"
+          ? "py-0 dark:bg-black/60 light:bg-white/60 backdrop-blur-sm"
+          : "py-1 bg-transparent"
       }`}
     >
       <div className="kontainer">
