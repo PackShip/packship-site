@@ -4,6 +4,7 @@ import React from "react";
 import { usePathname } from "next/navigation";
 import CopyCodeSnippet from "@/shared/CopyCodeSnippet";
 import DocNavigation from "@/shared/DocNavigation";
+import InteractiveChecklist from "@/shared/InteractiveChecklist";
 import {
   DocH2,
   DocH3,
@@ -17,6 +18,61 @@ import {
 
 export default function SecurityBestPractices() {
   const pathname = usePathname();
+
+  const securityChecklistItems = [
+    {
+      id: "2fa",
+      text: <>Enable 2FA for your npm account</>,
+    },
+    {
+      id: "audit",
+      text: (
+        <>
+          Regularly audit dependencies with <DocCode>npm audit</DocCode>
+        </>
+      ),
+    },
+    {
+      id: "update",
+      text: <>Keep dependencies updated</>,
+    },
+    {
+      id: "validate",
+      text: <>Validate and sanitize all inputs</>,
+    },
+    {
+      id: "dangerous",
+      text: (
+        <>
+          Avoid dangerous functions like <DocCode>eval()</DocCode>
+        </>
+      ),
+    },
+    {
+      id: "https",
+      text: <>Use HTTPS for all external resources</>,
+    },
+    {
+      id: "error",
+      text: (
+        <>
+          Implement proper error handling without exposing sensitive information
+        </>
+      ),
+    },
+    {
+      id: "static",
+      text: <>Use static analysis tools to identify security issues</>,
+    },
+    {
+      id: "privilege",
+      text: <>Follow the principle of least privilege</>,
+    },
+    {
+      id: "document",
+      text: <>Document security considerations for users of your package</>,
+    },
+  ];
 
   return (
     <>
@@ -396,33 +452,14 @@ snyk monitor`}
         <DocH2 id="security-checklist">Security Checklist</DocH2>
 
         <DocParagraph>
-          Use this checklist to ensure your package follows security best
-          practices:
+          Use this interactive checklist to track your progress in implementing
+          security best practices for your package:
         </DocParagraph>
 
-        <DocList>
-          <DocListItem>☐ Enable 2FA for your npm account</DocListItem>
-          <DocListItem>
-            ☐ Regularly audit dependencies with <DocCode>npm audit</DocCode>
-          </DocListItem>
-          <DocListItem>☐ Keep dependencies updated</DocListItem>
-          <DocListItem>☐ Validate and sanitize all inputs</DocListItem>
-          <DocListItem>
-            ☐ Avoid dangerous functions like <DocCode>eval()</DocCode>
-          </DocListItem>
-          <DocListItem>☐ Use HTTPS for all external resources</DocListItem>
-          <DocListItem>
-            ☐ Implement proper error handling without exposing sensitive
-            information
-          </DocListItem>
-          <DocListItem>
-            ☐ Use static analysis tools to identify security issues
-          </DocListItem>
-          <DocListItem>☐ Follow the principle of least privilege</DocListItem>
-          <DocListItem>
-            ☐ Document security considerations for users of your package
-          </DocListItem>
-        </DocList>
+        <InteractiveChecklist
+          items={securityChecklistItems}
+          storageKey="security-best-practices"
+        />
 
         {/* Next Page Button */}
         <DocNavigation currentPath={pathname} />
