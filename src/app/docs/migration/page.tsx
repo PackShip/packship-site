@@ -27,15 +27,35 @@ export default function Migration() {
         <DocH2 id="migration-v1-v2">Migrating from v1.x to v2.x</DocH2>
 
         <DocParagraph>
-          Version 2.0 of PackShip introduces several breaking changes and new
-          features. Follow these steps to migrate your project from v1.x to
-          v2.x.
+          Version 2.0 of PackShip marks a significant transition from a
+          commercial product to an open-source project. This change was made to
+          foster community-driven innovation, improve accessibility, increase
+          transparency, and provide educational resources for developers.
         </DocParagraph>
+
+        <DocH3>Key Changes in v2.x</DocH3>
+
+        <DocParagraph>The primary changes in v2.x focus on:</DocParagraph>
+
+        <DocList>
+          <DocListItem>
+            <strong>Licensing:</strong> PackShip is now fully open source,
+            removing all commercial licensing restrictions
+          </DocListItem>
+          <DocListItem>
+            <strong>Publishing Improvements:</strong> Resolved edge cases and
+            improved reliability in the package publishing process
+          </DocListItem>
+          <DocListItem>
+            <strong>Community Focus:</strong> Added infrastructure for community
+            contributions and feedback
+          </DocListItem>
+        </DocList>
 
         <DocH3>Update PackShip CLI</DocH3>
 
         <DocParagraph>
-          First, update the PackShip CLI to the latest version:
+          To migrate to v2.x, update the PackShip CLI to the latest version:
         </DocParagraph>
 
         <div className="mb-4">
@@ -45,259 +65,69 @@ export default function Migration() {
           />
         </div>
 
-        <DocH3>Project Configuration Changes</DocH3>
+        <DocH3>Getting Involved</DocH3>
 
         <DocParagraph>
-          Version 2.0 uses a new configuration file format. You need to update
-          your <DocCode>packship.config.js</DocCode> file:
+          As an open-source project, PackShip now welcomes community
+          contributions. You can get involved by:
         </DocParagraph>
-
-        <div className="mb-4">
-          <CopyCodeSnippet
-            code={`// v1.x format (old)
-module.exports = {
-  name: 'my-package',
-  entry: './src/index.ts',
-  output: './dist',
-  typescript: true,
-  react: true
-};
-
-// v2.x format (new)
-module.exports = {
-  package: {
-    name: 'my-package',
-  },
-  build: {
-    entry: './src/index.ts',
-    output: './dist',
-  },
-  features: {
-    typescript: true,
-    react: true
-  }
-};`}
-            language="javascript"
-          />
-        </div>
-
-        <DocNote>
-          The migration tool can automatically convert your configuration file.
-          Run <DocCode>packship migrate</DocCode> to use it.
-        </DocNote>
-
-        <DocH3>Webpack Configuration Changes</DocH3>
-
-        <DocParagraph>
-          In v2.x, the webpack configuration structure has changed. If you have
-          a custom webpack configuration, you need to update it:
-        </DocParagraph>
-
-        <div className="mb-4">
-          <CopyCodeSnippet
-            code={`// v1.x format (old)
-module.exports = {
-  // ... webpack config
-};
-
-// v2.x format (new)
-module.exports = (env, argv) => {
-  return {
-    // ... webpack config
-  };
-};`}
-            language="javascript"
-          />
-        </div>
-
-        <DocH3>Package.json Scripts</DocH3>
-
-        <DocParagraph>
-          Update your <DocCode>package.json</DocCode> scripts to use the new CLI
-          commands:
-        </DocParagraph>
-
-        <div className="mb-4">
-          <CopyCodeSnippet
-            code={`// v1.x scripts (old)
-"scripts": {
-  "build": "packship build",
-  "publish": "packship publish"
-}
-
-// v2.x scripts (new)
-"scripts": {
-  "build": "packship build",
-  "publish": "packship publish",
-  "dev": "packship dev"
-}`}
-            language="json"
-          />
-        </div>
-
-        <DocH3>TypeScript Configuration</DocH3>
-
-        <DocParagraph>
-          Version 2.0 requires TypeScript 4.0 or later. Update your{" "}
-          <DocCode>tsconfig.json</DocCode> file:
-        </DocParagraph>
-
-        <div className="mb-4">
-          <CopyCodeSnippet
-            code={`{
-  "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "react-jsx", // Updated from "react"
-    "declaration": true,
-    "declarationDir": "dist/types",
-    "outDir": "dist"
-  },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.test.tsx"]
-}`}
-            language="json"
-          />
-        </div>
-
-        <DocH3>Babel Configuration</DocH3>
-
-        <DocParagraph>
-          Update your <DocCode>.babelrc</DocCode> file to use the new preset
-          options:
-        </DocParagraph>
-
-        <div className="mb-4">
-          <CopyCodeSnippet
-            code={`{
-  "presets": [
-    "@babel/preset-env",
-    ["@babel/preset-react", {
-      "runtime": "automatic" // New in v2.x
-    }],
-    "@babel/preset-typescript"
-  ],
-  "plugins": [
-    "@babel/plugin-proposal-class-properties",
-    "@babel/plugin-transform-runtime"
-  ]
-}`}
-            language="json"
-          />
-        </div>
-
-        <DocH3>API Changes</DocH3>
-
-        <DocParagraph>
-          Several API methods have been renamed or changed in v2.x:
-        </DocParagraph>
-
-        <div className="mb-4">
-          <CopyCodeSnippet
-            code={`// v1.x API (old)
-import { configure, build } from 'packship';
-
-configure({
-  // config options
-});
-
-build();
-
-// v2.x API (new)
-import { createConfig, buildPackage } from 'packship';
-
-const config = createConfig({
-  // config options
-});
-
-buildPackage(config);`}
-            language="javascript"
-          />
-        </div>
-
-        <DocH2 id="automated-migration">Automated Migration Tool</DocH2>
-
-        <DocParagraph>
-          PackShip provides an automated migration tool to help you upgrade your
-          project:
-        </DocParagraph>
-
-        <div className="mb-4">
-          <CopyCodeSnippet code={`packship migrate`} language="bash" />
-        </div>
-
-        <DocParagraph>This tool will:</DocParagraph>
 
         <DocList>
-          <DocListItem>Update your configuration files</DocListItem>
-          <DocListItem>Update your package.json scripts</DocListItem>
           <DocListItem>
-            Update your webpack and Babel configurations
+            Starring and watching the{" "}
+            <a
+              href="https://github.com/CodeNKoffee/packship"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-packship-purple-lite hover:underline"
+            >
+              GitHub repository
+            </a>
           </DocListItem>
+          <DocListItem>Providing feedback through GitHub issues</DocListItem>
+          <DocListItem>Contributing code, documentation, or ideas</DocListItem>
           <DocListItem>
-            Provide guidance on API changes that need manual updates
+            Spreading the word about PackShip in your developer communities
           </DocListItem>
         </DocList>
 
         <DocNote>
-          Always back up your project before running the migration tool. While
-          it attempts to preserve your custom configurations, manual adjustments
-          might still be necessary.
+          All existing PackShip projects will continue to work with v2.x without
+          requiring configuration changes. The transition to open source does
+          not introduce breaking changes to the API or configuration.
         </DocNote>
 
-        <DocH2 id="troubleshooting">Troubleshooting Migration Issues</DocH2>
-
-        <DocH3>Common Issues</DocH3>
-
-        <DocH4>Build Failures</DocH4>
+        <DocH2 id="future-plans">Future Plans</DocH2>
 
         <DocParagraph>
-          If your build fails after migration, check the following:
+          The open-source journey for PackShip is just beginning. The roadmap
+          for future versions includes:
         </DocParagraph>
 
         <DocList>
           <DocListItem>
-            Ensure all dependencies are updated to compatible versions
+            <strong>PackShip Pug:</strong> A desktop GUI application for visual
+            package management
           </DocListItem>
           <DocListItem>
-            Verify that your webpack configuration is correctly formatted
+            <strong>Enhanced Plugin System:</strong> For extending functionality
+            with community-developed plugins
           </DocListItem>
           <DocListItem>
-            Check for API usage that needs to be updated
-          </DocListItem>
-        </DocList>
-
-        <DocH4>TypeScript Errors</DocH4>
-
-        <DocParagraph>If you encounter TypeScript errors:</DocParagraph>
-
-        <DocList>
-          <DocListItem>Update TypeScript to version 4.0 or later</DocListItem>
-          <DocListItem>
-            Update type definitions for React and other dependencies
+            <strong>Framework Integrations:</strong> Better integration with
+            popular frameworks and tools
           </DocListItem>
           <DocListItem>
-            Check for breaking changes in TypeScript 4.0 that might affect your
-            code
+            <strong>Improved Documentation:</strong> Expanded learning resources
+            and examples
           </DocListItem>
         </DocList>
 
         <DocH3>Getting Help</DocH3>
 
         <DocParagraph>
-          If you encounter issues during migration that you can&apos;t resolve,
-          you can:
+          If you encounter issues during migration or have questions about
+          PackShip v2, you can:
         </DocParagraph>
 
         <DocList>
