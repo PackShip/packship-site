@@ -129,7 +129,7 @@ export default function PackshipPug() {
             Want to be notified when Packship Pug launches?
             <a
               href="https://github.com/CodeNKoffee/packship"
-              className="light:text-purple-500 dark:text-packship-purple-lite hover:underline ml-1"
+              className="text-purple-600 dark:text-packship-purple-lite underline ml-1 font-medium"
             >
               Star our GitHub repository
             </a>
