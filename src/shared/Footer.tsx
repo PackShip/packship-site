@@ -16,7 +16,7 @@ export default function Footer() {
       <div className="kontainer">
         <div className="w-[90%] sm:w-full mx-auto py-[12px] flex flex-col justify-between items-center gap-8">
           <div className="flex flex-col md:flex-row-reverse justify-between items-center md:items-start gap-8">
-            <div className="flex flex-col items-center md:items-start">
+            <div className="flex flex-col items-start">
               <Link href="/" className="flex items-center gap-2 mb-4">
                 <Image
                   src={packshipLogo}
@@ -26,7 +26,7 @@ export default function Footer() {
                   className="h-auto"
                 />
               </Link>
-              <p className="dark:text-white/60 light:text-gray-600 text-sm max-w-md text-center md:text-left">
+              <p className="dark:text-white/60 light:text-gray-600 text-sm max-w-md text-left">
                 An open-source tool that automates the NPM package lifecycle,
                 from setup to publishing, so you can focus on writing great
                 code.
