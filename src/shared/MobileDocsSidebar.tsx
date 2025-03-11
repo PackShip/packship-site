@@ -113,12 +113,23 @@ export default function MobileDocsSidebar() {
 
   return (
     <div className="md:hidden">
+      {/* Toggle button - shows "Contents" when closed, "Close" when open */}
       <button
         onClick={toggleSidebar}
-        className="fixed top-20 left-4 z-30 bg-packship-purple-lite/20 p-2 rounded-md hover:bg-packship-purple-lite/30 transition-colors"
-        aria-label="Toggle sidebar"
+        className="fixed bottom-6 right-6 z-50 bg-packship-purple-lite text-black font-medium py-2 px-4 rounded-full shadow-lg hover:bg-packship-purple-lite/90 transition-colors flex items-center gap-2"
+        aria-label={isOpen ? "Close docs navigation" : "Toggle docs navigation"}
       >
-        <FaBars size={24} className="text-packship-purple-lite" />
+        {isOpen ? (
+          <>
+            <span>Close</span>
+            <FaTimes size={16} />
+          </>
+        ) : (
+          <>
+            <span>Contents</span>
+            <FaBars size={16} />
+          </>
+        )}
       </button>
 
       {isOpen && (
@@ -128,7 +139,7 @@ export default function MobileDocsSidebar() {
           aria-hidden="true"
         >
           <div
-            className="relative w-[80%] max-w-[300px] bg-black/90 dark:bg-black/90 light:bg-gray-100 h-full shadow-lg shadow-black/30"
+            className="relative w-[80%] max-w-[300px] bg-black/90 dark:bg-black/90 light:bg-gray-100 h-full shadow-lg shadow-black/30 ml-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between p-4 border-b border-white/10">
