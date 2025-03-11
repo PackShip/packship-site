@@ -203,7 +203,7 @@ const InteractiveChecklist: React.FC<InteractiveChecklistProps> = ({
                 checkedItems[item.id]
                   ? "text-white/60 dark:text-white/60 light:text-gray-500 line-through"
                   : "text-white dark:text-white light:text-gray-900"
-              }`}
+              } checklist-item-text`}
             >
               {item.text}
             </span>

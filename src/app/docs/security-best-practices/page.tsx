@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import CopyCodeSnippet from "@/shared/CopyCodeSnippet";
 import DocNavigation from "@/shared/DocNavigation";
 import InteractiveChecklist from "@/shared/InteractiveChecklist";
+import ChecklistCode from "@/shared/ChecklistCode";
 import {
   DocH2,
   DocH3,
@@ -28,7 +29,8 @@ export default function SecurityBestPractices() {
       id: "audit",
       text: (
         <>
-          Regularly audit dependencies with <DocCode>npm audit</DocCode>
+          Regularly audit dependencies with{" "}
+          <ChecklistCode>npm audit</ChecklistCode>
         </>
       ),
     },
@@ -44,7 +46,7 @@ export default function SecurityBestPractices() {
       id: "dangerous",
       text: (
         <>
-          Avoid dangerous functions like <DocCode>eval()</DocCode>
+          Avoid dangerous functions like <ChecklistCode>eval()</ChecklistCode>
         </>
       ),
     },

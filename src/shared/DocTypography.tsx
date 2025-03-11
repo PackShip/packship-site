@@ -68,7 +68,7 @@ export function DocParagraph({ children, className = "" }: DocTextProps) {
 export function DocCode({ children, className = "" }: DocTextProps) {
   return (
     <code
-      className={`bg-black/30 px-1.5 py-0.5 rounded text-packship-purple-lite font-mono ${className}`}
+      className={`bg-black/30 dark:bg-black/30 light:bg-gray-200 px-1.5 py-0.5 rounded text-packship-purple-lite dark:text-packship-purple-lite light:text-purple-600 font-mono ${className}`}
     >
       {children}
     </code>

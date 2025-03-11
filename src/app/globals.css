@@ -216,6 +216,32 @@ button {
   }
 }
 
+/* Ensure code elements in the checklist are visible in both light and dark modes */
+.light .text-packship-purple-lite code,
+.light code.text-packship-purple-lite {
+  color: #a855f7 !important; /* purple-500 */
+  background-color: rgba(168, 85, 247, 0.1);
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.25rem;
+}
+
+/* Ensure checklist items with code elements are properly styled */
+.checklist-item-text code {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.2;
+}
+
+.light .checklist-item-text code {
+  color: #a855f7 !important; /* purple-500 */
+}
+
+/* Style for checklist code elements when the item is checked */
+.checklist-item-text.line-through .checklist-code {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
 /* Text colors for headings */
 .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
   color: #fff;
