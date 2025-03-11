@@ -49,6 +49,10 @@ export const footerLinks = [
         href: "/packship-pug",
       },
       {
+        name: "Blog",
+        href: "/blog",
+      },
+      {
         name: "GitHub",
         href: "https://github.com/CodeNKoffee/packship",
       },
