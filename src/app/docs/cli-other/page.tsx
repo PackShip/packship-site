@@ -22,18 +22,17 @@ export default function CliOther() {
     <>
       <div className="w-full flex flex-col gap-6">
         <DocParagraph>
-          In addition to the core <DocCode>init</DocCode> and{" "}
-          <DocCode>publish</DocCode> commands, PackShip provides several other
-          useful commands. This guide explains these additional commands and
-          their usage.
+          In addition to the core <DocCode>init</DocCode>,{" "}
+          <DocCode>publish</DocCode>, and the version flag commands, PackShip
+          provides several other useful commands. This guide explains these
+          additional commands and their usage.
         </DocParagraph>
 
         <DocH2 id="report-command">packship report</DocH2>
 
         <DocParagraph>
-          The <DocCode>report</DocCode> command generates a detailed report
-          about your package, including size analysis, dependency information,
-          and potential issues.
+          The <DocCode>report</DocCode> command allows you to report issues with
+          the PackShip tool itself directly to the GitHub repository.
         </DocParagraph>
 
         <DocH3>Basic Usage</DocH3>
@@ -45,135 +44,77 @@ export default function CliOther() {
         <DocParagraph>This command will:</DocParagraph>
 
         <DocList>
-          <DocListItem>Analyze your package size</DocListItem>
-          <DocListItem>List all dependencies and their versions</DocListItem>
-          <DocListItem>Identify potential issues or improvements</DocListItem>
-          <DocListItem>Generate a report in the console</DocListItem>
+          <DocListItem>
+            Guide you through an interactive process to report an issue
+          </DocListItem>
+          <DocListItem>
+            Allow you to choose between automatic or manual submission
+          </DocListItem>
+          <DocListItem>
+            Collect necessary information about the issue
+          </DocListItem>
+          <DocListItem>
+            Optionally include system information to help with troubleshooting
+          </DocListItem>
         </DocList>
 
-        <DocH3>Command Options</DocH3>
+        <DocH3>Submission Methods</DocH3>
 
-        <DocH4>--output [format]</DocH4>
-
-        <DocParagraph>
-          Specify the output format for the report. Available formats are{" "}
-          <DocCode>json</DocCode>, <DocCode>html</DocCode>, and{" "}
-          <DocCode>text</DocCode> (default).
-        </DocParagraph>
-
-        <div className="mb-4">
-          <CopyCodeSnippet
-            code={`# Generate a JSON report
-packship report --output json
-
-# Generate an HTML report
-packship report --output html`}
-            language="bash"
-          />
-        </div>
-
-        <DocH4>--file [path]</DocH4>
+        <DocH4>Automatic Submission</DocH4>
 
         <DocParagraph>
-          Save the report to a file instead of displaying it in the console.
+          Submit the issue directly to GitHub from the CLI. This requires a
+          GitHub personal access token with the &quot;repo&quot; scope.
         </DocParagraph>
-
-        <div className="mb-4">
-          <CopyCodeSnippet
-            code={`# Save the report to a file
-packship report --file ./report.txt
-
-# Save a JSON report to a file
-packship report --output json --file ./report.json`}
-            language="bash"
-          />
-        </div>
-
-        <DocH3>Report Sections</DocH3>
-
-        <DocParagraph>The report includes several sections:</DocParagraph>
-
-        <DocH4>Package Information</DocH4>
 
         <DocParagraph>
-          Basic information about your package, including name, version,
-          description, and author.
+          If you don&apos;t have a token configured, the CLI will prompt you to
+          enter one and optionally save it for future use.
         </DocParagraph>
 
-        <div className="mb-4 font-mono text-sm bg-black/20 p-4 rounded-md text-white/80 overflow-x-auto">
-          <pre>
-            {`Package Information:
-  Name: my-package
-  Version: 1.0.0
-  Description: A description of my package
-  Author: Your Name
-  License: MIT`}
-          </pre>
-        </div>
-
-        <DocH4>Size Analysis</DocH4>
+        <DocH4>Manual Submission</DocH4>
 
         <DocParagraph>
-          Analysis of your package size, including the total size, size of each
-          file, and size of dependencies.
+          The CLI will format your issue and provide instructions for manually
+          submitting it to GitHub.
         </DocParagraph>
 
-        <div className="mb-4 font-mono text-sm bg-black/20 p-4 rounded-md text-white/80 overflow-x-auto">
-          <pre>
-            {`Size Analysis:
-  Total Size: 256.4 KB
-  Source Files: 45.2 KB
-  Dependencies: 211.2 KB
-  
-  Largest Files:
-    dist/index.js: 32.1 KB
-    dist/components/DataTable.js: 8.5 KB
-    dist/utils/formatters.js: 4.6 KB`}
-          </pre>
-        </div>
+        <DocH3>Issue Categories</DocH3>
 
-        <DocH4>Dependencies</DocH4>
+        <DocParagraph>You can report different types of issues:</DocParagraph>
 
-        <DocParagraph>
-          List of all dependencies, including their versions and sizes.
-        </DocParagraph>
+        <DocList>
+          <DocListItem>
+            Bug Report - For problems with the PackShip tool
+          </DocListItem>
+          <DocListItem>
+            Feature Request - For suggesting new features
+          </DocListItem>
+          <DocListItem>
+            Documentation Issue - For reporting errors or gaps in documentation
+          </DocListItem>
+          <DocListItem>
+            Question - For general questions about PackShip
+          </DocListItem>
+          <DocListItem>
+            Other - For any other PackShip-related issues
+          </DocListItem>
+        </DocList>
 
-        <div className="mb-4 font-mono text-sm bg-black/20 p-4 rounded-md text-white/80 overflow-x-auto">
-          <pre>
-            {`Dependencies:
-  react: ^17.0.2 (peer)
-  react-dom: ^17.0.2 (peer)
-  lodash: ^4.17.21 (45.6 KB)
-  prop-types: ^15.8.1 (2.8 KB)
-  
-  Dev Dependencies:
-    typescript: ^4.7.4
-    webpack: ^5.73.0
-    babel-loader: ^8.2.5`}
-          </pre>
-        </div>
-
-        <DocH4>Issues and Recommendations</DocH4>
-
-        <DocParagraph>
-          Potential issues and recommendations for improving your package.
-        </DocParagraph>
-
-        <div className="mb-4 font-mono text-sm bg-black/20 p-4 rounded-md text-white/80 overflow-x-auto">
-          <pre>
-            {`Issues and Recommendations:
-  ⚠️ Large bundle size: Consider code splitting or tree shaking
-  ⚠️ Outdated dependency: lodash (4.17.21 -> 4.17.22)
-  ✅ All peer dependencies are correctly specified
-  ✅ TypeScript declarations are properly generated`}
-          </pre>
-        </div>
+        <DocNote>
+          The <DocCode>report</DocCode> command is specifically for reporting
+          issues with the PackShip tool itself, not for issues with your npm
+          package. If you&apos;re trying to report an issue with your package,
+          please refer to your package documentation.
+        </DocNote>
 
         <DocH2 id="telemetry-commands">Telemetry Commands</DocH2>
 
         <DocParagraph>
-          PackShip collects anonymous usage data to help improve the tool. You
-          can control telemetry with the following commands.
+          PackShip collects anonymous usage data to help improve the tool. This
+          data includes command usage and error rates, but never includes
+          personal information or code. You can control telemetry with the
+          following commands.
         </DocParagraph>
 
         <DocH3>packship telemetry status</DocH3>
@@ -195,7 +136,7 @@ packship report --output json --file ./report.json`}
             {`Telemetry is currently enabled.
 
 PackShip collects anonymous usage data to help improve the tool.
-No personal information or code is collected.`}
+This data includes command usage and error rates, but never includes personal information or code.`}
           </pre>
         </div>
 
@@ -212,11 +153,7 @@ No personal information or code is collected.`}
         </DocParagraph>
 
         <div className="mb-4 font-mono text-sm bg-black/20 p-4 rounded-md text-white/80 overflow-x-auto">
-          <pre>
-            {`Telemetry has been enabled.
-
-Thank you for helping us improve PackShip!`}
-          </pre>
+          <pre>{`Telemetry has been enabled.`}</pre>
         </div>
 
         <DocH3>packship telemetry disable</DocH3>
@@ -235,34 +172,14 @@ Thank you for helping us improve PackShip!`}
         </DocParagraph>
 
         <div className="mb-4 font-mono text-sm bg-black/20 p-4 rounded-md text-white/80 overflow-x-auto">
-          <pre>
-            {`Telemetry has been disabled.
-
-You can re-enable it at any time with 'packship telemetry enable'.`}
-          </pre>
+          <pre>{`Telemetry has been disabled.`}</pre>
         </div>
 
         <DocNote>
           Telemetry data is anonymous and does not include any personal
           information or code. It only includes information about which commands
-          are used and basic system information.
+          are used and basic system information to help improve the tool.
         </DocNote>
-
-        <DocH2 id="version-command">packship version</DocH2>
-
-        <DocParagraph>Display the current version of PackShip.</DocParagraph>
-
-        <div className="mb-4">
-          <CopyCodeSnippet code={`packship version`} language="bash" />
-        </div>
-
-        <DocParagraph>
-          This will show the installed version of PackShip.
-        </DocParagraph>
-
-        <div className="mb-4 font-mono text-sm bg-black/20 p-4 rounded-md text-white/80 overflow-x-auto">
-          <pre>{`PackShip v2.0.0`}</pre>
-        </div>
 
         <DocH2 id="help-command">packship help</DocH2>
 
