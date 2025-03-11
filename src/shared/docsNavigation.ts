@@ -64,6 +64,16 @@ const getPageIndex = (currentPath: string) => {
   return flattenedItems.findIndex((item) => item.href === currentPath);
 };
 
+// Check if a page is the first page
+export const isFirstPage = (currentPath: string) => {
+  return getPageIndex(currentPath) === 0;
+};
+
+// Check if a page is the last page
+export const isLastPage = (currentPath: string) => {
+  return getPageIndex(currentPath) === flattenedItems.length - 1;
+};
+
 // Get the previous page
 export const getPreviousPage = (currentPath: string) => {
   const currentIndex = getPageIndex(currentPath);
