@@ -118,7 +118,7 @@ export default function DocsSidebar() {
                         href={item.href}
                         className={`block py-1.5 px-2 rounded-md transition-colors text-[14px] ${
                           pathname === item.href
-                            ? "bg-packship-purple-lite/30 text-packship-purple-lite font-medium"
+                            ? "bg-packship-purple-lite/30 !text-white dark:!text-white light:!text-white font-medium"
                             : "text-white/70 dark:text-white/70 light:text-gray-600 hover:text-packship-purple-lite hover:bg-white/5"
                         }`}
                       >
