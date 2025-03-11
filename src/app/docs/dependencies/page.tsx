@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
+import { usePathname } from "next/navigation";
 import CopyCodeSnippet from "@/shared/CopyCodeSnippet";
-import NextPageButton from "@/shared/NextPageButton";
+import DocNavigation from "@/shared/DocNavigation";
 import {
   DocH2,
   DocH3,
@@ -15,6 +16,8 @@ import {
 } from "@/shared/DocTypography";
 
 export default function Dependencies() {
+  const pathname = usePathname();
+
   return (
     <>
       <div className="w-full flex flex-col gap-6">
@@ -311,7 +314,7 @@ npm install`}
         </div>
 
         {/* Next Page Button */}
-        <NextPageButton title="Publishing" href="/docs/publishing" />
+        <DocNavigation currentPath={pathname} />
       </div>
     </>
   );

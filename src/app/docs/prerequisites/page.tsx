@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
+import { usePathname } from "next/navigation";
 import CopyCodeSnippet from "@/shared/CopyCodeSnippet";
-import NextPageButton from "@/shared/NextPageButton";
+import DocNavigation from "@/shared/DocNavigation";
 import {
   DocH2,
   DocH3,
@@ -15,6 +16,8 @@ import {
 } from "@/shared/DocTypography";
 
 export default function Prerequisites() {
+  const pathname = usePathname();
+
   return (
     <>
       <div className="w-full flex flex-col gap-6">
@@ -180,7 +183,7 @@ export default function Prerequisites() {
         </DocNote>
 
         {/* Next Page Button */}
-        <NextPageButton title="Create a Project" href="/docs/create-project" />
+        <DocNavigation currentPath={pathname} />
       </div>
     </>
   );

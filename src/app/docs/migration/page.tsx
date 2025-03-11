@@ -2,7 +2,7 @@
 
 import React from "react";
 import CopyCodeSnippet from "@/shared/CopyCodeSnippet";
-import NextPageButton from "@/shared/NextPageButton";
+import DocNavigation from "@/shared/DocNavigation";
 import {
   DocH2,
   DocH3,
@@ -13,8 +13,11 @@ import {
   DocList,
   DocListItem,
 } from "@/shared/DocTypography";
+import { usePathname } from "next/navigation";
 
 export default function Migration() {
+  const pathname = usePathname();
+
   return (
     <>
       <div className="w-full flex flex-col gap-6">
@@ -160,11 +163,8 @@ export default function Migration() {
           </DocListItem>
         </DocList>
 
-        {/* Next Page Button */}
-        <NextPageButton
-          title="Package Structure"
-          href="/docs/package-structure"
-        />
+        {/* Navigation Buttons */}
+        <DocNavigation currentPath={pathname} />
       </div>
     </>
   );

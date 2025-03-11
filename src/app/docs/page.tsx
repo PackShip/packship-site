@@ -1,12 +1,13 @@
 "use client";
 
 import React from "react";
+import { usePathname } from "next/navigation";
 import DocsSectionHeader from "@/shared/DocsSectionHeader";
 import CopyCodeSnippet from "@/shared/CopyCodeSnippet";
 import Image from "next/image";
 import DependacyResIssuePreview from "../../../public/assets/dep-res-issue.png";
 import EACCESSPreview from "../../../public/assets/eas-issue.png";
-import NextPageButton from "@/shared/NextPageButton";
+import DocNavigation from "@/shared/DocNavigation";
 import {
   DocH2,
   DocH3,
@@ -19,6 +20,8 @@ import {
 } from "@/shared/DocTypography";
 
 export default function Docs() {
+  const pathname = usePathname();
+
   return (
     <>
       <div className="w-full flex flex-col justify-center">
@@ -217,7 +220,7 @@ export default function Docs() {
           </div>
 
           {/* Next Page Button */}
-          <NextPageButton title="Prerequisites" href="/docs/prerequisites" />
+          <DocNavigation currentPath={pathname} />
         </div>
       </div>
     </>
