@@ -57,7 +57,7 @@ export default function Footer() {
                         >
                           {link.name}
                         </Link>
-                        {link.name === "Packship Pug" && (
+                        {link.name === "PackShip Pug" && (
                           <span className="ml-2">
                             <ComingSoonBadge />
                           </span>
@@ -72,7 +72,7 @@ export default function Footer() {
 
           <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t dark:border-white/10 light:border-gray-200 gap-4">
             <div className="dark:text-white/60 light:text-gray-600 text-sm">
-              &copy; {currentYear} Packship. Released under the MIT License.
+              &copy; {currentYear} PackShip. Released under the MIT License.
             </div>
 
             <div className="flex gap-4">

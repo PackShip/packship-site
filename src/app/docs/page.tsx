@@ -24,17 +24,17 @@ export default function Docs() {
       <div className="w-full flex flex-col justify-center">
         <div className="w-full flex flex-col gap-6">
           <DocParagraph>
-            This guide will walk you through installing Packship&apos;s
+            This guide will walk you through installing PackShip&apos;s
             dependencies and configuring Webpack.
           </DocParagraph>
 
           {/* Section: Getting Started */}
           <DocH2 id="getting-started">1. Getting Started</DocH2>
           <DocParagraph>
-            Start by installing the Packship global command:
+            Start by installing the PackShip global command:
           </DocParagraph>
 
-          <DocH3>Packship Global Installation</DocH3>
+          <DocH3>PackShip Global Installation</DocH3>
 
           {/* MacOS & Linux Section */}
           <div className="mb-4 flex flex-col gap-3">
@@ -51,7 +51,7 @@ export default function Docs() {
             <CopyCodeSnippet code="npm i -g packship@latest" language="bash" />
           </div>
 
-          <DocH3>Setting Up Your Package with Packship</DocH3>
+          <DocH3>Setting Up Your Package with PackShip</DocH3>
 
           {/* Setup Section */}
           <div className="mb-4 flex flex-col gap-3">

@@ -26,13 +26,13 @@ export default function Features() {
                 data-aos="fade-up"
                 className="text-3xl md:text-4xl font-bold dark:text-white light:text-gray-900 mb-4"
               >
-                Why Use Packship?
+                Why Use PackShip?
               </h2>
               <p
                 data-aos="fade-up"
                 className="dark:text-white/70 light:text-gray-700 text-lg"
               >
-                Packship eliminates the complexity of NPM package development,
+                PackShip eliminates the complexity of NPM package development,
                 letting you focus on writing great code instead of managing
                 release processes.
               </p>

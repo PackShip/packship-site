@@ -10,7 +10,7 @@ export default function PackshipPug() {
         <div className="relative mb-12 text-center">
           <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-packship-purple-lite/5 rounded-full blur-3xl -z-10"></div>
           <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-packship-purple-lite/5 rounded-full blur-3xl -z-10"></div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Packship Pug</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">PackShip Pug</h1>
           <div className="flex justify-center mb-6">
             <ComingSoonBadge className="text-sm px-3 py-1" />
           </div>
@@ -23,16 +23,16 @@ export default function PackshipPug() {
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           <div className="bg-white dark:bg-black/20 light:bg-white p-6 rounded-xl shadow-sm">
             <h2 className="text-xl font-semibold text-packship-purple-lite mb-4">
-              What is Packship Pug?
+              What is PackShip Pug?
             </h2>
             <p className="text-gray-600 dark:text-white/70 light:text-gray-600 mb-4">
-              Packship Pug is our upcoming desktop application that brings the
+              PackShip Pug is our upcoming desktop application that brings the
               power of Packship to a graphical user interface. It&apos;s
               designed for developers who prefer visual tools over command-line
               interfaces.
             </p>
             <p className="text-gray-600 dark:text-white/70 light:text-gray-600">
-              With Packship Pug, you&apos;ll be able to create, update, and
+              With PackShip Pug, you&apos;ll be able to create, update, and
               publish packages with just a few clicks, making the entire process
               more intuitive and accessible.
             </p>

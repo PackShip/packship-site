@@ -30,7 +30,7 @@ export default function Pricing() {
               data-aos="fade-up"
               className="dark:text-white/70 light:text-gray-600 text-lg"
             >
-              Packship is open source and free to use. Join our community and
+              PackShip is open source and free to use. Join our community and
               start shipping your packages faster.
             </p>
           </div>
@@ -49,7 +49,7 @@ export default function Pricing() {
                 </h3>
               </div>
               <p className="dark:text-white/70 light:text-gray-600 mb-6">
-                Packship is completely open source under the MIT license. You
+                PackShip is completely open source under the MIT license. You
                 can use it, modify it, and contribute to it freely.
               </p>
               <div className="mt-auto flex gap-4">

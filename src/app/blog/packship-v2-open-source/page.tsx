@@ -165,7 +165,7 @@ export default function PackshipV2OpenSource() {
               </p>
 
               <ul>
-                <li>Packship Pug: A desktop GUI application (coming soon)</li>
+                <li>PackShip Pug: A desktop GUI application (coming soon)</li>
                 <li>Enhanced plugin system for extending functionality</li>
                 <li>Better integration with popular frameworks and tools</li>
                 <li>Improved documentation and learning resources</li>

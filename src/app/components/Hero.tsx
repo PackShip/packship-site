@@ -40,7 +40,7 @@ export default function Hero() {
               className="text-lg dark:text-white/80 light:text-gray-700 max-w-2xl mx-auto md:mx-0 mb-8"
             >
               A powerful CLI tool that automates the entire NPM package
-              lifecycle, from setup to publishing. Packship handles
+              lifecycle, from setup to publishing. PackShip handles
               configuration, versioning, testing, and deployment so you can
               focus on writing code.
             </p>

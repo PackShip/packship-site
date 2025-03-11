@@ -8,7 +8,7 @@ export const navLinks = [
     href: "/docs",
   },
   {
-    name: "Packship Pug",
+    name: "PackShip Pug",
     href: "/packship-pug",
   },
   {
@@ -45,7 +45,7 @@ export const footerLinks = [
         href: "/docs",
       },
       {
-        name: "Packship Pug",
+        name: "PackShip Pug",
         href: "/packship-pug",
       },
       {
