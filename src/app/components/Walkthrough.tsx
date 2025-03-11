@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import SectionHeader from "@/shared/SectionHeader";
+import NoteBadge from "./NoteBadge";
 
 export default function Walkthrough() {
   useEffect(() => {
@@ -28,6 +29,14 @@ export default function Walkthrough() {
               style={{ width: "100%", maxWidth: "500px", height: "405px" }}
               className="bg-white bg-opacity-75 rounded-xl p-2 md:w-500"
             />
+            <div className="mt-4 max-w-lg">
+              <NoteBadge>
+                Note: This video shows Packship v1. In v2 (current version), no
+                serial code is required. When running{" "}
+                <code className="bg-black/20 px-1 rounded">packship init</code>,
+                the package creation process starts immediately.
+              </NoteBadge>
+            </div>
           </div>
         </div>
       </div>
