@@ -117,6 +117,13 @@ export default function CLIOther() {
           following commands.
         </DocParagraph>
 
+        <DocNote>
+          By default, telemetry is turned on when you first install and use
+          PackShip. This helps us understand how the tool is being used and
+          identify areas for improvement. You can disable it at any time using
+          the commands below.
+        </DocNote>
+
         <DocH3>packship telemetry status</DocH3>
 
         <DocParagraph>
@@ -205,6 +212,7 @@ packship help report`}
           including available options and examples.
         </DocParagraph>
 
+        {/* Commented out update command
         <DocH2 id="update-command">packship update</DocH2>
 
         <DocParagraph>Update PackShip to the latest version.</DocParagraph>
@@ -221,7 +229,9 @@ packship help report`}
             language="bash"
           />
         </div>
+        */}
 
+        {/* Commented out doctor command
         <DocH2 id="doctor-command">packship doctor</DocH2>
 
         <DocParagraph>
@@ -259,7 +269,9 @@ Recommendations:
 2. Add react-dom as a peer dependency`}
           </pre>
         </div>
+        */}
 
+        {/* Commented out clean command
         <DocH2 id="clean-command">packship clean</DocH2>
 
         <DocParagraph>
@@ -285,6 +297,7 @@ Recommendations:
           remove node_modules, use <DocCode>rm -rf node_modules</DocCode> or{" "}
           <DocCode>packship clean --deep</DocCode>.
         </DocNote>
+        */}
 
         {/* Next Page Button */}
         <DocNavigation currentPath={pathname} />
