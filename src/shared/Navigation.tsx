@@ -75,9 +75,12 @@ export default function Navigation() {
                 >
                   {link.name}
                   {link.name === "Packship Pug" && (
-                    <span className="absolute -top-2 -right-2">
-                      <ComingSoonBadge />
-                    </span>
+                    <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 whitespace-nowrap">
+                      <div className="relative">
+                        <ComingSoonBadge className="shadow-sm" />
+                        <div className="absolute h-2 w-2 bg-packship-purple-lite/20 rotate-45 -bottom-1 left-1/2 transform -translate-x-1/2"></div>
+                      </div>
+                    </div>
                   )}
                 </Link>
               </li>
@@ -145,9 +148,12 @@ export default function Navigation() {
                     >
                       {link.name}
                       {link.name === "Packship Pug" && (
-                        <span className="absolute -top-2 -right-2">
-                          <ComingSoonBadge />
-                        </span>
+                        <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 whitespace-nowrap">
+                          <div className="relative">
+                            <ComingSoonBadge className="shadow-sm" />
+                            <div className="absolute h-2 w-2 bg-packship-purple-lite/20 rotate-45 top-5 left-1/2 transform -translate-x-1/2"></div>
+                          </div>
+                        </div>
                       )}
                     </Link>
                   ))}
