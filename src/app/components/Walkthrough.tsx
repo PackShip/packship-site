@@ -17,8 +17,13 @@ export default function Walkthrough() {
     <section className="mt-24">
       <div className="kontainer text-center">
         <div className="row text-md sm:text-xl text-white flex flex-col items-center gap-8">
-          <div className="h-24 flex items-center justify-center">
+          <div className="h-24 flex flex-col items-center justify-center">
             <SectionHeader header="Walkthrough" />
+            <NoteBadge>
+                V2 Update: No serial code needed.{" "}
+                <code className="bg-black/20 px-1 rounded">packship init</code>{" "}
+                starts immediately.
+              </NoteBadge>
           </div>
           <div
             data-aos="fade-up"
@@ -29,14 +34,6 @@ export default function Walkthrough() {
               style={{ width: "100%", maxWidth: "500px", height: "405px" }}
               className="bg-white bg-opacity-75 rounded-xl p-2 md:w-500"
             />
-            <div className="mt-4 max-w-lg">
-              <NoteBadge>
-                Note: This video shows Packship v1. In v2 (current version), no
-                serial code is required. When running{" "}
-                <code className="bg-black/20 px-1 rounded">packship init</code>,
-                the package creation process starts immediately.
-              </NoteBadge>
-            </div>
           </div>
         </div>
       </div>
