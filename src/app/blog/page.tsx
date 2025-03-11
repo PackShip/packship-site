@@ -1,9 +1,13 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Navigation from "@/shared/Navigation";
 
 export default function Blog() {
   return (
+    <>
+    <Navigation />
     <div className="min-h-screen pt-24 pb-16">
       <div className="kontainer">
         <div className="max-w-4xl mx-auto">
@@ -99,5 +103,6 @@ export default function Blog() {
         </div>
       </div>
     </div>
+    </>
   );
 }

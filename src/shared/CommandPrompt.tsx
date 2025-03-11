@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy, faCheck } from "@fortawesome/free-solid-svg-icons";
 import { useTheme } from "@/context/ThemeContext";
+import toast from "react-hot-toast";
 
 interface CommandPromptProps {
   command?: string;
@@ -30,8 +31,27 @@ export default function CommandPrompt({
   const isDark = theme === "dark";
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(commands[currentTab] || command);
+    const textToCopy = commands[currentTab] || command;
+    navigator.clipboard.writeText(textToCopy);
     setCopied(true);
+
+    toast.success("Command copied to clipboard!", {
+      style: {
+        background: "rgba(20, 20, 20, 0.9)",
+        color: "#fff",
+        border: "1px solid rgba(138, 75, 175, 0.5)",
+        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.3)",
+        padding: "12px 16px",
+        borderRadius: "8px",
+        fontSize: "14px",
+      },
+      iconTheme: {
+        primary: "#8a4baf",
+        secondary: "#fff",
+      },
+      duration: 2000,
+    });
+
     setTimeout(() => setCopied(false), 2000);
   };
 
@@ -48,8 +68,8 @@ export default function CommandPrompt({
           </button>
         ))}
       </div>
-      <div className="terminal-window flex justify-between items-center">
-        <div className="flex items-center overflow-x-auto">
+      <div className="terminal-window relative">
+        <div className="flex items-center pr-12 overflow-x-auto">
           <span className="text-green-500 dark:text-green-400 light:text-green-600 mr-2">
             $
           </span>
@@ -59,8 +79,9 @@ export default function CommandPrompt({
         </div>
         <button
           onClick={handleCopy}
-          className="dark:text-white/50 light:text-gray-500 hover:text-packship-purple-lite transition-colors p-2 flex-shrink-0"
+          className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-packship-purple-lite/20 hover:bg-packship-purple-lite/30 text-packship-purple-lite p-2 rounded-full transition-colors flex-shrink-0"
           title={copied ? "Copied!" : "Copy to clipboard"}
+          aria-label="Copy command to clipboard"
         >
           <FontAwesomeIcon icon={copied ? faCheck : faCopy} />
         </button>

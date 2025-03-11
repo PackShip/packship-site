@@ -60,16 +60,40 @@ export default function CopyCodeSnippet({
   }
 
   return (
-    <div className="bg-[#1E1E1E] p-2 rounded-lg w-full flex flex-col sm:flex-row justify-between gap-4">
-      <SyntaxHighlighter language={language} style={vs2015}>
-        {code}
-      </SyntaxHighlighter>
-      <button
-        className="bg-packship-purple px-4 py-2 text-white font-bold text-sm rounded-full hover:bg-purple-700 transition"
-        onClick={copyCodeToClipboard}
-      >
-        {buttonText}
-      </button>
+    <div className="relative bg-[#1E1E1E] rounded-lg w-full overflow-hidden">
+      <div className="px-4 py-1 overflow-auto max-h-[500px]">
+        <SyntaxHighlighter
+          language={language}
+          style={vs2015}
+          wrapLongLines={true}
+          className="m-0"
+        >
+          {code}
+        </SyntaxHighlighter>
+      </div>
+
+      <div className="absolute bottom-4 right-4">
+        <button
+          className="bg-packship-purple hover:bg-purple-700 text-white font-bold text-sm rounded-full px-4 py-2 transition-colors flex items-center justify-center shadow-lg"
+          onClick={copyCodeToClipboard}
+          aria-label="Copy code to clipboard"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4 mr-2"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          {buttonText}
+        </button>
+      </div>
     </div>
   );
 }
