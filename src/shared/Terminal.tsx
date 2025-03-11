@@ -65,7 +65,7 @@ export default function Terminal({ commands }: TerminalProps) {
         ))}
       </div>
 
-      <div className="absolute top-1/2 right-4 transform -translate-y-1/2">
+      <div className="absolute bottom-0 right-4 transform -translate-y-1/2 bg-gray-800 rounded-lg p-2">
         <button
           className="bg-packship-purple hover:bg-purple-700 text-white font-bold text-sm rounded-full px-4 py-2 transition-colors flex items-center justify-center shadow-lg"
           onClick={copyToClipboard}

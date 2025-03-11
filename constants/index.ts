@@ -70,8 +70,8 @@ export const footerLinks = [
         href: "https://discord.gg/packship",
       },
       {
-        name: "Twitter",
-        href: "https://twitter.com/packshipcli",
+        name: "X (formerly Twitter)",
+        href: "https://x.com/h4temsoliman",
       },
       {
         name: "Contribute",
@@ -79,7 +79,7 @@ export const footerLinks = [
       },
       {
         name: "Sponsor",
-        href: "https://github.com/sponsors/packship",
+        href: "/sponsor-packship",
       },
     ],
   },
