@@ -35,7 +35,7 @@ const getIconForFeature = (title: string) => {
 const getDescriptionForFeature = (title: string) => {
   const titleLower = title.toLowerCase();
   if (titleLower.includes("setup") || titleLower.includes("automated"))
-    return "Automatically generates package.json, README, testing setup, and so much more with a single command.";
+    return "Automatically generates package.json, README, project setup, and so much more with a single command.";
   if (titleLower.includes("workflow") || titleLower.includes("efficient"))
     return "Integrates with Git, CI/CD pipelines, and testing frameworks to create a seamless development experience.";
   if (titleLower.includes("cli") || titleLower.includes("command"))
@@ -45,7 +45,7 @@ const getDescriptionForFeature = (title: string) => {
   if (titleLower.includes("size") || titleLower.includes("minimal"))
     return "Lightweight tool that doesn't bloat your project with unnecessary dependencies or configuration files.";
   if (titleLower.includes("platform") || titleLower.includes("cross"))
-    return "Works on macOS, Windows, and Linux with consistent behavior and reliable results across environments.";
+    return "Seamlessly operates across macOS, Windows, and Linux, delivering consistent performance and dependable results regardless of your package manager (NPM, PNPM, Yarn) or shell environment (Bash, PowerShell, Zsh).";
   return "Enhance your NPM package development experience.";
 };
 

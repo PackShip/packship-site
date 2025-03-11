@@ -223,7 +223,7 @@ export const painPoints = [
     title: "Platform Compatibility Issues",
     hours: "2 hrs",
     description: "fixing cross-platform bugs",
-    creatorExperience: "1 day"
+    creatorExperience: "24 hours"
   },
 ];
 
