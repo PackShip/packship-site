@@ -3,6 +3,7 @@ import { footerLinks } from "../../constants";
 import Image from "next/image";
 import packshipLogo from "../../public/assets/PackShipLogo.svg";
 import { FaGithub, FaTwitter, FaDiscord } from "react-icons/fa";
+import ComingSoonBadge from "../app/components/ComingSoonBadge";
 
 const isExternal = (url: string) => /^https?:\/\//.test(url);
 const isAnchorLink = (url: string) => /^#/.test(url);
@@ -57,6 +58,11 @@ export default function Footer() {
                         >
                           {link.name}
                         </Link>
+                        {link.name === "PackShip Pug" && (
+                          <span className="ml-2">
+                            <ComingSoonBadge />
+                          </span>
+                        )}
                       </li>
                     ))}
                   </ul>
