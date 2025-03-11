@@ -14,7 +14,6 @@
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "@fortawesome/react-native-fontawesome": "^0.3.2",
     "@reduxjs/toolkit": "^2.2.7",
     "aos": "^2.3.4",
     "axios": "^1.7.7",
