@@ -91,6 +91,11 @@ export default function MobileDocsSidebar() {
     }
   }, [isOpen, pathname]);
 
+  // Close sidebar when route changes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
   const toggleSection = (title: string) => {
     setExpandedSections((prev) => ({
       ...prev,
@@ -110,34 +115,42 @@ export default function MobileDocsSidebar() {
     <div className="md:hidden">
       <button
         onClick={toggleSidebar}
-        className="fixed top-20 left-4 z-10 bg-packship-purple-lite/20 p-2 rounded-md"
+        className="fixed top-20 left-4 z-30 bg-packship-purple-lite/20 p-2 rounded-md hover:bg-packship-purple-lite/30 transition-colors"
         aria-label="Toggle sidebar"
       >
         <FaBars size={24} className="text-packship-purple-lite" />
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 bg-black/50 z-40" onClick={closeSidebar}>
+        <div
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+          onClick={closeSidebar}
+          aria-hidden="true"
+        >
           <div
-            className="relative w-full max-w-[300px] bg-black/30 dark:bg-black/30 light:bg-gray-100 h-full bg-opacity-90 backdrop-blur-sm bg-gradient-to-b from-black/35 to-black/25"
-            style={{ height: "100vh" }}
+            className="relative w-[80%] max-w-[300px] bg-black/90 dark:bg-black/90 light:bg-gray-100 h-full shadow-lg shadow-black/30"
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              onClick={closeSidebar}
-              className="absolute top-4 right-4 text-packship-purple-lite"
-              aria-label="Close sidebar"
-            >
-              <FaTimes size={24} />
-            </button>
+            <div className="flex items-center justify-between p-4 border-b border-white/10">
+              <h2 className="text-lg font-medium text-packship-purple-lite">
+                PackShip Docs
+              </h2>
+              <button
+                onClick={closeSidebar}
+                className="text-packship-purple-lite hover:text-packship-purple-lite/80 transition-colors"
+                aria-label="Close sidebar"
+              >
+                <FaTimes size={20} />
+              </button>
+            </div>
 
-            <ScrollbarWrapper style={{ height: "100vh", paddingTop: "60px" }}>
+            <div className="h-[calc(100vh-64px)] overflow-y-auto py-4 px-2">
               <nav>
                 <ul className="space-y-2 pb-20">
                   {sidebarItems.map((section) => (
                     <li key={section.title} className="mb-4">
                       <div
-                        className="flex items-center justify-between cursor-pointer text-white/90 dark:text-white/90 light:text-gray-800 hover:text-packship-purple-lite hover:bg-white/5 rounded-md px-2 transition-colors py-2 font-medium text-[15px] uppercase tracking-wide"
+                        className="flex items-center justify-between cursor-pointer text-white/90 dark:text-white/90 light:text-gray-800 hover:text-packship-purple-lite hover:bg-white/5 rounded-md px-3 transition-colors py-2 font-medium text-[15px] uppercase tracking-wide"
                         onClick={() => toggleSection(section.title)}
                       >
                         <span>{section.title}</span>
@@ -149,14 +162,14 @@ export default function MobileDocsSidebar() {
                           ))}
                       </div>
                       {expandedSections[section.title] && (
-                        <ul className="ml-2 mt-1 space-y-1 border-l border-white/10 pl-2">
+                        <ul className="ml-2 mt-1 space-y-1 border-l border-white/10 pl-3">
                           {section.items.map((item) => (
                             <li key={item.name}>
                               <Link
                                 href={item.href}
-                                className={`block py-1.5 px-2 rounded-md transition-colors text-[14px] ${
+                                className={`block py-2 px-3 rounded-md transition-colors text-[14px] ${
                                   pathname === item.href
-                                    ? "bg-packship-purple-lite/30 text-packship-purple-lite font-medium"
+                                    ? "bg-packship-purple-lite/30 text-white font-medium"
                                     : "text-white/70 dark:text-white/70 light:text-gray-600 hover:text-packship-purple-lite hover:bg-white/5"
                                 }`}
                                 onClick={closeSidebar}
@@ -171,7 +184,7 @@ export default function MobileDocsSidebar() {
                   ))}
                 </ul>
               </nav>
-            </ScrollbarWrapper>
+            </div>
           </div>
         </div>
       )}

@@ -50,14 +50,14 @@ export default function DocsLayout({
         <MobileDocsSidebar />
         <DocsSidebar />
         <div className="md:ml-[250px]">
-          <div className="max-w-[1200px] mx-auto px-6 pt-32 pb-16 flex">
+          <div className="max-w-[1200px] mx-auto px-4 sm:px-6 pt-24 sm:pt-28 md:pt-32 pb-16 flex">
             <main className="flex-1 max-w-[850px]">
-              <div className="mb-6">
-                <h1 className="text-3xl sm:text-4xl font-bold text-packship-purple-lite dark:text-packship-purple-lite light:text-packship-purple">
+              <div className="mb-4 sm:mb-6">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-packship-purple-lite dark:text-packship-purple-lite light:text-packship-purple">
                   {getCurrentPageTitle()}
                 </h1>
               </div>
-              <div className="prose prose-invert dark:prose-invert light:prose-gray max-w-none">
+              <div className="prose prose-sm sm:prose prose-invert dark:prose-invert light:prose-gray max-w-none">
                 {children}
               </div>
             </main>

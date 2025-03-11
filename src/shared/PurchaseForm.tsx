@@ -80,6 +80,23 @@ export default function PurchaseForm() {
           We&apos;re still working on our newsletter subscription system. Check
           back later for updates!
         </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
+          <a
+            href="https://www.npmjs.com/package/packship"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-packship-purple-lite hover:bg-packship-purple-lite/90 text-black font-medium py-2 px-6 rounded-md transition-colors"
+          >
+            Try PackShip CLI while you wait
+          </a>
+          <a
+            href="/"
+            className="bg-transparent border-2 border-packship-purple-lite hover:bg-packship-purple-lite/10 text-packship-purple-lite font-medium py-2 px-6 rounded-md transition-colors"
+          >
+            Back to Home
+          </a>
+        </div>
       </div>
 
       {/* Original form hidden behind the construction banner */}

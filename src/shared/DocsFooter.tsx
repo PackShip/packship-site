@@ -12,7 +12,7 @@ export default function DocsFooter() {
 
   return (
     <footer className="border-t dark:border-white/10 light:border-gray-200 py-12 mt-16 md:ml-[250px]">
-      <div className="max-w-[1200px] mx-auto px-6">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col md:flex-row-reverse justify-between items-center md:items-start gap-8">
             <div className="flex flex-col items-center md:items-start">
@@ -32,9 +32,9 @@ export default function DocsFooter() {
               </p>
             </div>
 
-            <div className="text-center md:text-left flex gap-8 flex-wrap justify-center md:justify-start">
+            <div className="text-center md:text-left flex flex-wrap justify-center md:justify-start gap-6 sm:gap-8">
               {footerLinks.map((section, index) => (
-                <div key={index} className="min-w-32">
+                <div key={index} className="min-w-[120px] sm:min-w-32">
                   <h4 className="dark:text-packship-purple-lite light:text-packship-purple font-medium text-sm text-center md:text-left mb-3">
                     {section.title}
                   </h4>

@@ -47,14 +47,14 @@ export default function PainPoints() {
               data-aos-delay="100"
               className="dark:text-packship-purple-lite light:text-packship-purple-lite text-lg italic"
             >
-              Here's how much time it actually took me to develop and ship my
-              first package:
+              Here&apos;s how much time it actually took me to develop and ship
+              my first package:
             </p>
           </div>
 
           <div
             data-aos="fade-up"
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 w-full"
           >
             {painPoints.map((point, index) => (
               <div
@@ -75,39 +75,39 @@ export default function PainPoints() {
 
           <div
             data-aos="fade-up"
-            className="bg-gradient-to-br from-brown-900/80 to-brown-800/60 p-8 rounded-xl border border-white/10 text-center max-w-3xl mx-auto"
+            className="bg-gradient-to-br from-brown-900/80 to-brown-800/60 p-6 sm:p-8 rounded-xl border border-white/10 text-center max-w-3xl mx-auto"
           >
-            <div className="flex items-center justify-center gap-4 mb-2">
-              <span className="text-2xl font-bold text-packship-purple-lite">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 mb-4">
+              <span className="text-xl sm:text-2xl font-bold text-packship-purple-lite">
                 = {totalHours}+ hours
               </span>
-              <span className="text-2xl font-bold text-white">
+              <span className="text-xl sm:text-2xl font-bold text-white">
                 of headaches
               </span>
-              <FaCloudRain className="text-white/70 text-2xl" />
+              <FaCloudRain className="text-white/70 text-xl sm:text-2xl" />
             </div>
 
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <span className="text-lg text-packship-purple-lite font-semibold">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 mb-4">
+              <span className="text-base sm:text-lg text-packship-purple-lite font-semibold">
                 My personal time spent:
               </span>
-              <span className="text-lg text-white font-bold">
+              <span className="text-base sm:text-lg text-white font-bold">
                 {creatorTotalTime}
               </span>
             </div>
 
-            <p className="text-white/70 mb-2">
+            <p className="text-white/70 mb-3">
               <span className="text-packship-purple-lite font-semibold">
                 PackShip
               </span>{" "}
               eliminates these pain points with its six powerful features,
               saving you time and frustration.
             </p>
-            <p className="text-white/70 text-sm italic">
+            <p className="text-white/70 text-xs sm:text-sm italic">
               * I shipped my first package with security risks because I was
               tired of the amount of work involved.
-              <br />
-              Don't make the same mistake - use PackShip instead!
+              <br className="hidden sm:block" />
+              Don&apos;t make the same mistake - use PackShip instead!
             </p>
           </div>
 
@@ -116,7 +116,7 @@ export default function PainPoints() {
               <div className="h-12 w-0.5 bg-white/20"></div>
             </div>
             <p className="text-white/70 mt-4 text-lg">
-              There's an easier way with PackShip
+              There&apos;s an easier way with PackShip
             </p>
           </div>
         </div>
