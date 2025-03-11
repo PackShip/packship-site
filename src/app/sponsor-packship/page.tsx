@@ -184,7 +184,8 @@ export default function SponsorPackShip() {
                         Early Access
                       </h4>
                       <p className="dark:text-white/70 light:text-gray-700">
-                        Preview and test new features before they're released
+                        Preview and test new features before they&apos;re
+                        released
                       </p>
                     </div>
                   </li>

@@ -78,7 +78,7 @@ export default function LightModeWarningModal({
               onChange={(e) => setDontShowAgain(e.target.checked)}
             />
             <span className="ml-2 text-sm dark:text-white/80 light:text-gray-600">
-              Don't show this warning again
+              Don&apos;t show this warning again
             </span>
           </label>
         </div>
