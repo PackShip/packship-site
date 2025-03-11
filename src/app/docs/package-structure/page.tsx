@@ -22,411 +22,390 @@ export default function PackageStructure() {
     <>
       <div className="w-full flex flex-col gap-6">
         <DocParagraph>
-          Understanding the structure of a PackShip project is essential for
-          effective development and maintenance. This guide explains the
-          standard directory structure and key files in a PackShip project.
+          Understanding the structure of your package is essential for effective
+          development and maintenance. PackShip creates a well-organized project
+          structure based on your choices during initialization.
         </DocParagraph>
 
-        <DocH2 id="directory-structure">Directory Structure</DocH2>
+        <DocH2 id="project-types">Project Types</DocH2>
 
         <DocParagraph>
-          A typical PackShip project has the following directory structure:
+          PackShip supports multiple project types, each with its own
+          recommended structure. The structure varies based on your language
+          choice (TypeScript or JavaScript) and project type.
+        </DocParagraph>
+
+        <DocH3 id="typescript-react">TypeScript React Package</DocH3>
+
+        <DocParagraph>
+          A TypeScript React package is structured to support component
+          development with type safety:
         </DocParagraph>
 
         <div className="mb-4 font-mono text-sm bg-black/20 p-4 rounded-md text-white/80 overflow-x-auto">
           <pre>
             {`my-package/
-├── src/                  # Source code
-│   ├── index.ts          # Main entry point
-│   ├── components/       # React components
-│   └── utils/            # Utility functions
-├── dist/                 # Compiled output (generated)
-├── node_modules/         # Dependencies (generated)
-├── tests/                # Test files
-├── .babelrc              # Babel configuration
-├── .gitignore            # Git ignore file
-├── package.json          # Package configuration
-├── README.md             # Documentation
-├── tsconfig.json         # TypeScript configuration
-└── webpack.config.js     # Webpack configuration`}
+├── src/
+│   ├── index.tsx           # Main entry point
+│   ├── declaration.d.ts    # TypeScript declarations
+│   └── internal/           # (Optional) Internal components
+│       └── index.tsx
+├── types/
+│   └── index.ts            # Type definitions
+├── styles/                 # (Optional) CSS styles
+│   └── style.css
+├── dist/                   # Compiled output (created after build)
+├── package.json            # Package configuration
+├── tsconfig.json           # TypeScript configuration
+├── webpack.config.js       # (Optional) Webpack configuration
+├── babel.config.json       # Babel configuration
+├── postcss.config.js       # (Optional) PostCSS configuration
+├── .eslintrc.json          # (Optional) ESLint configuration
+├── .gitignore              # Git ignore file
+├── .npmignore              # (Optional) npm ignore file
+├── README.md               # (Optional) Documentation
+├── LICENSE.md              # (Optional) License information
+└── CODE_OF_CONDUCT.md      # (Optional) Code of conduct`}
+          </pre>
+        </div>
+
+        <DocH3 id="typescript-node">TypeScript Node.js Package</DocH3>
+
+        <DocParagraph>
+          A TypeScript Node.js package is structured for server-side
+          development:
+        </DocParagraph>
+
+        <div className="mb-4 font-mono text-sm bg-black/20 p-4 rounded-md text-white/80 overflow-x-auto">
+          <pre>
+            {`my-package/
+├── src/
+│   ├── index.ts            # Main entry point
+│   ├── declaration.d.ts    # TypeScript declarations
+│   └── internal/           # (Optional) Internal modules
+│       └── index.ts
+├── types/
+│   └── index.ts            # Type definitions
+├── dist/                   # Compiled output (created after build)
+├── package.json            # Package configuration
+├── tsconfig.json           # TypeScript configuration
+├── webpack.config.js       # (Optional) Webpack configuration
+├── .eslintrc.json          # (Optional) ESLint configuration
+├── .gitignore              # Git ignore file
+├── .npmignore              # (Optional) npm ignore file
+├── README.md               # (Optional) Documentation
+├── LICENSE.md              # (Optional) License information
+└── CODE_OF_CONDUCT.md      # (Optional) Code of conduct`}
+          </pre>
+        </div>
+
+        <DocH3 id="javascript-react">JavaScript React Package</DocH3>
+
+        <DocParagraph>
+          A JavaScript React package is structured for component development
+          without TypeScript:
+        </DocParagraph>
+
+        <div className="mb-4 font-mono text-sm bg-black/20 p-4 rounded-md text-white/80 overflow-x-auto">
+          <pre>
+            {`my-package/
+├── src/
+│   ├── index.jsx           # Main entry point
+│   └── internal/           # (Optional) Internal components
+│       └── index.jsx
+├── styles/                 # (Optional) CSS styles
+│   └── style.css
+├── dist/                   # Compiled output (created after build)
+├── package.json            # Package configuration
+├── webpack.config.js       # (Optional) Webpack configuration
+├── babel.config.json       # Babel configuration
+├── postcss.config.js       # (Optional) PostCSS configuration
+├── .eslintrc.json          # (Optional) ESLint configuration
+├── .gitignore              # Git ignore file
+├── .npmignore              # (Optional) npm ignore file
+├── README.md               # (Optional) Documentation
+├── LICENSE.md              # (Optional) License information
+└── CODE_OF_CONDUCT.md      # (Optional) Code of conduct`}
+          </pre>
+        </div>
+
+        <DocH3 id="javascript-node">JavaScript Node.js Package</DocH3>
+
+        <DocParagraph>
+          A JavaScript Node.js package is structured for server-side development
+          without TypeScript:
+        </DocParagraph>
+
+        <div className="mb-4 font-mono text-sm bg-black/20 p-4 rounded-md text-white/80 overflow-x-auto">
+          <pre>
+            {`my-package/
+├── src/
+│   ├── index.js            # Main entry point
+│   └── internal/           # (Optional) Internal modules
+│       └── index.js
+├── dist/                   # Compiled output (created after build)
+├── package.json            # Package configuration
+├── webpack.config.js       # (Optional) Webpack configuration
+├── .eslintrc.json          # (Optional) ESLint configuration
+├── .gitignore              # Git ignore file
+├── .npmignore              # (Optional) npm ignore file
+├── README.md               # (Optional) Documentation
+├── LICENSE.md              # (Optional) License information
+└── CODE_OF_CONDUCT.md      # (Optional) Code of conduct`}
+          </pre>
+        </div>
+
+        <DocH3 id="vanilla-js">Vanilla JavaScript Package</DocH3>
+
+        <DocParagraph>
+          A Vanilla JavaScript package is structured for browser-based utilities
+          without framework dependencies:
+        </DocParagraph>
+
+        <div className="mb-4 font-mono text-sm bg-black/20 p-4 rounded-md text-white/80 overflow-x-auto">
+          <pre>
+            {`my-package/
+├── src/
+│   ├── index.js            # Main entry point
+│   └── internal/           # (Optional) Internal utilities
+│       └── index.js
+├── styles/                 # (Optional) CSS styles
+│   └── style.css
+├── dist/                   # Compiled output (created after build)
+├── package.json            # Package configuration
+├── webpack.config.js       # (Optional) Webpack configuration
+├── postcss.config.js       # (Optional) PostCSS configuration
+├── .eslintrc.json          # (Optional) ESLint configuration
+├── .gitignore              # Git ignore file
+├── .npmignore              # (Optional) npm ignore file
+├── README.md               # (Optional) Documentation
+├── LICENSE.md              # (Optional) License information
+└── CODE_OF_CONDUCT.md      # (Optional) Code of conduct`}
           </pre>
         </div>
 
         <DocH2 id="key-files">Key Files and Directories</DocH2>
 
-        <DocH3>src/ Directory</DocH3>
+        <DocH3 id="entry-points">Entry Points</DocH3>
 
         <DocParagraph>
-          The <DocCode>src/</DocCode> directory contains all your source code.
-          It&apos;s organized as follows:
+          The entry point is the main file that exports your package&apos;s
+          functionality:
         </DocParagraph>
 
-        <DocH4>index.ts</DocH4>
+        <DocList>
+          <DocListItem>
+            <DocCode>src/index.tsx</DocCode> or <DocCode>src/index.jsx</DocCode>
+            : Main entry point for React packages
+          </DocListItem>
+          <DocListItem>
+            <DocCode>src/index.ts</DocCode> or <DocCode>src/index.js</DocCode>:
+            Main entry point for Node.js and Vanilla JS packages
+          </DocListItem>
+        </DocList>
 
-        <DocParagraph>
-          This is the main entry point of your package. All components and
-          utilities that should be available to consumers of your package should
-          be exported from this file.
-        </DocParagraph>
+        <DocParagraph>Example of a TypeScript React entry point:</DocParagraph>
 
         <div className="mb-4">
           <CopyCodeSnippet
-            code={`// src/index.ts
-import Button from './components/Button';
-import Card from './components/Card';
-import { formatDate } from './utils/dateUtils';
+            code={`// src/index.tsx
+import MyComponent from './components/MyComponent';
+import MyOtherComponent from './components/MyOtherComponent';
 
-export {
-  Button,
-  Card,
-  formatDate
-};
+// Export components
+export { MyComponent, MyOtherComponent };
 
-// Default export (optional)
-export default {
-  Button,
-  Card,
-  formatDate
-};`}
+// Default export
+export default { MyComponent, MyOtherComponent };`}
             language="typescript"
           />
         </div>
 
-        <DocH4>components/ Directory</DocH4>
+        <DocH3 id="type-definitions">Type Definitions</DocH3>
 
         <DocParagraph>
-          The <DocCode>components/</DocCode> directory contains all your React
-          components. Each component should be in its own file or directory,
-          depending on its complexity.
+          TypeScript packages include type definitions to provide type
+          information:
         </DocParagraph>
 
-        <DocParagraph>
-          For simple components, a single file is sufficient:
-        </DocParagraph>
+        <DocList>
+          <DocListItem>
+            <DocCode>types/index.ts</DocCode>: Contains shared type definitions
+          </DocListItem>
+          <DocListItem>
+            <DocCode>src/declaration.d.ts</DocCode>: Contains module
+            declarations for non-TypeScript files
+          </DocListItem>
+        </DocList>
+
+        <DocParagraph>Example of type definitions:</DocParagraph>
 
         <div className="mb-4">
           <CopyCodeSnippet
-            code={`// src/components/Button.tsx
-import React from 'react';
-
-export interface ButtonProps {
-  text: string;
+            code={`// types/index.ts
+export interface ComponentProps {
+  className?: string;
+  children?: React.ReactNode;
   onClick?: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ text, onClick }) => {
-  return (
-    <button onClick={onClick}>
-      {text}
-    </button>
-  );
-};
-
-export default Button;`}
+export type Theme = 'light' | 'dark' | 'system';`}
             language="typescript"
           />
         </div>
 
+        <DocH3 id="configuration-files">Configuration Files</DocH3>
+
         <DocParagraph>
-          For more complex components, use a directory structure:
+          PackShip generates several configuration files based on your choices:
         </DocParagraph>
 
-        <div className="mb-4 font-mono text-sm bg-black/20 p-4 rounded-md text-white/80 overflow-x-auto">
-          <pre>
-            {`components/
-├── DataTable/
-│   ├── index.ts           # Re-exports the component
-│   ├── DataTable.tsx      # Main component
-│   ├── TableHeader.tsx    # Sub-component
-│   ├── TableRow.tsx       # Sub-component
-│   └── types.ts           # Type definitions`}
-          </pre>
-        </div>
+        <DocList>
+          <DocListItem>
+            <DocCode>package.json</DocCode>: Defines package metadata,
+            dependencies, and scripts
+          </DocListItem>
+          <DocListItem>
+            <DocCode>tsconfig.json</DocCode>: Configures TypeScript compiler
+            options
+          </DocListItem>
+          <DocListItem>
+            <DocCode>webpack.config.js</DocCode>: Configures bundling options
+            (if Webpack is selected)
+          </DocListItem>
+          <DocListItem>
+            <DocCode>babel.config.json</DocCode>: Configures Babel for
+            transpilation (for React projects)
+          </DocListItem>
+          <DocListItem>
+            <DocCode>postcss.config.js</DocCode>: Configures PostCSS for CSS
+            processing (if selected)
+          </DocListItem>
+          <DocListItem>
+            <DocCode>.eslintrc.json</DocCode>: Configures ESLint for code
+            linting (if selected)
+          </DocListItem>
+        </DocList>
 
-        <div className="mb-4">
-          <CopyCodeSnippet
-            code={`// src/components/DataTable/index.ts
-export { default } from './DataTable';
-export * from './types';`}
-            language="typescript"
-          />
-        </div>
-
-        <DocH4>utils/ Directory</DocH4>
-
-        <DocParagraph>
-          The <DocCode>utils/</DocCode> directory contains utility functions and
-          helpers that are used across your components.
-        </DocParagraph>
-
-        <div className="mb-4">
-          <CopyCodeSnippet
-            code={`// src/utils/dateUtils.ts
-export function formatDate(date: Date, format: string = 'yyyy-MM-dd'): string {
-  // Implementation
-  return format
-    .replace('yyyy', date.getFullYear().toString())
-    .replace('MM', (date.getMonth() + 1).toString().padStart(2, '0'))
-    .replace('dd', date.getDate().toString().padStart(2, '0'));
-}`}
-            language="typescript"
-          />
-        </div>
-
-        <DocH3>dist/ Directory</DocH3>
+        <DocH3 id="package-json">package.json</DocH3>
 
         <DocParagraph>
-          The <DocCode>dist/</DocCode> directory contains the compiled output of
-          your package. This is what gets published to npm. It&apos;s generated
-          when you run <DocCode>npm run build</DocCode>.
-        </DocParagraph>
-
-        <div className="mb-4 font-mono text-sm bg-black/20 p-4 rounded-md text-white/80 overflow-x-auto">
-          <pre>
-            {`dist/
-├── index.js              # Main bundle
-├── index.d.ts            # TypeScript declarations
-└── types/                # Additional type declarations`}
-          </pre>
-        </div>
-
-        <DocNote>
-          You should never modify files in the <DocCode>dist/</DocCode>{" "}
-          directory directly. Always make changes to the source files in{" "}
-          <DocCode>src/</DocCode> and rebuild.
-        </DocNote>
-
-        <DocH3>tests/ Directory</DocH3>
-
-        <DocParagraph>
-          The <DocCode>tests/</DocCode> directory contains test files for your
-          components and utilities. PackShip supports Jest for testing.
-        </DocParagraph>
-
-        <div className="mb-4">
-          <CopyCodeSnippet
-            code={`// tests/Button.test.tsx
-import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
-import Button from '../src/components/Button';
-
-describe('Button', () => {
-  it('renders correctly', () => {
-    const { getByText } = render(<Button text="Click me" />);
-    expect(getByText('Click me')).toBeInTheDocument();
-  });
-
-  it('calls onClick when clicked', () => {
-    const handleClick = jest.fn();
-    const { getByText } = render(
-      <Button text="Click me" onClick={handleClick} />
-    );
-    fireEvent.click(getByText('Click me'));
-    expect(handleClick).toHaveBeenCalledTimes(1);
-  });
-});`}
-            language="typescript"
-          />
-        </div>
-
-        <DocH3>Configuration Files</DocH3>
-
-        <DocH4>package.json</DocH4>
-
-        <DocParagraph>
-          The <DocCode>package.json</DocCode> file contains metadata about your
-          package and defines scripts, dependencies, and other configuration
-          options.
+          The <DocCode>package.json</DocCode> file contains important metadata
+          and configuration:
         </DocParagraph>
 
         <div className="mb-4">
           <CopyCodeSnippet
             code={`{
   "name": "my-package",
-  "version": "1.0.0",
-  "description": "A description of my package",
+  "version": "0.1.0",
+  "description": "My awesome package",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "module": "dist/index.mjs",
+  "type": "module",
   "scripts": {
-    "build": "packship build",
-    "test": "jest",
-    "lint": "eslint src",
-    "prepublishOnly": "npm run build"
+    "test": "echo 'Error: no test specified' && exit 1",
+    "build": "tsc && npm run build-babel && npm run build-webpack",
+    "build-babel": "babel src --out-dir dist --presets=@babel/preset-react,@babel/preset-env",
+    "build-webpack": "webpack --config webpack.config.js",
+    "lint": "eslint .",
+    "packship:publish": "packship publish"
   },
-  "dependencies": {
-    // Runtime dependencies
+  "keywords": [],
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com"
   },
+  "license": "MIT",
+  "_packshipInitialized": true,
   "peerDependencies": {
-    "react": "^17.0.0 || ^18.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    // Development dependencies
-  },
-  "keywords": [
-    "react",
-    "component",
-    "ui"
-  ],
-  "author": "Your Name",
-  "license": "MIT"
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
+    "@babel/preset-react": "^7.23.3",
+    "@babel/preset-typescript": "^7.24.7",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^4.9.5",
+    "webpack": "^5.0.0",
+    "webpack-cli": "^5.1.4",
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.24.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "autoprefixer": "^10.3.1",
+    "postcss": "^8.4.5"
+  }
 }`}
             language="json"
           />
         </div>
 
-        <DocH4>tsconfig.json</DocH4>
+        <DocNote>
+          The <DocCode>_packshipInitialized</DocCode> property is added to your
+          package.json to indicate that the package was initialized with
+          PackShip.
+        </DocNote>
+
+        <DocH2 id="customizing-structure">
+          Customizing Your Project Structure
+        </DocH2>
 
         <DocParagraph>
-          The <DocCode>tsconfig.json</DocCode> file configures TypeScript for
-          your project.
+          While PackShip provides a solid foundation, you can customize your
+          project structure to fit your specific needs:
         </DocParagraph>
 
-        <div className="mb-4">
-          <CopyCodeSnippet
-            code={`{
-  "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "react-jsx",
-    "declaration": true,
-    "declarationDir": "dist/types",
-    "outDir": "dist"
-  },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.test.tsx"]
-}`}
-            language="json"
-          />
-        </div>
-
-        <DocH4>webpack.config.js</DocH4>
-
-        <DocParagraph>
-          The <DocCode>webpack.config.js</DocCode> file configures how your
-          package is bundled.
-        </DocParagraph>
-
-        <div className="mb-4">
-          <CopyCodeSnippet
-            code={`const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
-module.exports = {
-  entry: './src/index.ts',
-  output: {
-    filename: 'index.js',
-    path: path.resolve(__dirname, 'dist'),
-    libraryTarget: 'umd',
-    library: 'MyPackage',
-    umdNamedDefine: true,
-    globalObject: 'this'
-  },
-  mode: 'production',
-  module: {
-    rules: [
-      {
-        test: /\\.tsx?$/,
-        use: 'babel-loader',
-        exclude: /node_modules/
-      },
-      {
-        test: /\\.css$/,
-        use: ['style-loader', 'css-loader']
-      }
-    ]
-  },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.jsx']
-  },
-  externals: {
-    react: {
-      root: 'React',
-      commonjs2: 'react',
-      commonjs: 'react',
-      amd: 'react'
-    },
-    'react-dom': {
-      root: 'ReactDOM',
-      commonjs2: 'react-dom',
-      commonjs: 'react-dom',
-      amd: 'react-dom'
-    }
-  },
-  plugins: [
-    new CleanWebpackPlugin()
-  ]
-};`}
-            language="javascript"
-          />
-        </div>
-
-        <DocH4>.babelrc</DocH4>
-
-        <DocParagraph>
-          The <DocCode>.babelrc</DocCode> file configures Babel for transpiling
-          your code.
-        </DocParagraph>
-
-        <div className="mb-4">
-          <CopyCodeSnippet
-            code={`{
-  "presets": [
-    "@babel/preset-env",
-    "@babel/preset-react",
-    "@babel/preset-typescript"
-  ],
-  "plugins": [
-    "@babel/plugin-proposal-class-properties",
-    "@babel/plugin-transform-runtime"
-  ]
-}`}
-            language="json"
-          />
-        </div>
-
-        <DocH2 id="best-practices">Best Practices</DocH2>
+        <DocH3 id="adding-directories">Adding Directories</DocH3>
 
         <DocList>
           <DocListItem>
-            <strong>Keep the entry point clean</strong>: Only export components
-            and utilities that are part of your public API from{" "}
-            <DocCode>src/index.ts</DocCode>.
+            <DocCode>src/components/</DocCode>: For React components
           </DocListItem>
           <DocListItem>
-            <strong>Use a consistent component structure</strong>: Decide on a
-            pattern for your components (function components vs. class
-            components, named exports vs. default exports) and stick to it.
+            <DocCode>src/hooks/</DocCode>: For React hooks
           </DocListItem>
           <DocListItem>
-            <strong>Organize by feature</strong>: For larger packages, consider
-            organizing components by feature rather than by type.
+            <DocCode>src/utils/</DocCode>: For utility functions
           </DocListItem>
           <DocListItem>
-            <strong>Document your code</strong>: Use JSDoc comments to document
-            your components and functions.
+            <DocCode>src/services/</DocCode>: For service modules
           </DocListItem>
           <DocListItem>
-            <strong>Write tests</strong>: Ensure good test coverage for your
-            components and utilities.
+            <DocCode>src/constants/</DocCode>: For constant values
+          </DocListItem>
+          <DocListItem>
+            <DocCode>tests/</DocCode>: For test files
           </DocListItem>
         </DocList>
 
-        {/* Next Page Button */}
+        <DocH3 id="recommended-practices">Recommended Practices</DocH3>
+
+        <DocList>
+          <DocListItem>
+            Keep related files together in feature-based directories
+          </DocListItem>
+          <DocListItem>Use clear, consistent naming conventions</DocListItem>
+          <DocListItem>
+            Export public APIs only from the main entry point
+          </DocListItem>
+          <DocListItem>
+            Use the internal directory for components not meant for public
+            consumption
+          </DocListItem>
+          <DocListItem>Keep configuration files at the root level</DocListItem>
+        </DocList>
+
+        <DocNote>
+          While you can customize your project structure, following the PackShip
+          conventions makes it easier to use the built-in tools and workflows.
+        </DocNote>
+
         <DocNavigation currentPath={pathname} />
       </div>
     </>
