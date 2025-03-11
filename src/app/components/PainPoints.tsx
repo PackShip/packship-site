@@ -20,6 +20,9 @@ export default function PainPoints() {
     return total + (isNaN(hours) ? 0 : hours);
   }, 0);
 
+  // Calculate creator's total time in days (rough estimate)
+  const creatorTotalTime = "~200 days";
+
   return (
     <section className="py-16 relative">
       <div className="kontainer">
@@ -74,7 +77,7 @@ export default function PainPoints() {
             data-aos="fade-up"
             className="bg-gradient-to-br from-brown-900/80 to-brown-800/60 p-8 rounded-xl border border-white/10 text-center max-w-3xl mx-auto"
           >
-            <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="flex items-center justify-center gap-4 mb-2">
               <span className="text-2xl font-bold text-packship-purple-lite">
                 = {totalHours}+ hours
               </span>
@@ -83,6 +86,16 @@ export default function PainPoints() {
               </span>
               <FaCloudRain className="text-white/70 text-2xl" />
             </div>
+
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <span className="text-lg text-packship-purple-lite font-semibold">
+                My personal time spent:
+              </span>
+              <span className="text-lg text-white font-bold">
+                {creatorTotalTime}
+              </span>
+            </div>
+
             <p className="text-white/70 mb-2">
               <span className="text-packship-purple-lite font-semibold">
                 PackShip
