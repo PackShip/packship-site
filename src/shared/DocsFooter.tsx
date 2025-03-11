@@ -81,7 +81,7 @@ export default function DocsFooter() {
                 <FaGithub size={20} />
               </a>
               <a
-                href="https://twitter.com/packshipcli"
+                href="https://x.com/h4temsoliman"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="dark:text-white/60 light:text-gray-600 hover:text-packship-purple-lite transition-colors"
