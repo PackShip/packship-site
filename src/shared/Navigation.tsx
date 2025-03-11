@@ -5,7 +5,6 @@ import packshipLogo from "../../public/assets/PackShipLogo.svg";
 import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import ThemeToggle from "./ThemeToggle";
-import ComingSoonBadge from "../app/components/ComingSoonBadge";
 
 const isExternal = (url: string) => /^https?:\/\//.test(url);
 const isAnchorLink = (url: string) => /^#/.test(url);
@@ -74,11 +73,6 @@ export default function Navigation() {
                   }
                 >
                   {link.name}
-                  {link.name === "Packship Pug" && (
-                    <span className="absolute -top-1 -right-1">
-                      <ComingSoonBadge />
-                    </span>
-                  )}
                 </Link>
               </li>
             ))}
@@ -144,11 +138,6 @@ export default function Navigation() {
                       onClick={closeMenu}
                     >
                       {link.name}
-                      {link.name === "Packship Pug" && (
-                        <span className="absolute -top- -right-5">
-                          <ComingSoonBadge />
-                        </span>
-                      )}
                     </Link>
                   ))}
                   <a
