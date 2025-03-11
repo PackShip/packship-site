@@ -8,8 +8,8 @@ export const navLinks = [
     href: "/docs",
   },
   {
-    name: "References",
-    href: "/docs/api",
+    name: "Packship Pug",
+    href: "/packship-pug",
   },
   {
     name: "Blog",

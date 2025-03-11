@@ -5,6 +5,7 @@ import packshipLogo from "../../public/assets/PackShipLogo.svg";
 import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import ThemeToggle from "./ThemeToggle";
+import ComingSoonBadge from "../app/components/ComingSoonBadge";
 
 const isExternal = (url: string) => /^https?:\/\//.test(url);
 const isAnchorLink = (url: string) => /^#/.test(url);
@@ -66,13 +67,18 @@ export default function Navigation() {
                     link.name === "Get Started"
                       ? "bg-packship-purple-lite text-black hover:bg-packship-purple-lite/90 dark:text-black light:text-black"
                       : "dark:text-white/80 light:text-gray-700 hover:text-packship-purple-lite"
-                  } font-medium px-4 py-2 rounded-md transition-all`}
+                  } font-medium px-4 py-2 rounded-md transition-all relative`}
                   target={isExternal(link.href) ? "_blank" : "_self"}
                   rel={
                     isExternal(link.href) ? "noopener noreferrer" : undefined
                   }
                 >
                   {link.name}
+                  {link.name === "Packship Pug" && (
+                    <span className="absolute -top-2 -right-2">
+                      <ComingSoonBadge />
+                    </span>
+                  )}
                 </Link>
               </li>
             ))}
@@ -128,7 +134,7 @@ export default function Navigation() {
                         link.name === "Get Started"
                           ? "bg-packship-purple-lite text-black"
                           : "dark:text-white light:text-gray-900"
-                      } font-medium px-6 py-3 rounded-md`}
+                      } font-medium px-6 py-3 rounded-md relative`}
                       target={isExternal(link.href) ? "_blank" : "_self"}
                       rel={
                         isExternal(link.href)
@@ -138,6 +144,11 @@ export default function Navigation() {
                       onClick={closeMenu}
                     >
                       {link.name}
+                      {link.name === "Packship Pug" && (
+                        <span className="absolute -top-2 -right-2">
+                          <ComingSoonBadge />
+                        </span>
+                      )}
                     </Link>
                   ))}
                   <a
