@@ -46,10 +46,10 @@ export default function DocsLayout({
   return (
     <>
       <Navigation />
-      <div className="min-h-screen">
+      <div className="min-h-screen flex">
         <MobileDocsSidebar />
         <DocsSidebar />
-        <div className="md:ml-[250px] w-full">
+        <div className="w-full md:pl-[250px]">
           <div className="w-full px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 md:pt-32 pb-16">
             <main className="w-full">
               <div className="w-full mb-4 sm:mb-6">

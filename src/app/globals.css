@@ -48,6 +48,21 @@ html {
 .prose-override {
   width: 100%;
   max-width: none !important;
+  overflow-x: auto;
+}
+
+.prose-override pre,
+.prose-override code,
+.prose-override .overflow-x-auto {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Ensure content doesn't overflow behind sidebar */
+@media (min-width: 768px) {
+  .md\:pl-\[250px\] {
+    padding-left: 250px;
+  }
 }
 
 /* Dark mode (default) */
