@@ -5,7 +5,7 @@ import { FaExclamationTriangle } from "react-icons/fa";
 
 interface LightModeWarningModalProps {
   isOpen: boolean;
-  onClose: () => void;
+  onClose: (dontShowAgain?: boolean) => void;
   onStayInDarkMode: () => void;
 }
 
@@ -28,12 +28,18 @@ export default function LightModeWarningModal({
     }
   }, [isOpen]);
 
+  // Reset the checkbox when the modal opens
+  useEffect(() => {
+    if (isOpen) {
+      setDontShowAgain(false);
+    }
+  }, [isOpen]);
+
   if (!isVisible && !isOpen) return null;
 
   const handleClose = () => {
-    // The dontShowAgain state is automatically used in the ThemeContext
-    // because we're storing it in localStorage there
-    onClose();
+    // Pass the dontShowAgain value to the parent component
+    onClose(dontShowAgain);
   };
 
   return (
@@ -85,7 +91,7 @@ export default function LightModeWarningModal({
           </button>
           <button
             onClick={onStayInDarkMode}
-            className="px-4 py-2 bg-packship-purple-lite hover:bg-packship-purple-lite/80 text-white rounded-md transition-colors"
+            className="px-4 py-2 bg-purple-500 hover:bg-purple-400 text-white rounded-md transition-colors"
           >
             Stay in Dark Mode
           </button>

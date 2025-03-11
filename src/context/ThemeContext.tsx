@@ -64,15 +64,18 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  const handleCloseWarning = () => {
+  const handleCloseWarning = (dontShowAgain = false) => {
     setShowLightModeWarning(false);
     // Apply the pending theme change if user confirmed
     if (pendingThemeChange) {
       setTheme(pendingThemeChange);
       setPendingThemeChange(null);
-      // Remember that user has acknowledged the warning
-      setHasAcknowledgedWarning(true);
-      localStorage.setItem("lightModeWarningAcknowledged", "true");
+
+      // Remember that user has acknowledged the warning if they checked the box
+      if (dontShowAgain) {
+        setHasAcknowledgedWarning(true);
+        localStorage.setItem("lightModeWarningAcknowledged", "true");
+      }
     }
   };
 
