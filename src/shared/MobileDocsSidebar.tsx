@@ -134,15 +134,15 @@ export default function MobileDocsSidebar() {
 
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+          className="fixed inset-0 bg-black backdrop-blur-sm z-40"
           onClick={closeSidebar}
           aria-hidden="true"
         >
           <div
-            className="relative w-[80%] max-w-[300px] bg-black/90 dark:bg-black/90 light:bg-gray-100 h-full shadow-lg shadow-black/30 ml-auto"
+            className="relative w-[80%] max-w-[300px] bg-black not-dark:bg-gray-100 h-full shadow-lg shadow-black/30 ml-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between p-4 border-b border-white/10">
+            <div className="flex items-center justify-between p-4 border-b border-white/10 dark:border-white/10 not-dark:border-gray-200">
               <h2 className="text-lg font-medium text-packship-purple-lite">
                 PackShip Docs
               </h2>
@@ -161,7 +161,7 @@ export default function MobileDocsSidebar() {
                   {sidebarItems.map((section) => (
                     <li key={section.title} className="mb-4">
                       <div
-                        className="flex items-center justify-between cursor-pointer text-white/90 dark:text-white/90 light:text-gray-800 hover:text-packship-purple-lite hover:bg-white/5 rounded-md px-3 transition-colors py-2 font-medium text-[15px] uppercase tracking-wide"
+                        className="flex items-center justify-between cursor-pointer text-white/90 dark:text-white/90 not-dark:text-gray-800 hover:text-packship-purple-lite hover:bg-white/5 rounded-md px-3 transition-colors py-2 font-medium text-[15px] uppercase tracking-wide"
                         onClick={() => toggleSection(section.title)}
                       >
                         <span>{section.title}</span>
@@ -173,15 +173,15 @@ export default function MobileDocsSidebar() {
                           ))}
                       </div>
                       {expandedSections[section.title] && (
-                        <ul className="ml-2 mt-1 space-y-1 border-l border-white/10 pl-3">
+                        <ul className="ml-2 mt-1 space-y-1 border-l border-white/10 dark:border-white/10 not-dark:border-gray-300 pl-3">
                           {section.items.map((item) => (
                             <li key={item.name}>
                               <Link
                                 href={item.href}
                                 className={`block py-2 px-3 rounded-md transition-colors text-[14px] ${
                                   pathname === item.href
-                                    ? "bg-packship-purple-lite/30 text-white font-medium"
-                                    : "text-white/70 dark:text-white/70 light:text-gray-600 hover:text-packship-purple-lite hover:bg-white/5"
+                                    ? "bg-packship-purple-lite/30 text-white dark:text-white not-dark:text-gray-900 font-medium"
+                                    : "text-white/70 dark:text-white/70 not-dark:text-gray-600 hover:text-packship-purple-lite hover:bg-white/5"
                                 }`}
                                 onClick={closeSidebar}
                               >
