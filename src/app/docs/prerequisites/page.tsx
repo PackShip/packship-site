@@ -25,18 +25,72 @@ export default function Prerequisites() {
 
         <DocH2 id="system-requirements">System Requirements</DocH2>
         <DocParagraph>
-          PackShip requires the following software to be installed on your
-          system:
+          PackShip requires the following minimum software to be installed on
+          your system:
         </DocParagraph>
 
         <DocList>
           <DocListItem>
-            <strong>Node.js</strong> (version 14.x or higher)
+            <strong>Node.js</strong> (version 12.x or higher)
           </DocListItem>
           <DocListItem>
             <strong>npm</strong> (version 6.x or higher)
           </DocListItem>
         </DocList>
+
+        <DocH3>Operating System Compatibility</DocH3>
+        <DocParagraph>PackShip is cross-platform and works on:</DocParagraph>
+
+        <DocList>
+          <DocListItem>
+            <strong>Windows</strong> (Windows 10 or higher)
+          </DocListItem>
+          <DocListItem>
+            <strong>macOS</strong> (10.15 Catalina or higher)
+          </DocListItem>
+          <DocListItem>
+            <strong>Linux</strong> (Most major distributions)
+          </DocListItem>
+        </DocList>
+
+        <DocParagraph>
+          While PackShip can run on these minimum requirements, we recommend
+          using:
+        </DocParagraph>
+
+        <DocList>
+          <DocListItem>
+            <strong>Node.js</strong> (version 16.x or higher) for optimal
+            performance
+          </DocListItem>
+          <DocListItem>
+            <strong>npm</strong> (version 7.x or higher) for improved dependency
+            resolution
+          </DocListItem>
+        </DocList>
+
+        <DocH3>Hardware Requirements</DocH3>
+        <DocParagraph>
+          PackShip is lightweight and has minimal hardware requirements:
+        </DocParagraph>
+
+        <DocList>
+          <DocListItem>
+            <strong>Disk Space:</strong> ~50MB for the CLI tool and its
+            dependencies
+          </DocListItem>
+          <DocListItem>
+            <strong>Memory:</strong> 256MB RAM minimum (512MB recommended)
+          </DocListItem>
+          <DocListItem>
+            <strong>Processor:</strong> Any modern CPU (1GHz or faster)
+          </DocListItem>
+        </DocList>
+
+        <DocNote>
+          When building larger packages, more memory and disk space may be
+          required depending on your project&apos;s dependencies.
+        </DocNote>
 
         <DocH3>Installing Node.js and npm</DocH3>
 
