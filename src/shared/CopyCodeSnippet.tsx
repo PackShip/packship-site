@@ -61,7 +61,7 @@ export default function CopyCodeSnippet({
 
   return (
     <div className="relative bg-[#1E1E1E] rounded-lg w-full overflow-hidden">
-      <div className="px-4 py-1 overflow-auto max-h-[500px]">
+      <div className="p-4 overflow-auto max-h-[500px]">
         <SyntaxHighlighter
           language={language}
           style={vs2015}
@@ -72,7 +72,7 @@ export default function CopyCodeSnippet({
         </SyntaxHighlighter>
       </div>
 
-      <div className="absolute bottom-4 right-4">
+      <div className="absolute top-1/2 right-4 transform -translate-y-1/2">
         <button
           className="bg-packship-purple hover:bg-purple-700 text-white font-bold text-sm rounded-full px-4 py-2 transition-colors flex items-center justify-center shadow-lg"
           onClick={copyCodeToClipboard}
