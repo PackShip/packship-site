@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Navigation from "@/shared/Navigation";
+import Footer from "@/shared/Footer";
 
 export default function Blog() {
   return (
@@ -22,7 +23,7 @@ export default function Blog() {
               <div className="p-6 md:p-8">
                 <div className="flex items-center mb-4">
                   <span className="text-sm text-gray-500 dark:text-white/60 light:text-gray-500">
-                    May 15, 2023
+                    March 11 , 2025
                   </span>
                   <span className="mx-2 text-gray-300 dark:text-white/30 light:text-gray-300">
                     •
@@ -101,8 +102,9 @@ export default function Blog() {
             {/* More blog posts would go here */}
           </div>
         </div>
+        </div>
       </div>
-    </div>
+      <Footer />
     </>
   );
 }
