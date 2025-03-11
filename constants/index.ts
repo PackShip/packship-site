@@ -188,6 +188,39 @@ export const features = [
   },
 ];
 
+export const painPoints = [
+  {
+    title: "Manual Project Setup",
+    hours: "4 hrs",
+    description: "configuring package structure"
+  },
+  {
+    title: "Inefficient Development Cycles",
+    hours: "6 hrs",
+    description: "managing build and release processes"
+  },
+  {
+    title: "Complex Command-Line Tools",
+    hours: "4 hrs",
+    description: "learning and debugging CLI commands"
+  },
+  {
+    title: "Publishing Security Risks",
+    hours: "2 hrs",
+    description: "ensuring secure package distribution"
+  },
+  {
+    title: "Development Overhead",
+    hours: "3 hrs",
+    description: "dealing with unnecessary dependencies"
+  },
+  {
+    title: "Platform Compatibility Issues",
+    hours: "2 hrs",
+    description: "fixing cross-platform bugs"
+  },
+];
+
 export const commands: Command[] = [
   {
     text: "# Initialize Your Project",

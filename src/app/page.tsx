@@ -30,7 +30,7 @@ export default function Home() {
       <main className="pt-16">
         <Hero />
         <Features />
-        <div className="flex flex-col md:flex-row justify-between items-start flex-1">
+        <div className="flex flex-col md:flex-row justify-around items-start flex-1">
           <Preview />
           <Walkthrough />
         </div>
