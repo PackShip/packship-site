@@ -25,16 +25,16 @@ export default function Prerequisites() {
 
         <DocH2 id="system-requirements">System Requirements</DocH2>
         <DocParagraph>
-          PackShip requires the following minimum software to be installed on
-          your system:
+          As of March 2025, PackShip requires the following minimum software to
+          be installed on your system:
         </DocParagraph>
 
         <DocList>
           <DocListItem>
-            <strong>Node.js</strong> (version 12.x or higher)
+            <strong>Node.js</strong> (version 20.x or higher)
           </DocListItem>
           <DocListItem>
-            <strong>npm</strong> (version 6.x or higher)
+            <strong>npm</strong> (version 9.x or higher)
           </DocListItem>
         </DocList>
 
@@ -43,13 +43,13 @@ export default function Prerequisites() {
 
         <DocList>
           <DocListItem>
-            <strong>Windows</strong> (Windows 10 or higher)
+            <strong>Windows</strong>
           </DocListItem>
           <DocListItem>
-            <strong>macOS</strong> (10.15 Catalina or higher)
+            <strong>macOS</strong>
           </DocListItem>
           <DocListItem>
-            <strong>Linux</strong> (Most major distributions)
+            <strong>Linux</strong>
           </DocListItem>
         </DocList>
 
@@ -60,12 +60,12 @@ export default function Prerequisites() {
 
         <DocList>
           <DocListItem>
-            <strong>Node.js</strong> (version 16.x or higher) for optimal
+            <strong>Node.js</strong> (version 22.x or higher) for optimal
             performance
           </DocListItem>
           <DocListItem>
-            <strong>npm</strong> (version 7.x or higher) for improved dependency
-            resolution
+            <strong>npm</strong> (version 10.x or higher) for improved
+            dependency resolution
           </DocListItem>
         </DocList>
 
