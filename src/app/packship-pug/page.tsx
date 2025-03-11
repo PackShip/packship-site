@@ -118,12 +118,21 @@ export default function PackshipPug() {
         </div>
 
         <div className="text-center mb-12">
-          <Link
-            href="/#start-packshipping"
-            className="inline-flex items-center px-6 py-3 rounded-md bg-packship-purple-lite hover:bg-packship-purple-lite/90 text-black font-medium transition-all"
-          >
-            Try PackShip CLI while you wait
-          </Link>
+          <div className="flex flex-col items-center space-y-4">
+            <Link
+              href="/#start-packshipping"
+              className="w-full sm:w-64 inline-flex items-center justify-center px-6 py-3 rounded-md bg-packship-purple-lite hover:bg-packship-purple-lite/90 text-black font-medium transition-all"
+            >
+              Try PackShip CLI while you wait
+            </Link>
+
+            <Link
+              href="/"
+              className="w-full sm:w-64 inline-flex items-center justify-center px-6 py-3 rounded-md bg-transparent border border-packship-purple-lite hover:bg-packship-purple-lite/90 text-packship-purple-lite font-medium transition-all"
+            >
+              Back Home
+            </Link>
+          </div>
 
           <p className="mt-12 text-lg text-center">
             Want to be notified when PackShip Pug launches?
