@@ -35,53 +35,66 @@ export default function Webpack() {
         <div className="mb-4 font-mono text-sm bg-black/20 p-4 rounded-md text-white/80 overflow-x-auto">
           <pre>
             {`// webpack.config.js
-const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+import path from 'path';
 
-module.exports = {
-  entry: './src/index.ts',
-  output: {
-    filename: 'index.js',
-    path: path.resolve(__dirname, 'dist'),
-    libraryTarget: 'umd',
-    library: 'MyPackage',
-    umdNamedDefine: true,
-    globalObject: 'this'
-  },
+export default {
   mode: 'production',
+  entry: './src/index.tsx',
+  output: {
+    path: path.resolve('dist'),
+    filename: 'index.js',
+    library: {
+      type: 'umd',
+      name: 'MyPackage',
+    },
+    globalObject: 'this',
+    publicPath: '/',
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+  },
   module: {
     rules: [
       {
-        test: /\\.tsx?$/,
+        test: /\\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'ts-loader',
+            options: {
+              transpileOnly: true,
+            },
+          },
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-react', '@babel/preset-env'],
+            },
+          },
+        ],
+      },
+      {
+        test: /\\.(js|jsx)$/,
+        exclude: /node_modules/,
         use: 'babel-loader',
-        exclude: /node_modules/
+      },
+      {
+        test: /\\.(png|jpg|jpeg|gif|svg)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/[name][ext]',
+        },
       },
       {
         test: /\\.css$/,
-        use: ['style-loader', 'css-loader']
-      }
-    ]
-  },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.jsx']
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
   },
   externals: {
-    react: {
-      root: 'React',
-      commonjs2: 'react',
-      commonjs: 'react',
-      amd: 'react'
-    },
-    'react-dom': {
-      root: 'ReactDOM',
-      commonjs2: 'react-dom',
-      commonjs: 'react-dom',
-      amd: 'react-dom'
-    }
+    react: 'react',
+    'react-dom': 'react-dom',
   },
-  plugins: [
-    new CleanWebpackPlugin()
-  ]
 };`}
           </pre>
         </div>
@@ -93,12 +106,12 @@ module.exports = {
         <DocParagraph>
           The <DocCode>entry</DocCode> option specifies the entry point of your
           package. By default, it&apos;s set to{" "}
-          <DocCode>./src/index.ts</DocCode>.
+          <DocCode>./src/index.tsx</DocCode>.
         </DocParagraph>
 
         <div className="mb-4">
           <CopyCodeSnippet
-            code={`entry: './src/index.ts',`}
+            code={`entry: './src/index.tsx',`}
             language="javascript"
           />
         </div>
@@ -112,20 +125,24 @@ module.exports = {
 
         <DocList>
           <DocListItem>
-            <DocCode>filename</DocCode>: The name of the output file (default:{" "}
-            <DocCode>index.js</DocCode>)
-          </DocListItem>
-          <DocListItem>
             <DocCode>path</DocCode>: The directory where the bundled files will
             be placed (default: <DocCode>dist</DocCode>)
           </DocListItem>
           <DocListItem>
-            <DocCode>libraryTarget</DocCode>: The format of the library
-            (default: <DocCode>umd</DocCode> for Universal Module Definition)
+            <DocCode>filename</DocCode>: The name of the output file (default:{" "}
+            <DocCode>index.js</DocCode>)
           </DocListItem>
           <DocListItem>
-            <DocCode>library</DocCode>: The name of the library when it&apos;s
-            used as a global variable
+            <DocCode>library</DocCode>: Configures how the library is exposed,
+            using UMD format by default
+          </DocListItem>
+          <DocListItem>
+            <DocCode>globalObject</DocCode>: Determines the global object
+            reference, set to <DocCode>this</DocCode> for compatibility
+          </DocListItem>
+          <DocListItem>
+            <DocCode>publicPath</DocCode>: The public URL of the output
+            directory when referenced in a browser
           </DocListItem>
         </DocList>
 
@@ -138,14 +155,39 @@ module.exports = {
 
         <DocList>
           <DocListItem>
-            TypeScript/JavaScript files are processed with{" "}
+            TypeScript/TSX files are processed with <DocCode>ts-loader</DocCode>{" "}
+            (with transpileOnly for faster builds) and{" "}
             <DocCode>babel-loader</DocCode>
+          </DocListItem>
+          <DocListItem>
+            JavaScript/JSX files are processed with{" "}
+            <DocCode>babel-loader</DocCode>
+          </DocListItem>
+          <DocListItem>
+            Images and SVGs are handled as assets with customizable output paths
           </DocListItem>
           <DocListItem>
             CSS files are processed with <DocCode>style-loader</DocCode> and{" "}
             <DocCode>css-loader</DocCode>
           </DocListItem>
         </DocList>
+
+        <DocH3>Resolve</DocH3>
+
+        <DocParagraph>
+          The <DocCode>resolve.extensions</DocCode> array specifies which file
+          extensions webpack should resolve automatically. This allows you to
+          import modules without specifying their extensions.
+        </DocParagraph>
+
+        <div className="mb-4">
+          <CopyCodeSnippet
+            code={`resolve: {
+  extensions: ['.js', '.jsx', '.ts', '.tsx'],
+},`}
+            language="javascript"
+          />
+        </div>
 
         <DocH3>Externals</DocH3>
 
@@ -156,6 +198,16 @@ module.exports = {
           included in your bundle. This is important for React component
           libraries to avoid bundling React twice.
         </DocParagraph>
+
+        <div className="mb-4">
+          <CopyCodeSnippet
+            code={`externals: {
+  react: 'react',
+  'react-dom': 'react-dom',
+},`}
+            language="javascript"
+          />
+        </div>
 
         <DocNote>
           Marking dependencies as external reduces the size of your bundle and
@@ -190,37 +242,53 @@ module.exports = {
         <div className="mb-4">
           <CopyCodeSnippet
             code={`// webpack.config.js
-module.exports = {
+export default {
   // ... other config
   module: {
     rules: [
       // ... other rules
       {
         test: /\\.s[ac]ss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader'
-        ]
-      }
-    ]
-  }
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+    ],
+  },
 };`}
             language="javascript"
           />
         </div>
 
-        <DocH3>Adding Support for Images and Fonts</DocH3>
+        <DocH3>Adding Support for PostCSS</DocH3>
 
         <DocParagraph>
-          To handle images and fonts, you can use the{" "}
-          <DocCode>file-loader</DocCode> or <DocCode>url-loader</DocCode>:
+          To use PostCSS for advanced CSS processing, install the required
+          packages:
         </DocParagraph>
 
         <div className="mb-4">
           <CopyCodeSnippet
-            code={`npm install --save-dev file-loader url-loader`}
+            code={`npm install --save-dev postcss postcss-loader autoprefixer postcss-preset-env`}
             language="bash"
+          />
+        </div>
+
+        <DocParagraph>Create a postcss.config.js file:</DocParagraph>
+
+        <div className="mb-4">
+          <CopyCodeSnippet
+            code={`// postcss.config.js
+module.exports = {
+  plugins: [
+    require('autoprefixer'),
+    require('postcss-preset-env')({
+      stage: 3,
+      features: {
+        'nesting-rules': true,
+      },
+    }),
+  ],
+};`}
+            language="javascript"
           />
         </div>
 
@@ -229,67 +297,132 @@ module.exports = {
         <div className="mb-4">
           <CopyCodeSnippet
             code={`// webpack.config.js
-module.exports = {
+export default {
   // ... other config
   module: {
     rules: [
       // ... other rules
       {
-        test: /\\.(png|jpe?g|gif|svg)$/i,
+        test: /\\.css$/,
         use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192, // Convert images < 8kb to base64 strings
-              name: 'images/[name].[hash:7].[ext]'
-            }
-          }
-        ]
+          'style-loader',
+          'css-loader',
+          'postcss-loader',
+        ],
       },
-      {
-        test: /\\.(woff|woff2|eot|ttf|otf)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'fonts/[name].[hash:7].[ext]'
-            }
-          }
-        ]
-      }
-    ]
-  }
+    ],
+  },
 };`}
             language="javascript"
           />
         </div>
 
-        <DocH3>Multiple Entry Points</DocH3>
+        <DocH3>Multiple Output Formats</DocH3>
 
         <DocParagraph>
-          If you need to create multiple bundles, you can specify multiple entry
-          points:
+          To build your package for multiple formats (CommonJS, ESM, and UMD),
+          you can create separate webpack configurations:
         </DocParagraph>
 
         <div className="mb-4">
           <CopyCodeSnippet
             code={`// webpack.config.js
-module.exports = {
-  entry: {
-    main: './src/index.ts',
-    utils: './src/utils/index.ts'
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// Base configuration
+const baseConfig = {
+  mode: 'production',
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
+  module: {
+    rules: [
+      // ... rules as before
+    ],
+  },
+  externals: {
+    react: 'react',
+    'react-dom': 'react-dom',
+  },
+};
+
+// UMD build
+const umdConfig = {
+  ...baseConfig,
+  entry: './src/index.tsx',
   output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, 'dist'),
-    libraryTarget: 'umd',
-    library: ['MyPackage', '[name]'],
-    umdNamedDefine: true,
-    globalObject: 'this'
+    path: path.resolve(__dirname, 'dist/umd'),
+    filename: 'index.js',
+    library: {
+      type: 'umd',
+      name: 'MyPackage',
+    },
+    globalObject: 'this',
   },
-  // ... other config
-};`}
+};
+
+// CommonJS build
+const cjsConfig = {
+  ...baseConfig,
+  entry: './src/index.tsx',
+  output: {
+    path: path.resolve(__dirname, 'dist/cjs'),
+    filename: 'index.js',
+    library: {
+      type: 'commonjs2',
+    },
+  },
+};
+
+// ESM build
+const esmConfig = {
+  ...baseConfig,
+  entry: './src/index.tsx',
+  output: {
+    path: path.resolve(__dirname, 'dist/esm'),
+    filename: 'index.js',
+    library: {
+      type: 'module',
+    },
+  },
+  experiments: {
+    outputModule: true,
+  },
+};
+
+export default [umdConfig, cjsConfig, esmConfig];`}
             language="javascript"
+          />
+        </div>
+
+        <DocParagraph>
+          Then update your package.json to specify the different entry points:
+        </DocParagraph>
+
+        <div className="mb-4">
+          <CopyCodeSnippet
+            code={`{
+  "name": "my-package",
+  "version": "1.0.0",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "unpkg": "dist/umd/index.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  // ... other package.json fields
+}`}
+            language="json"
           />
         </div>
 
@@ -305,28 +438,45 @@ module.exports = {
         <div className="mb-4">
           <CopyCodeSnippet
             code={`// webpack.config.js
-const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+import path from 'path';
 
-module.exports = (env, argv) => {
-  const isProduction = argv.mode === 'production';
+export default (env) => {
+  const isDevelopment = env.development === true;
   
   return {
-    entry: './src/index.ts',
+    mode: isDevelopment ? 'development' : 'production',
+    entry: './src/index.tsx',
     output: {
-      filename: isProduction ? 'index.js' : 'index.dev.js',
-      path: path.resolve(__dirname, 'dist'),
-      libraryTarget: 'umd',
-      library: 'MyPackage',
-      umdNamedDefine: true,
-      globalObject: 'this'
+      path: path.resolve('dist'),
+      filename: 'index.js',
+      library: {
+        type: 'umd',
+        name: 'MyPackage',
+      },
+      globalObject: 'this',
+      publicPath: '/',
     },
-    mode: isProduction ? 'production' : 'development',
-    devtool: isProduction ? 'source-map' : 'inline-source-map',
-    // ... other config
-    plugins: [
-      new CleanWebpackPlugin()
-    ]
+    resolve: {
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    },
+    module: {
+      rules: [
+        // ... module rules
+      ],
+    },
+    externals: {
+      react: 'react',
+      'react-dom': 'react-dom',
+    },
+    devtool: isDevelopment ? 'inline-source-map' : 'source-map',
+    ...(isDevelopment && {
+      devServer: {
+        static: './dist',
+        hot: true,
+        open: true,
+        port: 9000,
+      },
+    }),
   };
 };`}
             language="javascript"
@@ -339,10 +489,44 @@ module.exports = (env, argv) => {
 
         <div className="mb-4">
           <CopyCodeSnippet
-            code={`npm run build -- --mode=development`}
+            code={`npm run build -- --env development`}
             language="bash"
           />
         </div>
+
+        <DocH3>Adding a Development Server</DocH3>
+
+        <DocParagraph>
+          To use webpack-dev-server for development, install the required
+          package:
+        </DocParagraph>
+
+        <div className="mb-4">
+          <CopyCodeSnippet
+            code={`npm install --save-dev webpack-dev-server`}
+            language="bash"
+          />
+        </div>
+
+        <DocParagraph>Add a script to your package.json:</DocParagraph>
+
+        <div className="mb-4">
+          <CopyCodeSnippet
+            code={`{
+  "scripts": {
+    "start": "webpack serve --env development",
+    "build": "webpack --env production"
+  }
+}`}
+            language="json"
+          />
+        </div>
+
+        <DocNote>
+          Using webpack-dev-server provides features like hot module replacement
+          (HMR), which allows you to see changes in real-time without refreshing
+          the page.
+        </DocNote>
 
         {/* Next Page Button */}
         <NextPageButton title="Babel Configuration" href="/docs/babel" />
