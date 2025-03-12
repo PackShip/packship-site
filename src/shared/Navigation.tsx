@@ -7,6 +7,7 @@ import packshipLogo from "../../public/assets/PackShipLogo.svg";
 import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import ThemeToggle from "./ThemeToggle";
+import V2Banner from "./V2Banner";
 
 const isExternal = (url: string) => /^https?:\/\//.test(url);
 const isAnchorLink = (url: string) => /^#/.test(url);
@@ -54,8 +55,9 @@ export default function Navigation() {
 
   return (
     <>
+      <V2Banner />
       <nav
-        className={`fixed top-0 left-0 right-0 z-30 transition-all duration-300 ${
+        className={`fixed top-[32px] left-0 right-0 z-30 transition-all duration-300 ${
           scrolled
             ? "py-0 dark:bg-black/60 light:bg-white/60 backdrop-blur-sm"
             : "py-1 bg-transparent"
