@@ -119,6 +119,37 @@ export default function Prerequisites() {
           <CopyCodeSnippet code="npm --version" language="bash" />
         </div>
 
+        <DocH3>Installing PackShip CLI</DocH3>
+
+        <DocParagraph>
+          Once you have Node.js and npm set up, you can install the PackShip CLI
+          tool globally on your machine:
+        </DocParagraph>
+
+        <div className="mb-4 flex flex-col gap-3">
+          <DocH4>For macOS/Linux</DocH4>
+          <CopyCodeSnippet
+            code="sudo npm i -g packship@latest"
+            language="bash"
+          />
+
+          <DocH4>For Windows</DocH4>
+          <CopyCodeSnippet code="npm i -g packship@latest" language="bash" />
+        </div>
+
+        <DocParagraph>
+          This will install the PackShip command suite on your machine, making
+          the <DocCode>packship</DocCode> command available globally.
+        </DocParagraph>
+
+        <DocParagraph>
+          To verify that PackShip is installed correctly, run:
+        </DocParagraph>
+
+        <div className="mb-4">
+          <CopyCodeSnippet code="packship --version" language="bash" />
+        </div>
+
         <DocH3>Development Environment</DocH3>
 
         <DocParagraph>
