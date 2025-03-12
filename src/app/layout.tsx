@@ -9,23 +9,23 @@ import { Toaster } from "react-hot-toast";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Packship - Open Source NPM Package Management",
+  title: "PackShip - Open Source NPM Package Builder",
   description:
-    "Simplify your NPM package releases with Packship, an open-source CLI tool for efficient package development and publishing.",
+    "Simplify your NPM package releases with PackShip, an open-source CLI tool for efficient package development and publishing.",
   keywords:
     "npm, package, management, open source, cli, javascript, typescript, development",
   openGraph: {
-    title: "Packship - Open Source NPM Package Management",
+    title: "PackShip - Open Source NPM Package Builder",
     description:
-      "Simplify your NPM package releases with Packship, an open-source CLI tool for efficient package development and publishing.",
+      "Simplify your NPM package releases with PackShip, an open-source CLI tool for efficient package development and publishing.",
     url: "https://packship.dev",
-    siteName: "Packship",
+    siteName: "PackShip",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Packship - Open Source NPM Package Management",
+        alt: "PackShip - Open Source NPM Package Builder",
       },
     ],
     locale: "en_US",

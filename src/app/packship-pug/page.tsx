@@ -121,7 +121,7 @@ export default function PackshipPug() {
           <div className="flex flex-col items-center space-y-4">
             <Link
               href="/#start-packshipping"
-              className="w-full sm:w-64 inline-flex items-center justify-center px-6 py-3 rounded-md bg-packship-purple-lite hover:bg-packship-purple-lite/90 text-black font-medium transition-all"
+              className="w-full sm:w-96 inline-flex items-center justify-center px-6 py-3 rounded-md bg-packship-purple-lite hover:bg-packship-purple-lite/90 text-black font-medium transition-all"
             >
               Try PackShip CLI while you wait
             </Link>
