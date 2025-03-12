@@ -79,20 +79,19 @@ export default function Prerequisites() {
 
         <DocList>
           <DocListItem>
-            <strong>Disk Space:</strong> ~50MB for the CLI tool and its
-            dependencies
+            <strong>Disk Space:</strong> Minimal space required for the CLI tool
+            itself. Additional space will be needed for your project
+            dependencies.
           </DocListItem>
           <DocListItem>
-            <strong>Memory:</strong> 256MB RAM minimum (512MB recommended)
-          </DocListItem>
-          <DocListItem>
-            <strong>Processor:</strong> Any modern CPU (1GHz or faster)
+            <strong>Internet Connection:</strong> Required for installing
+            dependencies and publishing packages
           </DocListItem>
         </DocList>
 
         <DocNote>
-          When building larger packages, more memory and disk space may be
-          required depending on your project&apos;s dependencies.
+          When building larger packages, more disk space may be required
+          depending on your project&apos;s dependencies and build artifacts.
         </DocNote>
 
         <DocH3>Installing Node.js and npm</DocH3>
