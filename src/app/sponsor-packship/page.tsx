@@ -130,7 +130,7 @@ export default function SponsorPackShip() {
                   </p>
                   <div className="flex flex-col space-y-4">
                     {/* GitHub Sponsors iframe button */}
-                    <div className="flex justify-center mb-2">
+                    {/* <div className="flex justify-center mb-2">
                       <iframe
                         src="https://github.com/sponsors/CodeNKoffee/button"
                         title="Sponsor CodeNKoffee"
@@ -138,10 +138,10 @@ export default function SponsorPackShip() {
                         width="114"
                         style={{ border: 0, borderRadius: "6px" }}
                       ></iframe>
-                    </div>
-                    <p className="text-center text-sm dark:text-white/50 light:text-gray-500">
+                    </div> */}
+                    {/* <p className="text-center text-sm dark:text-white/50 light:text-gray-500">
                       Or use the direct link:
-                    </p>
+                    </p> */}
                     <a
                       href="https://github.com/sponsors/CodeNKoffee"
                       target="_blank"
