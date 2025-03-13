@@ -96,7 +96,7 @@ export default function Footer() {
                 <FaTwitter size={20} />
               </a>
               <a
-                href="https://discord.gg/packship"
+                href="https://discord.gg/5REXGVyRgV"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="dark:text-white/60 light:text-gray-600 hover:text-packship-purple-lite transition-colors"

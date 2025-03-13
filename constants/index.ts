@@ -67,7 +67,7 @@ export const footerLinks = [
     links: [
       {
         name: "Discord",
-        href: "https://discord.gg/packship",
+        href: "https://discord.gg/5REXGVyRgV",
       },
       {
         name: "GitHub",

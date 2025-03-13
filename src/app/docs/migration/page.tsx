@@ -149,7 +149,7 @@ export default function Migration() {
           <DocListItem>
             Join the{" "}
             <a
-              href="https://discord.gg/packship"
+              href="https://discord.gg/5REXGVyRgV"
               target="_blank"
               rel="noopener noreferrer"
               className="text-packship-purple-lite hover:underline"
