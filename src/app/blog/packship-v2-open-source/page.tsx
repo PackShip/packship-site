@@ -8,7 +8,7 @@ export default function PackshipV2OpenSource() {
   return (
     <>
       <Navigation />
-      <div className="min-h-screen pt-24 pb-16">
+      <div className="min-h-screen pt-32 pb-16">
         <div className="kontainer px-4 sm:px-6">
           <div className="row">
             <div className="max-w-3xl mx-auto">

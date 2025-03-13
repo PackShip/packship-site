@@ -50,7 +50,7 @@ export default function DocsLayout({
         <MobileDocsSidebar />
         <DocsSidebar />
         <div className="w-full md:pl-[250px]">
-          <div className="w-full max-w-[1000px] mx-auto md:mx-0 px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 md:pt-32 pb-16">
+          <div className="w-full max-w-[1000px] mx-auto md:mx-0 px-4 sm:px-6 lg:px-8 pt-32 sm:pt-36 md:pt-40 pb-16">
             <main className="w-full">
               <div className="w-full mb-4 sm:mb-6">
                 <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-packship-purple-lite dark:text-packship-purple-lite light:text-packship-purple">

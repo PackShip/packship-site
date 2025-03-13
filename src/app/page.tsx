@@ -27,7 +27,7 @@ export default function Home() {
   return (
     <Suspense>
       <Navigation />
-      <main className="pt-16">
+      <main className="pt-24">
         <Hero />
         <Features />
         <div className="flex flex-col md:flex-row justify-around items-start flex-1">

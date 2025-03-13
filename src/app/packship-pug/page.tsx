@@ -5,7 +5,7 @@ import ComingSoonBadge from "../components/ComingSoonBadge";
 
 export default function PackshipPug() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-4 py-16">
+    <div className="flex flex-col items-center justify-center min-h-screen px-4 py-24">
       <div className="max-w-4xl w-full">
         <div className="relative mb-12 text-center">
           <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-packship-purple-lite/5 rounded-full blur-3xl -z-10"></div>

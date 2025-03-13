@@ -22,7 +22,7 @@ export default function SponsorPackShip() {
     <main className="min-h-screen flex flex-col dark:bg-black light:bg-white">
       <Navigation />
 
-      <div className="flex-grow pt-24 pb-16">
+      <div className="flex-grow pt-32 pb-16">
         <div className="kontainer">
           <div className="max-w-4xl mx-auto">
             {/* Header */}
