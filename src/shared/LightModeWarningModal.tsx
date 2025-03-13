@@ -82,7 +82,7 @@ export default function LightModeWarningModal({
             </span>
           </label>
         </div>
-        <div className="flex justify-between">
+        <div className="flex flex-col md:flex-row gap-2 justify-between">
           <button
             onClick={handleClose}
             className="px-4 py-2 dark:bg-gray-700 dark:hover:bg-gray-600 light:bg-gray-200 light:hover:bg-gray-300 dark:text-white light:text-gray-800 rounded-md transition-colors"

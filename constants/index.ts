@@ -70,6 +70,10 @@ export const footerLinks = [
         href: "https://discord.gg/packship",
       },
       {
+        name: "GitHub",
+        href: "https://github.com/CodeNKoffee/packship",
+      },
+      {
         name: "X (formerly Twitter)",
         href: "https://x.com/h4temsoliman",
       },
