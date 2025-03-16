@@ -19,30 +19,37 @@ export default function SponsorPackShip() {
   }, []);
 
   return (
-    <main className="min-h-screen flex flex-col dark:bg-black light:bg-white">
+    <>
       <Navigation />
+      <div className="min-h-screen pt-32 pb-16">
+        <div className="kontainer px-4 sm:px-6">
+          <div className="max-w-4xl mx-auto relative">
+            {/* Decorative elements - moved inside the container and adjusted opacity */}
+            <div className="absolute top-1/4 -left-1/4 w-64 h-64 bg-packship-purple-lite/5 rounded-full blur-3xl -z-10"></div>
+            <div className="absolute bottom-1/4 -right-1/4 w-64 h-64 bg-packship-purple-lite/5 rounded-full blur-3xl -z-10"></div>
 
-      <div className="flex-grow pt-32 pb-16">
-        <div className="kontainer">
-          <div className="max-w-4xl mx-auto">
             {/* Header */}
-            <div className="text-center mb-16" data-aos="fade-up">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4 dark:text-white light:text-gray-900">
+            <div className="text-center mb-12 sm:mb-16" data-aos="fade-up">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 dark:text-white light:text-gray-900">
                 Support{" "}
                 <span className="text-packship-purple-lite">PackShip</span>
               </h1>
-              <p className="text-xl dark:text-white/70 light:text-gray-700 max-w-2xl mx-auto">
+              <p className="text-lg sm:text-xl dark:text-white/70 light:text-gray-700 max-w-2xl mx-auto px-4">
                 Help us continue building and improving PackShip for the
                 developer community
               </p>
             </div>
 
             {/* Why Sponsor Section */}
-            <div className="mb-16" data-aos="fade-up" data-aos-delay="100">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 dark:text-white light:text-gray-900">
+            <div
+              className="mb-12 sm:mb-16 px-4 sm:px-0"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <h2 className="text-2xl sm:text-3xl font-bold mb-6 dark:text-white light:text-gray-900">
                 Why Sponsor PackShip?
               </h2>
-              <div className="bg-gradient-to-br from-black/40 to-black/20 dark:from-black/40 dark:to-black/20 light:from-gray-100 light:to-gray-50 backdrop-blur-sm p-6 rounded-xl border border-white/10 dark:border-white/10 light:border-gray-200 mb-8">
+              <div className="bg-white dark:bg-black/20 light:bg-white p-6 sm:p-8 rounded-xl shadow-sm mb-8">
                 <p className="dark:text-white/80 light:text-gray-700 mb-4">
                   PackShip is an open-source tool dedicated to simplifying NPM
                   package development and publishing. Your sponsorship helps us:
@@ -71,14 +78,18 @@ export default function SponsorPackShip() {
             </div>
 
             {/* Sponsorship Options */}
-            <div className="mb-16" data-aos="fade-up" data-aos-delay="200">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 dark:text-white light:text-gray-900">
+            <div
+              className="mb-12 sm:mb-16 px-4 sm:px-0"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <h2 className="text-2xl sm:text-3xl font-bold mb-6 dark:text-white light:text-gray-900">
                 Sponsorship Options
               </h2>
 
               <div className="grid md:grid-cols-2 gap-6">
                 {/* One-time Donation */}
-                <div className="bg-gradient-to-br from-black/40 to-black/20 dark:from-black/40 dark:to-black/20 light:from-gray-100 light:to-gray-50 backdrop-blur-sm p-6 rounded-xl border border-white/10 dark:border-white/10 light:border-gray-200 h-full flex flex-col">
+                <div className="bg-white dark:bg-black/20 light:bg-white p-6 sm:p-8 rounded-xl shadow-sm h-full flex flex-col">
                   <div className="mb-4 flex items-center">
                     <FaHeart className="text-packship-purple-lite mr-3 text-xl" />
                     <h3 className="text-xl font-semibold dark:text-white light:text-gray-900">
@@ -117,7 +128,7 @@ export default function SponsorPackShip() {
                 </div>
 
                 {/* GitHub Sponsors */}
-                <div className="bg-gradient-to-br from-black/40 to-black/20 dark:from-black/40 dark:to-black/20 light:from-gray-100 light:to-gray-50 backdrop-blur-sm p-6 rounded-xl border border-white/10 dark:border-white/10 light:border-gray-200 h-full flex flex-col">
+                <div className="bg-white dark:bg-black/20 light:bg-white p-6 sm:p-8 rounded-xl shadow-sm h-full flex flex-col">
                   <div className="mb-4 flex items-center">
                     <FaGithub className="text-packship-purple-lite mr-3 text-xl" />
                     <h3 className="text-xl font-semibold dark:text-white light:text-gray-900">
@@ -156,11 +167,15 @@ export default function SponsorPackShip() {
             </div>
 
             {/* Sponsor Benefits */}
-            <div className="mb-16" data-aos="fade-up" data-aos-delay="300">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 dark:text-white light:text-gray-900">
+            <div
+              className="mb-12 sm:mb-16 px-4 sm:px-0"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <h2 className="text-2xl sm:text-3xl font-bold mb-6 dark:text-white light:text-gray-900">
                 Sponsor Benefits
               </h2>
-              <div className="bg-gradient-to-br from-black/40 to-black/20 dark:from-black/40 dark:to-black/20 light:from-gray-100 light:to-gray-50 backdrop-blur-sm p-6 rounded-xl border border-white/10 dark:border-white/10 light:border-gray-200">
+              <div className="bg-white dark:bg-black/20 light:bg-white p-6 sm:p-8 rounded-xl shadow-sm">
                 <ul className="space-y-4 dark:text-white/80 light:text-gray-700">
                   <li className="flex items-start">
                     <div className="bg-packship-purple-lite/20 p-2 rounded-full mr-4 flex-shrink-0">
@@ -221,11 +236,15 @@ export default function SponsorPackShip() {
             </div>
 
             {/* Questions Section */}
-            <div data-aos="fade-up" data-aos-delay="400" className="mb-16">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 dark:text-white light:text-gray-900">
+            <div
+              className="mb-12 sm:mb-16 px-4 sm:px-0"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <h2 className="text-2xl sm:text-3xl font-bold mb-6 dark:text-white light:text-gray-900">
                 Questions?
               </h2>
-              <div className="bg-gradient-to-br from-black/40 to-black/20 dark:from-black/40 dark:to-black/20 light:from-gray-100 light:to-gray-50 backdrop-blur-sm p-6 rounded-xl border border-white/10 dark:border-white/10 light:border-gray-200">
+              <div className="bg-white dark:bg-black/20 light:bg-white p-6 sm:p-8 rounded-xl shadow-sm">
                 <p className="dark:text-white/80 light:text-gray-700 mb-4">
                   If you have any questions about sponsoring PackShip or would
                   like to discuss custom sponsorship options, please reach out
@@ -255,11 +274,11 @@ export default function SponsorPackShip() {
 
             {/* Final CTA */}
             <div
+              className="px-4 sm:px-0"
               data-aos="fade-up"
               data-aos-delay="500"
-              className="text-center"
             >
-              <div className="bg-gradient-to-br from-packship-purple-lite/20 to-packship-purple-lite/5 p-8 rounded-xl border border-packship-purple-lite/20 mb-8">
+              <div className="bg-white dark:bg-black/20 light:bg-white p-6 sm:p-8 rounded-xl shadow-sm mb-8">
                 <h2 className="text-2xl md:text-3xl font-bold mb-4 dark:text-white light:text-gray-900">
                   Ready to Support PackShip?
                 </h2>
@@ -305,12 +324,7 @@ export default function SponsorPackShip() {
           </div>
         </div>
       </div>
-
-      {/* Decorative elements */}
-      <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-packship-purple-lite/5 rounded-full blur-3xl -z-10"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-packship-purple-lite/5 rounded-full blur-3xl -z-10"></div>
-
       <Footer />
-    </main>
+    </>
   );
 }
