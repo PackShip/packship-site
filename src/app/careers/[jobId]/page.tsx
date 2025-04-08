@@ -27,6 +27,30 @@ export default function JobPage({ params }: JobPageProps) {
     notFound();
   }
 
+  // Generate email subject and body for the application
+  const emailSubject = `Application for ${job.title} role at PackShip`;
+  const emailBody = `Hi PackShip team,
+
+I'm interested in the ${job.title} (${job.type}) role.
+
+A little about me:
+[Your brief intro here]
+
+I'm interested in this role because:
+[Your reason here]
+
+Here's my GitHub/portfolio:
+[Your link here]
+
+Looking forward to hearing from you.
+
+Thanks!`;
+
+  // Create the mailto link with pre-filled content
+  const mailtoLink = `mailto:hatemthedev@gmail.com?subject=${encodeURIComponent(
+    emailSubject
+  )}&body=${encodeURIComponent(emailBody)}`;
+
   return (
     <>
       <Navigation />
@@ -147,25 +171,37 @@ export default function JobPage({ params }: JobPageProps) {
                 </div>
               </div>
 
+              {/* Apply buttons */}
+              <div className="mt-8 space-y-4">
+                {/* Email button */}
+                <a
+                  href={mailtoLink}
+                  className="block w-full bg-packship-purple-lite text-black hover:bg-packship-purple-lite/90 dark:text-black light:text-black py-3 px-6 rounded-lg text-center font-medium"
+                >
+                  Apply via Email
+                </a>
+
+                {/* LinkedIn button */}
+                <a
+                  href="https://www.linkedin.com/company/packship-npm/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full border-2 border-packship-purple-lite bg-transparent text-packship-purple-lite hover:bg-packship-purple-lite/10 py-3 px-6 rounded-lg text-center font-medium"
+                >
+                  Visit our LinkedIn
+                </a>
+
+                <p className="text-sm text-gray-500 dark:text-gray-400 text-center mt-2">
+                  You can also reach out directly on LinkedIn with a message
+                  describing your interest in this role.
+                </p>
+              </div>
+
               {/* Apply button - fixed at bottom on mobile */}
               <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-900 p-4 md:hidden border-t dark:border-white/10 z-10">
                 <a
-                  href="https://www.linkedin.com/company/packship-npm/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={mailtoLink}
                   className="block w-full bg-packship-purple-lite text-black hover:bg-packship-purple-lite/90 dark:text-black light:text-black py-3 px-4 rounded-lg text-center font-medium"
-                >
-                  Apply Now
-                </a>
-              </div>
-
-              {/* Apply button - inline on desktop */}
-              <div className="hidden md:block mt-8">
-                <a
-                  href="https://www.linkedin.com/company/packship-npm/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block w-full bg-packship-purple-lite text-black hover:bg-packship-purple-lite/90 dark:text-black light:text-black py-3 px-6 rounded-lg text-center font-medium"
                 >
                   Apply Now
                 </a>

@@ -177,7 +177,7 @@ export const socials = [
   },
   {
     name: "Email",
-    link: "mailto:packshipcli@gmail.com",
+    link: "mailto:hatemthedev@gmail.com",
     icon: faEnvelope,  // Use the imported icon object
   },
   {
@@ -382,7 +382,7 @@ export const jobDetails: JobDetails = {
   ],
 
   howToApply: [
-    "DM us here on LinkedIn",
+    "Apply on our careers page OR send us a message on LinkedIn",
     "A short intro",
     "What role(s) you're interested in",
     "A link to your GitHub, website, or anything you're proud of"

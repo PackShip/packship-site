@@ -252,10 +252,10 @@ export default function SponsorPackShip() {
                 </p>
                 <div className="flex flex-col md:flex-row gap-4">
                   <Link
-                    href="mailto:packshipcli@gmail.com"
+                    href="mailto:hatemthedev@gmail.com"
                     className="inline-flex items-center text-packship-purple-lite hover:underline"
                   >
-                    Contact us at packshipcli@gmail.com
+                    Contact us at hatemthedev@gmail.com
                   </Link>
                   <span className="hidden md:inline dark:text-white/50 light:text-gray-500">
                     •
