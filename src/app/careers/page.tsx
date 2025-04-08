@@ -39,16 +39,16 @@ export default function Careers() {
                           {job.title}
                         </h2>
                         <div className="flex items-center gap-3">
-                          <span className="px-3 py-1 text-xs font-medium bg-packship-purple-lite/10 text-packship-purple-lite rounded-full">
+                          <span className="px-3 py-1 text-xs font-medium bg-packship-purple-lite/10 text-packship-purple-lite rounded-full whitespace-nowrap">
                             {job.category}
                           </span>
-                          <span className="px-3 py-1 text-xs font-medium bg-packship-purple-lite/5 text-packship-purple-lite/80 rounded-full">
+                          <span className="px-3 py-1 text-xs font-medium bg-packship-purple-lite/5 text-packship-purple-lite/80 rounded-full whitespace-nowrap">
                             {job.location}
                           </span>
                         </div>
                       </div>
 
-                      <p className="text-sm text-gray-600 dark:text-white/60 light:text-gray-600 mb-4">
+                      <p className="text-sm text-gray-600 dark:text-white/60 light:text-gray-600 mb-4 whitespace-nowrap">
                         {job.type}
                       </p>
 

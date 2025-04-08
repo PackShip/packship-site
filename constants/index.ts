@@ -309,10 +309,10 @@ export const jobListings: JobListing[] = [
   {
     id: "software-engineer-metrics-telemetry",
     title: "Software Engineer, Metrics & Telemetry",
-    type: "Open Source Contributor",
+    type: "Part-time Volunteer",
     location: "Remote - Worldwide",
     category: "Engineering",
-    summary: "Help us shape how we understand PackShip's growth. You'll work with Umami, PostHog, and custom telemetry to design scalable, privacy-aware insights across CLI usage, installs, and feature adoption.",
+    summary: "Help us shape how we understand PackShip's growth. You'll work with Umami, PostHog, and custom telemetry to design scalable, privacy-aware insights across CLI usage, installs, and feature adoption. This is currently an unpaid, open-source contributor role.",
     responsibilities: [
       "Improve real-time metrics and dashboarding.",
       "Collaborate with the CLI team to embed insights directly into dev tooling.",
@@ -322,10 +322,10 @@ export const jobListings: JobListing[] = [
   {
     id: "software-engineer-cli-development",
     title: "Software Engineer, CLI Development (Node.js/TypeScript)",
-    type: "Open Source Contributor",
+    type: "Part-time Volunteer",
     location: "Remote - Worldwide",
     category: "Engineering",
-    summary: "Our CLI is the core of PackShip. You'll help us architect new features like prebuilt templates, remote deployment logic, and bundling automations.",
+    summary: "Our CLI is the core of PackShip. You'll help us architect new features like prebuilt templates, remote deployment logic, and bundling automations. This is currently an unpaid, open-source contributor role.",
     responsibilities: [
       "Work with modern TypeScript, Node.js, and the monorepo ecosystem.",
       "Define the developer workflows of the future.",
@@ -335,10 +335,10 @@ export const jobListings: JobListing[] = [
   {
     id: "technical-writer-documentation",
     title: "Technical Writer & Documentation Engineer",
-    type: "Volunteer (Immediate)",
+    type: "Part-time Volunteer",
     location: "Remote - Worldwide",
     category: "Documentation",
-    summary: "We believe docs are part of the product. You'll own the docs experience — from onboarding guides and usage tutorials to contribution guides and API references.",
+    summary: "We believe docs are part of the product. You'll own the docs experience — from onboarding guides and usage tutorials to contribution guides and API references. This is currently an unpaid, open-source contributor role.",
     responsibilities: [
       "Work closely with engineering to document new features.",
       "Craft engaging tutorials and write for real-world use cases.",
@@ -348,10 +348,10 @@ export const jobListings: JobListing[] = [
   {
     id: "frontend-engineer-web",
     title: "Frontend Engineer, Web & Docs Site",
-    type: "Volunteer (Immediate)",
+    type: "Part-time Volunteer",
     location: "Remote - Worldwide",
     category: "Engineering",
-    summary: "Help us build a sleek and developer-focused PackShip web experience.",
+    summary: "Help us build a sleek and developer-focused PackShip web experience. This is currently an unpaid, open-source contributor role.",
     responsibilities: [
       "Own and maintain the PackShip.dev site.",
       "Help design and implement our documentation system (likely with MDX or custom CMS).",
