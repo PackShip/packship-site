@@ -53,6 +53,10 @@ export const footerLinks = [
         href: "/blog",
       },
       {
+        name: "Announcements",
+        href: "/announcements",
+      },
+      {
         name: "GitHub",
         href: "https://github.com/CodeNKoffee/packship",
       },
@@ -88,6 +92,10 @@ export const footerLinks = [
       {
         name: "Contribute",
         href: "https://github.com/CodeNKoffee/packship/blob/master/CONTRIBUTING.md",
+      },
+      {
+        name: "Careers",
+        href: "/careers",
       },
       {
         name: "Sponsor",
@@ -141,11 +149,11 @@ export const footerLinks = [
       },
       {
         name: "Splanda Media",
-        href: "https://splandamedia.com/",
+        href: "https://linkedin.com/company/splanda-media/",
       },
       {
-        name: "QMaster",
-        href: "https://linkedin.com/company/qmasterapp/",
+        name: "Tawabiry",
+        href: "https://linkedin.com/company/tawabiry/",
       },
     ],
   },
@@ -278,3 +286,105 @@ export const tweetUrls = [
   "https://x.com/crptwtf/status/1837109244476231822",
   "https://x.com/andrecasaldev/status/1837171793351598239",
 ];
+
+// Job Types
+export interface JobListing {
+  id: string;
+  title: string;
+  type: string;
+  location: string;
+  category: string;
+  summary: string;
+  responsibilities: string[];
+}
+
+export interface JobDetails {
+  aboutTeam: string;
+  aboutYou: string[];
+  benefits: string[];
+  howToApply: string[];
+}
+
+export const jobListings: JobListing[] = [
+  {
+    id: "software-engineer-metrics-telemetry",
+    title: "Software Engineer, Metrics & Telemetry",
+    type: "Full-time (Hiring Soon)",
+    location: "Remote - Worldwide",
+    category: "Engineering",
+    summary: "Help us shape how we understand PackShip's growth. You'll work with Umami, PostHog, and custom telemetry to design scalable, privacy-aware insights across CLI usage, installs, and feature adoption.",
+    responsibilities: [
+      "Improve real-time metrics and dashboarding.",
+      "Collaborate with the CLI team to embed insights directly into dev tooling.",
+      "Design systems to help guide product development and release cadence."
+    ],
+  },
+  {
+    id: "software-engineer-cli-development",
+    title: "Software Engineer, CLI Development (Node.js/TypeScript)",
+    type: "Full-time (Hiring Soon)",
+    location: "Remote - Worldwide",
+    category: "Engineering",
+    summary: "Our CLI is the core of PackShip. You'll help us architect new features like prebuilt templates, remote deployment logic, and bundling automations.",
+    responsibilities: [
+      "Work with modern TypeScript, Node.js, and the monorepo ecosystem.",
+      "Define the developer workflows of the future.",
+      "Contribute to our open-source roadmap and collaborate on DX principles."
+    ],
+  },
+  {
+    id: "technical-writer-documentation",
+    title: "Technical Writer & Documentation Engineer",
+    type: "Part-time/Volunteer (Immediate Hiring)",
+    location: "Remote - Worldwide",
+    category: "Documentation",
+    summary: "We believe docs are part of the product. You'll own the docs experience — from onboarding guides and usage tutorials to contribution guides and API references.",
+    responsibilities: [
+      "Work closely with engineering to document new features.",
+      "Craft engaging tutorials and write for real-world use cases.",
+      "Improve our docs site experience, structure, and accessibility."
+    ],
+  },
+  {
+    id: "frontend-engineer-web",
+    title: "Frontend Engineer, Web & Docs Site",
+    type: "Part-time/Volunteer (Immediate Hiring)",
+    location: "Remote - Worldwide",
+    category: "Engineering",
+    summary: "Help us build a sleek and developer-focused PackShip web experience.",
+    responsibilities: [
+      "Own and maintain the PackShip.dev site.",
+      "Help design and implement our documentation system (likely with MDX or custom CMS).",
+      "Contribute to UI/UX that makes our tools more discoverable and intuitive."
+    ],
+  },
+];
+
+export const jobDetails: JobDetails = {
+  aboutTeam: "We're a small and fast-moving group of developers and builders with deep roots in open source, DX, and developer communities. PackShip began as a weekend project and has evolved into a full-fledged devtool adopted across several ecosystems. Our mission is simple: make package publishing super simple, and empower every developer to ship confidently. We build in public, value async-first workflows, and care deeply about quality, simplicity, and performance.",
+
+  aboutYou: [
+    "Enjoy building tools for developers and have experience in open-source ecosystems.",
+    "Care about clean, maintainable code (especially in TypeScript/Node).",
+    "Have an eye for developer experience — from docs to error messages to logs.",
+    "Are excited by small teams, fast iteration, and ownership.",
+    "Value clear communication and async workflows.",
+    "Experience with CLIs, telemetry, bundlers, or technical writing is a huge plus — but we value curiosity and initiative even more."
+  ],
+
+  benefits: [
+    "💻 Remote-first, async-friendly collaboration (work from anywhere)",
+    "🧭 Ownership over your work and roadmap input",
+    "📚 Open-source portfolio you can proudly showcase",
+    "💬 Community recognition across our developer and builder network",
+    "🛠️ Paid opportunities for contributors who help shape key product pillars",
+    "⚡ Early access to future PackShip products and internal tools"
+  ],
+
+  howToApply: [
+    "DM us here on LinkedIn",
+    "A short intro",
+    "What role(s) you're interested in",
+    "A link to your GitHub, website, or anything you're proud of"
+  ]
+};
