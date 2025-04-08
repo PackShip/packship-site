@@ -300,6 +300,11 @@ button {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .dark .tab-button {
@@ -313,11 +318,18 @@ button {
 .dark .tab-button.active {
   background-color: #1a1a1a;
   color: var(--packship-purple-lite);
+  font-weight: 600;
 }
 
 .light .tab-button.active {
   background-color: #f0f0f0;
   color: #3F3D56;
+  font-weight: 600;
+}
+
+.tab-button:hover:not(.active) {
+  color: var(--packship-purple-lite);
+  transform: translateY(-2px);
 }
 
 /* Dark mode */

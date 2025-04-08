@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy, faCheck } from "@fortawesome/free-solid-svg-icons";
 import { useTheme } from "@/context/ThemeContext";
@@ -27,8 +27,26 @@ export default function CommandPrompt({
 }: CommandPromptProps) {
   const [copied, setCopied] = useState(false);
   const [currentTab, setCurrentTab] = useState(activeTab);
+  const [activeTabLeft, setActiveTabLeft] = useState(0);
+  const [activeTabWidth, setActiveTabWidth] = useState(0);
+  const tabRefs = useRef<{ [key: string]: HTMLButtonElement | null }>({});
   const { theme } = useTheme();
   const isDark = theme === "dark";
+
+  // Update the active tab indicator position
+  useEffect(() => {
+    const activeTabElement = tabRefs.current[currentTab];
+    if (activeTabElement) {
+      const containerRect =
+        activeTabElement.parentElement?.getBoundingClientRect();
+      const tabRect = activeTabElement.getBoundingClientRect();
+
+      if (containerRect) {
+        setActiveTabLeft(tabRect.left - containerRect.left);
+        setActiveTabWidth(tabRect.width);
+      }
+    }
+  }, [currentTab]);
 
   const handleCopy = () => {
     const textToCopy = commands[currentTab] || command;
@@ -55,14 +73,33 @@ export default function CommandPrompt({
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const handleTabClick = (tab: string) => {
+    setCurrentTab(tab);
+  };
+
   return (
     <div className={`${className}`}>
-      <div className="flex flex-wrap gap-1 mb-2">
+      <div className="flex flex-wrap gap-1 mb-2 relative">
+        {/* The sliding indicator for the active tab */}
+        <div
+          className="absolute bottom-0 h-1 bg-packship-purple-lite transition-all duration-300 ease-in-out rounded-t-sm"
+          style={{
+            left: `${activeTabLeft}px`,
+            width: `${activeTabWidth}px`,
+          }}
+        />
+
         {Object.keys(commands).map((tab) => (
           <button
             key={tab}
-            className={`tab-button ${currentTab === tab ? "active" : ""}`}
-            onClick={() => setCurrentTab(tab)}
+            ref={(el) => {
+              tabRefs.current[tab] = el;
+              return undefined;
+            }}
+            className={`tab-button ${
+              currentTab === tab ? "active" : ""
+            } transition-all duration-200`}
+            onClick={() => handleTabClick(tab)}
           >
             {tab}
           </button>

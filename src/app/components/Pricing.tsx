@@ -35,7 +35,7 @@ export default function Pricing() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-4xl">
             <div
               data-aos="fade-up"
               className="feature-card flex flex-col dark:bg-black/20 light:bg-white/90 p-6 rounded-lg border dark:border-gray-800 light:border-gray-200"
