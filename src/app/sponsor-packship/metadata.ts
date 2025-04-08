@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     siteName: "PackShip",
     images: [
       {
-        url: "/og-image.png",
+        url: "/letter-logo.png",
         width: 1200,
         height: 630,
         alt: "Sponsor PackShip - Support Open Source Development",

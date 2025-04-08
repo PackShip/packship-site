@@ -9,6 +9,7 @@ import { Toaster } from "react-hot-toast";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://packship.dev"),
   title: "PackShip - Open Source NPM Package Builder",
   description:
     "Simplify your NPM package releases with PackShip, an open-source CLI tool for efficient package development and publishing.",
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     siteName: "PackShip",
     images: [
       {
-        url: "/og-image.png",
+        url: "/letter-logo.png",
         width: 1200,
         height: 630,
         alt: "PackShip - Open Source NPM Package Builder",
@@ -30,6 +31,13 @@ export const metadata: Metadata = {
     ],
     locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PackShip - Open Source NPM Package Builder",
+    description:
+      "Simplify your NPM package releases with PackShip, an open-source CLI tool for efficient package development and publishing.",
+    images: ["/letter-logo.png"],
   },
 };
 
