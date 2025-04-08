@@ -4,6 +4,11 @@ import Navigation from "@/shared/Navigation";
 import Footer from "@/shared/Footer";
 import { jobListings, JobListing } from "../../../constants";
 
+export interface PageProps {
+  params: Record<string, never>;
+  searchParams: { [key: string]: string | string[] | undefined };
+}
+
 export default function Careers() {
   return (
     <>

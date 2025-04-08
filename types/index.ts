@@ -40,3 +40,14 @@ export interface CopyCodeSnippetProps {
   buttonText?: string;
   inline?: boolean;
 }
+
+// Updated props type to conform to Next.js App Router expectations
+export interface JobIDPageProps {
+  params: { jobId: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+}
+
+export interface JobPageProps {
+  params: Record<string, never>;
+  searchParams: { [key: string]: string | string[] | undefined };
+}

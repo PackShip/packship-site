@@ -3,20 +3,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Navigation from "@/shared/Navigation";
 import Footer from "@/shared/Footer";
-import {
-  jobListings,
-  jobDetails,
-  JobListing,
-  JobDetails,
-} from "../../../../constants";
+import { jobListings, jobDetails, JobListing } from "../../../../constants";
+import { JobIDPageProps } from "../../../../types";
 
-interface JobPageProps {
-  params: {
-    jobId: string;
-  };
-}
 
-export default function JobPage({ params }: JobPageProps) {
+
+export default function JobPage({ params, searchParams }: JobIDPageProps) {
   const { jobId } = params;
 
   // Find the job with the matching ID
