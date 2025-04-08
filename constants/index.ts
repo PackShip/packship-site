@@ -309,7 +309,7 @@ export const jobListings: JobListing[] = [
   {
     id: "software-engineer-metrics-telemetry",
     title: "Software Engineer, Metrics & Telemetry",
-    type: "Full-time (Hiring Soon)",
+    type: "Open Source Contributor",
     location: "Remote - Worldwide",
     category: "Engineering",
     summary: "Help us shape how we understand PackShip's growth. You'll work with Umami, PostHog, and custom telemetry to design scalable, privacy-aware insights across CLI usage, installs, and feature adoption.",
@@ -322,7 +322,7 @@ export const jobListings: JobListing[] = [
   {
     id: "software-engineer-cli-development",
     title: "Software Engineer, CLI Development (Node.js/TypeScript)",
-    type: "Full-time (Hiring Soon)",
+    type: "Open Source Contributor",
     location: "Remote - Worldwide",
     category: "Engineering",
     summary: "Our CLI is the core of PackShip. You'll help us architect new features like prebuilt templates, remote deployment logic, and bundling automations.",
@@ -335,7 +335,7 @@ export const jobListings: JobListing[] = [
   {
     id: "technical-writer-documentation",
     title: "Technical Writer & Documentation Engineer",
-    type: "Part-time/Volunteer (Immediate Hiring)",
+    type: "Volunteer (Immediate)",
     location: "Remote - Worldwide",
     category: "Documentation",
     summary: "We believe docs are part of the product. You'll own the docs experience — from onboarding guides and usage tutorials to contribution guides and API references.",
@@ -348,7 +348,7 @@ export const jobListings: JobListing[] = [
   {
     id: "frontend-engineer-web",
     title: "Frontend Engineer, Web & Docs Site",
-    type: "Part-time/Volunteer (Immediate Hiring)",
+    type: "Volunteer (Immediate)",
     location: "Remote - Worldwide",
     category: "Engineering",
     summary: "Help us build a sleek and developer-focused PackShip web experience.",

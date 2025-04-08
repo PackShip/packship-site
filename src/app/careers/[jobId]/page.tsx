@@ -3,7 +3,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Navigation from "@/shared/Navigation";
 import Footer from "@/shared/Footer";
-import { jobListings, jobDetails, JobListing, JobDetails } from "../../../../constants";
+import {
+  jobListings,
+  jobDetails,
+  JobListing,
+  JobDetails,
+} from "../../../../constants";
 
 interface JobPageProps {
   params: {
@@ -144,14 +149,14 @@ export default function JobPage({ params }: JobPageProps) {
 
               {/* Apply button - fixed at bottom on mobile */}
               <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-900 p-4 md:hidden border-t dark:border-white/10 z-10">
-                <Link
+                <a
                   href="https://www.linkedin.com/company/packship-npm/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full bg-packship-purple-lite text-white py-3 px-4 rounded-lg text-center font-medium"
+                  className="block w-full bg-packship-purple-lite text-black hover:bg-packship-purple-lite/90 dark:text-black light:text-black py-3 px-4 rounded-lg text-center font-medium"
                 >
                   Apply Now
-                </Link>
+                </a>
               </div>
 
               {/* Apply button - inline on desktop */}
@@ -160,7 +165,7 @@ export default function JobPage({ params }: JobPageProps) {
                   href="https://www.linkedin.com/company/packship-npm/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-packship-purple-lite text-white py-3 px-6 rounded-lg text-center font-medium"
+                  className="inline-block w-full bg-packship-purple-lite text-black hover:bg-packship-purple-lite/90 dark:text-black light:text-black py-3 px-6 rounded-lg text-center font-medium"
                 >
                   Apply Now
                 </a>
