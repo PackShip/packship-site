@@ -74,6 +74,14 @@ export const footerLinks = [
         href: "https://github.com/CodeNKoffee/packship",
       },
       {
+        name: "Linkedin",
+        href: "https://www.linkedin.com/company/packship-npm/",
+      },
+      {
+        name: "Whop",
+        href: "https://whop.com/packship",
+      },
+      {
         name: "X (formerly Twitter)",
         href: "https://x.com/h4temsoliman",
       },
