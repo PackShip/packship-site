@@ -3,6 +3,8 @@ import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import copy from "copy-to-clipboard";
 import toast from "react-hot-toast";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCopy } from "@fortawesome/free-solid-svg-icons";
 import { CopyCodeSnippetProps } from "../../types";
 
 export default function CopyCodeSnippet({
@@ -40,20 +42,7 @@ export default function CopyCodeSnippet({
           onClick={copyCodeToClipboard}
           title="Copy to clipboard"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="12"
-            height="12"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-          </svg>
+          <FontAwesomeIcon icon={faCopy} className="h-3 w-3" />
         </button>
       </span>
     );
@@ -74,24 +63,12 @@ export default function CopyCodeSnippet({
 
       <div className="absolute bottom-4 right-4">
         <button
-          className="bg-packship-purple hover:bg-purple-700 text-white font-bold text-sm rounded-full px-3 md:px-4 py-2 transition-colors flex items-center justify-center shadow-lg"
+          className="bg-packship-purple-lite/20 hover:bg-packship-purple-lite/40 text-packship-purple-lite p-3 rounded-full transition-colors flex items-center justify-center"
           onClick={copyCodeToClipboard}
-          aria-label="Copy code to clipboard"
+          aria-label="Copy to clipboard"
+          title="Copy to clipboard"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4 md:mr-2"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-          </svg>
-          <span className="hidden md:inline">{buttonText}</span>
+          <FontAwesomeIcon icon={faCopy} />
         </button>
       </div>
     </div>

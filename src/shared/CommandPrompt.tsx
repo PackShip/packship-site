@@ -79,7 +79,7 @@ export default function CommandPrompt({
         </div>
         <button
           onClick={handleCopy}
-          className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-packship-purple-lite/20 hover:bg-packship-purple-lite/30 text-packship-purple-lite p-2 rounded-full transition-colors flex-shrink-0"
+          className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-packship-purple-lite/20 hover:bg-packship-purple-lite/40 text-packship-purple-lite p-2 rounded-full transition-colors flex-shrink-0"
           title={copied ? "Copied!" : "Copy to clipboard"}
           aria-label="Copy command to clipboard"
         >
