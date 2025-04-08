@@ -4,12 +4,15 @@ import { notFound } from "next/navigation";
 import Navigation from "@/shared/Navigation";
 import Footer from "@/shared/Footer";
 import { jobListings, jobDetails, JobListing } from "../../../../constants";
-import { JobIDPageProps } from "../../../../types";
 
+type Props = {
+  params: Promise<{ jobId: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
 
-
-export default function JobPage({ params, searchParams }: JobIDPageProps) {
-  const { jobId } = params;
+export default async function JobPage({ params, searchParams }: Props) {
+  const { jobId } = await params;
+  const searchParamsValue = await searchParams;
 
   // Find the job with the matching ID
   const job = jobListings.find((job: JobListing) => job.id === jobId);

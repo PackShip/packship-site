@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import Navigation from "@/shared/Navigation";
 import Footer from "@/shared/Footer";
-import { JobIDPageProps } from "../../../types";
 
 export default function Announcements() {
   return (

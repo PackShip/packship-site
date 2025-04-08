@@ -41,7 +41,8 @@ export interface CopyCodeSnippetProps {
   inline?: boolean;
 }
 
-// Updated props type to conform to Next.js App Router expectations
+// Deprecated: Use inline interface definitions for Next.js pages instead
+// Keep for backward compatibility with any remaining usages
 export interface JobIDPageProps {
   params: { jobId: string };
   searchParams: { [key: string]: string | string[] | undefined };
