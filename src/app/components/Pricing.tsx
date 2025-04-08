@@ -108,7 +108,7 @@ export default function Pricing() {
             </div>
           </div>
 
-          <div
+          {/* <div
             className="w-full max-w-2xl dark:bg-black/30 light:bg-white/90 rounded-lg dark:border-gray-800 light:border-gray-200 border p-6 mt-8"
             data-aos="fade-up"
           >
@@ -122,7 +122,7 @@ export default function Pricing() {
               </p>
             </div>
             <PurchaseForm />
-          </div>
+          </div> */}
         </div>
       </div>
 
