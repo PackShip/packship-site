@@ -35,10 +35,10 @@ export default function Pricing() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-4xl">
+          <div className="flex flex-col md:flex-row w-full gap-8 max-w-4xl">
             <div
               data-aos="fade-up"
-              className="feature-card flex flex-col dark:bg-black/20 light:bg-white/90 p-6 rounded-lg border dark:border-gray-800 light:border-gray-200"
+              className="feature-card flex flex-col dark:bg-black/20 light:bg-white/90 p-6 rounded-lg border dark:border-gray-800 light:border-gray-200 w-full lg:w-[40%]"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-md bg-packship-purple-lite/20 flex items-center justify-center">
@@ -77,7 +77,7 @@ export default function Pricing() {
             <div
               data-aos="fade-up"
               data-aos-delay="100"
-              className="feature-card flex flex-col dark:bg-black/20 light:bg-white/90 p-6 rounded-lg border dark:border-gray-800 light:border-gray-200"
+              className="feature-card flex flex-col dark:bg-black/20 light:bg-white/90 p-6 rounded-lg border dark:border-gray-800 light:border-gray-200 w-full lg:w-[60%]"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-md bg-packship-purple-lite/20 flex items-center justify-center">
