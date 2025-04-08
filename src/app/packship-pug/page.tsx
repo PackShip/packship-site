@@ -128,7 +128,7 @@ export default function PackshipPug() {
 
             <Link
               href="/"
-              className="w-full sm:w-96 inline-flex items-center justify-center px-6 py-3 rounded-md bg-transparent border border-packship-purple-lite hover:bg-packship-purple-lite/90 text-packship-purple-lite hover:text-black light:text-black font-medium transition-all duration-300 ease-in-out"
+              className="w-full sm:w-96 inline-flex items-center justify-center px-6 py-3 rounded-md bg-transparent border-2 border-packship-purple-lite hover:bg-packship-purple-lite/10 text-packship-purple-lite font-medium transition-colors"
             >
               Back Home
             </Link>
