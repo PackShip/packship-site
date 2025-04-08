@@ -76,7 +76,7 @@ export default function Navigation() {
                 />
               </figure>
             </Link>
-            <div className="hidden md:flex gap-4 items-center">
+            <div className="hidden lg:flex gap-4 items-center">
               {navLinks.map((link, index) => (
                 <li key={index}>
                   <Link
@@ -125,7 +125,7 @@ export default function Navigation() {
                 <ThemeToggle />
               </li>
             </div>
-            <div className="md:hidden relative flex justify-end items-end gap-2">
+            <div className="lg:hidden relative flex justify-end items-end gap-2">
               <ThemeToggle />
               <button
                 onClick={handleToggle}
