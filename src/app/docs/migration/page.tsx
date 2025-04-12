@@ -79,7 +79,7 @@ export default function Migration() {
           <DocListItem>
             Starring and watching the{" "}
             <a
-              href="https://github.com/CodeNKoffee/packship"
+              href="https://github.com/packship"
               target="_blank"
               rel="noopener noreferrer"
               className="text-packship-purple-lite hover:underline"

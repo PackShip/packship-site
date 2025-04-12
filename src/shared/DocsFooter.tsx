@@ -72,7 +72,7 @@ export default function DocsFooter() {
 
             <div className="flex gap-4">
               <a
-                href="https://github.com/CodeNKoffee/packship"
+                href="https://github.com/packship"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="dark:text-white/60 light:text-gray-600 hover:text-packship-purple-lite transition-colors"

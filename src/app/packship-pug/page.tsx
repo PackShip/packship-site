@@ -137,7 +137,7 @@ export default function PackshipPug() {
           <p className="mt-12 text-lg text-center">
             Want to be notified when PackShip Pug launches?
             <a
-              href="https://github.com/CodeNKoffee/packship"
+              href="https://github.com/packship"
               className="text-packship-purple-lite underline ml-1 font-medium"
             >
               Star our GitHub repository

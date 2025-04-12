@@ -21,17 +21,6 @@ export const navLinks = [
   },
 ];
 
-export const brands = [
-  {
-    title: "Ecaller",
-    img: "/assets/EcallerBlack.svg",
-  },
-  {
-    title: "QMaster",
-    img: "/assets/QMasterBlack.svg",
-  },
-];
-
 export const footerLinks = [
   {
     title: "Project",
@@ -58,7 +47,7 @@ export const footerLinks = [
       },
       {
         name: "GitHub",
-        href: "https://github.com/CodeNKoffee/packship",
+        href: "https://github.com/packship",
       },
       {
         name: "Report an Issue",
@@ -75,7 +64,7 @@ export const footerLinks = [
       },
       {
         name: "GitHub",
-        href: "https://github.com/CodeNKoffee/packship",
+        href: "https://github.com/packship",
       },
       {
         name: "Linkedin",

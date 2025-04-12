@@ -197,7 +197,7 @@ export default function PackshipV2OpenSource() {
                     <li>
                       Star and watch the{" "}
                       <a
-                        href="https://github.com/CodeNKoffee/packship"
+                        href="https://github.com/packship"
                         className="text-packship-purple-lite hover:underline"
                       >
                         GitHub repository

@@ -101,7 +101,7 @@ export default function Navigation() {
               </span>
               <li>
                 <a
-                  href="https://github.com/CodeNKoffee/packship"
+                  href="https://github.com/packship"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="dark:text-white/80 light:text-gray-700 hover:text-packship-purple-lite transition-all"
