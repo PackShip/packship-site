@@ -1,0 +1,54 @@
+name: "✨ Feature Request"
+description: Suggest an idea or enhancement for PackShip
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to suggest a new feature!
+  
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Feature Description
+      description: A clear and concise description of the feature you'd like to see implemented
+      placeholder: I would like to see...
+    validations:
+      required: true
+      
+  - type: textarea
+    id: feature-importance
+    attributes:
+      label: Why is this feature important?
+      description: Explain why this feature is needed and how it would benefit users
+      placeholder: This feature would help users by...
+    validations:
+      required: true
+      
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: If applicable, describe any alternative solutions or features you've considered
+      placeholder: I've also thought about...
+    validations:
+      required: false
+      
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context, screenshots, or mockups that can help explain your idea
+      placeholder: More details...
+    validations:
+      required: false
+      
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our Code of Conduct
+      options:
+        - label: I agree to follow PackShip's Code of Conduct
+          required: true 

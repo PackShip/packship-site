@@ -1,0 +1,28 @@
+# This is GitHub's issue template configuration file
+# The properties here are GitHub-specific and don't follow the same schema as issue templates
+
+name: "Configuration"
+description: "Configuration for GitHub issue templates"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is a configuration file and should not be directly used as an issue template.
+
+blank_issues_enabled: false
+contact_links:
+  - name: PackShip Documentation
+    url: https://packship.dev/docs
+    about: Check our documentation for answers to common questions
+  - name: Discord Community
+    url: https://discord.gg/fKWxWT8M
+    about: Join our Discord community for real-time support and discussions
+  - name: Whop Support
+    url: https://whop.com/packship
+    about: Get premium support through our Whop page
+  - name: PackShip Website
+    url: https://packship.dev
+    about: Visit our website to learn more about PackShip
+  - name: LinkedIn
+    url: https://www.linkedin.com/company/packship-npm
+    about: Follow us on LinkedIn to stay updated on our latest news and developments

@@ -1,0 +1,66 @@
+name: "🎨 Icon Request"
+description: Request a new icon or icon theme for PackShip
+title: "[Icon Request]: "
+labels: ["icon", "enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to request a new icon!
+  
+  - type: input
+    id: icon-name
+    attributes:
+      label: Icon Name
+      description: What file/folder/feature needs an icon?
+      placeholder: "e.g., New file extension, folder type, feature"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: icon-description
+    attributes:
+      label: Description
+      description: Describe what this icon should represent and where it would be used
+      placeholder: This icon would be used for...
+    validations:
+      required: true
+      
+  - type: textarea
+    id: icon-suggestion
+    attributes:
+      label: Icon Suggestion
+      description: If you have a suggestion for what the icon should look like, please describe it or attach a mockup
+      placeholder: The icon could look like...
+    validations:
+      required: false
+      
+  - type: dropdown
+    id: icon-priority
+    attributes:
+      label: Priority
+      description: How important is this icon for your workflow?
+      options:
+        - Low (nice to have)
+        - Medium (would improve experience)
+        - High (essential for my workflow)
+    validations:
+      required: true
+      
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context or screenshots about the icon request
+      placeholder: More details...
+    validations:
+      required: false
+      
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our Code of Conduct
+      options:
+        - label: I agree to follow PackShip's Code of Conduct
+          required: true 

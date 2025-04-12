@@ -1,0 +1,74 @@
+name: "🤔 Support or Usage Questions"
+description: Get help using PackShip
+title: "[Question]: "
+labels: ["question", "help wanted"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reaching out with your question! Before you continue, please check:
+        
+        - [PackShip Documentation](https://packship.dev/docs)
+        - [Existing Issues](https://github.com/packship/packship/issues) to see if your question has already been asked
+        - [Discord Community](https://discord.gg/fKWxWT8M) for real-time support
+  
+  - type: textarea
+    id: question
+    attributes:
+      label: Your Question
+      description: A clear and detailed description of your question or the help you need
+      placeholder: I'm trying to use PackShip to... How do I...?
+    validations:
+      required: true
+      
+  - type: textarea
+    id: what-tried
+    attributes:
+      label: What You've Tried
+      description: Describe what you've already tried to solve your issue
+      placeholder: I've already tried...
+    validations:
+      required: false
+      
+  - type: dropdown
+    id: version
+    attributes:
+      label: Version
+      description: What version of PackShip are you using?
+      options:
+        - Latest release
+        - Previous release
+        - Development version (from source)
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: operating-system
+    attributes:
+      label: Operating System
+      description: What operating system are you using?
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - Other
+    validations:
+      required: true
+      
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context about your question here
+      placeholder: More details...
+    validations:
+      required: false
+      
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our Code of Conduct
+      options:
+        - label: I agree to follow PackShip's Code of Conduct
+          required: true 
