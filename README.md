@@ -1,78 +1,84 @@
-# PackShip
+# PackShip Website
 
-Welcome to the official **PackShip** website! This site complements the [PackShip CLI](https://www.npmjs.com/package/packship), providing an easy way to understand, explore, and purchase the tool that helps you streamline your npm package development and publishing process.
+Welcome to the **official PackShip website**—the home for everything you need to learn, explore, and engage with PackShip.
 
-## About PackShip
+🔗 Live site: https://packship.dev  
+🛒 Whop: https://whop.com/packship  
+💬 Community: https://discord.gg/fKWxWT8M  
+📝 Our story: https://medium.com/@hatemthedev/packship-v2-the-decision-that-changed-everything-55a12eebcd21  
+🤝 Help our business thrive: https://www.linkedin.com/company/packship-npm
 
-**PackShip** is a CLI tool designed to simplify the creation, configuration, and publishing of npm packages. Whether you’re a new developer releasing your first package or an experienced one tired of repetitive configuration tasks, **PackShip** provides a faster, more efficient workflow, so you can focus on what really matters—building great tools.
+---
 
-### Key Features of PackShip CLI
+## What Is PackShip?
 
-- **Automatic Initialization**: Quickly initialize a new npm package with a single command.
-- **Dependency Management**: Automatically installs necessary dependencies for TypeScript or JavaScript projects.
-- **Webpack & Babel Setup**: Seamlessly integrates Babel and Webpack into your project.
-- **Simple Publishing**: Publish new or updated packages with a simple command.
-- **Version Control**: Easily bump package versions and ensure your updates are ready for deployment.
+PackShip is an **open‑source** CLI tool that automates the entire npm package lifecycle—initialization, configuration, testing, versioning, and publishing—so you can ship in seconds, not days.
 
-## Website Purpose
+Whether you're just releasing your first package or you're a veteran looking to eliminate repetitive setup, PackShip streamlines your workflow.
 
-This website serves as a hub for all things **PackShip**. Here's what you can do here:
+---
 
-- **Learn** about the tool, its installation process, and how to maximize its features.
-- **Access Documentation** for using the CLI and troubleshooting common issues.
-- **Purchase** the CLI tool for streamlined npm package development.
-- **Receive Updates** on new features, releases, and updates to **PackShip**.
+## Key Features
 
-## Installation Guide
+- **`packship init`** – One command to scaffold a fully configured npm package.  
+- **Dependency Management** – Auto‑installs dependencies for JS/TS, bundlers, linters, and more.  
+- **`packship publish`** – Build, bump, and publish in a single step.  
+- **Templates** – Prebuilt project types (component library, API wrapper, CLI) coming soon.  
+- **Telemetry & Analytics** – Opt‑in usage metrics to help us improve the tool.
 
-To start using **PackShip CLI**, follow these simple steps:
+---
 
-1. **Global Installation** (MacOS/Linux):
+## Get Started
 
-    ```bash
-    sudo npm i -g packship@latest
-    ```
+1. **Install globally**  
 
-    **For Windows**:
+   ```bash
+   npm install -g packship@latest
+   ```
 
-    ```bash
-    npm i -g packship@latest
-    ```
+2. **Initialize a project**  
 
-2. **Initialize a New Package**:
+   ```bash
+   packship init
+   ```
 
-    ```bash
-    packship init
-    ```
-    
-    Follow the prompts to set up your project quickly.
+3. **Publish your package**  
 
-3. **Publishing Your Package**:
-    Once your package is ready, publish it:
-    
-    ```bash
-    packship publish
-    ```
+   ```bash
+   packship publish
+   ```
 
-    For updating an existing package:
+For more details, visit our [Docs](https://packship.dev/docs).
 
-    ```bash
-    npm version patch/minor/major  # Based on your release
-    packship publish
-    ```
+---
 
-For more detailed documentation, head to our [Documentation section](https://www.npmjs.com/package/packship).
+## Join the Community
 
-## PackShip + CLI Integration
+- **Discord** – Chat with fellow shippers, share your projects, suggest features, and report bugs in our [community](https://discord.gg/fKWxWT8M).
+- **GitHub** – Star ⭐ and contribute at [https://github.com/packship/packship](https://github.com/packship/packship)
+- **Whop** – Get instant access and support at [https://whop.com/packship](https://whop.com/packship).
+- **Medium** – Read ["PackShip v2: The Decision That Changed Everything."](https://medium.com/@hatemthedev/packship-v2-the-decision-that-changed-everything-55a12eebcd21)
 
-The **PackShip** site and the CLI tool work together seamlessly. While the CLI handles the technical side of npm package creation, configuration, and publishing, the website offers an intuitive interface for understanding the tool and facilitating the purchasing process.
+---
 
-### Why Use PackShip?
+## Roadmap & Commercial
 
-- **Simplicity**: Reduce the complexity of npm publishing and configuration.
-- **Efficiency**: Automate redundant tasks so you can focus on development.
-- **For All Developers**: Whether you're new to npm package publishing or a seasoned dev, PackShip makes the process smoother.
+- **More Templates** – Ready‑to‑use scaffolds for common npm package patterns.
+- **Plugin System** – Extend PackShip with custom workflows and integrations.
+- **Enhanced Telemetry** – Improve metrics tracking and analytics to better understand user workflows, identify pain points, and make data-driven improvements.
+- **Performance Metrics** – Track and optimize build times, initialization speed, and overall tool efficiency.
+- **PackShip Pug** – A GUI desktop app (closed‑source) for power users. Early contributors get priority access and equity.
+- **Custom Reporting Dashboard** – Provide users with insights into their package development workflows.
+
+---
+
+## Contributing
+
+We welcome contributions from the community! Please check our [Contributing Guidelines](CONTRIBUTING.md) for more details on how to submit pull requests, report issues, and suggest improvements.
+
+---
 
 ## License
 
-This project is licensed under the ISC License. See the LICENSE file for more details.
+- **PackShip Website** is open‑source under the MIT License. See [LICENSE](LICENSE) for details.
+- **PackShip CLI** is open‑source under the MIT License. See [https://github.com/packship/packship/blob/master/LICENSE](https://github.com/packship/packship/blob/master/LICENSE).
