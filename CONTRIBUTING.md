@@ -1,30 +1,65 @@
-# Contributing to PackShip Website
+# Contributing to PackShip
 
-We love your input! We want to make contributing to PackShip Website as easy and transparent as possible, whether it's:
+Thank you for considering contributing to PackShip! This document outlines the process for contributing to the project.
 
-- Reporting a bug
-- Discussing the current state of the code
-- Submitting a fix
-- Proposing new features
-- Becoming a maintainer
+## Code of Conduct
 
-## Development Process
+By participating in this project, you agree to abide by our Code of Conduct. Please read it before contributing.
 
-We use GitHub to host code, to track issues and feature requests, as well as accept pull requests.
+## How Can I Contribute?
+
+### Reporting Bugs
+
+- Check if the bug has already been reported in the Issues section
+- Use the bug report template when creating a new issue
+- Follow our [Issue Naming Convention](.github/ISSUE_NAMING_CONVENTION.md)
+- Include detailed steps to reproduce the bug
+- Include information about your environment (OS, Node.js version, etc.)
+
+### Suggesting Features
+
+- Check if the feature has already been suggested in the Issues section
+- Use the feature request template when creating a new issue
+- Follow our [Issue Naming Convention](.github/ISSUE_NAMING_CONVENTION.md)
+- Explain why this feature would be useful to most users
 
 ### Pull Requests
 
-1. Fork the repo and create your branch from `main`.
-2. If you've added code that should be tested, add tests.
-3. If you've changed APIs, update the documentation.
-4. Ensure the test suite passes.
-5. Make sure your code lints.
-6. Issue that pull request!
+1. Fork the repository
+2. Create a new branch for your changes following our [Branch Naming Convention](.github/BRANCH_NAMING_CONVENTION.md)
+3. Make your changes
+4. Run tests to ensure your changes don't break existing functionality
+5. Submit a pull request
 
-### Issues
+## Development Setup
 
-We use GitHub issues to track public bugs. Report a bug by opening a new issue; it's that easy!
+1. Clone the repository
+2. Install dependencies with `npm install`
+3. Build the project with `npm run build`
+4. Run the CLI with `npm start`
+
+## Style Guide
+
+- Use TypeScript for all new code
+- Follow the existing code style
+- Use descriptive variable names
+- Add comments for complex logic
+- Write tests for new features
+
+## Commit Messages
+
+- Follow the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/)
+- Use the present tense ("Add feature" not "Added feature")
+- Use the imperative mood ("Move cursor to..." not "Moves cursor to...")
+- Limit the first line to 72 characters or less
+- Reference issues and pull requests liberally after the first line
+
+## Testing
+
+- Add tests for new features
+- Ensure all tests pass before submitting a pull request
+- Run tests with `npm test`
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under the project's MIT License. 
+By contributing to PackShip, you agree that your contributions will be licensed under the project's MIT license.
