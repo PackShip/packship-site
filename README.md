@@ -55,7 +55,7 @@ For more details, visit our [Docs](https://packship.dev/docs).
 ## Join the Community
 
 - **Discord** – Chat with fellow shippers, share your projects, suggest features, and report bugs in our [community](https://discord.gg/fKWxWT8M).
-- **GitHub** – Star ⭐ and contribute at [https://github.com/packship/packship](https://github.com/packship/packship)
+- **GitHub** – Star ⭐ and contribute at [https://github.com/packship/packship](https://github.com/packship/packship-cli)
 - **Whop** – Get instant access and support at [https://whop.com/packship](https://whop.com/packship).
 - **Medium** – Read ["PackShip v2: The Decision That Changed Everything."](https://medium.com/@hatemthedev/packship-v2-the-decision-that-changed-everything-55a12eebcd21)
 
@@ -81,4 +81,4 @@ We welcome contributions from the community! Please check our [Contributing Guid
 ## License
 
 - **PackShip Website** is open‑source under the MIT License. See [LICENSE](LICENSE) for details.
-- **PackShip CLI** is open‑source under the MIT License. See [https://github.com/packship/packship/blob/master/LICENSE](https://github.com/packship/packship/blob/master/LICENSE).
+- **PackShip CLI** is open‑source under the MIT License. See [https://github.com/packship/packship/blob/master/LICENSE](https://github.com/packship/packship-cli/blob/master/LICENSE).

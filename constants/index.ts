@@ -51,7 +51,7 @@ export const footerLinks = [
       },
       {
         name: "Report an Issue",
-        href: "https://github.com/CodeNKoffee/packship/issues/new",
+        href: "https://github.com/packship/packship-cli/issues/new",
       },
     ],
   },
@@ -80,7 +80,7 @@ export const footerLinks = [
       },
       {
         name: "Contribute",
-        href: "https://github.com/CodeNKoffee/packship/blob/master/CONTRIBUTING.md",
+        href: "https://github.com/packship/packship-cli/blob/master/CONTRIBUTING.md",
       },
       {
         name: "Careers",
@@ -97,15 +97,15 @@ export const footerLinks = [
     links: [
       {
         name: "Open Source License",
-        href: "https://github.com/CodeNKoffee/packship/blob/master/LICENSE.md",
+        href: "https://github.com/packship/packship-cli/blob/master/LICENSE.md",
       },
       {
         name: "Code of Conduct",
-        href: "https://github.com/CodeNKoffee/packship/blob/master/CODE_OF_CONDUCT.md",
+        href: "https://github.com/packship/packship-cli/blob/master/CODE_OF_CONDUCT.md",
       },
       {
         name: "Contributing Guidelines",
-        href: "https://github.com/CodeNKoffee/packship/blob/master/CONTRIBUTING.md",
+        href: "https://github.com/packship/packship-cli/blob/master/CONTRIBUTING.md",
       },
     ],
   },

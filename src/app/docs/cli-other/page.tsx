@@ -107,7 +107,7 @@ export default function CLIOther() {
           causing problems with your npm package, you can either use{" "}
           <DocCode>packship report</DocCode> or submit an issue directly on our{" "}
           <a
-            href="https://github.com/CodeNKoffee/packship/issues"
+            href="https://github.com/packship/packship-cli/issues"
             target="_blank"
             rel="noopener noreferrer"
             className="text-packship-purple-lite hover:underline"
