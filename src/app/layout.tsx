@@ -50,6 +50,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <meta name="impact-site-verification" content="fd85fd65-7c0e-47c2-8379-d72fb8a896d8" />
       </head>
       <body className={`${inter.className} relative`}>
         {/* Grid background overlay - spans the entire page including behind nav */}
